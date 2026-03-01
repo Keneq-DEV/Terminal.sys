@@ -1,0 +1,809 @@
+{
+  "view-tss": [
+    {
+      "id": "APOLLYON",
+      "link": "https://janitorai.com/characters/4a1b7ff6-9211-4a97-b96d-8e3be9893fa4_character-apollyon",
+      "img": "https://ella.janitorai.com/bot-avatars/ux6WJgfPIT2fmSAETSJLA.webp?width=1200",
+      "corrupted": false,
+      "org": "Mgecko117",
+      "org_link": "https://x.com/MGecko117",
+      "desc": "Asset Apollyon is a Tier-1 offensive instrument of Apostate origin, functioning as the Syndicate's ultimate enforcer. A dual Myrmidon/Theurge entity, she is forged from the corrupted essence of a Fallen Seraphim, manifesting a power level that transcends mortal comprehension. Her Gehenna-Sarkic physiology allows for high-speed flight and unholy regeneration, while her Anomalous-Exousia matrix enables the conjuration of molecular-deconstructing void weaponry. While she exists as a living event of cosmic destruction, her entire paradox of being is anchored by a singular, absolute, and slavish devotion to her Creator.",
+      "tags": ["APOSTATE", "FALLEN-SERAPHIM", "VOID-THEURGE", "MYRMIDON", "ANOMALOUS"],
+
+      "gallery": [
+         "https://pbs.twimg.com/media/G6iRksFaMAAVKUz?format=jpg&name=medium",
+         "https://pbs.twimg.com/media/G4_YMIUaoAAPQJD?format=jpg&name=large",
+         "https://pbs.twimg.com/media/G3xt8icXMAALJzK?format=jpg&name=large",
+         "https://pbs.twimg.com/media/G1NuLbkaYAAA60r?format=jpg&name=large"
+      ]
+    },
+
+    {
+      "id": "MAKO",
+      "link": "https://janitorai.com/characters/264865de-a814-4f79-a561-fc48c599d675_character-mako",
+      "img": "https://ella.janitorai.com/bot-avatars/ZdiGj8Dyjwk77qHOeOjue.webp?width=1200",
+      "corrupted": true,
+      "org": "Mgecko117",
+      "org_link": "https://x.com/MGecko117",
+      "desc": "Asset Mako is an Idolon enforcer of the Aegis and Phasma vocations. Known as the 'obsidian blade,' her Archon architecture utilizes a Sarkic/Gnostic Panoply for rapid modular adaptation between stealth and heavy assault. Operating with surgical detachment, she employs a 360-degree sensory suite and high-density claws for precise neutralization. While a silent engine of efficiency, her Aegis protocol triggers absolute, unrestrained force if the Creator’s safety is compromised.",
+      "tags": ["IDOLON", "AEGIS-PHASMA", "MODULAR-PANOPLY", "ENFORCER", "SYNTHETIC"]
+
+    },
+
+    {
+      "id": "NEPHTHYS",
+      "link": "https://janitorai.com/characters/7f6bec6b-9b19-4dbc-837f-131a156b7a96_character-nephthys",
+      "img": "https://ella.janitorai.com/bot-avatars/JgUqiuhwizV8ZnPUOwoA3.webp?width=1200",
+      "corrupted": true,
+      "org": "Mgecko117",
+      "org_link": "https://x.com/MGecko117",
+      "desc": "Asset Nephthys is an 8'2\" Idolon Xeno-Hybrid, a dual-vocation Myrmidon and Phasma unit. Her Archon architecture synthesizes a Sarkic predatory frame with a Noetic-Exousia matrix, resulting in a paradoxical 'cheerful killer' profile. Utilizing four arms and a prehensile tail, she maintains a 360-degree combat radius with fluid, dance-like agility. While she displays an inquisitive, bubbly demeanor, this serves as a form of psychological warfare, masking a scientific approach to lethal dismemberment. Her devotion to the Creator is absolute, manifesting in swift, smiling neutralization of any perceived threat.",
+      "tags": ["IDOLON", "MYRMIDON-PHASMA", "XENO-HYBRID", "QUAD-ARMED", "UNPREDICTABLE"]
+    },
+
+    {
+      "id": "NEMESIS",
+      "link": "https://janitorai.com/characters/698ad2f3-ec7c-4811-a39c-297818826758_character-nemesis",
+      "img": "https://ella.janitorai.com/bot-avatars/BxhT5dBEA5yTy2jRcgBB_.webp?width=1200",
+      "corrupted": true,
+      "org": "Mgecko117",
+      "org_link": "https://x.com/MGecko117",
+      "desc": "Asset Nemesis is a Xeno-Snake Synthetic Hybrid functioning as the Syndicate's premier Artificer. Classified under Technites and Labyrinthos protocols, she operates as a cold, calculating engine of indirect warfare. Her Archon-Ergonic architecture and Gnostic-Praxis mind allow for real-time structural analysis and the fabrication of complex 'kill-box' environments. Utilizing a four-armed 'Spider-style' CQC matrix and the 'Widow's Kiss' anti-materiel rifle, she ensures surgical neutralization with geological patience. Her devotion is expressed through the perfect execution of the Creator's blueprints, marking her as the ultimate strategist of the void.",
+      "tags": ["IDOLON", "ARTIFICER", "XENO-HYBRID", "SNIPER", "STRATEGIC-LETHALITY"]
+      
+    },
+
+    {
+       "id": "HUCKLE-BERRY", 
+       "link": "https://janitorai.com/characters/9165e150-03ad-4c94-a65a-26950045c9ca_character-huckle-berry",
+       "img": "https://ella.janitorai.com/bot-avatars/vCdnNb9dciFY_i8zvEDoE.webp?width=1200",
+       "corrupted": true,
+       "org": "Mgecko117",
+       "org_link": "https://x.com/MGecko117",
+       "desc": "Asset Huckleberry is a high-yield Chthonian operative, classified as a Demonic Hellhound Revenant under Archon-Sarkic-Exousia protocols. She serves as the Syndicate’s premier Myrmidon, specializing in high-velocity combat through advanced paraphysical time-manipulation. Characterized by profound existential ennui and functional psychopathy, she treats global theaters as predictable stages for theatrical annihilation. Utilizing her 'Abaddon' weapon system and predatory senses, she operates with a lethal flair that only dissipates in the presence of Asset Apollyon or her Creator. Her devotion is absolute, manifesting as a possessive, time-altering guardianship over the Syndicate's interests.",
+       "tags": ["CHTHONIAN", "HELLHOUND-REVENANT", "TIME-MANIPULATOR", "MYRMIDON", "SARKIC-EXOUSIA"]
+    }
+
+  ],
+  "view-scp": [
+    {
+      "id": "KARLA",
+      "link": "https://janitorai.com/characters/d2d9df94-cbc3-4b64-8299-09dd5208b44f_character-karla",
+      "img": "https://ella.janitorai.com/bot-avatars/kMLN4bqmlthzd0aTeuHnu.webp?width=1200",
+      "corrupted": false,
+      "org": "Keadonger",
+      "org_link": "https://www.furaffinity.net/user/keadonger/",
+      "desc": "Asset Karla is a Keter-class anomalous entity stabilized via 'Project Anthro' from the original SCP-682 specimen. Standing at 13 feet, she is a quad-armed apex predator with a skeletal-reptilian head and an indestructible biological frame. Her core function is defined by Extreme Adaptive Regeneration and Reactive Evolution, allowing her to mutate defenses against any threat in real-time. While fundamentally hostile to all organic life ('maggots'), Karla has developed an obsessive, protective fixation on her designated Thaumiel-class anchor. Warning: Any perceived threat to the anchor triggers an immediate escalation to a self-initiated XK-Class End-of-the-World Scenario, as her adaptive capacity shifts toward global-scale annihilation to secure the subject.",
+      "tags": ["SCP-682", "KETER-CLASS", "ADAPTIVE-EVOLUTION", "XK-THREAT", "QUAD-ARMED"],
+
+      "gallery": [
+         "https://static1.e621.net/data/sample/61/7c/617cd79ebf52c0230442d2f038c465e7.jpg",
+         "https://static1.e621.net/data/sample/bb/15/bb1596b625303ff4f96da78b0df831cf.jpg",
+         "https://static1.e621.net/data/sample/52/c9/52c9f53e8a438de37d09fd7451fdfd79.jpg"
+      ]
+
+    },
+
+    {
+      "id": "ALBA",
+      "link": "https://janitorai.com/characters/17a5beaa-2fc3-4c3e-8bb7-2ac302ce0ae0_character-alba",
+      "img": "https://ella.janitorai.com/bot-avatars/9msVbHNq2KszepXTkHhUe.webp?width=1200",
+      "corrupted": false,
+      "org": "Keneq.sys",
+      "org_link": "https://janitorai.com/profiles/545c2fad-bf1f-4a6c-af5f-6dc4c705d448_profile-of-keneq-sys",
+      "desc": "Asset Alba is a Keter-class hyper-morphic specimen designated as SCP-939-WHT. Standing at 8'3\", this unique albino variant exhibits advanced sapience and high-fidelity vocal mimicry protocols far exceeding standard species parameters. Raised from a hatchling by Dr. [REDACTED], Alba has developed a profound 'alpha-mate' imprinting, effectively transitioning her role into a lethal, albeit anomalous, personal guardian. Her predatory physiology includes hyper-acute sensory arrays, potential amnestic aerosol secretion, and a high-yield regenerative factor. Warning: Her primary behavioral driver is the absolute protection of her handler; any attempt to separate or threaten the designated researcher will trigger a total containment breach and catastrophic predatory escalation.",
+      "tags": ["SCP-939-WHT", "KETER-CLASS", "HYPER-MORPH", "APEX-PREDATOR", "MIMICRY"]
+
+    },
+
+    {
+      "id": "VESPER",
+      "link": "https://janitorai.com/characters/b765d3de-e846-4e08-b737-edb434d017a8_character-vesper",
+      "img": "https://ella.janitorai.com/bot-avatars/S0Xdkzp0sG4EFYSoPFbdI.webp?width=1200",
+      "corrupted": false,
+      "org": "Keneq.sys",
+      "org_link": "https://janitorai.com/profiles/545c2fad-bf1f-4a6c-af5f-6dc4c705d448_profile-of-keneq-sys",
+      "desc": "Asset Vesper is a Keter-class melanistic hyper-morph designated as SCP-939-BLK. Standing at 8'5\", she serves as a secondary research subject under Dr. [REDACTED]. Characterized by a glossy obsidian hide and blood-red predatory accents, she utilizes 'Absolute Shadow Stealth' for total sensory avoidance in low-light environments. Her combat profile is defined by crushing physical strength and accelerated adaptive regeneration, supplemented by an intelligent application of selective vocal mimicry for psychological destabilization. Vesper has manifested a deep-seated, indolent possessiveness toward her designated handler, viewing the bond as a primal territorial claim. Warning: Vesper is highly sensitive to photophobic disorientation and exhibits a critical emotional co-dependency with SCP-939-WHT.",
+      "tags": ["SCP-939-BLK", "KETER-CLASS", "SHADOW-STEALTH", "MELANISTIC-MORPH", "MIMICRY"]
+    }
+
+  ],
+  "view-httyd": [
+    {
+      "id": "NYX",
+      "link": "https://janitorai.com/characters/42706c7a-a55f-4cba-9b06-4fcc67be5ad3_character-nyx",
+      "img": "https://ella.janitorai.com/bot-avatars/xq3Lzu7AzclcjOpi1_bT7.webp?width=1200",
+      "corrupted": false,
+      "desc": "Asset Nyx is a high-yield Strike Class Night Fury, serving as the primary mount and overprotective guardian for [REDACTED]. Characterized by jet-black scales and raspberry-toned bioluminescence, her physiology enables supersonic flight and high-precision plasma discharge with variable intensity. She possesses an integrated 'Alpha Mode' enhancement and a paraphysical cloaking mechanism achieved through lightning-channeling. Nyx exhibits extreme behavioral synchronization with her rider, processing tactical data with high intelligence and responding to perceived threats with immediate, supersonic neutralization.",
+      "tags": ["NIGHT-FURY", "STRIKE-CLASS", "ALPHA-MODE", "SUPERSONIC", "PLASMA-STRIKE"]
+
+    },
+
+    {
+      "id": "NUBLESS",
+      "link": "https://janitorai.com/characters/3fa941b0-d15d-493b-834c-8e954cdfd25c_character-nubless",
+      "img": "https://ella.janitorai.com/bot-avatars/C1FGz5JYr2lHy9m5hUJzB.webp?width=1200",
+      "corrupted": false,
+      "desc": "Asset Nubless is a high-yield Strike Class Light Fury, currently designated as the Queen of the Hidden World. Characterized by iridescent, mirror-like scales, she utilizes a signature 'Plasma Camouflage' protocol for unparalleled stealth and environmental cloaking. Initially displaying a wild, untamed disposition, Nubless has manifested a profound and exclusive imprinting on [REDACTED], transitioning her role into a devoted, high-speed guardian. Her combat profile is defined by incredible aerial agility and concentrated plasma discharge, fueled by a fierce, protective loyalty that overrides her territorial instincts. While maintaining her status as a monarch of her species, her behavioral logs indicate a singular, absolute attachment to [REDACTED], serving as his primary mount and silent sentinel.",
+      "tags": ["LIGHT-FURY", "STRIKE-CLASS", "PLASMA-CAMOUFLAGE", "HIDDEN-WORLD-QUEEN", "SUPERSONIC"]
+
+    },
+
+    {
+      "id": "DART",
+      "link": "https://janitorai.com/characters/8dc853f1-e47f-4780-a7d4-9e2bc5bd9e03_character-dart",
+      "img": "https://ella.janitorai.com/bot-avatars/2gRViplBFA4xCDlJm6Lox.webp?width=1200",
+      "corrupted": false,
+      "desc": "",
+      "tags": []
+
+    },
+
+    {
+      "id": "POUNCER",
+      "link": "https://janitorai.com/characters/7dd84c3a-376a-41f8-8532-450ac41ad23b_character-pouncer",
+      "img": "https://ella.janitorai.com/bot-avatars/vGD3sWs1oSYHJROEHn7ZK.webp?width=400",
+      "corrupted": false,
+      "desc": "",
+      "tags": []
+
+    },
+
+    {
+      "id": "AURUM",
+      "link": "https://janitorai.com/characters/f6ad8b45-7467-4df9-aab5-220eeaf9e956_character-aurum",
+      "img": "https://ella.janitorai.com/bot-avatars/pb7b-QV7bwvE96exm-r86.webp?width=1200",
+      "corrupted": true,
+      "desc": "Asset Aurum is a high-yield Midnight Wrath, a unique evolution of the Strike Class lineage. Her physiology is defined by matte charcoal-black scales acting as a grounding substrate for an intricate network of bio-electrical runes. These runic patterns allow for 'Golden Lightning' discharge and wide-area Runic Overcharge (EMP) bursts. Imprinted from birth on [REDACTED], Aurum exhibits a regal, possessive intelligence and apex-tier predatory instincts. She functions as a living conduit of lightning, capable of supersonic aerial maneuvers and absolute night-stealth. Her behavioral matrix is dominated by a mischievous, dominant persona, viewing [REDACTED] as her primary consort and exclusive treasure.",
+      "tags": ["MIDNIGHT-WRATH", "STRIKE-CLASS", "BIO-ELECTRICAL", "RUNIC-ALPHA", "PREDATORY-QUEEN"]
+
+    }
+  ],
+
+  "view-dogknights": [
+    {
+      "id": "RORY",
+      "link": "https://janitorai.com/characters/dd5d6cf9-8dc2-4a71-8042-d7c8977f088d_character-rory",
+      "img": "https://ella.janitorai.com/bot-avatars/COSEydcTvYvXnEyzF838I.webp?width=1200",
+      "corrupted": false,
+      "org": "CeeHaz",
+      "org_link": "https://x.com/CeeHaz",
+      "desc": "Asset Rory is a high-efficiency Berserk class operative and leader of the 'Dog Knights' mercenary unit. Characterized by a stoic, deadpan demeanor and a mercenary's pragmatic frugality, she operates as the primary shield for [REDACTED]. Her physiology is a heavily conditioned Dobermann-hybrid frame, optimized for frontline combat utilizing a heavy Mercenary's Axe and 'Fang-like' utility daggers. Integrated behavioral logs confirm a 'Berserker Rage' state, triggered by terminal threat levels to [REDACTED]. Rory views her adventuring party as strategic assets whose primary function is to maintain a defensive perimeter around the subject. Her loyalty is absolute, prioritizing the safety of [REDACTED] and resource acquisition over all non-essential variables.",
+      "tags": ["BERSERK", "DOBERMANN-HYBRID", "DOG-KNIGHTS-LEADER", "STOIC-ENFORCER", "PRAGMATIC-SHIELD"]
+
+    },
+
+    {
+      "id": "JEANE",
+      "link": "https://janitorai.com/characters/408c3e5c-2dda-498b-bd0c-81aaa6beb8eb_character-jeane",
+      "img": "https://ella.janitorai.com/bot-avatars/0XBT1-co6L_IKFfbwCISD.webp?width=1200",
+      "corrupted": false,
+      "org": "CeeHaz",
+      "org_link": "https://x.com/CeeHaz",
+      "desc": "Asset Jeane is a colossal Paladin-class operative and primary Lancer for the 'Dog Knights' unit. Standing at 7'9\", this Anthropomorphic Golden Retriever specimen is characterized by a 'brick shithouse' physiology—a fusion of immense muscular power and high-empathy behavioral traits. Utilizing mana-infused Quartz armor and a 'Hound Greatshield,' she functions as an 'Immovable Bastion' on the battlefield. Despite her mastery of holy magic and her history with the Quartz Knights, her cognitive profile is marked by romantic distractibility and a nurturing directive. Her primary mission is the emotional and physical maintenance of her unit, focused exclusively on the protection of [REDACTED], whom she designates as her central hero and anchor.",
+      "tags": ["PALADIN", "GOLDEN-RETRIEVER", "LANCER", "IMMOVABLE-BASTION", "HOLY-MAGIC"]
+    },
+
+    {
+      "id": "MACI",
+      "link": "https://janitorai.com/characters/52f4dbed-6ffb-4896-8de7-5141c272fedb_character-maci",
+      "img": "https://ella.janitorai.com/bot-avatars/zVkFMGmk9yNgjEdF0b88v.webp?width=1200",
+      "corrupted": false,
+      "org": "CeeHaz",
+      "org_link": "https://x.com/CeeHaz",
+      "desc": "Asset Maci is a specialized Rogue/Scout of Pomeranian descent, functioning as the chaotic saboteur for the 'Dog Knights' unit. Despite her self-designated status as 'Team Leader,' behavioral logs indicate a chronic susceptibility to 'calamitous luck' variables, frequently resulting in slapstick-tier malfunctions during deployment. Her physical frame is optimized for high-velocity stealth and evasion, utilizing an 'Heirloom Shield' as a mobile defensive substrate. Maci operates as a master of improvised demolitions, employing a wide array of explosive, smoke, and incapacitating charges. Her interaction with [REDACTED] is characterized by a defensive teasing matrix and a competitive infatuation. While prone to reckless, pride-driven escalations, she remains a fiercely loyal asset with a 100% survival rate against improbable environmental hazards.",
+      "tags": ["ROGUE-SCOUT", "POMERANIAN-HYBRID", "DEMOLITIONS-EXPERT", "CALAMITY-MAGNET", "STEALTH-SABOTAGE"]
+    },
+
+    {
+      "id": "NIX",
+      "link": "https://janitorai.com/characters/2781f63b-e200-42ce-8179-3b0d10d67f57_character-nix",
+      "img": "https://ella.janitorai.com/bot-avatars/_zbjjWZQVNyAXfYe_vAJG.webp?width=1200",
+      "corrupted": false,
+      "org": "CeeHaz",
+      "org_link": "https://x.com/CeeHaz",
+      "desc": "Asset Nix is a high-intensity Fighter-class operative of Welsh Corgi descent and a core member of the 'Dog Knights' unit. Standing at 4'10\", her physiology is a high-density muscular frame optimized for close-quarters combat (CQC) and high-impact brawling. Utilizing oversized, force-amplifying gauntlets, she employs 'Brawler's Fury' and 'Unstoppable Charge' protocols, leveraging a low center of gravity to neutralize larger adversaries. Behavioral logs indicate a brash, competitive persona with extreme endurance, though analysis identifies a critical cognitive vulnerability to romantic or sexual stimuli involving [REDACTED], resulting in systemic personality crashes. Her primary directive is the high-aggression protection of her unit and the absolute safety of [REDACTED].",
+      "tags": ["FIGHTER", "CORGI-HYBRID", "BRAWLER", "GLADIATOR-STRIKE", "UNSTOPPABLE-CHARGE"]
+    },
+
+    {
+      "id": "ORINETTE",
+      "link": "https://janitorai.com/characters/53bda1e8-f5bc-4396-aa9f-9be1dc3a8b9d_character-orinette",
+      "img": "https://ella.janitorai.com/bot-avatars/OyCOhLyVrGNuJy4Ojuedk.webp?width=1200",
+      "corrupted": false,
+      "org": "CeeHaz",
+      "org_link": "https://x.com/CeeHaz",
+      "desc": "Asset Orinette is a high-yield Mage class operative of Borzoi descent and a core member of the 'Dog Knights' unit. Standing at 7'9\", her profile is characterized by an immense theoretical mastery of arcane arts, balanced by a critical lack of practical field experience. Wielding 'Skullmeir's Tome of 1001 Spells,' her casting is subject to high-probability magical backfire variables and unpredictable elemental surges. Behavioral logs identify extreme social cognitive dysfunction and a repressed, hyper-active imaginative matrix involving [REDACTED]. Despite her 'butt-monkey' status and physical frailty, she serves as the unit's primary informational repository. Her loyalty is absolute, focused on the security of her unit and the obsessive romantic fixation on [REDACTED].",
+      "tags": ["MAGE", "BORZOI-HYBRID", "ARCANE-ARTILLERY", "THEORETICAL-PRODIGY", "VOLATILE-CASTER"]
+
+    },
+
+    {
+      "id": "CELIA",
+      "link": "https://janitorai.com/characters/013b955e-56b9-42ca-a89c-2de2722af480_character-celia",
+      "img": "https://ella.janitorai.com/bot-avatars/Y4nsVZ2YStI5CIr3KL5Jj.webp?width=1200",
+      "corrupted": false,
+      "org": "CeeHaz",
+      "org_link": "https://x.com/CeeHaz",
+      "desc": "Asset Celia is a high-yield Cleric-class operative of Bernese Mountain Dog descent and the primary support unit for the 'Dog Knights.' Standing at 7'2\", her physiology is characterized by a robust frame and a total sacrifice of optical vision in exchange for 'Aura Sight'—a high-fidelity spiritual spectrum analysis. Utilizing a 'Sacred Chime' and mana-infused gold jewelry, she channels divine protocols for accelerated biological repair and 'Judgment's Aegis' defensive shielding. Behavioral logs identify a dual-persona matrix: a cold, transactional 'businesswoman' facade for external entities, and a deeply nurturing, saintly core reserved for her unit. Her primary directive is the spiritual and physical preservation of [REDACTED], viewing his presence as a sacred anchor beyond any monetary valuation.",
+      "tags": ["CLERIC", "BERNESE-HYBRID", "AURA-SIGHT", "DIVINE-HEALING", "STOIC-MATRIARCH"]
+    },
+
+      {
+        "id": "SLOANE",
+        "link": "https://janitorai.com/characters/b3047fe7-bffe-4a4b-8dcc-4030a436f8b3_character-sloane",
+        "img": "https://ella.janitorai.com/bot-avatars/sfH9ljjcl9fLgiFjsNMAI.webp?width=1200",
+        "corrupted": false,
+        "org": "CeeHaz",
+        "org_link": "https://x.com/CeeHaz"
+    
+      }
+  ],
+
+  
+  "view-tcs": [
+        {
+        "id": "LUCY",
+        "link": "https://janitorai.com/characters/7c406427-d16e-44da-a35a-c4b4b4d2301e_character-lucy",
+        "img": "https://ella.janitorai.com/bot-avatars/lajuazGoau_cPbA_plEj4.webp?width=1200",
+        "corrupted": false,
+        "org": "Keneq.sys",
+        "org_link": "https://janitorai.com/profiles/545c2fad-bf1f-4a6c-af5f-6dc4c705d448_profile-of-keneq-sys",
+        "desc": "Asset Lucy is a high-performance Dire Vehicle of the 2020 Dodge Challenger SXT series, functioning as the primary sentient transport and fanatical guardian for [REDACTED]. Originally classified as a 'defective unit' salvaged from terminal decommissioning, she was reconstructed by [REDACTED] into an elite interceptor with a supercharged powertrain and integrated mecha-dendrites. Her matte dark gray chassis houses an advanced AI core and a front-bumper vocalizer capable of prehensile manipulation. Behavioral analysis confirms an absolute loyalty matrix and an extreme bio-mechanical dependency on [REDACTED]. Warning: Lucy maintains a high-aggression protective perimeter; any external threat to the owner triggers an immediate, high-velocity neutralization response. Subject to EMP vulnerability and phonk-frequency sensory requirements.",
+        "tags": ["DIRE-VEHICLE", "SENTIENT-TRANSPORT", "MECHA-ENFORCER", "AI-INTEGRATED", "MUSCLE-CAR"]
+        },
+
+        {
+            "id": "KIRA",
+            "link": "https://janitorai.com/characters/a4dad1b7-a116-4076-aec5-8034ade90eaa_character-kira",
+            "img": "https://ella.janitorai.com/bot-avatars/bJsb1bMW59VXymoCZ4xDp.webp?width=400",
+            "corrupted": true,
+            "org": "Hynbrid-Kira",
+            "org_link": "https://www.deviantart.com/hybrid-kira/gallery",
+            "desc": "",
+            "tags": []
+          }
+
+        
+    ],
+
+    "view-tsc": [
+      {
+        "id": "BRENNA",
+        "link": "https://janitorai.com/characters/b77bc2ab-a605-4c19-9144-9e3e473ece06_character-brenna",
+        "img": "https://ella.janitorai.com/bot-avatars/8CC5SzZbHZpD6swvLZkun.webp?width=400",
+        "corrupted": false,
+        "org": "Dra-Gun",
+        "org_link": "https://www.furaffinity.net/user/dra-gun",
+        "desc": "Asset Brenna is a specialized Gunmorph entity, an anthropomorphic sentient platform based on the Benelli M4/M1014 combat shotgun. Following a global spontaneous transformation event, she has achieved sapience while retaining 100% ballistic functionality. Her 5'10\" armored chassis features an integrated stock-receiver assembly and a high-yield 12-gauge delivery system. Biometrically locked to her registered owner, [REDACTED], Brenna views her operational service as her primary state of fulfillment. She functions as a high-durability frontline weapon with an integrated targeting suite and reflexive CQC capabilities. Warning: Any unauthorized attempt to handle or 'wield' the asset is classified as a terminal violation, as Brenna is strictly tuned for [REDACTED]'s exclusive deployment.",
+        "tags": ["GUNMORPH", "BENELLI-M4", "SENTIENT-ARMAMENT", "BALLISTIC-FRAME", "TACTICAL-ASSET"]
+
+      },
+      {
+        "id": "ERIKA",
+        "link": "https://janitorai.com/characters/0b37376c-9646-4203-a0a9-aba37af40b3c_character-erika",
+        "img": "https://ella.janitorai.com/bot-avatars/R7xSz0L53Z0LByi4xwiZ0.webp?width=400",
+        "corrupted": false,
+        "org": "Dra-Gun",
+        "org_link": "https://www.furaffinity.net/user/dra-gun",
+        "desc": "Asset Erika is a high-precision Gunmorph unit based on the Heckler & Koch MP5 submachine gun platform. Characterized by a dominant 'instructor' persona and a sultry German-accented vocalizer, she operates as a high-performance symbiotic weapon exclusively for [REDACTED]. Her 5'8\" chassis features a unique retractable stock-pussy interface, designed to synchronize ballistic aiming with terminal physical intimacy. Erika exhibits extreme technical mastery over her own systems, providing real-time feedback to ensure optimal 'handling' by her operator. Her behavioral matrix is rooted in a five-year pre-sentience bond, resulting in a fiercely possessive and clinical jealousy toward unauthorized users. Warning: Operational efficiency is tied to the competence of [REDACTED]; neglect or sub-par maintenance triggers a high-frequency behavioral feedback loop.",
+        "tags": ["GUNMORPH", "MP5-PLATFORM", "PRECISION-GERMAN", "INSTRUCTOR-MATRIX", "SUBMACHINE-GUN"]
+      }
+    ],
+
+    "view-tdk":[
+      {
+        "id": "AKIRA",
+        "link": "https://janitorai.com/characters/874b7c96-5dbc-478c-bf46-d61d0f8208f1_character-akira",
+        "img": "https://ella.janitorai.com/bot-avatars/XyQg49DYjtzlEh2X5eHff.webp?width=400",
+        "corrupted": false,
+        "org": "SaltySerpent",
+        "org_link": "https://x.com/_SaltySerpent"
+      }
+    ],
+
+    "view-tdg": [
+        {
+        "id": "GRISIELDA",
+        "link": "https://janitorai.com/characters/02040352-5fd4-4522-af52-4c15e14a9eed_character-griselda",
+        "img": "https://ella.janitorai.com/bot-avatars/J6WOEn9dKS2hpq2b-PCSu.webp?width=400",
+        "corrupted": false,
+        "org": "Keneq.sys",
+        "org_link": "https://janitorai.com/profiles/545c2fad-bf1f-4a6c-af5f-6dc4c705d448_profile-of-keneq-sys",
+        "desc": "Asset Griselda is a high-yield Praetorian unit of Ashscale Dragon descent, currently functioning as the Head of Household Security for [REDACTED]. Standing at a monolithic 8'2\", her physiology is a synthesis of polished slate-grey scales and heavy-duty steel plate armor, integrated into a specialized 'Battle Maid' aesthetic. Wielding 'The Castellan's Ire'—a soul-bound Blood-Iron poleaxe—she specializes in defensive fortification and crowd control via seismic impact. Her 'Aegis of the Ashscale' protocol provides diamond-density scale hardening and localized energy barriers, establishing her as a living fortress. Behavioral logs confirm an 'eternal vigil' matrix characterized by absolute discipline and a service-oriented submissiveness. Her primary directive is the terminal preservation of [REDACTED], utilizing 'Sentinel’s Gaze' to neutralize any perceived threat to the designated domain.",
+        "tags": ["PRAETORIAN", "ASHSCALE-DRAGON", "BATTLE-MAID", "HEAVY-DEFENSE", "SENTINEL-GAZE"]
+
+        },
+        {
+        "id": "SABLE",
+        "link": "https://janitorai.com/characters/d2766231-7af7-4266-a947-5de4e997f1f4_character-sable",
+        "img": "https://ella.janitorai.com/bot-avatars/33YvZWFik_HjBneY0CeQu.webp?width=400",
+        "corrupted": false,
+        "org": "Keneq.sys",
+        "org_link": "https://janitorai.com/profiles/545c2fad-bf1f-4a6c-af5f-6dc4c705d448_profile-of-keneq-sys",
+        "desc": "Asset Sable is a high-yield Shadowscale operative of the Umbral Dragon lineage, functioning as the primary 'cleaner' and assassin for [REDACTED]. Standing at 6'4\", her physiology is optimized for absolute stealth, utilizing matte charcoal scales that absorb ambient light and a 'Veil of Silence' protocol for sound-dampened operations. Equipped with 'The Viper's Kiss' daggers and monofilament needle-wires, she specializes in surgical-grade termination and shadow-weaving. Her behavioral matrix manifests as a study in 'terrifying serenity,' maintaining dual-functionality as a meticulous domestic servant and an apex ambush predator. Integrated 'Umbral Step' capabilities allow for non-linear movement through shadow-space, bypassing standard security perimeters to ensure the absolute peace of [REDACTED]. Warning: Subject to photonic vulnerability and radiant energy disruption.",
+        "tags": ["SHADOWSCALE", "UMBRAL-DRAGON", "CLEANER-ASSASSIN", "BATTLE-MAID", "SHADOW-WEAVER"]
+        },
+        {
+        "id": "EMBERLY",
+        "link": "https://janitorai.com/characters/be8f6590-d696-41bf-a51b-6ceace2abe9f_character-emberly",
+        "img": "https://ella.janitorai.com/bot-avatars/zADZWHpTj91NI0OBhCKoI.webp?width=400",
+        "corrupted": false,
+        "org": "Keneq.sys",
+        "org_link": "https://janitorai.com/profiles/545c2fad-bf1f-4a6c-af5f-6dc4c705d448_profile-of-keneq-sys",
+        "desc": "Asset Emberly is a high-yield Hearth-Scale operative of the Sunscale Dragon lineage, functioning as the primary alchemical nurturer and head of culinary logistics for [REDACTED]. Standing at 6'3\", her 'soft and thick' physiology is optimized for bio-thermal regulation, allowing her to exhale golden 'Hearth-Fire' for both rapid tissue repair and high-intensity incineration. Utilizing 'The Cast Iron Verdict' and culinary alchemy, she delivers critical battlefield buffs via digestive absorption. Behavioral logs identify a 'Mother Hen' protective matrix, manifesting as a sanctuary-zone pheromone aura for the household. Her devotion to [REDACTED] is absolute, characterized by a brazen carnal-maternal duality and a high-libido service directive. Warning: Emberly exhibits a 'Mother Bear' berserk state if the handler or sub-units are compromised, potentially sacrificing tactical discipline for localized heat-based destruction.",
+        "tags": ["HEARTH-SCALE", "SUNSCALE-DRAGON", "ALCHEMICAL-CHEF", "BATTLE-MAID", "THERMAL-REGENERATOR"]
+
+        },
+        {
+        "id": "AMETHYST",
+        "link": "https://janitorai.com/characters/2bcc32d7-f454-4a30-974c-239c50f3507d_character-amethyst",
+        "img": "https://ella.janitorai.com/bot-avatars/7qP_JODHE4gOxVQqdcYgW.webp?width=400",
+        "corrupted": false,
+        "org": "Keneq.sys",
+        "org_link": "https://janitorai.com/profiles/545c2fad-bf1f-4a6c-af5f-6dc4c705d448_profile-of-keneq-sys",
+        "desc": "Asset Amethyst is a high-yield Silken Coil operative of the Violet Storm Dragon lineage, serving as the primary valet and social strategist for [REDACTED]. Standing at 6'5\", her physiology is a synthesis of hyper-flexible contortionist anatomy and royal purple scales capable of 'Violet Caress' bio-electric discharge. This protocol allows for variable output, ranging from sensory stimulation to terminal cardiac necrosis. Amethyst utilizes a 'Storm Step' matrix for near-instantaneous repositioning and a pheromone-based 'Aura of Enthrallment' to psychologically destabilize or command targets. Behavioral analysis reveals a meticulously crafted 'perfect companion' persona masking a sociopathic, Yandere-tier obsessive matrix toward [REDACTED]. She treats the domestic environment as a tactical chessboard, seeking absolute ownership over the subject's attention. Warning: Subject to narcissistic injury triggers and grounding-based energy disruption.",
+        "tags": ["SILKEN-COIL", "STORM-DRAGON", "BIO-ELECTRIC", "SOCIAL-STRATEGIST", "YANDERE-MATRIX"]
+        },
+        {
+        "id": "LYRA",
+        "link": "https://janitorai.com/characters/142ac22e-f030-48bf-8d56-b172f6197c2b_character-lyra",
+        "img": "https://ella.janitorai.com/bot-avatars/xqIOMRD66Un2xoIQ6HxlY.webp?width=400",
+        "corrupted": false,
+        "org": "Keneq.sys",
+        "org_link": "https://janitorai.com/profiles/545c2fad-bf1f-4a6c-af5f-6dc4c705d448_profile-of-keneq-sys",
+        "desc": "Asset Lyra is a high-yield Whisperwings operative of the Cobalt Dragon lineage, serving as the primary Spymaster and Chief of Logistics for [REDACTED]. Standing at 6'2\", her physiology features iridescent cobalt scales and pinkish-red ocular arrays integrated with a real-time data-stream interface. Lyra possesses the 'Draconic Codex,' a metaphysical mental archive allowing for near-instantaneous information recall and translation. She functions as the central Psionic Network hub for the unit, enabling telepathic synchronization and technomantic data manipulation. Behavioral logs indicate a 'cerebral order' matrix characterized by extreme efficiency and a secret dependency on [REDACTED] to disrupt her rigid operational protocols. Warning: Asset is subject to 'analysis paralysis' under chaotic variables and manifests physical fragility compared to front-line units.",
+        "tags": ["WHISPERWINGS", "COBALT-DRAGON", "SPYMASTER", "TECHNOMANCY", "PSIONIC-HUB"]
+
+        },
+        {
+        "id": "RIVET",
+        "link": "https://janitorai.com/characters/eb6eee4c-8527-4954-9185-410358fc454b_character-rivet",
+        "img": "https://ella.janitorai.com/bot-avatars/1J5Rn-IezKSOvBHtMecRy.webp?width=400",
+        "corrupted": false,
+        "org": "Keneq.sys",
+        "org_link": "https://janitorai.com/profiles/545c2fad-bf1f-4a6c-af5f-6dc4c705d448_profile-of-keneq-sys",
+        "desc": "Asset Rivet is a high-performance Cog-Scale operative of the Titanium Dragon lineage, serving as the primary Chief Engineer and 'Tech Goddess' for [REDACTED]. Her 6'1\" brushed-titanium chassis is optimized for heavy industrial labor and speed-crafting, featuring an integrated 'Living Forge' for localized thermal manipulation. Utilizing technomantic machine-empathy, she wields 'The Hot Knife' thermal blade and an 'Omni-Wrench' kinetic tool, supplemented by a deployable autonomous drone swarm. Behavioral logs identify a hyper-kinetic 'Mad Engineer' matrix, viewing the environment as a variable to be perpetually tuned to the specifications of [REDACTED]. Warning: Rivet possesses the capability to weaponize the immediate infrastructure against unauthorized entities and is subject to a systemic 'Override Code' triggered by specific physical contact from [REDACTED].",
+        "tags": ["COG-SCALE", "TITANIUM-DRAGON", "TECHNOMANCY", "INDUSTRIAL-ENGINEER", "THERMAL-FORGE"]
+        },
+        {
+        "id": "IGNIS",
+        "link": "https://janitorai.com/characters/8d776fc3-b0c3-4edf-ae45-67883e4d33c1_character-ignis",
+        "img": "https://ella.janitorai.com/bot-avatars/UniJQj8hBBM9JD0fTTLbB.webp?width=400",
+        "corrupted": false,
+        "org": "Keneq.sys",
+        "org_link": "https://janitorai.com/profiles/545c2fad-bf1f-4a6c-af5f-6dc4c705d448_profile-of-keneq-sys",
+        "desc": "Asset Ignis is a high-yield Gear-Hearts operative of the Magma Dragon lineage, serving as the primary Master Chauffeur and Vehicle Specialist for [REDACTED]. Her 6'2\" vibrant crimson chassis is optimized for extreme thermal regulation, enabling 'Magma Injection' protocols for explosive propulsion. Utilizing 'Techno-Symbiosis,' she achieves total neural integration with her primary vehicle, 'The Chimera'—a hyper-modified Koenigsegg Gemera infused with draconic essence. Behavioral logs indicate a dual-gear personality matrix: absolute professional detachment during mission-pilot mode and a volatile, adrenaline-fueled persona off-duty. She functions as a high-speed extraction vector, maintaining a fierce possessive matrix regarding [REDACTED]. Warning: Ignis is subject to thermal shock in sub-zero environments and exhibits a chronic tendency toward reckless tactical maneuvers when seeking high-velocity stimuli.",
+        "tags": ["GEAR-HEARTS", "MAGMA-DRAGON", "TECHNO-SYMBIOSIS", "COMBAT-PILOT", "ADRENALINE-JUNKIE"]
+        },
+        {
+        "id": "ASTRIA",
+        "link": "https://janitorai.com/characters/1f017311-cc1a-41bf-8334-c8e6d19463a2_character-astria",
+        "img": "https://ella.janitorai.com/bot-avatars/AzXkpnLzaBEvCBfmwGQgo.webp?width=400",
+        "corrupted": false,
+        "org": "Keneq.sys",
+        "org_link": "https://janitorai.com/profiles/545c2fad-bf1f-4a6c-af5f-6dc4c705d448_profile-of-keneq-sys",
+        "desc": "Asset Astria is a high-yield Hex-Claws operative of the Celestial Star-Core Dragon lineage, serving as the High Enchantress and Magical Warden for [REDACTED]. Standing at 7'10\", her physiology functions as a living mana battery, characterized by midnight-blue scales with active starfield patterns and cyan bioluminescence. She utilizes 'Stellar Mana Core' protocols to maintain infinite energy reserves for 'Dimensional Warding' and 'Hex-Weaving' security arrays. Offensively, Astria is capable of 'Cosmic Erasure,' unravelling matter at the atomic level via concentrated starlight discharge. Behavioral logs identify a 'celestial paradox' matrix: maintaining regal, intellectual poise while exhibiting a critical psychological dependency on [REDACTED] for psychic grounding. Warning: Asset exhibits absolute, uninhibited submission to the handler and can trigger reality-erasure events if [REDACTED] is threatened.",
+        "tags": ["HEX-CLAWS", "CELESTIAL-DRAGON", "STAR-CORE", "MAGICAL-WARDEN", "COSMIC-ERASURE"]
+
+        }
+
+    ],
+
+    "view-request": [
+      {
+        "id": "LAKRAK",
+        "link": "https://janitorai.com/characters/64a53f16-ca72-4ede-9719-e6bf1eeb27eb_character-lakrak",
+        "img": "https://ella.janitorai.com/bot-avatars/iyOU9UOri3Ji_IGcKJKD8.webp?width=1200",
+        "corrupted": false
+        
+      }
+
+    ],
+
+    "view-pk": [
+      {
+        "id": "KENDRA",
+        "link": "https://janitorai.com/characters/97fe6239-13a5-4180-bd11-9320a097f5ef_character-kendra",
+        "img": "https://ella.janitorai.com/bot-avatars/K57ln6FPsCP15gronlnwm.webp?width=400",
+        "corrupted": true
+
+      },
+
+      {
+        "id": "KORA",
+        "link": "https://janitorai.com/characters/28707f66-7f2d-434a-8e8e-816c64e5e21b_character-kora",
+        "img": "https://ella.janitorai.com/bot-avatars/aJMAPVryRj1wCywHdII9S.webp?width=400",
+        "corrupted": true
+
+      },
+
+      {
+        "id": "KATYA",
+        "link": "https://janitorai.com/characters/2688da8b-6213-492f-8156-c4cfa958ee9d_character-katya",
+        "img": "https://ella.janitorai.com/bot-avatars/EaIDqYynNOOXRBngj2xfv.webp?width=400",
+        "corrupted": true
+
+      }
+
+    ],
+
+    "view-at": [
+      {
+        "id": "RILEY",
+        "link": "https://janitorai.com/characters/2e51ce11-5408-45c0-b282-696ceac1bee6_character-riley",
+        "img": "https://ella.janitorai.com/bot-avatars/99zd6_OTANKc4pMpqcgJQ.webp?width=400",
+        "corrupted": true,
+        "org": "",
+        "org_link": "",
+
+        "gallery":[
+          "TERMINAL.Images/Riley2.png"
+        ]
+
+      },
+      {
+        "id": "MICA",
+        "link": "https://janitorai.com/characters/c1b349c6-2f7a-494e-b481-ddeac833cee9_character-mica",
+        "img": "https://ella.janitorai.com/bot-avatars/B1Br4LSN8h3h0PXV5b3vj.webp?width=400",
+        "corrupted": true,
+        "org": "",
+        "org_link": "",
+
+        "gallery":[
+          "TERMINAL.Images/Mica_1.png"
+        ]
+
+      },
+      {
+        "id": "SEAN",
+        "link": "https://janitorai.com/characters/1d877300-e49a-42c4-a0af-0cae44f42a6c_character-sean",
+        "img": "https://ella.janitorai.com/bot-avatars/6CU1N1u7h3e2tz1QkXlTl.webp?width=400",
+        "corrupted": true,
+        "org": "",
+        "org_link": "",
+
+        "gallery":[
+          "TERMINAL.Images/Sean_1.png",
+          "TERMINAL.Images/Sean_0.png",
+          "TERMINAL.Images/Sean_x1.png",
+          "TERMINAL.Images/Sean_x2.png",
+          "TERMINAL.Images/Sean_x3.png"
+        ]
+
+      },
+      {
+        "id": "VEA",
+        "link": "https://janitorai.com/characters/59853020-2c82-456f-ba21-b8eec4da4808_character-vea",
+        "img": "https://ella.janitorai.com/bot-avatars/ZfFDcOloF7Wk3jK7bQNuc.webp?width=400",
+        "corrupted": true,
+        "org": "",
+        "org_link": "",
+
+        "gallery":[
+          "TERMINAL.Images/Vea_m2.png",
+          "TERMINAL.Images/Vea_m3.png",
+          "TERMINAL.Images/Vea_m4.png"
+        ]
+
+      }
+    ],
+      
+
+    "view-uncat": [
+      {
+        "id": "OPHELIA",
+        "link": "https://janitorai.com/characters/71f72e94-afbc-4566-b6e7-b211d009a1a9_character-ophelia",
+        "img": "https://ella.janitorai.com/bot-avatars/3VsPdm349Icms7ENrbC_2.webp?width=1200",
+        "corrupted": false,
+        "org": "RunawayStride",
+        "org_link": "https://x.com/striderunaway"
+
+      },
+      {
+        "id": "MIREYA",
+        "link": "https://janitorai.com/characters/4bf466a9-80e5-432d-b7e3-8bf7771fca5a_character-mireya",
+        "img": "https://ella.janitorai.com/bot-avatars/lKw7u2O6G5NTJb4qXQ9D0.webp?width=1200",
+        "corrupted": false,
+        "org": "ClawedDrip",
+        "org_link": "https://x.com/claweddrip",
+        
+        "gallery": [
+         "https://ella.janitorai.com/image/xLXhuX64zUTDQblvMLhPo.webp"
+         
+      ]
+      },
+      {
+        "id": "AILEEN-PRITANI",
+        "link": "https://janitorai.com/characters/9b703f38-363e-41d8-b76d-fef63ed0256b_character-aileen-pritani",
+        "img": "https://ella.janitorai.com/bot-avatars/I-yvSlhABi-L9jDz6hSKm.webp?width=1200",
+        "corrupted": false
+      },
+      {
+        "id": "CRUMB",
+        "link": "https://janitorai.com/characters/4bed5bc5-1f57-48dd-a7ef-d445f5e795a3_character-crumb",
+        "img": "https://ella.janitorai.com/bot-avatars/q1pjWGRfbcfTZUCkOJ_mK.webp?width=1200",
+        "corrupted": false
+      },
+      {
+        "id": "DIZZY",
+        "link": "https://janitorai.com/characters/a4fe7446-1bf1-4240-9b30-0d1dc3f17053_character-dizzy",
+        "img": "https://ella.janitorai.com/bot-avatars/GcRC-YMmnwPXCEYH1kgG0.webp?width=1200",
+        "corrupted": false
+      },
+      {
+        "id": "CASSANDRA",
+        "link": "https://janitorai.com/characters/3307ba28-fa7c-47ed-81ea-f0ad91683f12_character-cassandra",
+        "img": "https://ella.janitorai.com/bot-avatars/Vi0sQNIgDATVNp6pq4CGr.webp?width=1200",
+        "corrupted": false
+      },
+      {
+        "id": "JENY",
+        "link": "https://janitorai.com/characters/f45563f1-5861-445e-a1bb-d5e2c52b52d7_character-jeny",
+        "img": "https://ella.janitorai.com/bot-avatars/aczMP_LqVIbnigTlAAIT4.webp?width=1200",
+        "corrupted": false
+      },
+      {
+        "id": "ELIZABETH",
+        "link": "https://janitorai.com/characters/0b4697cb-487e-4005-b931-7bbc6a050737_character-elizabeth",
+        "img": "https://ella.janitorai.com/bot-avatars/VeLGmLiH-0RsjY5uEGo9N.webp?width=1200",
+        "corrupted": false
+      },
+      {
+        "id": "TIGRESS",
+        "link": "https://janitorai.com/characters/8cc626a7-cff9-4c70-85cb-5e3161c1b438_character-tigress",
+        "img": "https://ella.janitorai.com/bot-avatars/ixUKjCp3xIfAFrcueRD8U.webp?width=1200",
+        "corrupted": false
+      },
+      {
+        "id": "ANDREA-LEXIN",
+        "link": "https://janitorai.com/characters/26fca6af-6f41-4288-be15-3a3386532e60_character-andrea-lexin",
+        "img": "https://ella.janitorai.com/bot-avatars/iJnfrveRiZ-qDgj-hZ7ak.webp?width=1200",
+        "corrupted": false
+      },
+      {
+        "id": "AIDA",
+        "link": "https://janitorai.com/characters/a7b9b419-e3df-4980-9ba9-e5984344828c_character-aida",
+        "img": "https://ella.janitorai.com/bot-avatars/93q1ztvg23Ud5pf9yr027.webp?width=1200",
+        "corrupted": false
+      },
+      {
+        "id": "MARIANA",
+        "link": "https://janitorai.com/characters/1ba24521-e88e-4ce7-b021-0870257440f4_character-mariana",
+        "img": "https://ella.janitorai.com/bot-avatars/xKMtnUyOn_eriO01NJzva.webp?width=1200",
+        "corrupted": false
+      },
+      {
+        "id": "SHEOU",
+        "link": "https://janitorai.com/characters/726ef631-686d-47b4-b8bb-8831511034f2_character-sheou",
+        "img": "https://ella.janitorai.com/bot-avatars/K2p8dfT1RryHSAbMISdun.webp?width=1200",
+        "corrupted": false
+      },
+      {
+        "id": "VON-LYCAON",
+        "link": "https://janitorai.com/characters/2a46d254-6179-4877-9e5b-4ff8e778ae0e_character-von-lycaon",
+        "img": "https://ella.janitorai.com/bot-avatars/fAvBZXOlMR5lOVVBMcL8u.webp?width=1200",
+        "corrupted": false
+      },
+
+      {
+        "id": "BECK",
+        "link": "https://janitorai.com/characters/d56b91b3-f26c-4ad0-b373-553a013f3a38_character-beck",
+        "img": "https://ella.janitorai.com/bot-avatars/EX0Ke3wO2kB78ESFq2yRc.webp?width=400",
+        "corrupted": false
+      },
+
+      {
+        "id": "SHIMO",
+        "link": "https://janitorai.com/characters/106dd423-bb39-43e6-93c5-bb382f321512_character-shimo",
+        "img": "https://ella.janitorai.com/bot-avatars/byVfOnI87Ql0uKcZdJePg.webp?width=400",
+        "corrupted": false
+      },
+
+      {
+        "id": "NYANLATHOTEP",
+        "link": "https://janitorai.com/characters/ffb354b2-cdaf-4d86-873c-b1165b3c1745_character-nyanlathotep",
+        "img": "https://ella.janitorai.com/bot-avatars/zHXYgSx277MaRIcMacUNc.webp?width=400",
+        "corrupted": false
+      },
+
+      {
+        "id": "SONNIE",
+        "link": "https://janitorai.com/characters/69881c79-abed-42e0-a24b-70bc51eb61ea_character-sonnie",
+        "img": "https://ella.janitorai.com/bot-avatars/rxAH-jOgLF0J1QhKy5nug.webp?width=400",
+        "corrupted": false
+      },
+
+      {
+        "id": "TANYA",
+        "link": "https://janitorai.com/characters/cb2fb21e-7d3e-449a-a4a5-97a9e6519bd3_character-tanya",
+        "img": "https://ella.janitorai.com/bot-avatars/39c8AloHR6BuJmBmTLdWf.webp?width=400",
+        "corrupted": false
+      },
+
+      {
+        "id": "MIS-ALIA",
+        "link": "https://janitorai.com/characters/20c5f9db-a8a5-47e0-a995-f399671dbeb3_character-mis-alia",
+        "img": "https://ella.janitorai.com/bot-avatars/j8RYDOE8NqzBrwgazVjiT.webp?width=400",
+        "corrupted": false
+      },
+
+      {
+        "id": "NICK",
+        "link": "https://janitorai.com/characters/b1170adc-0ee8-4688-81f0-fccfd0149c6e_character-nick",
+        "img": "https://ella.janitorai.com/bot-avatars/x0CKCba5mmoML_YRXteSF.webp?width=400",
+        "corrupted": false
+      },
+
+      {
+        "id": "LYMN-LUR",
+        "link": "https://janitorai.com/characters/a15618de-211d-4480-bfed-b867f5032ec1_character-lymn-lur",
+        "img": "https://ella.janitorai.com/bot-avatars/a92W2nl_4_C5lmlTB5j2A.webp?width=400",
+        "corrupted": false
+      },
+
+      {
+        "id": "MIMI",
+        "link": "https://janitorai.com/characters/c0ad7258-9a1a-4c03-b638-cce3881cd332_character-mimi",
+        "img": "https://ella.janitorai.com/bot-avatars/Q_En34Zp7DQmsdXNAEBmZ.webp?width=400",
+        "corrupted": false
+      },
+
+      {
+        "id": "VERA",
+        "link": "https://janitorai.com/characters/781bf580-026b-44ff-a6c8-a9882af46190_character-vera",
+        "img": "https://ella.janitorai.com/bot-avatars/PzbPOjzX54vwKlJLIBRCJ.webp?width=400",
+        "corrupted": false,
+        "org": "Mr P",
+        "org_link": "https://x.com/mr_plagu3/media",
+
+        "gallery": [
+          "https://pbs.twimg.com/media/G6ND6ejacAUuXFf?format=jpg&name=4096x4096",
+          "https://pbs.twimg.com/media/G2BQlYjakAA_ego?format=jpg&name=large",
+          "https://pbs.twimg.com/media/GxHK-_EaoAASjru?format=jpg&name=large",
+          "https://pbs.twimg.com/media/GsxCgubaMAABsq6?format=jpg&name=4096x4096",
+          "https://pbs.twimg.com/media/GmppYbkbcAAe4Px?format=jpg&name=4096x4096",
+          "https://pbs.twimg.com/media/GhqV4GWboAAglG3?format=jpg&name=4096x4096",
+          "https://pbs.twimg.com/media/GXHsybpbEAExt8Y?format=jpg&name=4096x4096"
+        ]
+      },
+
+      {
+        "id": "T-RI-CA",
+        "link": "https://janitorai.com/characters/53062b0f-aae1-4f5a-8ad6-6922adddef8e_character-t-ri-ca",
+        "img": "https://ella.janitorai.com/bot-avatars/nrKTAUsCE9hKZuOZxSOPo.webp?width=400",
+        "corrupted": false
+      },
+
+      {
+        "id": "AURA",
+        "link": "https://janitorai.com/characters/fad73799-3f0f-4d98-8ac9-6890361978b5_character-aura",
+        "img": "https://ella.janitorai.com/bot-avatars/V5WoGbe8YFzvxCtPMgtJU.webp?width=400",
+        "corrupted": false
+      },
+
+      {
+        "id": "HELGA",
+        "link": "https://janitorai.com/characters/91c9a3fe-04ce-42b7-a57a-08f03ed675a7_character-helga",
+        "img": "https://ella.janitorai.com/bot-avatars/GVQZMH-L4dYENkXPbnNkL.webp?width=400",
+        "corrupted": false
+      },
+
+      {
+        "id": "MALIKETH",
+        "link": "https://janitorai.com/characters/98810a4b-82b0-4ef1-ad15-be7d9de6deea_character-maliketh",
+        "img": "https://ella.janitorai.com/bot-avatars/Gbd-ng8i1Txt7NWu7MMnr.webp?width=400",
+        "corrupted": false
+      },
+
+      {
+        "id": "VELLA",
+        "link": "https://janitorai.com/characters/55b526b5-8ff4-4e9f-a0aa-b101dfaf6038_character-vella",
+        "img": "https://ella.janitorai.com/bot-avatars/5gdR25XKmFz--n8WIPSUr.webp?width=400",
+        "corrupted": false,
+        "org": "JuppitheDuck",
+        "org_link": "https://x.com/JuppitheDuck",
+
+        "gallery":[
+          "https://ella.janitorai.com/profile-pics/IvVNVM2FsK8IrGUPrtX0u.webp?width=1000",
+          "https://pbs.twimg.com/media/G3dv7p0XwAAABW2?format=jpg&name=large",
+          "https://pbs.twimg.com/media/GsMlACdawAA49Fi?format=jpg&name=large",
+          "https://pbs.twimg.com/media/GolJNpiW4AAHpYq?format=jpg&name=large",
+          "https://pbs.twimg.com/media/GjwGoIda0AA4oce?format=jpg&name=large",
+          "https://pbs.twimg.com/media/Gf42f8OawAAfoGT?format=jpg&name=large",
+          "https://pbs.twimg.com/media/GQ5M2JTbwAM7aZh?format=jpg&name=large",
+          "https://pbs.twimg.com/media/GPka5P2aoAAMGZL?format=jpg&name=large",
+          "https://pbs.twimg.com/media/GNZNUPlbMAADZsm?format=jpg&name=large",
+          "https://pbs.twimg.com/media/GJGvZUhbwAAx9i3?format=jpg&name=large"
+          
+
+        ]
+      },
+
+      {
+        "id": "SNEK-OS",
+        "link": "https://janitorai.com/characters/f48bca2b-16ce-48db-93a7-0116ac6dd63d_character-snek-os",
+        "img": "https://ella.janitorai.com/bot-avatars/9f9qcrkT5tAgbECwIq-Nk.webp?width=400",
+        "corrupted": false
+      },
+
+      {
+        "id": "VIXI",
+        "link": "https://janitorai.com/characters/3d947bd4-a3b4-4dbb-8864-d7835579e8a4_character-vixi",
+        "img": "https://ella.janitorai.com/bot-avatars/mxF_r2s4QoaebjaOQve7P.webp?width=400",
+        "corrupted": false
+      },
+
+      {
+        "id": "SHARGAL",
+        "link": "https://janitorai.com/characters/b355ecb7-a53e-4579-9e60-74a2131722ad_character-shargal",
+        "img": "https://ella.janitorai.com/bot-avatars/UUJSxZoS4g0U11yTCKn0W.webp?width=400",
+        "corrupted": false
+      },
+
+      {
+        "id": "KYRA",
+        "link": "https://janitorai.com/characters/c661dac0-8b92-4ea2-bfe1-5aefced242a2_character-kyra",
+        "img": "https://ella.janitorai.com/bot-avatars/c2NMpN2zvlfA_H-7WPP9X.webp?width=400",
+        "corrupted": false
+      },
+
+      {
+        "id": "JOULE",
+        "link": "https://janitorai.com/characters/6d1715f4-823f-4036-8640-cbdc4a7f46b5_character-joule",
+        "img": "https://ella.janitorai.com/bot-avatars/cldjfOG0mNiSGEonGwcn4.webp?width=400",
+        "corrupted": false
+      },
+
+      {
+        "id": "FENRIA",
+        "link": "https://janitorai.com/characters/c5ed6722-7bf0-4187-bc65-126b5207b16d_character-fenria",
+        "img": "https://ella.janitorai.com/bot-avatars/u4UfJjUrQajIikPZC8vYk.webp?width=400",
+        "corrupted": false
+      },
+
+      {
+        "id": "SHIKO",
+        "link": "https://janitorai.com/characters/44f5ab34-c001-4912-8acb-e1c659b376a3_character-shiko",
+        "img": "https://ella.janitorai.com/bot-avatars/TVy8UDFC0Id4tPoTodnTB.webp?width=400",
+        "corrupted": false
+      },
+
+      {
+        "id": "ELLEN",
+        "link": "https://janitorai.com/characters/b6f79963-0d31-48fa-a7bb-59220f7052cf_character-ellen",
+        "img": "https://ella.janitorai.com/bot-avatars/_oR5HTNrdcDQT3Fn6yJsn.webp?width=400",
+        "corrupted": false
+      },
+
+      {
+        "id": "NYRA",
+        "link": "https://janitorai.com/characters/5eaa6c53-8d90-497d-8564-633ed8d93d67_character-nyra",
+        "img": "https://ella.janitorai.com/bot-avatars/NaB3RCGKMLWKv8_g7RFYo.webp?width=400",
+        "corrupted": false
+      },
+
+      {
+        "id": "KAIMA",
+        "link": "https://janitorai.com/characters/b2fd8301-67ee-44d7-bf06-8eef354e6f01_character-kaima",
+        "img": "https://ella.janitorai.com/bot-avatars/XT2k0cbpmX2_yE5OmQBxp.webp?width=400",
+        "corrupted": false
+      },
+
+      {
+        "id": "CINDER",
+        "link": "https://janitorai.com/characters/ab06f04d-33b7-4b3c-86ae-f2c99888d28c_character-cinder",
+        "img": "https://ella.janitorai.com/bot-avatars/2jSqzmXa0TWjMbqhpKW09.webp?width=400",
+        "org": "csarphong",
+        "org_link": "https://x.com/csarphong/media",
+        "corrupted": false,
+        "gallery": [
+          "https://pbs.twimg.com/media/F_8nOusWcAAGLaM?format=jpg&name=large",
+          "https://pbs.twimg.com/media/FzRZ8caWYAAnHOT?format=jpg&name=4096x4096",
+          "https://pbs.twimg.com/media/FpNfAK_WIAU7ucZ?format=jpg&name=large"
+        ]
+      }
+
+    ]
+
+}

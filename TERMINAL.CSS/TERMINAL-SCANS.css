@@ -1,0 +1,930 @@
+/* --- ESCANEO TEMA FRAGMENTED: DATA_STREAM_ANALYSIS --- */
+
+/* 1. El Texto de Escaneo: Cambiamos a un estilo de "Descifrado" */
+/* Solo se aplica cuando NO hay ninguna clase de tema activa */
+body:not([class*="theme-"]) .unit-card-wrapper::before {
+    
+    /* Mantenemos el texto original pero con IDs simulados que cambian */
+    content: attr(data-id) !important;
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+    
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.8rem !important;
+    color: #fff !important;
+    
+    /* Mantenemos el bloque sólido que te gustaba */
+    background: rgba(10, 12, 10, 0.9) !important;
+    border-top: 1px solid var(--verde-base);
+    border-bottom: 1px solid var(--verde-base);
+    
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+    letter-spacing: 2px;
+    pointer-events: none;
+
+
+}
+
+/* LA LÍNEA DEL ESCÁNER (LÁSER) */
+body:not([class*="theme-"]) .unit-card-wrapper::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--verde-high);
+    box-shadow: 0 0 15px var(--verde-base);
+    z-index: 6;
+    pointer-events: none;
+    
+    /* Animación de movimiento vertical */
+    animation: fragmented-scan-loop 3s linear infinite !important;
+}
+
+/* Filtro de la imagen (El que tenías) */
+body:not([class*="theme-"]) .unit-card-wrapper .unit-image-link img {
+    filter: brightness(0.3) contrast(1.2) sepia(1) hue-rotate(70deg) !important;
+}
+
+/* Al hacer hover se limpia todo */
+body:not([class*="theme-"]) .unit-card-wrapper:hover::before,
+body:not([class*="theme-"]) .unit-card-wrapper:hover::after {
+    display: none !important;
+}
+
+
+/* --- ESCANEO TEMA LEGACY: DATA_STREAM_ANALYSIS --- */
+/* ============================================================= */
+/*          ESCANEO TEMA: LEGACY (SISTEMA DE COMPUERTAS)         */
+/* ============================================================= */
+
+/* 1. RESET: Eliminamos cualquier rastro de las barras de Fragmented */
+body.theme-legacy .unit-card-wrapper::before,
+body.theme-legacy .unit-card-wrapper::after {
+    display: none !important;
+}
+
+/* 2. CREAMOS LAS PUERTAS (Contenedores nuevos) */
+/* Usamos el link de la imagen como base para las puertas */
+body.theme-legacy .unit-image-link {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Puerta Izquierda */
+body.theme-legacy .unit-image-link::before {
+    content: "L-SEC" !important;
+    position: absolute;
+    top: 0; left: 0;
+    width: 50%; height: 100%;
+    background: #0a0508 !important; /* Color sólido para tapar */
+    border-right: 1px solid var(--verde-base);
+    z-index: 10;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--verde-base); font-size: 0.7rem;
+    transition: transform 0.5s cubic-bezier(0.8, 0, 0.2, 1);
+}
+
+/* Puerta Derecha */
+body.theme-legacy .unit-image-link::after {
+    content: "R-SEC" !important;
+    position: absolute;
+    top: 0; right: 0;
+    width: 50%; height: 100%;
+    background: #0a0508 !important; /* Color sólido para tapar */
+    border-left: 1px solid var(--verde-base);
+    z-index: 10;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--verde-base); font-size: 0.7rem;
+    transition: transform 0.5s cubic-bezier(0.8, 0, 0.2, 1);
+}
+
+/* 3. MOVIMIENTO AL PASAR EL RATÓN (HOVER) */
+body.theme-legacy .unit-card-wrapper:hover .unit-image-link::before {
+    transform: translateX(-100%); /* Abre a la izquierda */
+}
+body.theme-legacy .unit-card-wrapper:hover .unit-image-link::after {
+    transform: translateX(100%); /* Abre a la derecha */
+}
+
+/* 4. LA INFORMACIÓN (Nombre y Desc) */
+/* En Legacy la info está oculta y aparece cuando las puertas se abren */
+body.theme-legacy .unit-info {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.4s ease 0.2s; /* Retraso para que abran primero las puertas */
+}
+
+body.theme-legacy .unit-card-wrapper:hover .unit-info {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 5. EL NOMBRE DEL BOT (Magenta Neón) */
+body.theme-legacy .unit-name {
+    color: var(--verde-base) !important;
+    text-shadow: 0 0 10px var(--verde-base);
+    font-size: 1.0rem !important;
+    margin-bottom: 5px;
+}
+
+/* 6. FILTRO DE IMAGEN (Estilo Cámara de Seguridad) */
+body.theme-legacy .unit-card-wrapper .unit-image-link img {
+    filter: grayscale(1) brightness(0.5) contrast(1.2) !important;
+    transition: 0.5s;
+}
+
+body.theme-legacy .unit-card-wrapper:hover .unit-image-link img {
+    filter: grayscale(0) brightness(1) contrast(1) !important;
+}
+
+/* --- MEJORA DE VISIBILIDAD DE TEXTO EN LEGACY --- */
+body.theme-legacy .unit-card-wrapper .unit-info {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    
+    /* 1. FONDO: Degradado negro fuerte abajo para que el texto siempre se vea */
+    background: linear-gradient(to top, 
+        rgba(0, 0, 0, 0.9) 0%, 
+        rgba(0, 0, 0, 0.5) 50%, 
+        transparent 100%) !important;
+    
+    /* 2. FILTRO: Un ligero desenfoque para separar el texto del fondo */
+    backdrop-filter: blur(2px);
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Empuja el texto hacia abajo donde el fondo es más oscuro */
+    padding: 20px 15px !important;
+    
+    z-index: 5;
+    opacity: 0;
+    transition: all 0.4s ease-in-out;
+    pointer-events: none;
+}
+
+/* 3. CONTORNO DE LETRAS: Añadimos sombra negra alrededor de cada letra */
+body.theme-legacy .unit-name,
+body.theme-legacy .unit-desc {
+    /* Esto crea un borde negro invisible pero efectivo alrededor de las letras magentas */
+    text-shadow: 
+        -1px -1px 0 #000,  
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000,
+         0px  0px 8px #000 !important; 
+}
+
+body.theme-legacy .unit-name {
+    color: var(--verde-base) !important;
+    font-size: 1.5rem !important;
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+body.theme-legacy .unit-desc {
+    color: var(--verde-high) !important;
+    font-size: 0.8rem !important;
+    line-height: 1.2;
+}
+
+/* ============================================================= */
+/*          ESCANEO TEMA: EX (ANALOG INTERFERENCE SYSTEM)        */
+/* ============================================================= */
+
+/* 1. RESET: Limpiamos los efectos de los otros temas */
+body.theme-ex .unit-card-wrapper::before,
+body.theme-ex .unit-card-wrapper::after {
+    display: none !important;
+}
+
+/* 2. EFECTO DE DESFASE (La imagen parece doble y vibra) */
+body.theme-ex .unit-image-link {
+    position: relative;
+    overflow: hidden;
+    background: #000;
+}
+
+/* Creamos una capa de estática blanca que cubre todo */
+body.theme-ex .unit-image-link::before {
+    content: "[ SIGNAL_LOST ]" !important;
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 10;
+    
+    /* Ruido visual puro */
+    background: repeating-radial-gradient(#000 0 0.0001%, #fff 0 0.0002%) 50% 0/2500px 8100px, #000 !important;
+    opacity: 0.2;
+    
+    display: flex; align-items: center; justify-content: center;
+    color: #fff; font-family: 'Courier New', monospace;
+    font-size: 1rem; font-weight: 900;
+    letter-spacing: 5px;
+    
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* 3. REVELACIÓN AL PASAR EL RATÓN (La señal se limpia) */
+body.theme-ex .unit-card-wrapper:hover .unit-image-link::before {
+    opacity: 0;
+    transform: scale(1.2) rotate(5deg);
+}
+
+/* 4. LA INFORMACIÓN (Etiquetas Adhesivas Esparcidas) */
+body.theme-ex .unit-info {
+    position: absolute !important;
+    top: 0 !important; 
+    left: 0 !important;
+    width: 100% !important; /* Forzamos ancho total */
+    height: 100% !important; /* Forzamos alto total para que el bottom: 15px funcione en L */
+    background: transparent !important;
+    z-index: 5;
+    pointer-events: none;
+    display: block !important;
+    opacity: 1 !important;
+}
+
+/* Nombre: Estilo etiqueta superior */
+body.theme-ex .unit-name {
+    position: absolute !important;
+    top: 15px !important; 
+    left: -150% !important; /* Aumentado a -150% para que en L no se vea un trozo */
+    background: #fff !important;
+    color: #000 !important;
+    padding: 5px 15px !important;
+    font-size: 1.1rem !important;
+    text-transform: uppercase;
+    font-weight: 900;
+    white-space: nowrap; /* Evita que el texto se rompa */
+    transition: left 0.4s cubic-bezier(0.18, 0.89, 0.32, 1.28) 0.1s;
+}
+
+/* Descripción y Datos: Estilo etiquetas inferiores */
+body.theme-ex .unit-desc {
+    position: absolute !important;
+    bottom: 15px !important; 
+    right: -150% !important; /* Aumentado para consistencia */
+    background: #fff !important;
+    color: #000 !important;
+    padding: 5px 10px !important;
+    font-size: 0.75rem !important;
+    font-family: 'Courier New', monospace;
+    white-space: nowrap;
+    transition: right 0.4s cubic-bezier(0.18, 0.89, 0.32, 1.28) 0.2s;
+}
+
+/* ACTIVACIÓN AL HOVER */
+body.theme-ex .unit-card-wrapper:hover .unit-name {
+    left: 0 !important;
+}
+
+body.theme-ex .unit-card-wrapper:hover .unit-desc {
+    right: 0 !important;
+}
+
+/* 5. FILTRO DE IMAGEN (Estilo Fotocopia quemada) */
+body.theme-ex .unit-card-wrapper .unit-image-link img {
+    filter: grayscale(1) contrast(2) brightness(0.4) blur(3px) !important;
+    transition: all 0.4s ease;
+    height: 100% !important; /* Asegura que llene la tarjeta en M y L */
+}
+
+body.theme-ex .unit-card-wrapper:hover .unit-image-link img {
+    filter: grayscale(1) contrast(1.5) brightness(0.8) blur(0) !important;
+}
+
+/* 6. EFECTO DE VIBRACIÓN DE SEÑAL */
+body.theme-ex .unit-card-wrapper:not(:hover) .unit-image-link img {
+    animation: ex-signal-flicker 4s infinite;
+}
+
+@keyframes ex-signal-flicker {
+    0%, 100% { transform: translateX(0); }
+    1% { transform: translateX(5px) skewX(5deg); }
+    2% { transform: translateX(-5px); }
+    3% { transform: translateX(0); }
+}
+
+/* --- 7. ESTADO CORRUPTO (DATA VOID) --- */
+body.theme-ex .unit-card-wrapper.corrupted {
+    border: 1px dashed #fff !important;
+    background: repeating-linear-gradient(45deg, #000, #000 5px, #111 5px, #111 10px) !important;
+    animation: ex-data-decay 0.2s infinite !important;
+}
+
+body.theme-ex .unit-card-wrapper.corrupted::before {
+    content: "[ ERROR: NULL_PTR_DUMP ]" !important;
+    background: #fff !important;
+    color: #000 !important;
+    font-size: 0.7rem !important;
+    opacity: 1 !important;
+    top: 50% !important; left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+}
+
+@keyframes ex-data-decay {
+    0% { transform: translate(0,0); }
+    50% { transform: translate(-1px, 1px); }
+    100% { transform: translate(0,0); }
+}
+
+/* ============================================================= */
+/*          TEMA: UNITY (RECONSTRUCCIÓN TOTAL v2)                */
+/* ============================================================= */
+
+/* --- 1. CONTENEDOR DE LA TARJETA --- */
+body.theme-unity .unit-card-wrapper {
+    position: relative;
+    width: 100% !important; 
+    height: 480px !important; /* Más alta para que quepa toda la info técnica */
+    background: #000;
+    border: 2px solid var(--verde-base);
+    border-radius: 0 !important;
+    overflow: hidden;
+    display: block !important;
+}
+
+/* --- 2. EL TEXTO "SCAN" (ESTADO CERRADO) --- */
+body.theme-unity .unit-card-wrapper::before {
+    content: ":: [!] ENCRYPTED_FILE [!] ::" !important;
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    width: 100%;
+    padding: 15px 0;
+    background: rgba(247, 176, 0, 0.2);
+    border-top: 1px solid var(--verde-base);
+    border-bottom: 1px solid var(--verde-base);
+    color: #fff !important;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.9rem !important;
+    text-align: center;
+    letter-spacing: 3px;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+/* --- 3. LA IMAGEN (ESTADO CERRADO) --- */
+body.theme-unity .unit-image-link {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 1;
+    transition: opacity 0.4s ease;
+}
+
+body.theme-unity .unit-image-link img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    filter: brightness(0.3) blur(10px) grayscale(1) !important;
+}
+
+/* --- 4. EL DOSSIER DE INFO (ESTADO HOVER) --- */
+body.theme-unity .unit-info {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: #05080f !important; /* Azul SCP profundo sólido */
+    z-index: 5;
+    
+    /* Centramos el contenido internamente */
+    display: flex;
+    flex-direction: column;
+    padding: 30px 20px !important;
+    
+    /* OCULTO POR DEFECTO */
+    opacity: 0;
+    transform: scale(1.1); /* Efecto de que viene de atrás */
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+    padding: 30px 10px !important; 
+    
+    /* Aseguramos que nada bloquee el crecimiento del texto */
+    overflow-y: auto !important;
+}
+
+/* --- 5. LÓGICA DE INTERCAMBIO (HOVER) --- */
+
+/* Cuando pasas el ratón: */
+body.theme-unity .unit-card-wrapper:hover::before { opacity: 0; } /* Borramos el SCAN */
+body.theme-unity .unit-card-wrapper:hover .unit-image-link { opacity: 0; } /* Borramos la IMAGEN */
+
+body.theme-unity .unit-card-wrapper:hover .unit-info {
+    opacity: 1; /* Mostramos el DOSSIER */
+    transform: scale(1);
+}
+
+/* --- 6. ESTILOS INTERNOS DEL DOSSIER --- */
+body.theme-unity .dossier-header {
+    color: var(--verde-base);
+    font-size: 0.7rem;
+    border-bottom: 1px solid var(--verde-base);
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+body.theme-unity .unit-name {
+    /* Mantenemos el tamaño pero permitimos que el texto use todo el ancho */
+    width: 100% !important;
+    display: block !important;
+    
+    /* ¡LA CLAVE! Permite que el nombre baje de línea si es muy largo */
+    font-size: 1.5rem !important;
+    white-space: normal !important; 
+    word-break: break-word !important; /* Rompe por palabras o letras si es necesario */
+    
+    /* Ajustamos el interlineado para que las letras no se encimen al bajar de línea */
+    line-height: 0.9 !important; 
+    
+    text-align: left !important;
+    margin-bottom: 15px !important;
+    color: #fff !important;
+    text-shadow: 0 0 10px var(--verde-base);
+}
+
+body.theme-unity .unit-desc {
+    color: var(--verde-high) !important;
+    font-size: 0.85rem !important;
+    line-height: 1.4;
+    margin-bottom: 20px;
+    border-left: 2px solid var(--verde-base);
+    padding-left: 10px;
+    position: static !important;
+    opacity: 1 !important;
+}
+
+/* Tags estilo "Botones de Seguridad" */
+body.theme-unity .unit-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: auto;
+    position: static !important;
+    opacity: 1 !important;
+}
+
+body.theme-unity .tag-item {
+    border: 1px solid var(--verde-base);
+    color: var(--verde-base);
+    padding: 4px 8px;
+    font-size: 0.7rem;
+    background: rgba(247, 176, 0, 0.05);
+}
+
+/* Símbolos dinámicos */
+body.theme-unity .t-keter::before { content: "☣ "; }
+body.theme-unity .t-euclid::before { content: "⚠ "; }
+body.theme-unity .t-safe::before { content: "✓ "; }
+
+/* ============================================================= */
+/*          ESCANEO TEMA: DEUS EX (FRACTURA DIAGONAL)            */
+/* ============================================================= */
+
+/* --- 1. ESTRUCTURA BASE --- */
+body.theme-deus .unit-card-wrapper {
+    position: relative;
+    height: 400px !important;
+    background: #000;
+    border: 1px solid var(--verde-base); /* Ámbar */
+    clip-path: polygon(15px 0%, 100% 0%, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0% 100%, 0% 15px);
+    overflow: hidden;
+    display: block !important;
+}
+
+/* El texto de SCAN montado en la diagonal central */
+body.theme-deus .unit-card-wrapper::before {
+    content: ":: [SYNCING_AUGMENTATIONS] ::" !important;
+    /* Mantenemos el tamaño pero permitimos que el texto use todo el ancho */
+    width: 100% !important;
+    display: block !important;
+    
+    white-space: normal !important; 
+    word-break: break-word !important; /* Rompe por palabras o letras si es necesario */
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%) rotate(-15deg); /* Texto inclinado */
+    z-index: 15;
+    background: var(--verde-base);
+    color: #000;
+    padding: 5px 20px;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.75rem;
+    font-weight: bold;
+    white-space: nowrap;
+    transition: opacity 0.3s;
+    pointer-events: none;
+}
+
+/* --- 2. LOS SHARDS (FRAGMENTOS TRIANGULARES) --- */
+body.theme-deus .shard-top,
+body.theme-deus .shard-bottom {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #0a0800;
+    z-index: 10;
+    transition: transform 0.6s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+/* Triángulo Superior */
+body.theme-deus .shard-top {
+    top: 0; left: 0;
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+    border-bottom: 1px solid var(--verde-base);
+}
+
+/* Triángulo Inferior */
+body.theme-deus .shard-bottom {
+    top: 0; left: 0;
+    clip-path: polygon(100% 0, 100% 100%, 0 100%);
+    border-top: 1px solid var(--verde-base);
+}
+
+/* --- 3. MECÁNICA HOVER (EL DESPLAZAMIENTO DIAGONAL) --- */
+
+/* Los triángulos se deslizan hacia las esquinas opuestas */
+body.theme-deus .unit-card-wrapper:hover .shard-top {
+    transform: translate(-100%, -100%);
+}
+body.theme-deus .unit-card-wrapper:hover .shard-bottom {
+    transform: translate(100%, 100%);
+}
+body.theme-deus .unit-card-wrapper:hover::before {
+    opacity: 0;
+}
+
+/* --- 4. LA IMAGEN Y LA INFO (FONDO Y REVELACIÓN) --- */
+body.theme-deus .unit-image-link {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 1;
+}
+
+body.theme-deus .unit-image-link img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    filter: brightness(0.5) sepia(0.5) hue-rotate(-10deg);
+}
+
+body.theme-deus .unit-info {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 5;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 30px !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.5s ease 0.2s; /* Aparece después de que abren los shards */
+
+    /* Mantenemos el tamaño pero permitimos que el texto use todo el ancho */
+    width: 100% !important;
+    display: block !important;
+    
+    /* ¡LA CLAVE! Permite que el nombre baje de línea si es muy largo */
+    font-size: 1.5rem !important;
+    white-space: normal !important; 
+    word-break: break-word !important; /* Rompe por palabras o letras si es necesario */
+}
+
+body.theme-deus .unit-card-wrapper:hover .unit-info {
+    opacity: 1;
+}
+
+/* Estilos internos Deus Ex */
+.aug-header {
+    color: var(--verde-base);
+    font-size: 0.6rem;
+    letter-spacing: 4px;
+    margin-bottom: 10px;
+    border-left: 3px solid var(--verde-base);
+    padding-left: 10px;
+}
+
+body.theme-deus .unit-name {
+    color: #fff !important;
+    font-size: 1.6rem !important;
+    text-transform: uppercase;
+    line-height: 1;
+    margin-bottom: 15px;
+}
+
+body.theme-deus .unit-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+body.theme-deus .tag-item {
+    border: 1px solid var(--verde-base);
+    color: var(--verde-base);
+    font-size: 0.65rem;
+    padding: 2px 6px;
+    transform: skewX(-10deg); /* Tags inclinados como los botones */
+}
+
+/* ============================================================= */
+/*          CORRECCIÓN BRIDGES: NOMBRES COMPLETOS                */
+/* ============================================================= */
+
+/* 1. EL GRID: Lista vertical completa */
+body.theme-bridges .unit-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+    padding: 20px !important;
+}
+
+/* 2. LA TARJETA: Más espacio para el texto */
+body.theme-bridges .unit-card-wrapper {
+    position: relative;
+    width: 100% !important;
+    height: 160px !important; 
+    background: rgba(11, 17, 21, 0.7) !important;
+    border: 1px solid rgba(50, 225, 255, 0.4);
+    display: flex !important;
+    flex-direction: row !important;
+    overflow: hidden;
+}
+
+body.theme-bridges .unit-card-wrapper::before {
+    /* CONTENIDO VACÍO: Solo lee lo que ponga el JavaScript */
+    content: attr(data-scan) !important; 
+    
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    z-index: 10;
+    color: var(--verde-base);
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 1px;
+    
+    /* El parpadeo que ya tienes */
+    animation: bridges-signal-pulse 1s step-end infinite !important;
+    pointer-events: none;
+}
+
+/* Efecto de Sonar (Onda de radio) */
+body.theme-bridges .unit-card-wrapper::after {
+    content: "";
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 5px;
+    height: 5px;
+    background: var(--verde-base);
+    border-radius: 50%;
+    /* Animación de onda expansiva */
+    animation: bridges-sonar-ripple 3s ease-out infinite !important;
+    z-index: 9;
+}
+
+/* --- ANIMACIONES DE SEÑAL BRIDGES --- */
+
+/* Parpadeo rítmico del texto */
+@keyframes bridges-signal-pulse {
+    0%, 100% { opacity: 0.4; color: var(--verde-base); }
+    50% { opacity: 1; color: #fff; text-shadow: 0 0 5px var(--verde-base); }
+}
+
+/* Onda de sonar que sale desde el texto */
+@keyframes bridges-sonar-ripple {
+    0% { transform: scale(1); opacity: 1; box-shadow: 0 0 0 0 rgba(50, 225, 255, 0.7); }
+    100% { transform: scale(20); opacity: 0; box-shadow: 0 0 10px 2px rgba(50, 225, 255, 0); }
+}
+
+/* 3. LA IMAGEN (IZQUIERDA) */
+body.theme-bridges .unit-image-link {
+    width: 160px !important;
+    height: 160px !important;
+    flex-shrink: 0; /* Que no se encoja */
+    border-right: 1px solid var(--verde-base);
+}
+
+/* 4. LA INFO (DERECHA - CORREGIDA) */
+body.theme-bridges .unit-info {
+    flex: 1 !important; /* Toma todo el espacio restante */
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    padding: 0 30px !important;
+    opacity: 1 !important; /* Visible siempre para evitar errores de carga */
+    transition: all 0.4s ease;
+    min-width: 0; /* ¡CLAVE! Permite que el contenido se ajuste al ancho real */
+}
+
+/* 5. EL NOMBRE (CORREGIDO PARA NOMBRES LARGOS) */
+body.theme-bridges .unit-name {
+    color: var(--verde-high) !important;
+    font-family: 'Share Tech Mono', monospace !important;
+    font-size: 1.8rem !important;
+    text-transform: uppercase;
+    
+    /* BLOQUE DE CONTROL DE TEXTO */
+    display: block !important;
+    width: 100% !important;
+    white-space: normal !important; /* Permite saltar de línea */
+    word-break: break-word !important; /* Rompe palabras si son muy largas */
+    line-height: 1 !important;
+    
+    border-left: 5px solid var(--verde-base);
+    padding-left: 15px !important;
+    margin-bottom: 5px !important;
+}
+
+/* 6. LA DESCRIPCIÓN TÉCNICA */
+body.theme-bridges .unit-desc {
+    color: var(--verde-base) !important;
+    font-size: 0.8rem !important;
+    opacity: 0.7 !important;
+    margin-top: 5px !important;
+}
+
+/* 7. EL TEXTO DE ESCANEO (Pequeño y en la esquina) */
+body.theme-bridges .unit-card-wrapper::before {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: var(--verde-base);
+    font-size: 0.6rem;
+    opacity: 0.4;
+}
+
+/* Al hacer Hover solo iluminamos un poco más */
+body.theme-bridges .unit-card-wrapper:hover {
+    background: rgba(11, 17, 21, 0.9) !important;
+    border-color: var(--verde-base);
+}
+
+/* ============================================================= */
+/*          ESCANEO TEMA: CYBER (GLITCH SLICING REVEAL)          */
+/* ============================================================= */
+
+/* ============================================================= */
+/*          TEMA: CYBERPUNK 2077 (ESTRUCTURA VERTICAL)           */
+/* ============================================================= */
+
+/* 1. EL GRID: Forzamos tarjetas ANCHAS para que no se vean delgadas */
+body.theme-cyber .unit-grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)) !important;
+    gap: 25px !important;
+    padding: 20px !important;
+}
+
+/* 2. LA TARJETA: Estilo Documento Kiroshi */
+body.theme-cyber .unit-card-wrapper {
+    position: relative;
+    height: 450px !important;
+    background: #000;
+    border: 2px solid var(--verde-base); /* Amarillo Cyber */
+    border-radius: 0 !important;
+    overflow: hidden;
+    display: flex !important;
+    flex-direction: column !important; /* Estructura vertical como Fragmented */
+    clip-path: polygon(0 0, 100% 0, 100% 95%, 95% 100%, 0 100%);
+}
+
+/* 3. EL TEXTO "SCAN" (ESTILO KIROSHI) */
+body.theme-cyber .unit-card-wrapper::before {
+    content: "[ ⌖ KIROSHI_OPTICS_SCANNING ]" !important;
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    width: 100%;
+    background: rgba(252, 238, 10, 0.9); /* Amarillo sólido */
+    color: #000 !important;
+    font-family: 'Share Tech Mono', monospace;
+    font-weight: 900;
+    font-size: 0.9rem;
+    padding: 10px 0;
+    text-align: center;
+    letter-spacing: 2px;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+/* 4. LA IMAGEN (OCUPA TODO AL PRINCIPIO) */
+body.theme-cyber .unit-image-link {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 1;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+body.theme-cyber .unit-image-link img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    filter: saturate(1.5) contrast(1.2) brightness(0.5) !important;
+}
+
+/* 5. LA INFO (OCULTA ABAJO) */
+body.theme-cyber .unit-info {
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 100%;
+    height: 180px; /* Espacio para el texto */
+    background: #000 !important;
+    border-top: 2px solid var(--verde-base);
+    padding: 20px !important;
+    z-index: 5;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 6. MECÁNICA HOVER (COMO FRAGMENTED PERO CON ESTILO CYBER) */
+
+/* La imagen sube */
+body.theme-cyber .unit-card-wrapper:hover .unit-image-link {
+    height: 270px;
+}
+body.theme-cyber .unit-card-wrapper:hover .unit-image-link img {
+    filter: saturate(1) brightness(0.8) !important;
+}
+
+/* El texto de "SCAN" desaparece */
+body.theme-cyber .unit-card-wrapper:hover::before {
+    opacity: 0;
+}
+
+/* La info aparece subiendo suavemente */
+body.theme-cyber .unit-card-wrapper:hover .unit-info {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 7. ESTILOS INTERNOS */
+body.theme-cyber .unit-name {
+    color: var(--verde-base) !important;
+    font-size: 1.8rem !important;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-shadow: 2px 2px #000, 4px 4px var(--rojo-error);
+    margin-bottom: 5px;
+    position: static !important;
+}
+
+body.theme-cyber .unit-desc {
+    color: #fff !important;
+    font-size: 0.85rem !important;
+    line-height: 1.2;
+    position: static !important;
+    opacity: 1 !important;
+}
+
+body.theme-cyber .unit-tags {
+    margin-top: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    position: static !important;
+    opacity: 1 !important;
+}
+
+body.theme-cyber .tag-item {
+    background: var(--verde-high); /* Cyan */
+    color: #000;
+    border: none;
+    font-size: 0.65rem;
+    padding: 2px 6px;
+    font-weight: bold;
+}
+
+body.theme-cyber .theme-option {
+    padding: 12px 15px;
+    cursor: pointer;
+    color: #f5dfdf;
+    border-bottom: 1px solid rgba(158, 194, 158, 0.1);
+    transition: 0.2s;
+    font-size: 0.85rem;
+   
+}
+
+body.theme-cyber .archive-item {
+    padding: 15px 20px;
+    cursor: pointer;
+    border-bottom: 1px solid var(--borde-dark);
+    color: #fff
+
+}

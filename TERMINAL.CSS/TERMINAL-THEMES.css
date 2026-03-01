@@ -1,0 +1,1016 @@
+   
+
+    /* =========================================
+   PALETAS DE COLORES ALTERNATIVAS (TEMAS)
+   ========================================= */
+
+    /* --- TEMA 1: JANITOR LEGACY (El Rosa Original) --- */
+    body.theme-legacy {
+        --bg-negro:    #0a0508; 
+        --verde-base:  #ff006c; /* Magenta Janitor */
+        --verde-high:  #fdd8d8; /* Rosa pálido */
+        --borde-dark:  #2d0a18; 
+        --rojo-error:  #ff3333; 
+        --gris-dim:    #b58498; 
+        --glow: 0 0 15px rgba(255, 0, 108, 0.5);
+    }
+
+    body.theme-alter {
+    /* Paleta extraída de las imágenes */
+        --bg-negro:    #05080c; /* Azul petróleo muy oscuro */
+        --verde-base:  #ff006c; /* Magenta/Rosa Neón característico */
+        --verde-high:  #ffffff; /* Blanco puro */
+        --borde-dark:  #1e2530; /* Gris azulado oscuro */
+        --rojo-error:  #ff4444; 
+        --gris-dim:    #7a8a99; 
+        --glow: 0 0 15px rgba(255, 0, 85, 0.6);
+    }
+
+
+    /* --- TEMA 2: CYBER BLUE (Azul Hielo / Tron) --- */
+    body.theme-unity {
+        --bg-negro:    #0e172a; /* El gris-negro oscuro del fondo de la imagen */
+        --verde-base:  #f7b000; /* El Oro exacto de las siglas "SCP" */
+        --verde-high:  #ffffff; /* El Blanco puro de "FOUNDATION" */
+        --borde-dark:  #2a2d31; /* El gris de las líneas divisorias */
+        --rojo-error:  #d32f2f; /* Rojo de brecha de contención */
+        --gris-dim:    #7c7c7c; /* El gris de "SECURE | CONTAIN | PROTECT" */
+    
+        /* Brillo dorado concentrado, no expansivo */
+        --glow: 0 0 8px rgba(247, 176, 0, 0.3); 
+    }
+
+    /* --- TEMA 3: RETRO AMBER (Deus / Naranja) --- */
+    body.theme-deus {
+    --bg-negro:    #000000;
+    --verde-base:  #ffb000; /* Ámbar Gold */
+    --verde-high:  #ffcc00; /* Brillo Ámbar */
+    --borde-dark:  #1a1100; /* Ámbar oscuro */
+    --rojo-error:  #ff4d00; 
+    --gris-dim:    #554400; /* Ámbar apagado */
+    --glow: 0 0 15px rgba(255, 176, 0, 0.4);
+    }
+
+    /* --- TEMA 4: ERROR MONOCHROME (Blanco y Negro) --- */
+    body.theme-ex {
+        --bg-negro:    #000000;
+        --verde-base:  #ffffff; /* Blanco puro */
+        --verde-high:  #ffffff;
+        --borde-dark:  #333333; /* Gris oscuro */
+        --rojo-error:  #666666; /* Gris medio para el error */
+        --gris-dim:    #999999; /* Gris claro */
+        --glow: 0 0 0px transparent; /* CERO BRILLO: Este tema es seco y crudo */
+    }
+
+    body.theme-bridges {
+    --bg-negro:    #0b1115; 
+    --verde-base:  #32e1ff; /* Azul Bridges */
+    --verde-high:  #ffffff; 
+    --borde-dark:  #1d2a33; 
+    --rojo-error:  #ff2c2c; 
+    --gris-dim:    #74838b; 
+    --amarillo-bridges: #ffcc00; /* Oro Quiral */
+    --glow: 0 0 10px rgba(50, 225, 255, 0.2);
+    }
+
+
+    .theme-switcher-btn {
+        background: transparent;
+        border: 1px dashed var(--verde-base);
+        color: var(--verde-base);
+        font-family: 'Share Tech Mono', monospace;
+        font-size: 0.8rem;
+        cursor: pointer;
+        padding: 5px 10px;
+        transition: 0.3s;
+    }
+
+    .theme-switcher-btn:hover {
+        background: var(--verde-base);
+        color: var(--verde-high);
+        box-shadow: var(--glow);
+    }
+
+
+        /* --- SELECTOR DE TEMA DESPLEGABLE --- */
+    .theme-selector-wrapper {
+        position: relative;
+        display: inline-block;
+        z-index: 10000 !important; 
+        isolation: isolate;
+    }
+
+    .theme-switcher-btn {
+        background: transparent;
+        border: 1px solid var(--verde-base);
+        color: var(--verde-base);
+        font-family: 'Share Tech Mono', monospace;
+        font-size: 0.9rem;
+        cursor: pointer;
+        padding: 8px 15px;
+        min-width: 180px;
+        text-align: left;
+        transition: 0.3s;
+    }
+
+    .theme-switcher-btn:hover {
+        background: var(--bg-negro);
+        box-shadow: var(--glow);
+    }
+
+    /* El menú oculto */
+    .theme-dropdown {
+        display: none; /* Oculto por defecto */
+        position: absolute;
+        top: 100%; /* Justo debajo del botón */
+        left: 0;
+        width: 100%;
+        background-color: var(--bg-negro) !important;
+        opacity: 1 !important; 
+        border: 1px solid var(--verde-base);
+        border-top: none;
+        z-index: 10000 !important; 
+        box-shadow: 0 10px 20px rgba(0,0,0,0.8);
+        overflow: hidden;
+        filter: none !important;
+    }
+
+    /* Clase para activar la animación */
+    .theme-dropdown.show {
+        display: block;
+        animation: slide-down 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+        pointer-events: all !important;
+    }
+
+    /* Opciones del menú */
+    .theme-option {
+        padding: 12px 15px;
+        cursor: pointer;
+        color: var(--gris-dim);
+        border-bottom: 1px solid rgba(158, 194, 158, 0.1);
+        transition: 0.2s;
+        font-size: 0.85rem;
+        z-index: 10001 !important;
+    }
+
+    .theme-option:hover {
+        background-color: var(--verde-base);
+        color: var(--solid-black);
+        padding-left: 25px; /* Efecto de movimiento al hover */
+    }
+   
+   
+   
+   
+   
+   /* =========================================
+   PALETAS DE COLORES ALTERNATIVAS DE LOS (TEMAS)
+   ========================================= */
+
+    /* Estilos dependiendo del tema */
+    /* --- DETALLES DE INMERSIÓN LEGACY --- */
+    /* --- TEXTURA DE FONDO (SCANLINE DINÁMICA) --- */
+    body.theme-legacy .crt-overlay {
+        background: 
+            linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(255, 0, 108, 0.05) 50%),
+            linear-gradient(90deg, rgba(255, 0, 108, 0.02) 1px, transparent 1px);
+        background-size: 100% 4px, 40px 100%;
+    }
+
+    /* --- CONTENEDORES OCTOGONALES (LOOK CIBERPUNK 80s) --- */
+    body.theme-legacy .dashboard-container,
+    body.theme-legacy .modal-content {
+        background: rgba(10, 5, 8, 0.9) !important;
+        border: 1px solid var(--verde-base) !important;
+        
+        clip-path: polygon(
+        0 40px,              /* Corte Arriba-Izquierda */
+        40px 0,              /* Fin corte Arriba-Izquierda */
+        100% 0,              /* ESQUINA ARRIBA-DERECHA (100% PROTEGIDA PARA LA X) */
+        100% calc(100% - 40px), /* Inicio corte Abajo-Derecha */
+        calc(100% - 40px) 100%, /* Fin corte Abajo-Derecha */
+        0 100%               /* Esquina Abajo-Izquierda cuadrada */
+    );
+        box-shadow: inset 0 0 20px rgba(255, 0, 108, 0.2) !important;
+    }
+
+    
+
+    /* --- TRANSFORMACIÓN DE CARPETAS A DISQUETES (FLOPPY DISKS) --- */
+    body.theme-legacy .win11-folder {
+        width: 55px;
+        height: 55px;
+        background: #1a1a1a !important; /* Plástico negro del disquete */
+        border: 1px solid #333 !important;
+        border-radius: 2px !important;
+        position: relative;
+    }
+
+    /* La pieza de metal deslizante del disquete */
+    body.theme-legacy .win11-folder::before {
+        content: "";
+        position: absolute;
+        top: 0; left: 10px;
+        width: 35px; height: 15px;
+        background: #444; /* Metal */
+        border-bottom: 2px solid #222;
+        z-index: 2;
+    }
+
+    /* La etiqueta magenta del disquete */
+    body.theme-legacy .win11-folder::after {
+        content: "";
+        position: absolute;
+        bottom: 5px; left: 5px;
+        width: 45px; height: 25px;
+        background: var(--verde-base);
+        opacity: 0.8;
+    }
+
+    body.theme-legacy .folder-back,
+    body.theme-legacy .folder-front {
+        display: none; /* Eliminamos el look de Windows 11 */
+    }
+
+    /* --- TARJETAS CON LÁSER DE ESCANEO --- */
+    body.theme-legacy .unit-card-wrapper {
+        border-radius: 0 !important;
+        border: 1px solid var(--verde-base);
+        background: #000;
+    }
+
+    /* Línea láser que sube y baja (Solo en Legacy) */
+    body.theme-legacy .unit-card-wrapper::after {
+        content: "";
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%; height: 2px;
+        background: var(--verde-base);
+        box-shadow: 0 0 15px var(--verde-base);
+        z-index: 10;
+        animation: legacy-laser-scan 3s linear infinite;
+    }
+
+    
+
+    /* --- BOTONES NEÓN --- */
+    body.theme-legacy .btn {
+        border: 1px solid var(--verde-base);
+        background: transparent;
+        box-shadow: 0 0 5px var(--verde-base);
+    }
+
+    body.theme-legacy .btn:hover {
+        background: var(--verde-base);
+        color: #fff;
+        box-shadow: 0 0 20px var(--verde-base);
+    }
+
+    /* --- SIDEBAR RETRO --- */
+    body.theme-legacy .win-sidebar {
+        background: rgba(45, 10, 24, 0.3) !important;
+        border-right: 1px solid var(--verde-base) !important;
+    }
+
+    body.theme-legacy .side-item {
+        font-family: 'Courier New', Courier, monospace;
+        color: var(--verde-high);
+        font-size: 12px;
+    }
+
+    /* --- CORRUPCIÓN TEMA LEGACY: ANALOG DRIFT (SUAVE Y SEGURO) --- */
+
+/* 1. La Tarjeta: Brillo constante y distorsión de onda lenta */
+body.theme-legacy .unit-card-wrapper.corrupted {
+    border: 2px solid #ff006c !important;
+    background: #1a050d !important;
+    /* Un resplandor fijo, sin parpadeos */
+    box-shadow: 0 0 15px rgba(255, 0, 108, 0.4) !important;
+    /* Movimiento de "ola" muy lento */
+    animation: legacy-vhs-slow-drift 4s ease-in-out infinite !important;
+}
+
+/* 2. El Texto: Rojo estático, sin animaciones de parpadeo */
+body.theme-legacy .unit-card-wrapper.corrupted::before {
+    content: ":: [!] ARCHIVE_UNSTABLE [!] ::" !important;
+    color: #fff !important;
+    background: #ff006c !important;
+    font-weight: bold;
+    font-size: 0.6rem !important;
+    text-shadow: 2px 2px 0px rgba(0, 255, 255, 0.5);
+    opacity: 1 !important; /* Siempre sólido */
+    transform: translate(-40px, -40px);
+}
+
+/* 3. La Imagen: Colores deslavados y distorsión lenta */
+body.theme-legacy .unit-card-wrapper.corrupted .unit-image-link img {
+    /* Efecto de color degradado sutil */
+    filter: sepia(0.5) contrast(1.2) brightness(0.6) hue-rotate(10deg) !important;
+    opacity: 0.5 !important;
+    transition: filter 1s ease;
+}
+
+/* 4. El Láser: Se mueve de forma constante y lenta */
+body.theme-legacy .unit-card-wrapper.corrupted::after {
+    background: rgba(255, 255, 255, 0.3) !important;
+    box-shadow: 0 0 10px #ff006c !important;
+    /* Bajamos la velocidad del láser a 5 segundos */
+    animation: legacy-laser-slow 5s ease-in-out infinite !important;
+}
+
+/* --- ANIMACIONES FLUIDAS (SIN SALTOS BRUSCOS) --- */
+
+
+
+/* 5. MODAL DE ERROR PARA TEMA LEGACY (Sólido y Elegante) */
+body.theme-legacy #modal-error .modal-content {
+    border: 2px solid #ff006c !important;
+    box-shadow: 0 0 30px rgba(255, 0, 108, 0.3) !important;
+    background: #0a0508 !important;
+    /* Eliminamos cualquier animación de vibración */
+    animation: none !important;
+}
+
+    /* --- DETALLES DE INMERSIÓN UNITY --- */
+
+    /* --- TEMA: UNITY (ESTRUCTURA DE ALTA SEGURIDAD / BRUTALISTA) --- */
+
+    body.theme-unity .dashboard-container,
+    body.theme-unity .modal-content {
+        background-color: var(--bg-negro) !important;
+        /* 1. Eliminamos curvas: SCP es militar/científico, no usa redondeos */
+        border-radius: 0 !important; 
+        border: 2px solid var(--verde-base) !important;
+        /* 2. Doble borde tipo "Caja de Seguridad" */
+        outline: 4px solid var(--bg-negro);
+        outline-offset: -6px;
+        box-shadow: 0 0 0 1px var(--verde-base) inset !important;
+    }
+
+    /* --- TRANSFORMACIÓN DE CARPETAS A KEYCARDS (TARJETAS DE ACCESO) --- */
+    body.theme-unity .win11-folder {
+        width: 70px;
+        height: 45px;
+        background: #1c222d !important; /* Gris azulado oscuro */
+        border: 1px solid var(--verde-base) !important;
+        border-radius: 4px !important;
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* La banda magnética de la tarjeta */
+    body.theme-unity .win11-folder::before {
+        content: "";
+        position: absolute;
+        top: 10px; left: 0;
+        width: 100%; height: 8px;
+        background: #000;
+        opacity: 0.8;
+    }
+
+    /* El chip dorado de la tarjeta */
+    body.theme-unity .win11-folder::after {
+        content: "";
+        position: absolute;
+        bottom: 8px; right: 8px;
+        width: 12px; height: 10px;
+        background: var(--verde-base);
+        border-radius: 2px;
+        box-shadow: 0 0 5px var(--verde-base);
+    }
+
+    body.theme-unity .folder-back,
+    body.theme-unity .folder-front {
+        display: none; /* Matamos el diseño de Windows 11 */
+    }
+
+    /* --- BOTONES ESTILO TERMINAL CUADRADA --- */
+    body.theme-unity .btn, 
+    body.theme-unity .view-btn {
+        border-radius: 0 !important;
+        border: 1px solid var(--verde-base);
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+
+    body.theme-unity .btn:hover {
+        background: var(--verde-base);
+        color: #000 !important;
+    }
+
+    /* --- TARJETAS DE BOT: ARCHIVO CLASIFICADO --- */
+    body.theme-unity .unit-card-wrapper {
+        border-radius: 0 !important; /* Cero curvas */
+        border: 1px solid var(--borde-dark);
+    }
+
+    body.theme-unity .unit-card-wrapper:hover {
+        border-color: var(--verde-base);
+    }
+
+    /* El efecto SCAN en Unity es un escaneo láser blanco/dorado */
+    body.theme-unity .unit-card-wrapper::before {
+        background: rgba(255, 255, 255, 0.05);
+        border-bottom: 1px solid var(--verde-base);
+        color: var(--verde-high);
+    }
+
+    /* --- SIDEBAR CLÍNICA --- */
+    body.theme-unity .win-sidebar {
+        background: #0a0b0d !important;
+        border-right: 2px solid var(--verde-base) !important;
+    }
+
+    body.theme-unity .side-label {
+        background: var(--verde-base);
+        color: #000;
+        padding: 2px 5px;
+        font-weight: 900;
+    }
+
+    /* --- CORRUPCIÓN TEMA UNITY: CONTAINMENT_LOCK (PROTOCOLO SCP) --- */
+
+    /* 1. La Tarjeta: Pulso de alerta roja profunda y lenta */
+    body.theme-unity .unit-card-wrapper.corrupted {
+        border: 2px solid #630000 !important; /* Rojo sangre oscuro */
+        background: #05080f !important;
+        /* Resplandor rojo muy suave y pausado */
+        animation: unity-containment-pulse 3s ease-in-out infinite !important;
+        box-shadow: none !important;
+    }
+
+    /* 2. El Texto: "REDACTED" con estilo de documento oficial */
+    body.theme-unity .unit-card-wrapper.corrupted::before {
+        content: ":: [!] DATA_REDACTED [!] ::" !important;
+        color: #fff !important;
+        background: #4a0000 !important; /* Fondo rojo oscuro sólido */
+        font-family: 'Share Tech Mono', monospace;
+        font-size: 0.5rem !important;
+        font-weight: bold;
+        letter-spacing: 2px;
+        opacity: 1 !important;
+        transform: translate(-40px, -10px);
+    }
+
+    /* 3. La Imagen: Censurada (Desenfoque pesado y oscurecimiento) */
+    body.theme-unity .unit-card-wrapper.corrupted .unit-image-link img {
+        /* Filtro de censura: muy borroso y casi negro */
+        filter: blur(8px) brightness(0.2) grayscale(1) !important;
+        opacity: 0.4 !important;
+    }
+
+    /* 4. Nombre del Bot en Rojo de Advertencia */
+    body.theme-unity .unit-card-wrapper.corrupted .unit-name {
+        color: #ff4444 !important;
+        text-shadow: 0 0 5px #630000;
+    }
+
+    
+
+    /* 5. MODAL DE ERROR PARA TEMA UNITY (Clínico y Autoritario) */
+    body.theme-unity #modal-error .modal-content {
+        border: 1px solid #ff0000 !important;
+        background: #05080f !important;
+        box-shadow: 0 0 40px rgba(0,0,0,1) !important;
+    }
+
+    body.theme-unity #modal-error h2 {
+        background: #ff0000;
+        color: #fff !important;
+        text-align: center;
+        letter-spacing: 5px;
+    }
+
+
+
+    /* --- DETALLES DE INMERSIÓN BRIDGES --- */
+
+        /* --- CONTENEDORES CON BRACKETS (ESQUINAS) --- */
+    body.theme-bridges .dashboard-container,
+    body.theme-bridges .modal-content {
+        background: rgba(11, 17, 21, 0.8) !important;
+        border: 1px solid rgba(50, 225, 255, 0.2) !important;
+        /* Creamos los corchetes de las esquinas con gradientes */
+        background-image: 
+            linear-gradient(to right, var(--verde-base) 15px, transparent 15px),
+            linear-gradient(to bottom, var(--verde-base) 15px, transparent 15px),
+            linear-gradient(to left, var(--verde-base) 15px, transparent 15px),
+            linear-gradient(to top, var(--verde-base) 15px, transparent 15px) !important;
+        background-repeat: no-repeat !important;
+        background-size: 20px 20px, 20px 20px, 20px 20px, 20px 20px !important;
+        background-position: 0 0, 0 0, 100% 100%, 100% 100% !important;
+        padding: 40px !important;
+    }
+
+    /* --- TRANSFORMACIÓN DE CARPETAS A MALETAS BRIDGES --- */
+    body.theme-bridges .win11-folder {
+        width: 60px;
+        height: 40px;
+        background: var(--amarillo-bridges) !important;
+        border-radius: 2px !important;
+        clip-path: none !important;
+    }
+
+    /* Añadimos las cintas negras de las maletas de carga */
+    body.theme-bridges .win11-folder::before {
+        content: "";
+        position: absolute;
+        top: 0; left: 10px;
+        width: 10px; height: 100%;
+        background: #000; /* Cinta negra 1 */
+        opacity: 0.8;
+        z-index: 2;
+    }
+
+    body.theme-bridges .win11-folder::after {
+        content: "";
+        position: absolute;
+        top: 0; right: 10px;
+        width: 10px; height: 100%;
+        background: #000; /* Cinta negra 2 */
+        opacity: 0.8;
+        z-index: 2;
+    }
+
+    body.theme-bridges .folder-back,
+    body.theme-bridges .folder-front {
+        display: none; /* Quitamos la forma de Windows 11 */
+    }
+
+    /* --- ESTILO DE LA SIDEBAR (LISTA TÉCNICA) --- */
+    body.theme-bridges .win-sidebar {
+        background: transparent !important;
+        border-right: 1px solid rgba(50, 225, 255, 0.1) !important;
+    }
+
+    body.theme-bridges .side-item {
+        border-left: 2px solid transparent;
+        margin-bottom: 10px;
+    }
+
+    body.theme-bridges .side-item:hover {
+        border-left: 2px solid var(--verde-base);
+        background: linear-gradient(to right, rgba(50, 225, 255, 0.1), transparent);
+    }
+
+    /* --- BOTONES HUD --- */
+    body.theme-bridges .btn {
+        border: 1px solid rgba(50, 225, 255, 0.3);
+        font-size: 0.7rem;
+        letter-spacing: 2px;
+    }
+
+    body.theme-bridges .btn:hover {
+        background: var(--verde-base);
+        color: #000;
+    }
+
+    /* --- CORRUPCIÓN TEMA BRIDGES: VOIDOUT_WARNING (ODRADEK ALERT) --- */
+
+    /* 1. La Tarjeta: Pulso naranja de advertencia mecánica */
+    body.theme-bridges .unit-card-wrapper.corrupted {
+        border: 2px solid #ff6600 !important; /* Naranja de Alerta Odradek */
+        background: #000 !important;
+        /* Pulso constante de "Peligro Cercano" */
+        animation: bridges-odradek-alert 2s ease-in-out infinite !important;
+        box-shadow: none !important;
+    }
+
+    /* 2. El Texto: Aviso de riesgo de craterización */
+    body.theme-bridges .unit-card-wrapper.corrupted::before {
+        content: ":: [!] VOIDOUT_RISK [!] ::" !important;
+        color: #ff6600 !important;
+        background: rgba(255, 102, 0, 0.1);
+        font-family: 'Share Tech Mono', monospace;
+        font-weight: bold;
+        text-shadow: 0 0 10px #ff6600;
+        opacity: 1 !important;
+    }
+
+    /* 3. La Imagen: Efecto de Alquitrán / Quiralium */
+    body.theme-bridges .unit-card-wrapper.corrupted .unit-image-link img {
+        /* Filtro: Oscurecemos casi totalmente y damos un tono petróleo sucio */
+        filter: grayscale(1) brightness(0.1) contrast(3) !important;
+        opacity: 0.2 !important;
+    }
+
+    /* 4. Nombre del Bot en el naranja de Bridges */
+    body.theme-bridges .unit-card-wrapper.corrupted .unit-name {
+        color: #ff6600 !important;
+        text-shadow: 0 0 5px #ff3300;
+    }
+
+    
+
+    /* 5. MODAL DE ERROR PARA TEMA BRIDGES (Estilo UCA/Bridges HUD) */
+    body.theme-bridges #modal-error .modal-content {
+        border: 1px solid #ff6600 !important;
+        background: #0b1115 !important;
+        /* Brackets en las esquinas para el error */
+        background-image: 
+            linear-gradient(to right, #ff6600 15px, transparent 15px),
+            linear-gradient(to bottom, #ff6600 15px, transparent 15px) !important;
+        background-size: 20px 20px !important;
+        background-repeat: no-repeat !important;
+    }
+
+    body.theme-bridges #modal-error h2 {
+        color: #ff6600 !important;
+        border-bottom: 1px solid #ff6600;
+    }
+
+    body.theme-deus .crt-overlay {
+    background-image: 
+        linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.2) 50%),
+        /* Patrón de malla hexagonal sutil */
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cpath fill='%23ffb000' fill-opacity='0.05' d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.89v12.22l11 6.35 11-6.35V17.89L14 11.54 3 17.89z'/%3E%3C/svg%3E");
+    background-size: 100% 4px, 28px 49px;
+    animation: flicker-soft 0.2s infinite;
+    }
+
+/* --- CONTENEDORES ANGULARES (ESTILO SARIF) --- */
+    body.theme-deus .dashboard-container,
+    body.theme-deus .modal-content {
+        background: rgba(0, 0, 0, 0.95) !important;
+        border: 2px solid var(--verde-base) !important;
+        /* Corte de esquinas agresivo (45 grados) */
+        clip-path: polygon(
+            20px 0%, 100% 0%, 100% calc(100% - 20px), 
+            calc(100% - 20px) 100%, 0% 100%, 0% 20px
+        );
+        box-shadow: 0 0 30px rgba(255, 176, 0, 0.1) !important;
+    }
+
+/* --- TRANSFORMACIÓN DE CARPETAS A NODOS TÁCTICOS --- */
+    body.theme-deus .win11-folder {
+        width: 50px;
+        height: 50px;
+        background: transparent !important;
+        border: 2px solid var(--verde-base);
+        transform: rotate(45deg); /* Los iconos son rombos/diamantes */
+        border-radius: 0 !important;
+    }
+
+    body.theme-deus .win11-folder::after {
+        content: "▲";
+        position: absolute;
+        top: 50%; left: 50%;
+        transform: translate(-50%, -50%) rotate(-45deg);
+        color: var(--verde-base);
+        font-size: 1.2rem;
+    }
+
+    body.theme-deus .folder-back,
+    body.theme-deus .folder-front {
+        display: none; /* Eliminamos el look de Windows */
+    }
+
+    /* --- BOTONES CON SKEW (INCLINADOS) --- */
+    body.theme-deus .btn, 
+    body.theme-deus .view-btn {
+        transform: skewX(-15deg);
+        background: transparent;
+        border: 1px solid var(--verde-base);
+        font-weight: bold;
+    }
+
+    body.theme-deus .btn:hover {
+        background: var(--verde-base);
+        color: #000;
+        transform: skewX(-15deg) scale(1.05);
+    }
+
+    /* --- EFECTO SCAN (COLOR DEUS) --- */
+    body.theme-deus .unit-card-wrapper {
+        border-color: var(--verde-base);
+        background: #0a0800;
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 85% 100%, 0 100%);
+    }
+
+    body.theme-deus .unit-card-wrapper::before {
+        color: var(--verde-high);
+        background: rgba(255, 176, 0, 0.15);
+        text-shadow: 0 0 10px var(--verde-base);
+    }
+
+    /* --- BARRA LATERAL (SIDEBAR) --- */
+    body.theme-deus .win-sidebar {
+        background: rgba(15, 10, 0, 0.5) !important;
+        border-right: 1px solid var(--verde-base) !important;
+    }
+
+    body.theme-deus .side-item {
+        color: var(--verde-base);
+        text-transform: uppercase;
+        font-size: 0.75rem;
+        border-bottom: 1px solid rgba(255, 176, 0, 0.1);
+    }
+
+    body.theme-deus .side-item:hover {
+        background: var(--verde-base);
+        color: #000;
+    }
+    
+    /* --- TEXTO DE ACCESO DENEGADO --- */
+    body.theme-deus .unit-card-wrapper.corrupted::before {
+        content: ":: [!] CONNECTION_SEVERED [!] ::" !important;
+        color: var(--rojo-error) !important;
+        background: rgba(255, 77, 0, 0.1);
+        text-shadow: 0 0 10px var(--rojo-error);
+        font-weight: 900;
+       
+    }
+
+    
+
+/* --- APLICACIÓN A LA TARJETA CORRUPTA --- */
+    body.theme-deus .unit-card-wrapper.corrupted {
+        opacity: 1 !important;
+        transform: none !important;
+        
+        /* Aplicamos el pulso lento */
+        animation: deus-glitch-flicker 1s infinite !important;
+        
+        border: 2px solid var(--rojo-error) !important;
+        background-color: rgba(255, 77, 0, 0.05) !important;
+    }
+
+/* El texto se queda fijo, solo brilla suavemente */
+    body.theme-deus .unit-card-wrapper.corrupted .unit-name {
+        color: var(--rojo-error) !important;
+        text-shadow: 0 0 10px var(--rojo-error);
+        animation: none !important;
+    }
+
+    /* --- TEXTURA ÚNICA: RUIDO / ESTÁTICA DE PAPEL --- */
+    body.theme-ex .crt-overlay {
+        background-image: 
+            /* Efecto de estática de puntos pesada */
+            url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        opacity: 0.15;
+        animation: static-shiver 0.1s infinite; /* Micro-vibración de la estática */
+    }
+
+    
+
+    /* --- CONTENEDORES: BORDE DOBLE (ESTILO IMPRESO) --- */
+    body.theme-ex .dashboard-container,
+    body.theme-ex .modal-content {
+        background: #000 !important;
+        border: 1px solid #fff !important;
+        /* Efecto de doble borde técnico */
+        outline: 4px solid #000;
+        outline-offset: -8px;
+        box-shadow: none !important;
+    }
+
+    /* --- TRANSFORMACIÓN DE CARPETAS A ICONOS DE SISTEMA 1-BIT --- */
+    body.theme-ex .win11-folder {
+        width: 60px;
+        height: 45px;
+        background: transparent !important;
+        border: 2px solid #fff !important;
+        border-radius: 0 !important;
+    }
+
+    body.theme-ex .win11-folder::after {
+        content: "FILE";
+        position: absolute;
+        top: 50%; left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 0.6rem;
+        color: #fff;
+    }
+
+    body.theme-ex .folder-back,
+    body.theme-ex .folder-front {
+        display: none;
+    }
+
+    /* --- TARJETAS: EFECTO INVERTIDO --- */
+    body.theme-ex .unit-card-wrapper {
+        background: #000;
+        border: 1px solid #fff;
+        transition: all 0.2s ease;
+    }
+
+    /* ¡LA MAGIA! Al hacer hover, la tarjeta se INVIERTE (Blanco sobre negro) */
+    body.theme-ex .unit-card-wrapper:hover {
+        background: #fff !important;
+        box-shadow: none !important;
+    }
+
+    body.theme-ex .unit-card-wrapper:hover .unit-name {
+        color: #ff4848 !important;
+        text-shadow: none;
+    }
+
+    body.theme-ex .unit-card-wrapper:hover .unit-desc {
+        color: #333 !important;
+    }
+
+    body.theme-ex .unit-card-wrapper:hover img {
+        filter: invert(1) grayscale(1) contrast(2) !important;
+    }
+
+    /* --- BOTONES BRUTALISTAS --- */
+    body.theme-ex .btn {
+        border: 2px solid #fff;
+        text-transform: uppercase;
+        font-weight: 900;
+    }
+
+    body.theme-ex .btn:hover {
+        background: #fff;
+        color: #000;
+    }
+
+    /* --- MENÚ DE TEMA SÓLIDO --- */
+    body.theme-ex .theme-dropdown {
+        background: #000 !important;
+        border: 2px solid #fff;
+    }
+
+    body.theme-ex .theme-option {
+        border-bottom: 1px solid #333;
+    }
+
+    /* 1. La Tarjeta Corrupta: Se vuelve un bloque de ruido gris */
+    body.theme-ex .unit-card-wrapper.corrupted {
+        border: 1px dashed #fff !important; /* Borde discontinuo */
+        background: repeating-linear-gradient(
+            45deg,
+            #000,
+            #000 5px,
+            #111 5px,
+            #111 10px
+        ) !important;
+        animation: ex-data-decay 0.2s infinite !important;
+        box-shadow: none !important;
+    }
+
+    /* 2. El Texto: Cambiamos "SCAN" por un error de puntero nulo */
+    body.theme-ex .unit-card-wrapper.corrupted::before {
+        content: "[ ERROR: NULL_PTR_DUMP ]" !important;
+        font-family: 'Courier New', monospace !important;
+        background: #fff !important;
+        color: #000 !important;
+        font-size: 0.7rem !important;
+        letter-spacing: -1px;
+        padding: 2px 5px;
+        /* El texto salta de posición aleatoriamente */
+        animation: ex-text-glitch 0.1s infinite !important;
+    }
+
+    /* 3. La Imagen: Alto contraste y grano extremo */
+    body.theme-ex .unit-card-wrapper.corrupted .unit-image-link img {
+        filter: grayscale(1) contrast(5) brightness(0.5) !important;
+        opacity: 0.3 !important;
+        /* La imagen se "desgarra" con clip-path */
+        animation: ex-image-tear 0.3s steps(2) infinite !important;
+    }
+
+    /* --- ANIMACIONES DE DEGRADACIÓN DE DATOS --- */
+
+    
+
+    /* 4. MODAL DE ERROR PARA TEMA EX (Estilo Aviso de Sistema Antiguo) */
+    body.theme-ex #modal-error .modal-content {
+        border: 4px double #fff !important;
+        background: #000 !important;
+        outline: none !important;
+    }
+
+    body.theme-ex #modal-error h2 {
+        background: #fff;
+        color: #000 !important;
+        padding: 5px;
+    }
+
+
+    body.theme-alter::before {
+    content: "";
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 70vh; /* Ocupa el 70% de abajo */
+    z-index: -1;
+    pointer-events: none;
+    
+    /* Creamos líneas verticales de diferentes grosores */
+    background: 
+        repeating-linear-gradient(
+            90deg, 
+            transparent 0, 
+            transparent 40px, 
+            rgba(255, 0, 85, 0.1) 41px, 
+            transparent 42px
+        ),
+        repeating-linear-gradient(
+            90deg, 
+            transparent 0, 
+            transparent 120px, 
+            rgba(255, 0, 85, 0.05) 121px, 
+            transparent 124px
+        );
+    
+    /* Máscara para que se desvanezcan al subir */
+    -webkit-mask-image: linear-gradient(to top, black 0%, transparent 100%);
+    mask-image: linear-gradient(to top, black 0%, transparent 100%);
+
+    /* Animación de subida "Glitchy" */
+    animation: rapidium-rise 10s linear infinite;
+    background-size: 100% 200%;
+}
+
+/* Capa extra para el brillo difuso en el suelo */
+body.theme-alter::after {
+    content: "";
+    position: fixed;
+    bottom: 0; left: 0; width: 100%; height: 30vh;
+    background: linear-gradient(to top, rgba(255, 0, 85, 0.15), transparent);
+    z-index: -1;
+    pointer-events: none;
+    animation: rapidium-pulse 4s ease-in-out infinite;
+}
+
+
+    /* --- UI ESTILO "THE ALTERS" (Redondeado y Tecnológico) --- */
+
+    /* Contenedores con esquinas redondeadas pero bordes cortados */
+    body.theme-legacy .dashboard-container,
+    body.theme-legacy .modal-content {
+        background: rgba(8, 12, 18, 0.95) !important;
+        border: 1px solid var(--verde-base) !important;
+        border-radius: 15px !important;
+        /* Efecto de borde doble brillante */
+        box-shadow: 
+            0 0 0 1px rgba(255, 0, 85, 0.2), 
+            0 0 30px rgba(255, 0, 85, 0.15) !important;
+    }
+
+    /* Botones estilo píldora (como en el menú del juego) */
+    body.theme-legacy .btn,
+    body.theme-legacy .view-btn {
+        border-radius: 50px !important; /* Completamente redondos */
+        border: 1px solid var(--verde-base);
+        font-weight: bold;
+        letter-spacing: 1px;
+    }
+
+    body.theme-legacy .btn:hover {
+        background: var(--verde-base);
+        color: #fff;
+        box-shadow: 0 0 20px var(--verde-base);
+    }
+
+    /* --- CARPETAS ESTILO ALTER (Minimalistas y Rosas) --- */
+    body.theme-alter .win11-folder {
+        width: 60px; height: 45px;
+    }
+    body.theme-alter .folder-back {
+        background: #2a0e18 !important; /* Fondo oscuro rojizo */
+        border-radius: 6px;
+    }
+    body.theme-alter .folder-front {
+        /* Degradado Rosa a Oscuro */
+        background: linear-gradient(160deg, #ff0055 0%, #59001d 100%) !important;
+        border-radius: 6px;
+        border-top: 1px solid rgba(255, 255, 255, 0.4);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    }
+
+    /* --- TARJETAS DE BOTS --- */
+    body.theme-alter .unit-card-wrapper {
+        border-radius: 12px !important;
+        border: 1px solid var(--verde-base);
+        background: #0b1016;
+    }
+
+    /* Efecto SCAN rosa */
+    body.theme-alter .unit-card-wrapper::before {
+        color: #fff;
+        background: rgba(255, 0, 85, 0.1);
+        text-shadow: 0 0 10px var(--verde-base);
+    }
+
+    /* Corrupción estilo "ALTER" (Fractura de personalidad) */
+    body.theme-legacy .unit-card-wrapper.corrupted {
+        border: 2px solid #fff !important;
+        animation: alter-instability 0.2s infinite;
+    }
+
+
+    /* --- TEMA: CYBERPUNK 2077 (KIROSHI OPTICS) --- */
+    body.theme-cyber {
+        --bg-negro:    #000000;
+        --verde-base:  #fcee0a; /* Amarillo Cyberpunk */
+        --verde-high:  #00f0ff; /* Cyan Eléctrico */
+        --borde-dark:  #1a1a1a;
+        --rojo-error:  #ff003c; /* Rojo Magenta */
+        --gris-dim:    #333333;
+        --glow: 0 0 10px rgba(252, 238, 10, 0.5);
+    }
+
+    

@@ -1,0 +1,349 @@
+@media (max-width: 768px) {
+    /* 1. Bloqueamos el movimiento de la pantalla */
+    body { overflow: hidden !important; position: fixed; width: 100%; }
+
+    /* 2. Ventana a pantalla completa total */
+    .modal-content {
+        width: 100vw !important;
+        height: 100vh !important;
+        max-height: 100vh !important;
+        top: 0 !important;
+        left: 0 !important;
+        padding: 0 !important;
+        display: flex !important;
+        flex-direction: column !important; /* Todo hacia abajo */
+        border: none !important;
+        overflow-y: auto !important; /* El scroll es de la ventana completa */
+    }
+
+    /* 3. Botón cerrar: arriba a la derecha, fijo */
+    .close-btn {
+        position: absolute !important;
+        top: 15px !important;
+        right: 15px !important;
+        z-index: 10001 !important;
+        background: var(--bg-negro);
+        border: 1px solid var(--rojo-error);
+        padding: 5px 15px;
+    }
+
+    /* 4. Dashboard e Inicio (Ajuste para que no sea un tubo estrecho) */
+    .dashboard-container {
+        padding: 25px !important;
+        margin: 10px !important;
+        width: calc(100% - 20px) !important;
+        max-width: none !important;
+    }
+    .dashboard-container h1 { font-size: 1.6rem !important; }
+    .dashboard-item summary { font-size: 0.8rem !important; }
+
+    
+
+    /* --- ESTILO DE LA BARRA DE SCROLL (Para que no tape los iconos) --- */
+    .win-sidebar::-webkit-scrollbar {
+        width: 5px !important; /* Muy delgada */
+    }
+
+    .win-sidebar::-webkit-scrollbar-track {
+        background: transparent !important;
+    }
+
+    .win-sidebar::-webkit-scrollbar-thumb {
+        background: var(--verde-base) !important;
+        border-radius: 0;
+    }
+
+    .win-sidebar .side-item {
+        display: flex;
+        justify-content: center; /* Centra el icono */
+        align-items: center;
+        width: 100%;
+        height: 50px;
+        margin-bottom: 10px;
+        font-size: 1.2rem; /* Tamaño de icono */
+        position: relative;
+        
+        
+    }
+    .win-sidebar::-webkit-scrollbar {
+        width: 2px !important;
+    }
+    .win-sidebar::-webkit-scrollbar-thumb {
+        background: var(--verde-base) !important;
+        border-radius: 0;
+    }
+
+
+    .side-label { 
+        display: block !important; 
+        font-size: 0.6rem !important;
+        margin: 10px 0 5px 0 !important;
+    }
+
+    .side-item {
+        justify-content: center !important;
+        padding: 12px 0 !important;
+        font-size: 1.2rem !important; /* Iconos más grandes para picar con el dedo */
+        border: none !important;
+        background: transparent !important;
+        
+    }
+
+    /* 7. Barra de herramientas (VIEW S/M/L) */
+    .win-toolbar {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: var(--bg-negro) !important;
+        padding: 10px !important;
+        justify-content: center !important;
+        border-bottom: 1px solid var(--verde-base) !important;
+    }
+
+    /* 8. Área de visualización (Carpetas y Bots) */
+    .win-viewport {
+        padding: 20px 15px !important;
+        flex: none !important;
+    }
+
+    /* Carpetas: 2 por fila para que se lean bien */
+    .explorer-grid {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 15px !important;
+    }
+
+    /* Bots: 1 por fila para que el efecto SCAN funcione */
+    .unit-grid {
+        grid-template-columns: 1fr !important;
+        gap: 25px !important;
+    }
+
+    .unit-card-wrapper {
+        height: 300px !important;
+    }
+
+    /* Ajuste de ruta */
+    .path-bar {
+        font-size: 0.6rem !important;
+        word-break: break-all;
+    }
+
+    .command-bar { 
+        display: grid !important;
+        grid-template-columns: 1fr 1fr; /* 2 Columnas iguales */
+        gap: 8px !important;
+        padding: 10px !important;
+        width: 100% !important;
+        flex-wrap: wrap !important;
+    }
+
+    .btn { 
+        flex: 1 1 45% !important; 
+        font-size: 0.6rem !important;
+     }
+
+     .modal-content {
+        width: 100vw !important;
+        height: 100vh !important;
+        border: none !important;
+    }
+
+    /* 2. SIDEBAR: Más ancha para que quepan los nombres, pero con texto pequeño */
+    .win-sidebar {
+        width: 130px !important; /* Aumentado de 60px a 130px */
+        min-width: 130px !important;
+        padding: 40px 5px 10px 5px !important; /* Espacio superior para la X */
+    }
+
+    .win-sidebar .side-item {
+        font-size: 0.7rem !important; /* Letra pequeña para que quepa el nombre */
+        justify-content: flex-start !important;
+        padding-left: 5px !important;
+        gap: 5px !important;
+    }
+
+    /* Forzamos que los nombres de la sidebar se vean en móvil */
+    .win-sidebar .side-item span {
+        display: inline-block !important; 
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    /* 3. BOTÓN CERRAR [X]: Más pequeño y mejor posicionado */
+    .close-btn {
+        font-size: 1.2rem !important; /* Reducido de 2rem */
+        top: 5px !important;
+        right: 10px !important;
+        padding: 5px !important;
+    }
+
+    /* 4. EXPLORADOR DE CARPETAS: Ajuste para que no se amontonen */
+    .explorer-grid {
+        grid-template-columns: repeat(auto-fill, minmax(85px, 1fr)) !important;
+        gap: 15px !important;
+        padding: 10px !important;
+    }
+
+    .win11-folder {
+        width: 50px !important; /* Carpetas un poco más pequeñas */
+        height: 38px !important;
+    }
+
+    .folder-name {
+        font-size: 0.65rem !important;
+    }
+
+    /* 5. GRID DE BOTS: Para que se vean en una sola columna si es muy estrecho */
+    .unit-grid {
+        grid-template-columns: 1fr !important; 
+        padding: 10px !important;
+    }
+
+    /* 6. VIEWPORT: Menos padding para ganar espacio */
+    .win-main-view {
+        padding: 10px !important;
+    }
+    
+    .path-bar {
+        font-size: 0.65rem !important;
+        margin-bottom: 10px !important;
+    }
+
+    #modal-error {
+        display: none; /* Se activa con JS */
+        justify-content: center !important;
+        align-items: center !important;
+        padding: 20px !important;
+    }
+
+    /* 2. TAMAÑO DE LA VENTANA DE ERROR */
+    #modal-error .modal-content {
+        width: 90% !important; /* No ocupa toda la pantalla */
+        height: auto !important; /* Se ajusta al texto */
+        min-height: 200px !important;
+        max-height: 80vh !important;
+        border: 2px solid var(--rojo-error) !important;
+        background-color: var(--bg-negro) !important;
+        box-shadow: 0 0 20px rgba(255, 68, 68, 0.4) !important;
+        
+        /* Reset de flex-direction para que el contenido respire */
+        display: block !important; 
+        position: relative !important;
+        padding: 30px 20px !important;
+        overflow-y: auto !important;
+    }
+
+    /* 3. TÍTULO Y TEXTO DE ERROR */
+    #modal-error h2 {
+        font-size: 1rem !important;
+        margin-bottom: 15px !important;
+        color: var(--rojo-error) !important;
+        text-align: center !important;
+    }
+
+    #modal-error p {
+        font-size: 0.8rem !important;
+        text-align: center !important;
+        line-height: 1.4 !important;
+    }
+
+    /* 4. BOTÓN CERRAR EN EL ERROR */
+    #modal-error .close-btn {
+        font-size: 1.5rem !important;
+        top: 5px !important;
+        right: 10px !important;
+        color: var(--rojo-error) !important;
+    }
+
+    /* 5. EL RECUADRO DE ABAJO (Unauthorized Access) */
+    #modal-error div[style*="border: 1px dashed"] {
+        margin-top: 20px !important;
+        font-size: 0.6rem !important;
+        padding: 8px !important;
+    }
+
+    .win-main-view, .win-viewport {
+        padding: 15px !important;
+        /* Smooth scrolling para móviles */
+        -webkit-overflow-scrolling: touch !important; 
+    }
+    
+    /* Espacio extra al final para que el último bot no quede tapado por el borde */
+    .unit-grid {
+        padding-bottom: 80px !important;
+    }
+
+    #modal-archives .modal-content {
+        flex-direction: column !important;
+        padding: 0 !important;
+        overflow: hidden !important;
+    }
+
+    /* 2. Ajustamos la Sidebar (Lista de nombres) */
+    .archive-sidebar {
+        width: 100% !important;
+        height: 30vh !important; /* Ocupa el 30% superior */
+        border-right: none !important;
+        border-bottom: 1px solid var(--verde-base);
+        flex-shrink: 0;
+    }
+
+    .archive-sidebar h3 {
+        padding: 10px !important;
+        font-size: 0.9rem;
+    }
+
+    .archive-item {
+        padding: 10px 15px !important;
+        font-size: 0.8rem;
+    }
+
+    /* 3. Ajustamos el Viewport (Donde sale la info del bot) */
+    .archive-viewport {
+        width: 100% !important;
+        height: 70vh !important;
+        overflow-y: auto;
+    }
+
+    /* 4. REORGANIZAMOS EL CONTENIDO INTERNO (Info + Imagen) */
+    /* El grid que era 1fr 300px ahora es una sola columna */
+    #dossier-content > div {
+        display: flex !important;
+        flex-direction: column-reverse !important; /* Imagen arriba, texto abajo */
+        gap: 20px !important;
+    }
+
+    /* 5. Ajuste de la Galería en móvil */
+    .gallery-container {
+        width: 100% !important;
+    }
+
+    .main-img-wrapper {
+        height: 250px !important; /* Imagen más pequeña para que no tape todo */
+    }
+
+    .thumbnail-grid {
+        grid-template-columns: repeat(4, 1fr) !important; /* Más miniaturas por fila */
+    }
+
+    /* 6. Ajuste de Textos */
+    #dos-name {
+        font-size: 1.8rem !important;
+    }
+
+    #dos-desc {
+        font-size: 0.85rem !important;
+        line-height: 1.4;
+    }
+
+    /* 7. BOTÓN CERRAR [X]: Lo movemos para que no tape nada */
+    #modal-archives .close-btn {
+        top: 5px !important;
+        right: 10px !important;
+        font-size: 1.5rem !important;
+        background: var(--bg-negro);
+        border: 1px solid var(--rojo-error);
+        padding: 2px 8px;
+    }
+}

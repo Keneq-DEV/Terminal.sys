@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KENEQ.SYS // Terminal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+</head>
+
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+
+<link rel="stylesheet" href="TERMINAL.Css/TERMINAL-CORE.css?v=1.3">
+<!-- CAPA GRÁFICA PARA EFECTOS ESPECIALES -->
+<canvas id="vfx-canvas" style="position:fixed; top:0; left:0; width:100%; height:100%; z-index:-1; pointer-events:none;"></canvas>
+    <!-- CARGA DE SCRIPTS: El orden es vital -->
+<script src="TERMINAL.Js/VFX_ENGINE.js?v=1.1" defer></script>
+
+    <!-- 1. Cargas las fuentes primero -->
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+    <!-- 2. Cargas el CSS MOVIL -->
+    <link rel="stylesheet" href="TERMINAL.Css/TERMINAL-MOVIL.css?v=1.1">
+
+    <!-- 3. Cargas el CSS de VENTANAS -->
+    <link rel="stylesheet" href="TERMINAL.Css/TERMINAL-MODALS.css?v=1.1">
+
+    <!-- 4. Cargas el CSS de ANIMACIONES -->
+    <link rel="stylesheet" href="TERMINAL.Css/TERMINAL-ANM.css?v=1.1">
+
+    <!-- 5. Cargas los EFECTOS (Scan, Corrupción, Glitch) -->
+    <link rel="stylesheet" href="TERMINAL.Css/TERMINAL-SCANS.css?v=1.1">
+
+    <!-- 6. Cargas los TEMAS al final (para que sobreescriban colores) -->
+    <link rel="stylesheet" href="TERMINAL.Css/TERMINAL-THEMES.css?v=1.1">
+
+
+<script src="TERMINAL.Js/TERMINAL-JS.js?v=1.3" defer></script>
+
+<body>
+    
+    <div class="crt-overlay"></div>
+    
+    <div id="theme-transition-layer" class="glitch-transition"></div>
+    <img id="profile-gif-bg" src="">
+    <video id="profile-video-bg" loop muted playsinline style="display:none;"></video>
+
+    <header>
+        <div class="logo">KENEQ.SYS // TERMINAL <span id="sys-version">v2.0</span></div>
+
+        <div class="music-selector-wrapper">
+    <button id="music-btn" class="theme-switcher-btn" onclick="toggleMusicMenu()">
+        [ MUSIC: SELECT_TRACK ] ▼
+    </button>
+    <div id="music-menu" class="theme-dropdown">
+        <!-- Se llena dinámicamente con JS según el tema -->
+    </div>
+</div>
+
+        <div class="theme-selector-wrapper">
+    <!-- El botón ahora solo abre/cierra el menú -->
+        <button id="theme-btn" class="theme-switcher-btn" onclick="toggleThemeMenu()">[ SYSTEM_THEME ] ▼</button>
+     
+    <!-- La lista desplegable -->
+        <div id="theme-menu" class="theme-dropdown">
+        <div class="theme-option" onclick="selectSpecificTheme(0)">> FRAGMENTED</div>
+        <div class="theme-option" onclick="selectSpecificTheme(1)">> LEGACY</div>
+        <div class="theme-option" onclick="selectSpecificTheme(2)">> UNITY</div>
+        <div class="theme-option" onclick="selectSpecificTheme(3)">> DEUS</div>
+        <div class="theme-option" onclick="selectSpecificTheme(4)">> EX</div>
+        <div class="theme-option" onclick="selectSpecificTheme(5)">> BRIDGES</div>
+        <div class="theme-option" onclick="selectSpecificTheme(6)">> CYBERPUNK</div>
+        </div>
+        </div>
+        <div id="clock">00:00:00</div>
+</header>
+
+    <nav class="command-bar">
+        <button class="btn" onclick="toggleFullScreen()">[ ] FULLSCREEN</button>
+        <button class="btn" onclick="goToDashboard()">DASHBOARD</button>
+        <button class="btn" onclick="openModal('modal-explorer')">UNITS_DATABASE</button>
+        <button class="btn" onclick="openModal('modal-archives'); loadArchives();">CLASSIFIED_ARCHIVES</button>
+        <button class="btn" onclick="openModal('modal-status')">SYSTEM_STATUS</button>
+        <button class="btn" onclick="window.open('https://janitorai.com/profiles/545c2fad-bf1f-4a6c-af5f-6dc4c705d448_profile-of-keneq-sys', '_blank')">RETURN_TO_JAI</button>
+        
+    </nav>
+
+    <!-- DASHBOARD PRINCIPAL -->
+    <main class="main-viewport">
+        <div class="dashboard-container">
+
+            <a href="javascript:void(0)" class="close-btn" onclick="closeDashboard()" style="position: absolute; top: 10px; right: 20px; font-size: 1.5rem; color: var(--verde-base); text-decoration: none;">×</a>
+
+            <h1>> WELCOME_OPERATOR</h1>
+            <p class="subtitle">"The static is where the real stories are told."</p>
+            
+            <details class="dashboard-item" open>
+                <summary>:: MANIFESTO.txt</summary>
+                <div class="inner-content">
+                    "We don't create bots; we launch narrative simulations. This is a terminal for the discerning user, one who understands that the most compelling stories are found in the grey areas, in the static between signals."
+                </div>
+            </details>
+
+            <details class="dashboard-item">
+                <summary>:: PARAMETERS.log</summary>
+                <div class="inner-content">
+                    • CONTENT: Dark Narrative / NSFW Focus<br>
+                    • PROTOCOL: Multi-paragraph Literacy<br>
+                    • VERSIONS: 3000.
+                </div>
+            </details>
+        </div>
+    </main>
+
+    <!-- VENTANA EXPLORADOR (WINDOWS 11 STYLE) -->
+    <!-- VENTANA ÚNICA DE BASE DE DATOS -->
+<div id="modal-explorer" class="modal">
+    <div class="modal-content">
+        <a href="javascript:closeModal('modal-explorer')" class="close-btn">×</a>
+            <div class="win-body">
+                
+            <!-- BARRA LATERAL (Sidebar) -->
+            <aside class="win-sidebar">
+                <details class="side-group" open>
+                <summary>Quick Access</summary>
+                <div class="side-item" onclick="openFolderContent('view-root')">⬣ Home</div>
+                <div class="side-item" onclick="openFolderContent('view-request')">📂 REQUESTS_DATA</div>
+            </details>
+
+            <details class="side-group" open>
+                <summary>Unit Categories</summary>
+                <div class="side-item" onclick="openFolderContent('view-scp')">📁 SCP_DATA</div>
+                <div class="side-item" onclick="openFolderContent('view-uncat')">📁 UNCAT_DATA</div>
+                <div class="side-item" onclick="openFolderContent('view-dogknights')">📁 DOGKNIGHTS_DATA</div>
+                <div class="side-item" onclick="openFolderContent('view-tdg')">📁 DRACONIC_GRIMORE_DATA</div>
+                <div class="side-item" onclick="openFolderContent('view-tdk')">📁 DINOSAUR_KINDOM_DATA</div>
+                <div class="side-item" onclick="openFolderContent('view-tsc')">📁 STOCKHOLM_COMPENDIUM_DATA</div>
+                <div class="side-item" onclick="openFolderContent('view-httyd')">📁 HTTYD_DATA</div>
+                <div class="side-item" onclick="openFolderContent('view-pk')">📁 PROTOCOL_K_DATA</div>
+                <div class="side-item" onclick="openFolderContent('view-tcs')">📁 CHROME_SUTRA_DATA</div>
+                <div class="side-item" onclick="openFolderContent('view-tss')">📁 STYGIAN_SYNDICATE_DATA</div>
+                <div class="side-item" onclick="openFolderContent('view-at')">📁 AETERNA_DATA</div>
+                
+            </details>
+
+
+                <div class="win-view-selector">
+                <span style="font-size: 0.6rem; color: var(--gris-dim); align-self: center;">VIEW:</span>
+                <button class="view-btn active" onclick="setViewSize('size-s')">S</button>
+                <button class="view-btn" onclick="setViewSize('size-m')">M</button>
+                <button class="view-btn" onclick="setViewSize('size-l')">L</button>
+            </div>
+                
+    
+                <hr style="border:0; border-top:1px solid var(--borde-dark); margin:15px 0;">
+                <div class="side-label">This PC</div>
+                
+                <div class="side-item" onclick="openFolderContent('main-explorer-root')">💾 Local Disk (C:)</div>
+                <div class="side-item" style="opacity: 0.5;">💾 Network (N:)</div>
+                <div class="side-item" onclick="openFolderContent('main-explorer-root')">💾 System_Storage</div>
+                
+                <div class="side-label">Network</div>
+                <div class="side-item" style="opacity: 0.5;">🌐 Remote_Server</div>
+            </aside>
+
+            
+            <section class="win-main-view">
+                <div class="path-bar" id="current-path">This PC > Local Disk (C:) > Units</div>
+
+                <!-- 2. VISTA DE UNIDADES (La pantalla con las unidades dentro de una carpeta) -->
+                <div id="unit-viewer" class="view-content" style="display: none;"><div class="unit-grid size-s"></div></div>
+
+                <!-- 1. VISTA DE ICONOS (La pantalla con las carpetas Win11) -->
+                <div id="view-root" class="view-content" style="display: block;">
+                    <div class="explorer-grid size-m">
+                    
+                        <div class="folder-wrapper" onclick="openFolderContent('view-scp')">
+                            <div class="win11-folder"><div class="folder-back"></div><div class="folder-front"></div></div>
+                            <span class="folder-name">SCP_DATA</span>
+                        </div>
+
+                        <div class="folder-wrapper" onclick="openFolderContent('view-dogknights')">
+                            <div class="win11-folder"><div class="folder-back"></div><div class="folder-front"></div></div>
+                            <span class="folder-name">DOGKNIGHTS_DATA</span>
+                        </div>
+
+                        <div class="folder-wrapper" onclick="openFolderContent('view-uncat')">
+                            <div class="win11-folder"><div class="folder-back"></div><div class="folder-front"></div></div>
+                            <span class="folder-name">UNCAT_DATA</span>
+                        </div>
+
+                        <div class="folder-wrapper" onclick="openFolderContent('view-tdg')">
+                            <div class="win11-folder"><div class="folder-back"></div><div class="folder-front"></div></div>
+                            <span class="folder-name">DRACONIC_GRIMORE_DATA</span>
+                        </div>
+
+                        <div class="folder-wrapper" onclick="openFolderContent('view-tdk')">
+                            <div class="win11-folder"><div class="folder-back"></div><div class="folder-front"></div></div>
+                            <span class="folder-name">DINOSAUR_KINDOM_DATA</span>
+                        </div>
+
+                        <div class="folder-wrapper" onclick="openFolderContent('view-tcs')">
+                            <div class="win11-folder"><div class="folder-back"></div><div class="folder-front"></div></div>
+                            <span class="folder-name">CHROME_SUTRA_DATA</span>
+                        </div>
+
+                        <div class="folder-wrapper" onclick="openFolderContent('view-tsc')">
+                            <div class="win11-folder"><div class="folder-back"></div><div class="folder-front"></div></div>
+                            <span class="folder-name">STOCKHOLM_COMPENDIUM_DATA</span>
+                        </div>
+
+                        <div class="folder-wrapper" onclick="openFolderContent('view-httyd')">
+                            <div class="win11-folder"><div class="folder-back"></div><div class="folder-front"></div></div>
+                            <span class="folder-name">HTTYD_DATA</span>
+                        </div>
+
+                        <div class="folder-wrapper" onclick="openFolderContent('view-pk')">
+                            <div class="win11-folder"><div class="folder-back"></div><div class="folder-front"></div></div>
+                            <span class="folder-name">PROTOCOL_K_DATA</span>
+                        </div>
+
+                        <div class="folder-wrapper" onclick="openFolderContent('view-tss')">
+                            <div class="win11-folder"><div class="folder-back"></div><div class="folder-front"></div></div>
+                            <span class="folder-name">STYGIAN_SYNDICATE_DATA</span>
+                            
+                        </div>
+
+                        <div class="folder-wrapper" onclick="openFolderContent('view-at')">
+                            <div class="win11-folder"><div class="folder-back"></div><div class="folder-front"></div></div>
+                            <span class="folder-name">AETERNA_DATA</span>
+                        <!-- FIN COPIA -->
+
+                        
+
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL: CLASSIFIED ARCHIVES (DOSSIER VIEW) -->
+<div id="modal-archives" class="modal">
+    <div class="modal-content" style="flex-direction: row; padding: 0;">
+        <a href="javascript:closeModal('modal-archives')" class="close-btn">×</a>
+
+        <!-- COLUMNA IZQUIERDA: LISTA DE UNIDADES -->
+        <aside class="archive-sidebar">
+            <h3 style="padding: 20px; border-bottom: 1px solid var(--verde-base); color: var(--verde-high);">// INDEX</h3>
+            <div id="archive-list" class="archive-list-container">
+                <!-- Se llena con JS -->
+            </div>
+        </aside>
+
+        <!-- COLUMNA DERECHA: VISOR DEL DOSSIER -->
+        <section class="archive-viewport">
+            <div id="dossier-placeholder" style="display:flex; height:100%; justify-content:center; align-items:center; opacity:0.5;">
+                SELECT_UNIT_TO_DECRYPT_DATA...
+            </div>
+
+            <div id="dossier-content" style="display:none; height:100%; overflow-y: auto; padding: 30px;">
+                <!-- CABECERA -->
+                <div style="display:flex; justify-content:space-between; align-items:flex-end; border-bottom: 1px solid var(--borde-dark); padding-bottom:10px; margin-bottom:20px;">
+                    <div>
+                        <h1 id="dos-name" style="font-size: 2.5rem; color: var(--verde-high); text-shadow: var(--glow);">UNIT_NAME</h1>
+                        <span id="dos-org" style="color: var(--gris-dim); font-size: 0.9rem;">ORIGIN_DATA</span>
+                    </div>
+                    <div id="dos-status" style="border:1px solid var(--verde-base); padding: 5px 10px; font-size: 0.8rem;">STATUS: OK</div>
+                </div>
+
+                <!-- CUERPO -->
+                <div style="display: grid; grid-template-columns: 1fr 300px; gap: 30px;">
+                    
+                    <!-- INFO Y TAGS -->
+                    <div>
+                        <h3 style="color: var(--verde-base); margin-bottom: 10px;">>> DATA_LOGS</h3>
+                        <p id="dos-desc" style="line-height: 1.6; color: #e0e0e0; margin-bottom: 20px; white-space: pre-wrap;"></p>
+                        
+                        <h3 style="color: var(--verde-base); margin-bottom: 10px;">>> CLASSIFICATION_TAGS</h3>
+                        <div id="dos-tags" class="tag-container">
+                            <!-- Los tags se inyectan aquí -->
+                        </div>
+                    </div>
+
+                    <!-- GALERÍA DE IMÁGENES -->
+                    <div class="gallery-container">
+                        <div class="main-img-wrapper">
+                            <img id="dos-main-img" src="" alt="Main View">
+                        </div>
+                        <div id="dos-thumbnails" class="thumbnail-grid">
+                            <!-- Las miniaturas se inyectan aquí -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+
+    <!-- STATUS HUD COMPLETO -->
+    <div id="modal-status" class="modal">
+        <div class="modal-content" style="max-width: 600px; height: auto; padding: 30px;">
+            <a href="javascript:closeModal('modal-status')" class="close-btn">×</a>
+            <h2 style="margin-bottom: 20px;">// SYSTEM_STATUS_HUD</h2>
+            <div class="status-row"><span>USER_STATUS:</span><span class="status-online">OPERATIONAL</span></div>
+            <div class="status-row"><span>ACTIVE_TASK:</span><span style="color:var(--verde-high)">COMPILING_UNIT_CORES</span></div>
+            <div class="status-row"><span>INCOMING_REQUESTS:</span><a href="https://forms.gle/unzjPimuZkMuMS9M7" target="_blank" style="color:var(--bg-negro); background:var(--verde-base); padding:2px 8px; text-decoration:none;">[ OPEN_FORM ]</a></div>
+            <div style="margin-top: 25px; padding: 15px; border: 1px solid var(--borde-dark); background: rgba(0,0,0,0.3);">
+                <p style="color: var(--gris-dim); font-style: italic;">"They closed one door. Now we operate from the shadows. The old signal is gone, but the echo remains."</p>
+            </div>
+        </div>
+    </div>
+
+<!-- ELEMENTOS DE AUDIO LOCALES -->
+<audio id="snd-ambience" loop src="TERMINAL.Audio/Ambience_terminal_1.wav"></audio>
+<audio id="terminal-sequencer" preload="auto" loop></audio>
+<audio id="snd-click" src="TERMINAL.Audio/click.wav"></audio>
+<audio id="snd-error" src="TERMINAL.Audio/error.wav"></audio>
+<audio id="snd-close" src="TERMINAL.Audio/close.wav"></audio>
+
+<div id="modal-error" class="modal">
+    <div class="modal-content">
+        <a href="javascript:closeModal('modal-error')" class="close-btn">×</a>
+        <h2>[!] SECURITY_BREACH [!]</h2>
+        <div style="padding: 20px;">
+            <p style="color: var(--rojo-error); font-size: 1.2rem; margin-bottom: 15px;">CRITICAL_ERROR: INSUFFICIENT_CLEARANCE</p>
+            <p style="color: var(--gris-dim); line-height: 1.5;">
+                Your current operator level is too low to decrypt this unit's data cores. 
+                <br><br>
+                <span style="color: #fff;">REQUIRED_LEVEL: OVERSEER (Lvl 5)</span>
+            </p>
+            <div style="margin-top: 25px; border: 1px dashed var(--rojo-error); padding: 10px; font-size: 0.8rem;">
+                UNAUTHORIZED ACCESS ATTEMPT LOGGED.
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
