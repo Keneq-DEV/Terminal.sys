@@ -812,7 +812,26 @@
           "https://pbs.twimg.com/media/FzRZ8caWYAAnHOT?format=jpg&name=4096x4096",
           "https://pbs.twimg.com/media/FpNfAK_WIAU7ucZ?format=jpg&name=large"
         ]
-      }
+      }, 
+
+      {
+        "id": "XHURI",
+        "link": "https://janitorai.com/characters/2bea6cda-f2d8-4b6d-80b9-2009d7f520c9_character-xhuri",
+        "img": "https://ella.janitorai.com/bot-avatars/Aevg9GjkojBpUqo65O_v_.webp?width=1200",
+        "org": "PinkOlliePop",
+        "org_link": "https://x.com/PinkOlliePop",
+        "corrupted": true,
+        "gallery": [
+          "https://pbs.twimg.com/media/HCkqGEBXcAAMsfM?format=jpg&name=large",
+          "https://pbs.twimg.com/media/HCVOZk9WMAE5ee3?format=jpg&name=large",
+          "https://pbs.twimg.com/media/HBddNcnXcAEqxMN?format=jpg&name=900x900",
+          "https://pbs.twimg.com/media/HBTieB1aIAAte2o?format=jpg&name=medium",
+          "https://pbs.twimg.com/media/HAK3zWuXkAEw60Q?format=jpg&name=small",
+          ""
+          
+        ]
+      }, 
+      
 
     ]
 
