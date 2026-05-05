@@ -4,38 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KENEQ.SYS // Terminal</title>
+
+    <!-- CARGA DE FUENTES -->
     <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+    <!-- CARGA DE SCRIPTS JS -->
+    <script src="TERMINAL.Js/VFX_ENGINE.js?v=1.1" defer></script>
+    <script src="TERMINAL.Js/TERMINAL-JS.js?v=1.4" defer></script>
+
+    <!-- CARGA DE CSS AUTOMÁTICA (Sin caché para el CSS) -->
+    <script>
+        const version = Date.now(); 
+        const cssFiles = [
+            "TERMINAL.CSS/TERMINAL-CORE.css",
+            "TERMINAL.CSS/TERMINAL-MODALS.css",
+            "TERMINAL.CSS/TERMINAL-SCANS.css",
+            "TERMINAL.CSS/TERMINAL-THEMES.css",
+            "TERMINAL.CSS/TERMINAL-ANM.css",
+            "TERMINAL.CSS/TERMINAL-MOVIL.css"
+        ];
+        cssFiles.forEach(file => {
+            let link = document.createElement("link");
+            link.rel = "stylesheet";
+            link.href = file + "?v=" + version;
+            document.head.appendChild(link);
+        });
+    </script>
 
 </head>
 
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-<meta http-equiv="Pragma" content="no-cache">
-<meta http-equiv="Expires" content="0">
-
-<link rel="stylesheet" href="TERMINAL.Css/TERMINAL-CORE.css?v=1.3">
-<!-- CAPA GRÁFICA PARA EFECTOS ESPECIALES -->
-<canvas id="vfx-canvas" style="position:fixed; top:0; left:0; width:100%; height:100%; z-index:-1; pointer-events:none;"></canvas>
-    <!-- CARGA DE SCRIPTS: El orden es vital -->
-<script src="TERMINAL.Js/VFX_ENGINE.js?v=1.1" defer></script>
-
-    <!-- 1. Cargas las fuentes primero -->
-    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
-
-
-
-    <!-- REEMPLAZA TU BLOQUE DE LINKS POR ESTE -->
-<link rel="stylesheet" href="TERMINAL.CSS/TERMINAL-CORE.css?v=1.4">
-<link rel="stylesheet" href="TERMINAL.CSS/TERMINAL-MODALS.css?v=1.4">
-<link rel="stylesheet" href="TERMINAL.CSS/TERMINAL-SCANS.css?v=1.4">
-<link rel="stylesheet" href="TERMINAL.CSS/TERMINAL-THEMES.css?v=1.4">
-<link rel="stylesheet" href="TERMINAL.CSS/TERMINAL-ANM.css?v=1.4">
-<link rel="stylesheet" href="TERMINAL.CSS/TERMINAL-MOVIL.css?v=1.4">
-
-
-<script src="TERMINAL.Js/TERMINAL-JS.js?v=1.4" defer></script>
-
 <body>
     
+    <!-- CAPA GRÁFICA PARA EFECTOS ESPECIALES -->
+    <canvas id="vfx-canvas" style="position:fixed; top:0; left:0; width:100%; height:100%; z-index:-1; pointer-events:none;"></canvas>
+
     <div class="crt-overlay"></div>
     
     <div id="theme-transition-layer" class="glitch-transition"></div>
