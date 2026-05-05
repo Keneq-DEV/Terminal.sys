@@ -4,7 +4,7 @@
         {
             "label": "Subir a GitHub (Auto)",
             "type": "shell",
-            "command": "git add . ; git commit -m \"AUTO_updt\" ; git push",
+            "command": "git pull ; git add . ; git commit -m \"AUTO_updt\" ; git push",
             "group": {
                 "kind": "build",
                 "isDefault": true
