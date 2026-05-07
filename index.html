@@ -12,9 +12,9 @@
     <script src="TERMINAL.Js/VFX_ENGINE.js?v=1.2" defer></script>
     <script src="TERMINAL.Js/TERMINAL-JS.js?v=1.5" defer></script>
 
-    <!-- CARGA DE CSS AUTOMÁTICA (Sin caché para el CSS) -->
+    <!-- CARGA DE CSS AUTOMÁTICA (con cache automática) -->
     <script>
-        const version = Date.now(); 
+        const version = `${Date.now()}-${crypto.randomUUID().split('-')}`; 
         const cssFiles = [
             "TERMINAL.CSS/TERMINAL-CORE.css",
             "TERMINAL.CSS/TERMINAL-MODALS.css",
