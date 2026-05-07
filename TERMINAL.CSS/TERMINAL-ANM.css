@@ -160,3 +160,17 @@
         90% { opacity: 1; }
         100% { top: 100%; opacity: 0; }
     }
+
+
+    .subtitle,
+    .inner-content {
+    animation: simple-flicker 3s infinite;
+    opacity: 0.8;
+    }
+
+    @keyframes simple-flicker {
+        0% { opacity: 0.8; }
+        5% { opacity: 0.4; }
+        10% { opacity: 0.8; }
+        100% { opacity: 0.8; }
+    }

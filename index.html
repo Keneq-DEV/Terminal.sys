@@ -21,7 +21,8 @@
             "TERMINAL.CSS/TERMINAL-SCANS.css",
             "TERMINAL.CSS/TERMINAL-THEMES.css",
             "TERMINAL.CSS/TERMINAL-ANM.css",
-            "TERMINAL.CSS/TERMINAL-MOVIL.css"
+            "TERMINAL.CSS/TERMINAL-MOVIL.css",
+            "TERMINAL.CSS/TERMINAL-MONITOR.css"
         ];
         cssFiles.forEach(file => {
             let link = document.createElement("link");
@@ -34,6 +35,8 @@
 </head>
 
 <body>
+
+    
     
     <!-- CAPA GRÁFICA PARA EFECTOS ESPECIALES -->
     <canvas id="vfx-canvas" style="position:fixed; top:0; left:0; width:100%; height:100%; z-index:-1; pointer-events:none;"></canvas>
@@ -335,6 +338,17 @@
         </div>
     </div>
 </div>
+
+
+<!-- MONITOR DE SEÑAL FLOTANTE (ECG) -->
+<div id="ecg-monitor" class="ecg-widget">
+    <div class="ecg-header">> SYSTEM_STATUS</div>
+    <div id="signal-text" class="ecg-status">SIGNAL: STABLE</div>
+    <canvas id="ecg-canvas" width="280" height="90"></canvas>
+</div>
+
+<!-- Capa para los pop-ups de error (Invisible al inicio) -->
+<div id="overload-overlay"></div>
 
 </body>
 </html>

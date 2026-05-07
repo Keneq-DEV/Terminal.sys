@@ -1013,4 +1013,16 @@ body.theme-alter::after {
         --glow: 0 0 10px rgba(252, 238, 10, 0.5);
     }
 
-    
+    .music-btn-error {
+    border: 1px solid var(--rojo-error) !important;
+    color: var(--rojo-error) !important;
+    background: rgba(255, 0, 0, 0.1) !important;
+    text-shadow: 0 0 8px var(--rojo-error) !important;
+    cursor: not-allowed !important; /* Cambia el puntero a señal de prohibido */
+    animation: button-glitch-red 0.2s infinite alternate;
+    }
+
+    @keyframes button-glitch-red {
+        0% { transform: translateX(0); opacity: 1; }
+        100% { transform: translateX(2px); opacity: 0.8; }
+    }

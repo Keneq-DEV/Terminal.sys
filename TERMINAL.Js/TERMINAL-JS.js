@@ -7,10 +7,6 @@ const closeSnd = document.getElementById('snd-close');
 const ambienceSnd = document.getElementById('snd-ambience');
 const sequencer = document.getElementById('terminal-sequencer');
 
-const musicTracks = [
-    
-];
-
 // ==========================================
 //    INICIALIZACIÓN (WINDOW LOAD)
 // ==========================================
@@ -586,7 +582,7 @@ const systemThemes = [
             "Tonight, Tonight, Tonight.mp3",
             "Dead Man.mp3",
             "John.mp3",
-            "Cargohigh.mp3",
+            "Cargo.mp3",
             "Cargo High.ogg"
 
 
@@ -825,9 +821,24 @@ function changeMusic(theme) {
 
 
 function toggleMusicMenu() {
+    // 1. EL FILTRO DE SEGURIDAD VA ARRIBA DEL TODO
+    // Si la pista rara está activa, bloqueamos todo inmediatamente
+    if (isRareTrackActive) {
+        if (typeof errorSnd !== 'undefined') { 
+            errorSnd.currentTime = 0; 
+            errorSnd.play(); 
+        }
+        console.warn("ACCESS_DENIED: Music control protocols are offline.");
+        return; // SALIMOS DE LA FUNCIÓN AQUÍ. No se ejecuta nada de lo de abajo.
+    }
+
+    // 2. LÓGICA NORMAL (Solo si no hay pista rara)
     if(clickSnd) { clickSnd.currentTime = 0; clickSnd.play(); }
+    
     const menu = document.getElementById('music-menu');
-    menu.classList.toggle('show');
+    if (menu) {
+        menu.classList.toggle('show');
+    }
 }
 
 // Esta función llena el menú con las canciones del tema actual
@@ -918,3 +929,168 @@ function startIdScrambler() {
 
 // Iniciar el scrambler al cargar la página
 window.addEventListener('load', startIdScrambler);
+
+// --- MONITOR MÉDICO AVANZADO: SIMULADOR QRS RESPONSIVO ---
+const _QRS_canvas = document.getElementById('ecg-canvas');
+const _QRS_ctx = _QRS_canvas.getContext('2d');
+let _QRS_analyser, _QRS_data;
+let _QRS_init = false;
+
+let _QRS_x = 0;
+let _QRS_lastY = 30;
+let _QRS_phase = "IDLE"; 
+let _QRS_step = 0;
+
+const _QRS_TEXTS = ["STABLE", "DECRYPTING", "ACTIVE_LINK", "RECEIVING", "INTERFERENCE", "UNSTABLE"];
+
+function initMedicalTerminal() {
+    if (_QRS_init) return;
+    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    _QRS_analyser = audioCtx.createAnalyser();
+    const player = document.getElementById('terminal-sequencer');
+    const source = audioCtx.createMediaElementSource(player);
+    source.connect(_QRS_analyser);
+    _QRS_analyser.connect(audioCtx.destination);
+    _QRS_analyser.fftSize = 512;
+    _QRS_data = new Uint8Array(_QRS_analyser.frequencyBinCount);
+    _QRS_init = true;
+    requestAnimationFrame(renderMedicalECG);
+}
+
+function renderMedicalECG() {
+    requestAnimationFrame(renderMedicalECG);
+    _QRS_analyser.getByteFrequencyData(_QRS_data);
+
+    // --- ANÁLISIS MULTI-BANDA ---
+    let bass = (_QRS_data[0] + _QRS_data[1] + _QRS_data[2]) / 3;   // Bajos (0-50Hz)
+    let mids = (_QRS_data[10] + _QRS_data[20] + _QRS_data[30]) / 3; // Medios (400-1000Hz)
+    let highs = (_QRS_data[100] + _QRS_data[150]) / 2;             // Agudos (4000Hz+)
+    let avg = (bass + mids + highs) / 3;
+
+    // Disparo del latido basado en Bajos
+    if (bass > 185 && _QRS_phase === "IDLE") {
+        _QRS_phase = "P_WAVE";
+        _QRS_step = 0;
+    }
+
+    let targetY = 30;
+    // Variación aleatoria para que cada parte del latido sea distinta
+    let rnd = () => 0.8 + Math.random() * 0.6; 
+
+    // MÁQUINA DE ESTADOS FISIOLÓGICA (QRS)
+    switch(_QRS_phase) {
+        case "P_WAVE": 
+            targetY = 30 - (Math.sin(_QRS_step * 0.5) * (4 * rnd()));
+            _QRS_step++;
+            if(_QRS_step > 6) { _QRS_phase = "PR_SEGMENT"; _QRS_step = 0; }
+            break;
+        case "PR_SEGMENT": 
+            targetY = 30 + (Math.random() * (mids/50)); // El ruido de medios afecta aquí
+            _QRS_step++;
+            if(_QRS_step > 4) { _QRS_phase = "Q_WAVE"; _QRS_step = 0; }
+            break;
+        case "Q_WAVE": 
+            targetY = 30 + (6 * rnd());
+            _QRS_phase = "R_SPIKE";
+            break;
+        case "R_SPIKE": // EL PICO MASIVO
+            targetY = 30 - ( (bass/5) * rnd() + 20 ); // Responsivo al bajo real
+            _QRS_phase = "S_WAVE";
+            break;
+        case "S_WAVE": 
+            targetY = 30 + (20 * rnd());
+            _QRS_phase = "T_WAVE";
+            _QRS_step = 0;
+            break;
+        case "T_WAVE": 
+            targetY = 30 - (Math.sin(_QRS_step * 0.4) * (8 * rnd()));
+            _QRS_step++;
+            if(_QRS_step > 10) { _QRS_phase = "IDLE"; _QRS_step = 0; }
+            break;
+        default: // IDLE (Responsivo a Medios y Agudos)
+            // La línea base vibra según la intensidad de la música en general
+            targetY = 30 + (Math.random() * (avg / 20) - (avg / 40));
+            break;
+    }
+
+    // --- ACTUALIZACIÓN DE TEXTO SIGNAL ---
+    const statusText = document.getElementById('signal-text');
+    if (avg > 90) {
+        document.body.classList.add('theme-overload');
+        if (statusText) statusText.innerText = "SIGNAL: OVERLOAD";
+        if (Math.random() > 0.96) spawnGlitchPopup();
+    } else {
+        document.body.classList.remove('theme-overload');
+        if (statusText && Math.random() > 0.98) {
+            statusText.innerText = "SIGNAL: " + _QRS_TEXTS[Math.floor(Math.random() * _QRS_TEXTS.length)];
+        }
+    }
+
+    // Limpiamos solo un pequeño rectángulo delante de la línea para el efecto de rastro
+    _QRS_ctx.clearRect(_QRS_x, 0, 12, 60); 
+
+    _QRS_ctx.beginPath();
+    _QRS_ctx.strokeStyle = getComputedStyle(document.body).getPropertyValue('--verde-base');
+    _QRS_ctx.lineWidth = 1.8;
+    _QRS_ctx.shadowBlur = 10;
+    _QRS_ctx.shadowColor = _QRS_ctx.strokeStyle;
+    
+    _QRS_ctx.moveTo(_QRS_x - 2, _QRS_lastY);
+    _QRS_ctx.lineTo(_QRS_x, targetY);
+    _QRS_ctx.stroke();
+
+    _QRS_lastY = targetY;
+    _QRS_x += 2;
+    if (_QRS_x > _QRS_canvas.width) _QRS_x = 0;
+}
+
+function spawnGlitchPopup() {
+    const p = document.createElement('div');
+    p.className = 'glitch-popup';
+    p.innerText = "!! OVERLOAD !!";
+    p.style.top = Math.random() * 80 + "%";
+    p.style.left = Math.random() * 80 + "%";
+    document.body.appendChild(p);
+    setTimeout(() => p.remove(), 150);
+}
+
+document.addEventListener('click', initMedicalTerminal, { once: true });
+
+const rare_tracks = [
+    "TERMINAL.Audio/Rare/Hail Mary.mp3",
+    
+];
+
+// 2. Probabilidad de que suene una pista rara (0.1 = 10%)
+const RARE_TRACK_CHANCE = 0.1;
+
+let isRareTrackActive = false; 
+
+// 3. Modifica la función changeMusic para que incluya la lógica
+function changeMusic(theme) {
+    if (isRareTrackActive) return; // Ya está bloqueado
+
+    let path = "";
+    const musicBtn = document.getElementById('music-btn'); 
+
+    if (Math.random() < RARE_TRACK_CHANCE && rare_tracks.length > 0) {
+        const randomRare = Math.floor(Math.random() * rare_tracks.length);
+        path = rare_tracks[randomRare];
+        isRareTrackActive = true; 
+
+        // --- BLOQUEO VISUAL DEL BOTÓN ---
+        if (musicBtn) {
+            musicBtn.innerText = "[ ERROR: TRACK_LOCKED ]";
+            musicBtn.classList.add('music-btn-error');
+        }
+        console.log("!!! SYSTEM_ERROR: AUDIO_CORE_SEIZED_BY_EXTERNAL_SIGNAL !!!");
+    } else {
+        const randomTrack = theme.tracks[Math.floor(Math.random() * theme.tracks.length)];
+        path = `TERMINAL.Audio/${theme.folder}/${randomTrack}`;
+    }
+
+    
+    sequencer.src = path;
+    sequencer.load();
+    sequencer.play().catch(e => console.log("Audio ready."));
+}
