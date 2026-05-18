@@ -14,8 +14,9 @@
 
     <!-- CARGA DE CSS AUTOMÁTICA (con cache automática) -->
     <script>
-    // Usamos replace para evitar las comas que rompen la carga en GitHub
-    const version = `${Date.now()}-${crypto.randomUUID().replace(/-/g, '')}`; 
+    // Versión simple sin caracteres raros para evitar bloqueos de URL
+    const version = Date.now() + Math.random().toString(36).substring(7); 
+    
     const cssFiles = [
         "TERMINAL.CSS/TERMINAL-CORE.css",
         "TERMINAL.CSS/TERMINAL-MODALS.css",
@@ -25,10 +26,17 @@
         "TERMINAL.CSS/TERMINAL-MOVIL.css",
         "TERMINAL.CSS/TERMINAL-MONITOR.css"
     ];
+
     cssFiles.forEach(file => {
-        let link = document.createElement("link");
+        const link = document.createElement("link");
         link.rel = "stylesheet";
+        link.type = "text/css"; // Obligatorio para servidores estrictos
         link.href = file + "?v=" + version;
+
+        // Detector de errores para saber CUÁL falla
+        link.onerror = () => console.error("FALLO_CRITICO: No se pudo cargar " + file);
+        link.onload = () => console.log("CARGADO: " + file);
+
         document.head.appendChild(link);
     });
 </script>
