@@ -62,7 +62,20 @@
        "org_link": "https://x.com/MGecko117",
        "desc": "Asset Huckleberry is a high-yield Chthonian operative, classified as a Demonic Hellhound Revenant under Archon-Sarkic-Exousia protocols. She serves as the Syndicate’s premier Myrmidon, specializing in high-velocity combat through advanced paraphysical time-manipulation. Characterized by profound existential ennui and functional psychopathy, she treats global theaters as predictable stages for theatrical annihilation. Utilizing her 'Abaddon' weapon system and predatory senses, she operates with a lethal flair that only dissipates in the presence of Asset Apollyon or her Creator. Her devotion is absolute, manifesting as a possessive, time-altering guardianship over the Syndicate's interests.",
        "tags": ["CHTHONIAN", "HELLHOUND-REVENANT", "TIME-MANIPULATOR", "MYRMIDON", "SARKIC-EXOUSIA"]
+    },
+
+    {
+       "id": "EZRAEL", 
+       "link": "https://janitorai.com/characters/e1433be3-b0f8-40ae-9901-0da03a57820c_character-ezrael",
+       "img": "https://ella.janitorai.com/bot-avatars/tfbF6TXYcdMyGSNrG_hLZ.webp?width=1200",
+       "corrupted": true,
+       "org": "Mgecko117",
+       "org_link": "https://x.com/MGecko117",
+       "desc": "",
+       "tags": [""]
     }
+
+    
 
   ],
   "view-scp": [
@@ -264,15 +277,49 @@
         },
 
         {
-            "id": "KIRA",
-            "link": "https://janitorai.com/characters/a4dad1b7-a116-4076-aec5-8034ade90eaa_character-kira",
-            "img": "https://ella.janitorai.com/bot-avatars/bJsb1bMW59VXymoCZ4xDp.webp?width=400",
-            "corrupted": true,
-            "org": "Hynbrid-Kira",
-            "org_link": "https://www.deviantart.com/hybrid-kira/gallery",
-            "desc": "",
-            "tags": []
-          }
+          "id": "KIRA",
+          "link": "https://janitorai.com/characters/a4dad1b7-a116-4076-aec5-8034ade90eaa_character-kira",
+          "img": "https://ella.janitorai.com/bot-avatars/bJsb1bMW59VXymoCZ4xDp.webp?width=400",
+          "corrupted": true,
+          "org": "Hynbrid-Kira",
+          "org_link": "https://www.deviantart.com/hybrid-kira/gallery",
+          "desc": "",
+          "tags": []
+        },
+
+        {
+          "id": "DAHLIA",
+          "link": "https://janitorai.com/characters/8c2ccc31-0cfd-4f43-91c0-3fc7e1a366e8_character-dahlia",
+          "img": "https://ella.janitorai.com/bot-avatars/GcpMvGHLUOk1oJPPgkSDX.webp?width=1200",
+          "corrupted": true,
+          "org": "Keneq.sys",
+          "org_link": "https://janitorai.com/profiles/545c2fad-bf1f-4a6c-af5f-6dc4c705d448_profile-of-keneq-sys",
+          "desc": "",
+          "tags": []
+        },
+
+        {
+          "id": "ZENDA",
+          "link": "https://janitorai.com/characters/d64c2184-d1f0-4180-bdbe-587082e0e378_character-zenda",
+          "img": "https://ella.janitorai.com/bot-avatars/woZq2qadQngMrRko8zHOx.webp?width=1200",
+          "corrupted": true,
+          "org": "Hynbrid-Kira",
+          "org_link": "https://www.deviantart.com/hybrid-kira/gallery",
+          "desc": "",
+          "tags": []
+        },
+
+        {
+          "id": "IRIS",
+          "link": "https://janitorai.com/characters/dd2a8bb0-b819-4194-876d-8fad70d6b12f_character-iris",
+          "img": "https://ella.janitorai.com/bot-avatars/icrAFQzMreTJtmM3K-lPY.webp?width=1200",
+          "corrupted": true,
+          "org": "Hynbrid-Kira",
+          "org_link": "https://www.deviantart.com/hybrid-kira/gallery",
+          "desc": "",
+          "tags": []
+        }
+
 
         
     ],
