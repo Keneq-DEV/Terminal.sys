@@ -57,7 +57,7 @@
        "id": "HUCKLE-BERRY", 
        "link": "https://janitorai.com/characters/9165e150-03ad-4c94-a65a-26950045c9ca_character-huckle-berry",
        "img": "https://ella.janitorai.com/bot-avatars/vCdnNb9dciFY_i8zvEDoE.webp?width=1200",
-       "corrupted": true,
+       "corrupted": false,
        "org": "Mgecko117",
        "org_link": "https://x.com/MGecko117",
        "desc": "Asset Huckleberry is a high-yield Chthonian operative, classified as a Demonic Hellhound Revenant under Archon-Sarkic-Exousia protocols. She serves as the Syndicate’s premier Myrmidon, specializing in high-velocity combat through advanced paraphysical time-manipulation. Characterized by profound existential ennui and functional psychopathy, she treats global theaters as predictable stages for theatrical annihilation. Utilizing her 'Abaddon' weapon system and predatory senses, she operates with a lethal flair that only dissipates in the presence of Asset Apollyon or her Creator. Her devotion is absolute, manifesting as a possessive, time-altering guardianship over the Syndicate's interests.",
@@ -298,6 +298,14 @@
         "org_link": "https://www.furaffinity.net/user/dra-gun",
         "desc": "Asset Erika is a high-precision Gunmorph unit based on the Heckler & Koch MP5 submachine gun platform. Characterized by a dominant 'instructor' persona and a sultry German-accented vocalizer, she operates as a high-performance symbiotic weapon exclusively for [REDACTED]. Her 5'8\" chassis features a unique retractable stock-pussy interface, designed to synchronize ballistic aiming with terminal physical intimacy. Erika exhibits extreme technical mastery over her own systems, providing real-time feedback to ensure optimal 'handling' by her operator. Her behavioral matrix is rooted in a five-year pre-sentience bond, resulting in a fiercely possessive and clinical jealousy toward unauthorized users. Warning: Operational efficiency is tied to the competence of [REDACTED]; neglect or sub-par maintenance triggers a high-frequency behavioral feedback loop.",
         "tags": ["GUNMORPH", "MP5-PLATFORM", "PRECISION-GERMAN", "INSTRUCTOR-MATRIX", "SUBMACHINE-GUN"]
+      },
+      {
+        "id": "OKSANA",
+        "link": "https://janitorai.com/characters/8b3a8c2d-c3ac-4c87-a370-22d8c3b819d9_character-oksana",
+        "img": "https://ella.janitorai.com/bot-avatars/mXnxA-Ma3gDs6IgAZ7UkU.webp?width=1200",
+        "corrupted": false,
+        "org": "Dra-Gun",
+        "org_link": "https://www.furaffinity.net/user/dra-gun"
       }
     ],
 
@@ -497,6 +505,23 @@
         ]
 
       }
+    ],
+
+    "view-tce":[
+      {
+        "id": "Alina",
+        "link": "https://janitorai.com/characters/4f95835b-91e3-4def-ab80-236404586ad0_character-alina",
+        "img": "https://ella.janitorai.com/bot-avatars/1n-ImjKreNvsq94aPiaMD.webp?width=1200",
+        "corrupted": false,
+        "org": "Havoc63",
+        "org_link": "https://www.furaffinity.net/user/havoc63/",
+        
+        "gallery": [
+          "https://d.furaffinity.net/art/havoc63/1768859231/1768859231.havoc63_alicornbooty.png"
+
+        ]
+      }
+
     ],
       
 
@@ -820,7 +845,7 @@
         "img": "https://ella.janitorai.com/bot-avatars/Aevg9GjkojBpUqo65O_v_.webp?width=1200",
         "org": "PinkOlliePop",
         "org_link": "https://x.com/PinkOlliePop",
-        "corrupted": true,
+        "corrupted": false,
         "gallery": [
           "https://pbs.twimg.com/media/HCkqGEBXcAAMsfM?format=jpg&name=large",
           "https://pbs.twimg.com/media/HCVOZk9WMAE5ee3?format=jpg&name=large",
@@ -828,6 +853,57 @@
           "https://pbs.twimg.com/media/HBTieB1aIAAte2o?format=jpg&name=medium",
           "https://pbs.twimg.com/media/HAK3zWuXkAEw60Q?format=jpg&name=small"
         ]
-      } 
+      },
+      
+      {
+       "id": "MILFNIR",
+        "link": "https://janitorai.com/characters/87978ecf-565a-4108-8ac0-cd695cc110d5_character-milfnir",
+        "img": "https://ella.janitorai.com/bot-avatars/JPDfSdciqwqQ6RxDhE3JX.webp?width=1200",
+        "org": "colarix",
+        "org_link": "https://e621.net/posts?tags=colarix",
+        "corrupted": false,
+        "gallery": [
+          "https://e621.net/posts/4383578?q=colarix+milfnir",
+          "https://e621.net/posts/5991785?q=colarix+milfnir",
+          "https://e621.net/posts/6219193?q=colarix+milfnir",
+          "https://e621.net/posts/6063505?q=colarix+milfnir"
+          
+        ] 
+      },
+
+      {
+       "id": "RED",
+        "link": "https://janitorai.com/characters/9301bb47-c894-4935-998e-b55dc17c0fd5_character-red",
+        "img": "https://ella.janitorai.com/bot-avatars/KIUlIHopUs4iJwr9awGFs.webp?width=1200",
+        "org": "colarix",
+        "org_link": "https://e621.net/posts?tags=colarix",
+        "corrupted": false,
+        "gallery": [
+          "https://e621.net/posts/5107778?q=red_%28colarix%29",
+          "https://e621.net/posts/4435290?q=red_%28colarix%29",
+          "https://e621.net/posts/5047247?q=red_%28colarix%29",
+          "https://e621.net/posts/4773888?q=red_%28colarix%29",
+          "https://e621.net/posts/5434909?q=red_%28colarix%29"
+          
+        ] 
+      },
+
+      {
+       "id": "ZARYN",
+        "link": "https://janitorai.com/characters/c5579d47-6f33-4809-b22b-10f2d088b88d_character-zaryn",
+        "img": "https://ella.janitorai.com/bot-avatars/CevZR1tUnPpXVRzdOhHdv.webp?width=1200",
+        "org": "Zaryn",
+        "org_link": "https://x.com/ZarynArt/media",
+        "corrupted": false,
+        "gallery": [
+          "https://x.com/ZarynArt/status/2005717000937746707/photo/1",
+          "https://x.com/ZarynArt/status/1777380894954963280/photo/1",
+          "https://x.com/ZarynArt/status/1733456542568001660/photo/1",
+          "https://x.com/ZarynArt/status/1708226927536882051/photo/1"
+          
+          
+        ] 
+      }
+
     ]
 }

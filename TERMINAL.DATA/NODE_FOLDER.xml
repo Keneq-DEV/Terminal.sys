@@ -1,34 +1,36 @@
 <system-terminal>
     <quick-access>
         <node id="view-root" label="Home" icon="⬣" />
-        <node id="view-request" label="REQUESTS_DATA" icon="📂" />
+        <node id="view-request" label="REQUESTS" icon="📂" />
     </quick-access>
 
     <sidebar>
-        <node id="view-scp" label="SCP_DATA" icon="✇" />
-        <node id="view-uncat" label="UNCAT_DATA" icon="☄" />
-        <node id="view-dogknights" label="DOGKNIGHTS_DATA" icon="☵" />
-        <node id="view-tdg" label="DRACONIC_GRIMORE_DATA" icon="Δ" />
-        <node id="view-tdk" label="DINOSAUR_KINDOM_DATA" icon="📂" />
-        <node id="view-tsc" label="STOCKHOLM_COMPENDIUM_DATA" icon="✠" />
-        <node id="view-httyd" label="HTTYD_DATA" icon="♀" />
-        <node id="view-pk" label="PROTOCOL_K_DATA" icon="※" />
-        <node id="view-tcs" label="CHROME_SUTRA_DATA" icon="⌘" />
-        <node id="view-tss" label="STYGIAN_SYNDICATE_DATA" icon="☦" />
-        <node id="view-at" label="AETERNA_DATA" icon="⌥" />
+        <node id="view-scp" label="SCP" icon="✇" />
+        <node id="view-uncat" label="UNCAT" icon="☄" />
+        <node id="view-dogknights" label="DOGKNIGHTS" icon="☵" />
+        <node id="view-tdg" label="DRACONIC_GRIMORE" icon="Δ" />
+        <node id="view-tdk" label="DINOSAUR_KINDOM" icon="📂" />
+        <node id="view-tsc" label="STOCKHOLM_COMPENDIUM" icon="✠" />
+        <node id="view-httyd" label="HTTYD" icon="♀" />
+        <node id="view-pk" label="PROTOCOL_K" icon="※" />
+        <node id="view-tcs" label="CHROME_SUTRA" icon="⌘" />
+        <node id="view-tss" label="STYGIAN_SYNDICATE" icon="☦" />
+        <node id="view-at" label="AETERNA" icon="⌥" />
+        <node id="view-tce" label="THE_CATALYST_EPOCH" icon="⚙" />
     </sidebar>
 
     <folder-list>
-        <node id="view-scp" label="SCP_DATA" />
-        <node id="view-uncat" label="UNCAT_DATA" />
-        <node id="view-dogknights" label="DOGKNIGHTS_DATA" />
-        <node id="view-tdg" label="DRACONIC_GRIMORE_DATA" />
-        <node id="view-tdk" label="DINOSAUR_KINDOM_DATA" />
-        <node id="view-tsc" label="STOCKHOLM_COMPENDIUM_DATA" />
-        <node id="view-httyd" label="HTTYD_DATA" />
-        <node id="view-pk" label="PROTOCOL_K_DATA" />
-        <node id="view-tcs" label="CHROME_SUTRA_DATA" />
-        <node id="view-tss" label="STYGIAN_SYNDICATE_DATA" />
-        <node id="view-at" label="AETERNA_DATA" />
+        <node id="view-scp" label="SCP" />
+        <node id="view-uncat" label="UNCAT" />
+        <node id="view-dogknights" label="DOGKNIGHTS" />
+        <node id="view-tdg" label="DRACONIC_GRIMORE" />
+        <node id="view-tdk" label="DINOSAUR_KINDOM" />
+        <node id="view-tsc" label="STOCKHOLM_COMPENDIUM" />
+        <node id="view-httyd" label="HTTYD" />
+        <node id="view-pk" label="PROTOCOL_K" />
+        <node id="view-tcs" label="CHROME_SUTRA" />
+        <node id="view-tss" label="STYGIAN_SYNDICATE" />
+        <node id="view-at" label="AETERNA" />
+        <node id="view-tce" label="THE_CATALYST_EPOCH" />
     </folder-list>
 </system-terminal>
