@@ -8,6 +8,7 @@ const launchSnd = document.getElementById('snd-launch');
 const ambienceSnd = document.getElementById('snd-ambience');
 const sequencer = document.getElementById('terminal-sequencer');
 
+const musicTracks = [];
 
 
 // ==========================================
