@@ -14,7 +14,7 @@
 
     <!-- CARGA DE CSS AUTOMÁTICA (con cache automática) -->
     <script>
-    // Usamos .replace para quitar los guiones y evitar que se generen comas que rompan la URL
+    // Usamos replace para evitar las comas que rompen la carga en GitHub
     const version = `${Date.now()}-${crypto.randomUUID().replace(/-/g, '')}`; 
     const cssFiles = [
         "TERMINAL.CSS/TERMINAL-CORE.css",
@@ -32,7 +32,6 @@
         document.head.appendChild(link);
     });
 </script>
-
 </head>
 
 <body>
