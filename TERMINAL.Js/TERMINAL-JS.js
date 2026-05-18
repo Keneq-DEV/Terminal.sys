@@ -4,8 +4,11 @@
 const clickSnd = document.getElementById('snd-click');
 const errorSnd = document.getElementById('snd-error');
 const closeSnd = document.getElementById('snd-close');
+const launchSnd = document.getElementById('snd-launch');
 const ambienceSnd = document.getElementById('snd-ambience');
 const sequencer = document.getElementById('terminal-sequencer');
+
+
 
 // ==========================================
 //    INICIALIZACIÓN (WINDOW LOAD)
@@ -143,12 +146,21 @@ async function openFolderContent(folderId) {
 
                     botsList.forEach(bot => {
                         let cardHTML = '';
+                        // --- COPIA Y REEMPLAZA ESTA PARTE EN TU BUCLE DE CARTAS ---
                         const corruptedClass = bot.corrupted ? 'corrupted' : '';
+
+                        // Codificamos de forma segura para no romper el HTML
+                        const safeLink = encodeURIComponent(bot.link || '');
+                        const safeDesc = encodeURIComponent(bot.desc || 'NO_DATA_AVAILABLE');
+
+                        // Usamos atributos de datos (data-*) en lugar de meter el texto en el paréntesis
                         const onClickAction = bot.corrupted 
                             ? `onclick="openModal('modal-error'); if(typeof errorSnd !== 'undefined'){errorSnd.currentTime=0;errorSnd.play();} return false;"` 
-                            : '';
-                        const hrefValue = bot.corrupted ? 'javascript:void(0)' : bot.link;
-                        const targetValue = bot.corrupted ? '_self' : '_blank';
+                            : `data-botid="${bot.id}" data-botlink="${safeLink}" data-botdesc="${safeDesc}" onclick="prepareLaunch(this); return false;"`;
+
+                        const hrefValue = 'javascript:void(0)'; 
+                        const targetValue = '_self';
+                        // ---------------------------------------------------------
 
                         if (isCyber) {
                             cardHTML = `
@@ -275,7 +287,7 @@ async function openFolderContent(folderId) {
         const pathName = folderId.replace('view-', '').toUpperCase();
         const pathElement = document.getElementById('current-path');
         if (pathElement) {
-            pathElement.innerText = `This PC > Local Disk (C:) > Units > ${folderId === 'view-root' ? '' : pathName}`;
+            pathElement.innerText = `This PC > Local Disk (C:) > node > ${folderId === 'view-root' ? '' : pathName}`;
         }
 
         setTimeout(() => {
@@ -611,6 +623,7 @@ const systemThemes = [
 ];
 
 let currentThemeIndex = 0;
+let systemIsStabilized = false; // El seguro para detener el modo rojo
 
 // --- INICIALIZACIÓN ---
 window.onload = function() {
@@ -994,7 +1007,7 @@ function renderMedicalECG() {
             _QRS_phase = "R_SPIKE";
             break;
         case "R_SPIKE": // EL PICO MASIVO
-            targetY = 30 - ( (bass/5) * rnd() + 20 ); // Responsivo al bajo real
+            targetY = 30 - ( (bass/5) * rnd() + 50 ); // Responsivo al bajo real
             _QRS_phase = "S_WAVE";
             break;
         case "S_WAVE": 
@@ -1015,16 +1028,26 @@ function renderMedicalECG() {
 
     // --- ACTUALIZACIÓN DE TEXTO SIGNAL ---
     const statusText = document.getElementById('signal-text');
-    if (avg > 90) {
-        document.body.classList.add('theme-overload');
-        if (statusText) statusText.innerText = "SIGNAL: OVERLOAD";
-        if (Math.random() > 0.96) spawnGlitchPopup();
-    } else {
+    const btnStabilize = document.getElementById('btn-stabilize');
+
+    if (avg > 90 && !isStabilized) {
+    document.body.classList.add('theme-overload');
+    if (btnStabilize) btnStabilize.style.display = 'inline-block'; 
+    if (statusText) statusText.innerText = "SIGNAL: OVERLOAD";
+    if (Math.random() > 0.96) spawnGlitchPopup();
+} else {
+        // Si la música baja mucho, permitimos que el sistema se pueda volver a sobrecargar después
+    if (avg < 70) isStabilized = false; 
+
+    if (!isStabilized) {
         document.body.classList.remove('theme-overload');
+        if (btnStabilize) btnStabilize.style.display = 'none';
         if (statusText && Math.random() > 0.98) {
             statusText.innerText = "SIGNAL: " + _QRS_TEXTS[Math.floor(Math.random() * _QRS_TEXTS.length)];
         }
     }
+}
+
 
     // Limpiamos solo un pequeño rectángulo delante de la línea para el efecto de rastro
     _QRS_ctx.clearRect(_QRS_x, 0, 12, 60); 
@@ -1093,4 +1116,139 @@ function changeMusic(theme) {
     sequencer.src = path;
     sequencer.load();
     sequencer.play().catch(e => console.log("Audio ready."));
+}
+
+async function loadSystemNodes() {
+    try {
+        const response = await fetch(`TERMINAL.DATA/NODE_FOLDER.xml?t=${Date.now()}`);
+        const xmlText = await response.text();
+        const xmlDoc = new DOMParser().parseFromString(xmlText, "text/xml");
+
+        // 1. Rellenar Quick Access
+        const qaContainer = document.getElementById('inject-quick-access');
+        if (qaContainer) {
+            qaContainer.innerHTML = '';
+            xmlDoc.querySelectorAll('quick-access node').forEach(node => {
+                const id = node.getAttribute('id');
+                const label = node.getAttribute('label');
+                const icon = node.getAttribute('icon');
+                qaContainer.innerHTML += `<div class="side-item" onclick="openFolderContent('${id}')">${icon} ${label}</div>`;
+            });
+        }
+
+        // 2. Rellenar Sidebar (Unit Categories)
+        const sideContainer = document.getElementById('inject-sidebar-categories');
+        if (sideContainer) {
+            sideContainer.innerHTML = '';
+            xmlDoc.querySelectorAll('sidebar node').forEach(node => {
+                const id = node.getAttribute('id');
+                const label = node.getAttribute('label');
+                const icon = node.getAttribute('icon');
+                sideContainer.innerHTML += `<div class="side-item" onclick="openFolderContent('${id}')">${icon} ${label}</div>`;
+            });
+        }
+
+        // 3. Rellenar el Grid Principal (Iconos de carpetas)
+        const gridContainer = document.getElementById('inject-folder-grid');
+        if (gridContainer) {
+            gridContainer.innerHTML = '';
+            xmlDoc.querySelectorAll('folder-list node').forEach(node => {
+                const id = node.getAttribute('id');
+                const label = node.getAttribute('label');
+                
+                gridContainer.innerHTML += `
+                    <div class="folder-wrapper" onclick="openFolderContent('${id}')">
+                        <div class="win11-folder">
+                            <div class="folder-back"></div>
+                            <div class="folder-front"></div>
+                        </div>
+                        <span class="folder-name">${label}</span>
+                    </div>`;
+            });
+        }
+    } catch (e) {
+        console.error("Error procesando NODE_FOLDER.xml:", e);
+    }
+}
+
+window.addEventListener('load', () => {
+    // ... tu código anterior ...
+    loadSystemNodes(); // <--- Activa la carga del XML
+});
+
+function prepareLaunch(element) { 
+    if (clickSnd) { clickSnd.currentTime = 0; clickSnd.play(); }
+
+    // 1. Extraemos los datos ocultos del botón que clickeaste
+    const id = element.getAttribute('data-botid');
+    const encodedLink = element.getAttribute('data-botlink');
+    const encodedDesc = element.getAttribute('data-botdesc');
+
+    // 2. Capturamos los datos técnicos (ID_HEX, CORE...)
+    const card = element.closest('.unit-card-wrapper');
+    let techData = "TECH_DATA_NOT_FOUND";
+    const techElement = card.querySelector('.unit-desc');
+    if (techElement) techData = techElement.innerText;
+
+    // 3. Decodificamos el Link y el Lore
+    const realLink = decodeURIComponent(encodedLink);
+    const realDesc = decodeURIComponent(encodedDesc);
+
+    // 4. Rellenamos la ventana
+    document.getElementById('launch-name').innerText = id;
+    document.getElementById('launch-tech').innerText = techData;
+    document.getElementById('launch-desc').innerText = realDesc;
+
+    // 5. Preparamos el botón LAUNCH
+    const btn = document.getElementById('btn-execute-launch');
+    btn.onclick = () => executeLaunch(realLink);
+    btn.innerText = "[ LAUNCH_SEQUENCE ]"; 
+
+    // 6. Abrimos la ventana
+    openModal('modal-launch');
+}
+
+function executeLaunch(targetUrl) {
+    if (launchSnd) { launchSnd.currentTime = 0; launchSnd.play(); }
+
+    // Iniciamos temblor y apagado
+    document.body.classList.add('launching-sequence');
+    
+    // Cambiamos el botón a rojo
+    const btn = document.getElementById('btn-execute-launch');
+    btn.innerText = ">> OVERRIDING_SYSTEM...";
+
+    // Esperamos 2.5s (lo que dura la animación CSS) y abrimos Janitor
+    setTimeout(() => {
+        window.open(targetUrl, '_blank');
+
+        // Restauramos el terminal por si el usuario regresa
+        document.body.classList.remove('launching-sequence');
+        closeModal('modal-launch');
+    }, 2500);
+}
+
+// 2. ESTABILIZAR (Limpieza total)
+function stabilizeSystem() {
+    if (launchSnd) { launchSnd.currentTime = 0; launchSnd.play(); }
+
+    // 1. BLOQUEAMOS el bucle del ECG para que no vuelva a ponerlo rojo
+    isStabilized = true;
+
+    // 2. Limpieza inmediata
+    document.body.classList.remove('theme-overload');
+    
+    const btn = document.getElementById('btn-stabilize');
+    if (btn) btn.style.display = 'none';
+
+    const statusText = document.getElementById('signal-text');
+    if (statusText) statusText.innerText = "SIGNAL: STABILIZED";
+
+    // 3. Limpiar pop-ups y cerrar modales
+    const overlay = document.getElementById('overload-overlay');
+    if (overlay) {
+        overlay.innerHTML = '';
+        overlay.style.display = 'none';
+    }
+    document.querySelectorAll('.modal').forEach(m => m.style.display = 'none');
 }

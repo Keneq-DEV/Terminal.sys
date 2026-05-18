@@ -174,3 +174,33 @@
         10% { opacity: 0.8; }
         100% { opacity: 0.8; }
     }
+
+    /* Animación de Lanzamiento */
+    .launching-sequence {
+        animation: heavy-engine-launch 2.5s cubic-bezier(0.85, 0, 0.15, 1) forwards, fade-to-black 2.5s forwards;
+        pointer-events: none;
+        transform-origin: center;
+    }
+
+    @keyframes heavy-engine-launch {
+    /* 0-15%: CARGA Y TENSIÓN (La máquina se prepara, moviéndose ligeramente hacia arriba) */
+    0%   { transform: translateY(0) scaleY(1); opacity: 1; }
+    12%  { transform: translateY(-18px) scaleY(1.02); } /* Tensión máxima del pistón */
+
+    /* 15-25%: LIBERACIÓN (El momento del impacto del sonido, caída seca inicial) */
+    18%  { transform: translateY(50px) scaleY(0.98); } /* Golpe seco hacia abajo */
+    25%  { transform: translateY(120px) scaleY(1.1); }  /* Empieza la aceleración */
+
+    /* 25-60%: ACELERACIÓN LINEAL (Inercia pura, sin vibraciones) */
+    45%  { transform: translateY(500px) scaleY(1.4); opacity: 0.9; }
+    
+    /* 60-100%: EYECCIÓN Y ESTIRAMIENTO (Efecto de velocidad por deformación, no por blur) */
+    75%  { transform: translateY(1200px) scaleY(2.5); opacity: 0.5; }
+    100% { transform: translateY(2500px) scaleY(4); opacity: 0; } /* Desaparece por velocidad */
+}
+
+    @keyframes fade-to-black {
+        0% { filter: brightness(1) contrast(1); }
+        80% { filter: brightness(0.2) contrast(1.5); }
+        100% { filter: brightness(0) contrast(2); opacity: 0; }
+    }

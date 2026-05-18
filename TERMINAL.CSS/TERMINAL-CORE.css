@@ -209,6 +209,7 @@
             height: 100% !important; 
             max-height: 100% !important; 
             
+            
             display: flex !important;
             flex-direction: column !important;
             padding: 20px 5px !important;
@@ -690,3 +691,4 @@
     /* Este filtro elimina la sensación de "dibujo" y lo vuelve "señal" */
     filter: contrast(1.8) brightness(1.2) saturate(1.5);
 }
+
