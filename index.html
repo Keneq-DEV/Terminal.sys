@@ -14,24 +14,24 @@
 
     <!-- CARGA DE CSS AUTOMÁTICA (con cache automática) -->
     <script>
-        const version = `${Date.now()}-${crypto.randomUUID().split('-')}`; 
-        const cssFiles = [
-            "TERMINAL.CSS/TERMINAL-CORE.css",
-            "TERMINAL.CSS/TERMINAL-MODALS.css",
-            "TERMINAL.CSS/TERMINAL-SCANS.css",
-            "TERMINAL.CSS/TERMINAL-THEMES.css",
-            "TERMINAL.CSS/TERMINAL-ANM.css",
-            "TERMINAL.CSS/TERMINAL-MOVIL.css",
-            "TERMINAL.CSS/TERMINAL-MONITOR.css"
-            
-        ];
-        cssFiles.forEach(file => {
-            let link = document.createElement("link");
-            link.rel = "stylesheet";
-            link.href = file + "?v=" + version;
-            document.head.appendChild(link);
-        });
-    </script>
+    // Usamos .replace para quitar los guiones y evitar que se generen comas que rompan la URL
+    const version = `${Date.now()}-${crypto.randomUUID().replace(/-/g, '')}`; 
+    const cssFiles = [
+        "TERMINAL.CSS/TERMINAL-CORE.css",
+        "TERMINAL.CSS/TERMINAL-MODALS.css",
+        "TERMINAL.CSS/TERMINAL-SCANS.css",
+        "TERMINAL.CSS/TERMINAL-THEMES.css",
+        "TERMINAL.CSS/TERMINAL-ANM.css",
+        "TERMINAL.CSS/TERMINAL-MOVIL.css",
+        "TERMINAL.CSS/TERMINAL-MONITOR.css"
+    ];
+    cssFiles.forEach(file => {
+        let link = document.createElement("link");
+        link.rel = "stylesheet";
+        link.href = file + "?v=" + version;
+        document.head.appendChild(link);
+    });
+</script>
 
 </head>
 
