@@ -1,7 +1,7 @@
 <system-terminal>
     <quick-access>
         <node id="view-root" label="Home" icon="⬣" />
-        <node id="view-request" label="REQUESTS" icon="📂" />
+        <node id="view-request" label="REQUESTS" icon="✉️" />
     </quick-access>
 
     <sidebar>
