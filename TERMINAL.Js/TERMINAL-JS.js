@@ -615,7 +615,11 @@ const systemThemes = [
             "Dead Man.mp3",
             "John.mp3",
             "Cargo.mp3",
-            "Cargo High.ogg"
+            "Cargo High.ogg",
+            "Mule.mp3",
+            "Porter Syndrome.mp3",
+            "Decentralized by Nature.mp3",
+            "Demens.mp3"
 
 
         ]
