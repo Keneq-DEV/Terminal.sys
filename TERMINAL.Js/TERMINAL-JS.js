@@ -531,7 +531,10 @@ const systemThemes = [
         folder: "Fragmented", // Carpeta: TERMINAL.Audio/Fragmented/
         tracks: [
             "Trauma.mp3", 
-            "Login.mp3"
+            "Login.mp3",
+            "System Failure.mp3",
+            "Sto Obrazov.mp3",
+            "untitled.mp3"
         ]
     },
 
