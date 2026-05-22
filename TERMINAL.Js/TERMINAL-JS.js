@@ -26,11 +26,11 @@ window.addEventListener('load', () => {
     if (errorSnd) errorSnd.volume = 0.6;
     if (neutralizeSnd) neutralizeSnd.volume = 0.4;
 
-    // 2. Iniciar Reloj
+    // Iniciar Reloj
     updateClock();
     //setInterval(updateClock, 1000);
 
-    // 3. Iniciar Música
+    // Iniciar Música
     playRandomTrack();
 });
 
@@ -118,7 +118,7 @@ async function openFolderContent(folderId) {
     const currentActiveView = viewRoot.style.display === 'block' ? viewRoot : unitViewer;
     const nextView = (folderId === 'view-root' || folderId === 'main-explorer-root') ? viewRoot : unitViewer;
 
-    // 1. Glitch de salida
+    // Glitch de salida
     currentActiveView.classList.add('anim-closing');
 
     setTimeout(async () => {
@@ -296,7 +296,7 @@ async function openFolderContent(folderId) {
                         grid.insertAdjacentHTML('beforeend', cardHTML);
                     });
 
-                    // Generar IDs técnicos para todos los bots inyectados
+                    // Generar IDs técnicos para todos los Nodes inyectados
                     generateUnitTechData();
                 }
             } catch (e) { console.error("Error en el flujo de datos.", e); }
@@ -414,7 +414,7 @@ let allBotsCache = []; // Para no cargar el JSON cada vez
 async function loadArchives() {
     if(clickSnd) clickSnd.play();
     
-    // 1. Cargar JSON y aplanar la lista (sacar bots de las carpetas)
+    // Cargar JSON y aplanar la lista (sacar bots de las carpetas)
     const response = await fetch(`TERMINAL.DATA/UNITS.json?t=${new Date().getTime()}`);
     const data = await response.json();
     
@@ -424,7 +424,7 @@ async function loadArchives() {
         allBotsCache = allBotsCache.concat(list);
     });
 
-    // 2. Llenar la barra lateral
+    // Llenar la barra lateral
     const listContainer = document.getElementById('archive-list');
     listContainer.innerHTML = '';
     
@@ -522,7 +522,6 @@ function showDossier(index) {
    =================================================== */
 
 // CONFIGURACIÓN DE LOS TEMAS Y SUS PLAYLISTS
-// Asegúrate de que los archivos de audio existan en TERMINAL.Audio/
 const systemThemes = [
     {
         name: "FRAGMENTED",
@@ -672,7 +671,7 @@ let systemIsStabilized = false; // El seguro para detener el modo rojo
 
 // --- INICIALIZACIÓN ---
 window.onload = function() {
-    // 1. Cargar tema guardado
+    // Cargar tema guardado
     const savedThemeName = localStorage.getItem('nightdrive_theme');
     if (savedThemeName) {
         // Buscar el índice del tema guardado
@@ -680,22 +679,19 @@ window.onload = function() {
         if (foundIndex !== -1) currentThemeIndex = foundIndex;
     }
 
-    // 2. Aplicar el tema sin animación (carga inicial)
+    // Aplicar el tema sin animación (carga inicial)
     applyTheme(false);
 
-    // 3. Configurar volumen
+    // Configurar volumen
     if (sequencer) sequencer.volume = 0.3;
     
-    // 4. Iniciar reloj
+    // Iniciar reloj
     updateClock();
     //setInterval(updateClock, 1000);
 };
 
 
-// --- FUNCIÓN DE CAMBIO DE TEMA (BOTÓN) ---
-// --- NUEVO SISTEMA DE MENÚ DESPLEGABLE ---
-
-// 1. Abrir / Cerrar el menú
+//  Abrir / Cerrar el menú
 function toggleThemeMenu() {
     // Sonido click
     if(document.getElementById('snd-click')) { 
@@ -707,7 +703,7 @@ function toggleThemeMenu() {
     menu.classList.toggle('show');
 }
 
-// 2. Elegir un tema específico
+// Elegir un tema específico
 function selectSpecificTheme(index) {
     // Si elegimos el mismo que ya está, solo cerramos y salimos
     if (index === currentThemeIndex) {
@@ -725,7 +721,7 @@ function selectSpecificTheme(index) {
     document.getElementById('theme-menu').classList.remove('show');
 }
 
-// 3. Cerrar el menú si haces clic fuera (Mejora de UX)
+// Cerrar el menú si haces clic fuera (Mejora de UX)
 window.onclick = function(event) {
     if (!event.target.matches('.theme-switcher-btn')) {
         const dropdowns = document.getElementsByClassName("theme-dropdown");
@@ -740,17 +736,17 @@ window.onclick = function(event) {
 
 // --- FUNCION CORRECTORA DE CLASES (LIMPIEZA TOTAL) ---
 function setBodyClass(className) {
-    // 1. Buscamos todas las clases que tiene el body actualmente
+    // Buscamos todas las clases que tiene el body actualmente
     const currentClasses = Array.from(document.body.classList);
     
-    // 2. Filtramos y eliminamos CUALQUIER clase que empiece con "theme-"
+    // Filtramos y eliminamos CUALQUIER clase que empiece con "theme-"
     currentClasses.forEach(c => {
         if (c.startsWith('theme-')) {
             document.body.classList.remove(c);
         }
     });
 
-    // 3. Si el nuevo tema no es el de por defecto (Fragmented), añadimos la clase
+    // Si el nuevo tema no es el de por defecto (Fragmented), añadimos la clase
     if (className !== 'default' && className !== '') {
         document.body.classList.add(className);
     }
@@ -879,7 +875,6 @@ function changeMusic(theme) {
 
 
 function toggleMusicMenu() {
-    // 1. EL FILTRO DE SEGURIDAD VA ARRIBA DEL TODO
     // Si la pista rara está activa, bloqueamos todo inmediatamente
     if (isRareTrackActive) {
         if (typeof errorSnd !== 'undefined') { 
@@ -890,7 +885,7 @@ function toggleMusicMenu() {
         return; // SALIMOS DE LA FUNCIÓN AQUÍ. No se ejecuta nada de lo de abajo.
     }
 
-    // 2. LÓGICA NORMAL (Solo si no hay pista rara)
+    // LÓGICA NORMAL (Solo si no hay pista rara)
     if(clickSnd) { clickSnd.currentTime = 0; clickSnd.play(); }
     
     const menu = document.getElementById('music-menu');
@@ -945,13 +940,13 @@ function selectSpecificTrack(filename, displayName) {
 }
 
 function closeDashboard() {
-    // 1. Sonido de cierre
+    // Sonido de cierre
     if (typeof closeSnd !== 'undefined') {
         closeSnd.currentTime = 0;
         closeSnd.play();
     }
     
-    // 2. Ocultar el contenedor del Dashboard
+    // Ocultar el contenedor del Dashboard
     const dashboard = document.querySelector('.dashboard-container');
     if (dashboard) {
         dashboard.style.display = 'none';
@@ -980,7 +975,7 @@ function startIdScrambler() {
                 // ESCRIBIMOS EN EL ATRIBUTO: data-id
                 card.setAttribute('data-id', `${hex}${letter}`);
             }
-            // --- HE ELIMINADO LA LÍNEA QUE SOBREESCRIBÍA TODO AQUÍ ---
+           
         });
     }, 150);
 }
@@ -1126,15 +1121,21 @@ document.addEventListener('click', initMedicalTerminal, { once: true });
 
 const rare_tracks = [
     "TERMINAL.Audio/Rare/Hail Mary.mp3",
+    "TERMINAL.Audio/Rare/You Were Loved (Burial).mp3",
+    "TERMINAL.Audio/Rare/Ryland Grace, Cognition Assessment.mp3",
+    "TERMINAL.Audio/Rare/Petrova Line.mp3",
+    "TERMINAL.Audio/Rare/Gravitational Aftermath.mp3",
+    "TERMINAL.Audio/Rare/A Moment.mp3",
+    "TERMINAL.Audio/Rare/Excessive Centrifugal Force.mp3",
+    "TERMINAL.Audio/Rare/Rocky Sacrifice.mp3"
     
 ];
 
-// 2. Probabilidad de que suene una pista rara (0.1 = 10%)
+// Probabilidad de que suene una pista rara (0.1 = 10%)
 const RARE_TRACK_CHANCE = 0.1;
 
 let isRareTrackActive = false; 
 
-// 3. Modifica la función changeMusic para que incluya la lógica
 function changeMusic(theme) {
     if (isRareTrackActive) return; // Ya está bloqueado
 
@@ -1169,7 +1170,7 @@ async function loadSystemNodes() {
         const xmlText = await response.text();
         const xmlDoc = new DOMParser().parseFromString(xmlText, "text/xml");
 
-        // 1. Rellenar Quick Access
+        // Rellenar Quick Access
         const qaContainer = document.getElementById('inject-quick-access');
         if (qaContainer) {
             qaContainer.innerHTML = '';
@@ -1181,7 +1182,7 @@ async function loadSystemNodes() {
             });
         }
 
-        // 2. Rellenar Sidebar (Unit Categories)
+        // Rellenar Sidebar (Unit Categories)
         const sideContainer = document.getElementById('inject-sidebar-categories');
         if (sideContainer) {
             sideContainer.innerHTML = '';
@@ -1193,7 +1194,7 @@ async function loadSystemNodes() {
             });
         }
 
-        // 3. Rellenar el Grid Principal (Iconos de carpetas)
+        // Rellenar el Grid Principal (Iconos de carpetas)
         const gridContainer = document.getElementById('inject-folder-grid');
         if (gridContainer) {
             gridContainer.innerHTML = '';
@@ -1217,39 +1218,39 @@ async function loadSystemNodes() {
 }
 
 window.addEventListener('load', () => {
-    // ... tu código anterior ...
+    
     loadSystemNodes(); // <--- Activa la carga del XML
 });
 
 function prepareLaunch(element) { 
     if (clickSnd) { clickSnd.currentTime = 0; clickSnd.play(); }
 
-    // 1. Extraemos los datos ocultos del botón que clickeaste
+    // Extraemos los datos ocultos del botón que clickeaste
     const id = element.getAttribute('data-botid');
     const encodedLink = element.getAttribute('data-botlink');
     const encodedDesc = element.getAttribute('data-botdesc');
 
-    // 2. Capturamos los datos técnicos (ID_HEX, CORE...)
+    // Capturamos los datos técnicos (ID_HEX, CORE...)
     const card = element.closest('.unit-card-wrapper');
     let techData = "TECH_DATA_NOT_FOUND";
     const techElement = card.querySelector('.unit-desc');
     if (techElement) techData = techElement.innerText;
 
-    // 3. Decodificamos el Link y el Lore
+    // Decodificamos el Link y el Lore
     const realLink = decodeURIComponent(encodedLink);
     const realDesc = decodeURIComponent(encodedDesc);
 
-    // 4. Rellenamos la ventana
+    // Rellenamos la ventana
     document.getElementById('launch-name').innerText = id;
     document.getElementById('launch-tech').innerText = techData;
     document.getElementById('launch-desc').innerText = realDesc;
 
-    // 5. Preparamos el botón LAUNCH
+    // Preparamos el botón LAUNCH
     const btn = document.getElementById('btn-execute-launch');
     btn.onclick = () => executeLaunch(realLink);
     btn.innerText = "[ LAUNCH_SEQUENCE ]"; 
 
-    // 6. Abrimos la ventana
+    // Abrimos la ventana
     openModal('modal-launch');
 }
 
@@ -1273,14 +1274,14 @@ function executeLaunch(targetUrl) {
     }, 2500);
 }
 
-// 2. ESTABILIZAR (Limpieza total)
+// ESTABILIZAR (Limpieza total)
 function stabilizeSystem() {
     if (launchSnd) { launchSnd.currentTime = 0; launchSnd.play(); }
 
-    // 1. BLOQUEAMOS el bucle del ECG para que no vuelva a ponerlo rojo
+    // BLOQUEAMOS el bucle del ECG para que no vuelva a ponerlo rojo
     isStabilized = true;
 
-    // 2. Limpieza inmediata
+    // Limpieza inmediata
     document.body.classList.remove('theme-overload');
     
     const btn = document.getElementById('btn-stabilize');
@@ -1289,7 +1290,7 @@ function stabilizeSystem() {
     const statusText = document.getElementById('signal-text');
     if (statusText) statusText.innerText = "SIGNAL: STABILIZED";
 
-    // 3. Limpiar pop-ups y cerrar modales
+    // Limpiar pop-ups y cerrar modales
     const overlay = document.getElementById('overload-overlay');
     if (overlay) {
         overlay.innerHTML = '';
