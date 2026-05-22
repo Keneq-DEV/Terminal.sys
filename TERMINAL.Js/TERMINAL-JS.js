@@ -28,7 +28,7 @@ window.addEventListener('load', () => {
 
     // Iniciar Reloj
     updateClock();
-    //setInterval(updateClock, 1000);
+    setInterval(updateClock, 1000);
 
     // Iniciar Música
     playRandomTrack();
@@ -690,7 +690,7 @@ window.onload = function() {
     
     // Iniciar reloj
     updateClock();
-    //setInterval(updateClock, 1000);
+    setInterval(updateClock, 1000);
 };
 
 
