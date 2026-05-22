@@ -5,6 +5,7 @@ const clickSnd = document.getElementById('snd-click');
 const errorSnd = document.getElementById('snd-error');
 const closeSnd = document.getElementById('snd-close');
 const launchSnd = document.getElementById('snd-launch');
+const neutralizeSnd = document.getElementById('snd-neutralize');
 const ambienceSnd = document.getElementById('snd-ambience');
 const sequencer = document.getElementById('terminal-sequencer');
 
@@ -23,6 +24,7 @@ window.addEventListener('load', () => {
     if (clickSnd) clickSnd.volume = 0.4;
     if (closeSnd) closeSnd.volume = 0.4;
     if (errorSnd) errorSnd.volume = 0.6;
+    if (neutralizeSnd) neutralizeSnd.volume = 0.4;
 
     // 2. Iniciar Reloj
     updateClock();
@@ -97,7 +99,7 @@ function closeModal(id) {
     setTimeout(() => {
         modal.style.display = 'none';
         modal.classList.remove('closing');
-    }, 300); // Sincronizado con tu animación CSS
+    }, 300); 
 }
 
 
@@ -144,17 +146,18 @@ async function openFolderContent(folderId) {
                     const isDeus = document.body.classList.contains('theme-deus');
                     const isBridges = document.body.classList.contains('theme-bridges');
                     const isCyber = document.body.classList.contains('theme-cyber');
+                    const isUPGRADE = document.body.classList.contains('theme-upgrade');
 
                     botsList.forEach(bot => {
                         let cardHTML = '';
-                        // --- COPIA Y REEMPLAZA ESTA PARTE EN TU BUCLE DE CARTAS ---
+                        
                         const corruptedClass = bot.corrupted ? 'corrupted' : '';
 
-                        // Codificamos de forma segura para no romper el HTML
+                        
                         const safeLink = encodeURIComponent(bot.link || '');
                         const safeDesc = encodeURIComponent(bot.desc || 'NO_DATA_AVAILABLE');
 
-                        // Usamos atributos de datos (data-*) en lugar de meter el texto en el paréntesis
+                        
                         const onClickAction = bot.corrupted 
                             ? `onclick="openModal('modal-error'); if(typeof errorSnd !== 'undefined'){errorSnd.currentTime=0;errorSnd.play();} return false;"` 
                             : `data-botid="${bot.id}" data-botlink="${safeLink}" data-botdesc="${safeDesc}" onclick="prepareLaunch(this); return false;"`;
@@ -230,7 +233,6 @@ async function openFolderContent(folderId) {
                             </div>`;
                         }
 
-                        // --- ESTRUCTURA TEMA LEGACY (CON PERSIANAS) ---
                         if (isLegacy) {
                             cardHTML = `
                             <div class="unit-card-wrapper ${corruptedClass}">
@@ -245,7 +247,22 @@ async function openFolderContent(folderId) {
                                 </div>
                             </div>`;
                         } 
-                        // --- ESTRUCTURA TEMA UNITY (CON DOSSIER CENTRAL) ---
+
+                        if (isUPGRADE) {
+                            cardHTML = `
+                            <div class="unit-card-wrapper ${corruptedClass}">
+                                <div class="shutter-l"></div>
+                                <div class="shutter-r"></div>
+                                <a href="${hrefValue}" target="${targetValue}" class="unit-image-link" ${onClickAction}>
+                                    <img src="${bot.img}">
+                                </a>
+                                <div class="unit-info">
+                                    <span class="unit-name">${bot.id}</span>
+                                    <p class="unit-desc"></p>
+                                </div>
+                            </div>`;
+                        }
+                        
                         else if (isUnity) {
                             cardHTML = `
                             <div class="unit-card-wrapper ${corruptedClass}">
@@ -262,7 +279,7 @@ async function openFolderContent(folderId) {
                                 </div>
                             </div>`;
                         }
-                        // --- ESTRUCTURA FRAGMENTED / DEFAULT (NORMAL) ---
+                        
                         else {
                             cardHTML = `
                             <div class="unit-card-wrapper ${corruptedClass}">
@@ -619,6 +636,33 @@ const systemThemes = [
             "Phantom Liberty.mp3"
             
         ]
+    }, 
+
+    {
+        name: "UPGRADE",
+        className: "theme-upgrade",
+        version: "20",
+        background: "",
+        folder: "Upgrade", // Carpeta: TERMINAL.Audio/Upgrade/
+        tracks: [
+            "A Better Place.mp3",
+            "The procedure.mp3",
+            "Aftermath.mp3",
+            "Stem is the One.mp3",
+            "Anolog vs Digital.mp3",
+            "Fisk.mp3",
+            "The Reprimand.mp3",
+            "The Tattoo.mp3"
+        ]
+    },
+
+    {
+        name: "NEVEN",
+        className: "theme-neven",
+        version: "0",
+        background: "",
+        folder: "Neven", // Carpeta: TERMINAL.Audio/Neven/
+        tracks: []
     }
 
 ];

@@ -318,10 +318,6 @@ body.theme-legacy .unit-card-wrapper.corrupted::after {
     animation: legacy-laser-slow 5s ease-in-out infinite !important;
 }
 
-/* --- ANIMACIONES FLUIDAS (SIN SALTOS BRUSCOS) --- */
-
-
-
 /* 5. MODAL DE ERROR PARA TEMA LEGACY (Sólido y Elegante) */
 body.theme-legacy #modal-error .modal-content {
     border: 2px solid #ff006c !important;
@@ -1026,3 +1022,7 @@ body.theme-alter::after {
         0% { transform: translateX(0); opacity: 1; }
         100% { transform: translateX(2px); opacity: 0.8; }
     }
+
+
+
+    
