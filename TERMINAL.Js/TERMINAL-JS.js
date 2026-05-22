@@ -759,6 +759,7 @@ function setBodyClass(className) {
 
 // --- ACTUALIZACIÓN DE LA FUNCIÓN APPLYTHEME (Para el Glitch) ---
 function applyTheme(animate) {
+    
     const theme = systemThemes[currentThemeIndex];
     const transitionLayer = document.getElementById('theme-transition-layer');
     const bgElement = document.getElementById('profile-gif-bg');
@@ -1069,27 +1070,27 @@ function renderMedicalECG() {
             break;
     }
 
-    // --- ACTUALIZACIÓN DE TEXTO SIGNAL ---
+    // --- ACTUALIZACIÓN DE TEXTO SIGNAL (Lógica Corregida) ---
     const statusText = document.getElementById('signal-text');
     const btnStabilize = document.getElementById('btn-stabilize');
 
-    if (avg > 90 && !isStabilized) {
-    document.body.classList.add('theme-overload');
-    if (btnStabilize) btnStabilize.style.display = 'inline-block'; 
-    if (statusText) statusText.innerText = "SIGNAL: OVERLOAD";
-    if (Math.random() > 0.96) spawnGlitchPopup();
-} else {
-        // Si la música baja mucho, permitimos que el sistema se pueda volver a sobrecargar después
-    if (avg < 70) isStabilized = false; 
-
-    if (!isStabilized) {
-        document.body.classList.remove('theme-overload');
-        if (btnStabilize) btnStabilize.style.display = 'none';
+    // 1. DISPARADOR: Solo entra en modo overload si la música está fuerte Y el fusible NO está puesto
+    if (avg > 110 && !systemIsStabilized) {
+        document.body.classList.add('theme-overload');
+        if (btnStabilize) btnStabilize.style.display = 'inline-block'; // El botón se queda FIJO
+        if (statusText) statusText.innerText = "SIGNAL: OVERLOAD";
+        if (Math.random() > 0.96) spawnGlitchPopup();
+    } 
+    // 2. MANTENIMIENTO: Si ya estamos en rojo, no quitamos el botón aunque baje el volumen
+    else if (document.body.classList.contains('theme-overload')) {
+        // No hacemos nada, dejamos que el usuario use el botón de Stabilize
+    }
+    // 3. ESTADO NORMAL: Solo si no hay sobrecarga y no estamos estabilizados manualmente
+    else if (!systemIsStabilized) {
         if (statusText && Math.random() > 0.98) {
             statusText.innerText = "SIGNAL: " + _QRS_TEXTS[Math.floor(Math.random() * _QRS_TEXTS.length)];
         }
     }
-}
 
 
     // Limpiamos solo un pequeño rectángulo delante de la línea para el efecto de rastro
@@ -1277,23 +1278,27 @@ function executeLaunch(targetUrl) {
     }, 2500);
 }
 
+
 // ESTABILIZAR (Limpieza total)
 function stabilizeSystem() {
-    if (launchSnd) { launchSnd.currentTime = 0; launchSnd.play(); }
+    if (clickSnd) { clickSnd.currentTime = 0; clickSnd.play(); }
 
-    // BLOQUEAMOS el bucle del ECG para que no vuelva a ponerlo rojo
-    isStabilized = true;
+    // 1. ACTIVAMOS EL FUSIBLE: El monitor ECG ya no podrá poner la pantalla roja
+    systemIsStabilized = true;
 
-    // Limpieza inmediata
+    // 2. LIMPIEZA INMEDIATA
     document.body.classList.remove('theme-overload');
     
     const btn = document.getElementById('btn-stabilize');
     if (btn) btn.style.display = 'none';
 
     const statusText = document.getElementById('signal-text');
-    if (statusText) statusText.innerText = "SIGNAL: STABILIZED";
+    if (statusText) {
+        statusText.innerText = "SIGNAL: STABILIZED";
+        statusText.style.color = "var(--verde-high)";
+    }
 
-    // Limpiar pop-ups y cerrar modales
+    // 3. BORRAR POPUPS Y CERRAR VENTANAS
     const overlay = document.getElementById('overload-overlay');
     if (overlay) {
         overlay.innerHTML = '';
