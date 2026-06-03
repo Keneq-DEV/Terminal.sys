@@ -39,12 +39,13 @@
             height: 100vh;
             object-fit: cover;
             z-index: -2;
-            opacity: 0.3;
-            filter: grayscale(1) brightness(0.4);
 
-            /* VALORES AJUSTADOS: Subimos opacidad y brillo */
-            opacity: 0.6 !important; 
+            /*opacity: 1;
+            filter: grayscale(1) brightness(0.4);
+            opacity: 3 !important; 
+            */
             filter: brightness(0.8) grayscale(0.6) contrast(1.2) !important;
+            
         }
 
         #profile-video-bg {
@@ -701,7 +702,7 @@
     background: rgba(10, 12, 10, 0.9);
     border: 1px solid var(--verde-base);
     padding: 15px;
-    z-index: 9999;
+    z-index: 99;
     box-shadow: var(--glow);
     pointer-events: none; /* No estorba los clics */
 }
@@ -758,4 +759,88 @@ body.theme-overload .crt-overlay {
     0% { transform: translate(0,0); }
     50% { transform: translate(-5px, 5px); filter: invert(1); }
     100% { transform: translate(5px, -5px); }
+}
+
+/* Contenedor del Sector */
+.archive-sector-group {
+    margin-bottom: 5px;
+    border-left: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Cabecera del Sector (Carpeta) */
+.sector-header {
+    padding: 10px 15px;
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--verde-base);
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    transition: background 0.2s;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+}
+
+.sector-header:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.sector-header::before {
+    content: "[ + ] ";
+    font-family: 'Share Tech Mono', monospace;
+}
+
+.sector-header.active::before {
+    content: "[ - ] ";
+}
+
+/* Lista de items dentro del sector */
+.sector-content {
+    display: none; /* Oculto por defecto */
+    padding-left: 15px;
+    overflow: hidden;
+    animation: sector-reveal 0.3s ease-out;
+}
+
+.sector-content.show {
+    display: block;
+}
+
+@keyframes sector-reveal {
+    from { opacity: 0; transform: translateX(-10px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+.sector-header {
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--verde-base);
+    cursor: pointer;
+    
+    /* Rejilla para que el icono no se mueva */
+    display: grid;
+    grid-template-columns: 40px 1fr; 
+    align-items: start;
+    
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 0.8rem;
+    line-height: 1.2;
+}
+
+.sector-header::before {
+    content: "[+]";
+    font-weight: bold;
+    color: var(--verde-high);
+}
+
+.sector-header.active::before {
+    content: "[-]";
+}
+
+/* Efecto para el bot seleccionado en la lista */
+.archive-item.selected-node {
+    background: var(--verde-base);
+    color: #000 !important;
+    font-weight: bold;
+    box-shadow: 0 0 10px var(--verde-base);
 }

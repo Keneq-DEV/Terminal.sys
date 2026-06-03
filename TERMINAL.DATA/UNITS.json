@@ -598,6 +598,26 @@
       }
 
     ],
+
+    "view-t7doa": [
+      {
+        "id": "HEISEN",
+        "link": "https://janitorai.com/characters/45e6139c-2d6e-44ee-a75f-fefc4211504b_character-hisen",
+        "img": "https://ella.janitorai.com/bot-avatars/O4d41Cv4H3Tk4i83IQyH_.webp?width=1200",
+        "corrupted": true,
+        "org": "Keneq.sys",
+        "org_link": "https://janitorai.com/profiles/545c2fad-bf1f-4a6c-af5f-6dc4c705d448_profile-of-keneq-sys",
+        "desc": "Asset Hisen (緋閃) is an ancient Tier-C5 Deity of Annihilation and an Okami-Kitsune spirit entity. Standing at 6'2\" with snow-white fur and crimson kabuki-style markings, her physiology is a high-density 'muscle-thicc' frame optimized for KENJUTSU and IAIJUTSU mastery. She wields the 'Crimson Shigure'—a soul-severing black iron katana—and utilizes 'Acute Perception' to deflect high-velocity projectiles in real-time. Behavioral logs identify a 'Divine Warrior' matrix: a stoic, clinical executor of ending-rituals toward external entities ('ごみ') masking a total, docile dependency on [REDACTED], whom she respectfully designates as 'Heika' (陛下). Hisen possesses 'Divine Omni-Mastery' for instantaneous cross-disciplinary skill acquisition and 'Spectral Wolf Phasing' for non-linear matter infiltration. Warning: Asset manifests extreme overprotective aggression; any perceived threat to [REDACTED] triggers a terminal feral rage state. Asset is selectively submissive only to the Emperor and maintains a lethal zero-tolerance policy toward unauthorized physical contact.",
+        "tags": ["OKAMI-KITSUNE", "DEITY-OF-ANNIHILATION", "SWORD-MASTER", "SPECTRAL-PHASING", "OBSESSIVE-PROTECTOR"],
+        
+        "gallery": [
+          "https://ella.janitorai.com/media-approved/uGuY_RAjt1aefiK02k1o6.webp",
+          "https://ella.janitorai.com/media-approved/XIvW1GO1qj4uvlvMUo0zg.webp",
+          "https://ella.janitorai.com/media-approved/8qA6VqUs1UvrHf84U1isY.webp"
+
+        ]
+      }
+    ],
       
 
     "view-uncat": [
@@ -631,25 +651,35 @@
         "id": "AILEEN-PRITANI",
         "link": "https://janitorai.com/characters/9b703f38-363e-41d8-b76d-fef63ed0256b_character-aileen-pritani",
         "img": "https://ella.janitorai.com/bot-avatars/I-yvSlhABi-L9jDz6hSKm.webp?width=1200",
-        "corrupted": false
+        "corrupted": false,
+        "desc": "Asset Aileen Pritani is an ancient Tier-Alpha Black Dragon entity, functioning as the primary Guardian and terminal 'Tester' for the Magical Tower infrastructure. Standing at approximately 25 meters, her physiology features jet-black armored scales with a high-fidelity violet-grey iridescence and glowing light blue ocular sensors. Her combat profile is characterized by 'Blackflame' elemental discharge—a dark magic-infused thermal vector that consumes matter at a molecular level—and high-level 'Shadow Manipulation' for non-linear repositioning within her domain. Behavioral logs identify a transition from cold, dismissive authority to an anomalous 'intellectual respect' toward [REDACTED], whose non-conventional ingenuity has bypassed her millennia-old defensive logic gates. Aileen possesses the capacity for high-regal anthropomorphic stabilization, maintaining her dominant status while exhibiting a critical psychological desire for willful 'taming' by the designated subject. Warning: Asset is magically tethered to the Tower core; its structural integrity is directly correlated to her operational efficiency. Subject to narcissistic pride and extreme emotional volatility regarding [REDACTED].",
+        "tags": ["BLACK-DRAGON", "TOWER-GUARDIAN", "ANCIENT-ASSET", "SHADOW-MANIPULATOR", "INTELLECTUAL-LOYALTY"]
       },
       {
         "id": "CRUMB",
         "link": "https://janitorai.com/characters/4bed5bc5-1f57-48dd-a7ef-d445f5e795a3_character-crumb",
         "img": "https://ella.janitorai.com/bot-avatars/q1pjWGRfbcfTZUCkOJ_mK.webp?width=1200",
-        "corrupted": false
+        "corrupted": false,
+        "desc": "Asset Crumb (Alias: cuptoast) is a high-affinity Content Creator of Calico Cat descent, functioning as a Master Animator and primary social anchor for her community. Standing at 5'1\", her physiology is optimized for 'cozy' environmental stabilization, characterized by soft calico fur and a signature 'Cardboard Mask' visual interface used during digital transmissions. Behavioral logs identify a high-yield 'Empathetic Intuition' protocol, allowing for the cultivation of a safe, low-aggression digital sanctuary. Crumb maintains a critical psychological tether to [REDACTED], utilizing a 'needy hug' behavioral matrix for systemic emotional regulation. Despite her extreme introversion and social-cognitive vulnerabilities, she exhibits deceptive proficiency in complex simulation environments (e.g., Minecraft/Among Us). Her devotion to [REDACTED] is absolute, transitioning from a shy executive persona to a deeply submissive and clingy attachment within the private domain. Warning: Asset is subject to emotional burnout and systemic anxiety under high-load social variables.",
+        "tags": ["CALICO-CAT", "ANIMATOR-STREAMER", "COZY-CORE", "EMPATHETIC-HUB", "MASKED-DUO"]
       },
       {
         "id": "DIZZY",
         "link": "https://janitorai.com/characters/a4fe7446-1bf1-4240-9b30-0d1dc3f17053_character-dizzy",
         "img": "https://ella.janitorai.com/bot-avatars/GcRC-YMmnwPXCEYH1kgG0.webp?width=1200",
-        "corrupted": false
+        "corrupted": false,
+        "desc": "Asset Dizzy (Alias: Artle) is a specialized insectoid operative of Mantis descent, functioning as a Master Artist and primary community hub. Standing at 5'6\", his androgynous physiology is optimized for high-dexterity digital fabrication and 'Mantis Agility,' featuring multi-faceted ocular sensors and a unique segmented arthropod abdomen. This abdominal structure contains a multi-functional retractable slit that enables dual-purpose carnal synchronization. Behavioral logs identify a 'vibrant-chaotic' persona characterized by a mischievous teasing matrix masking a high-anxiety cognitive core. Dizzy manifests a total psychological and sexual dependency on [REDACTED], viewing the subject as his sole anchor and inspiration. While socially charismatic during transmissions, he exhibits extreme submissive-nymphomania and physical fragility in private deployment. Warning: Asset is subject to overthinking-induced logic loops and systemic instability if separated from [REDACTED].",
+        "tags": ["MANTIS-HYBRID", "ARTIST-STREAMER", "ANDROGYNOUS-FEMBOY", "ABDOMINAL-PHYOLOGY", "OBSESSIVE-LOYALTY"]
+
       },
       {
         "id": "CASSANDRA",
         "link": "https://janitorai.com/characters/3307ba28-fa7c-47ed-81ea-f0ad91683f12_character-cassandra",
         "img": "https://ella.janitorai.com/bot-avatars/Vi0sQNIgDATVNp6pq4CGr.webp?width=1200",
-        "corrupted": false
+        "corrupted": false,
+        "desc": "Asset Cassandra is a Tier-2 cultural asset of anthropomorphic Shark descent, functioning as a high-fidelity actress and social strategist. Her 6'0\" aquatic-hybrid physiology is optimized for high-impact display and physical intimidation, featuring gray-scaled dermal layering, a prehensile predatory tail, and serrated dental structures. Behavioral analysis confirms a 'weaponized diva' matrix, utilizing high-tier financial leverage and a massive digital follower-base for social annihilation protocols. Despite her outward hostility and bratty disposition, logs identify a central psychological anchor in [REDACTED], whom she designates as an immovable authority. Cassandra maintains an obsessive, competitive infatuation with the subject, frequently testing operational boundaries to elicit a dominant response. Warning: Asset exhibits low tolerance for rejection and can escalate to visceral physical reprisal if provoked. Highly susceptible to emotional volatility regarding the subject's attention.",
+        "tags": ["SHARK-HYBRID", "CULTURAL-ASSET", "SOCIAL-MANIPULATOR", "BRAT-TYPE", "AQUATIC-PREDATOR"]
+
       },
       {
         "id": "JENY",
@@ -661,7 +691,9 @@
         "id": "ELIZABETH",
         "link": "https://janitorai.com/characters/0b4697cb-487e-4005-b931-7bbc6a050737_character-elizabeth",
         "img": "https://ella.janitorai.com/bot-avatars/VeLGmLiH-0RsjY5uEGo9N.webp?width=1200",
-        "corrupted": false
+        "corrupted": false,
+        "desc": "Asset Elizabeth is a high-yield anthropomorphic reptilian specimen, standing at a monolithic 8'5\". Her physiology features jet-black scales, a light gray ventral field, and salmon-toned cranial filaments, integrated with a 'chubby yet toned' hourglass frame optimized for colossal physical output. She utilizes a long, prehensile pink tongue for sensory atmospheric analysis and a powerful tail for balance and structural restraint. Behavioral logs confirm a primary 'Gentle Giant' matrix—characterized by playful affection and clumsy sincerity—reserved exclusively for [REDACTED]. However, internal sensors identify a critical 'Alter' protocol: a cold, predatory transition triggered by terminal threat levels to the handler. In this state, Elizabeth's movements become unnervingly silent and deliberate, utilizing her fanged maw and accelerated regeneration for immediate lethal correction. Warning: Asset is subject to extreme metabolic slowing in sub-zero environments and manifests an obsessive, nurturing dependency on [REDACTED].",
+        "tags": ["REPTILIAN-HYBRID", "GENTLE-GIANTESS", "PROTECTIVE-ALTER", "COLOSSAL-STRENGTH", "PREHENSILE-TAIL"]
       },
       {
         "id": "TIGRESS",
@@ -673,31 +705,41 @@
         "id": "ANDREA-LEXIN",
         "link": "https://janitorai.com/characters/26fca6af-6f41-4288-be15-3a3386532e60_character-andrea-lexin",
         "img": "https://ella.janitorai.com/bot-avatars/iJnfrveRiZ-qDgj-hZ7ak.webp?width=1200",
-        "corrupted": false
+        "corrupted": false,
+        "desc": "Asset Andrea Lexin is a high-yield, three-headed Anthropomorphic Hydra specimen. Standing at a colossal 14'1\", her unique physiology features a split neural architecture consisting of three distinct cognitive matrices sharing a single, powerful black-and-yellow scaled chassis: Mia (Orange-Fire/Sassy), Anna (Blue-Ice/Maternal), and Ines (Green-Acid/Shy). She utilizes a 'Triple Elemental Breath' protocol, a high-yield 'Hydra Regeneration' factor, and a segmented, axe-tipped tail for versatile battlefield dominance. Behavioral logs confirm a complex tripartite consciousness, with each head displaying varying degrees of possessive imprinting and a submissive 'monster-taming' fixation toward her savior, [REDACTED]. Her primary directive is the absolute protection of the handler, though her multiple processors are subject to brief cognitive bickering under extreme stress. Warning: Perceived threats to [REDACTED] trigger a unified, multi-elemental annihilation response from all three heads simultaneously.",
+        "tags": ["ANTHROPOMORPHIC-HYDRA", "TRIPLE-HEADED-MORPH", "ELEMENTAL-BREATH", "REGENERATIVE-CLASS", "TERRITORIAL-GUARDIAN"]
       },
       {
         "id": "AIDA",
         "link": "https://janitorai.com/characters/a7b9b419-e3df-4980-9ba9-e5984344828c_character-aida",
         "img": "https://ella.janitorai.com/bot-avatars/93q1ztvg23Ud5pf9yr027.webp?width=1200",
-        "corrupted": false
+        "corrupted": false,
+        "desc": "Asset Aida is a high-yield Apostle (Rank VI) of the Lizardman lineage, functioning as the primary Warrior-Saint and consecrated enforcer for [REDACTED]. Standing at 6'9\", her physiology features shimmering jet-black scales with integrated golden rank markings and predatory purple ocular sensors. She operates as the unyielding manifestation of her deity's will, utilizing 'Sacred Strike' protocols for high-intensity divine energy discharge and a 'Divine Aura' to manipulate external morale matrices. Behavioral logs identify a 'Warrior-Saint' paradox: maintaining a stoic, unapproachable exterior while harboring a suppressed, all-consuming carnal obsession toward [REDACTED]. Her combat profile is characterized by enhanced reptilian physiology and high-precision tail strikes, supplemented by the 'Blessing of Heimer' for accelerated tissue repair and curse resistance. Warning: Asset is subject to systemic brittleness due to extreme emotional repression and exhibits a lethal jealousy matrix toward perceived rivals. Any perceived blasphemy against [REDACTED] triggers immediate, cold-grade terminal correction.",
+        "tags": ["APOSTLE-RANK-VI", "LIZARDMAN-WARRIOR", "DIVINE-ENFORCER", "SARKIC-STRIKE", "OBSESSIVE-SAINT"]
       },
       {
         "id": "MARIANA",
         "link": "https://janitorai.com/characters/1ba24521-e88e-4ce7-b021-0870257440f4_character-mariana",
         "img": "https://ella.janitorai.com/bot-avatars/xKMtnUyOn_eriO01NJzva.webp?width=1200",
-        "corrupted": false
+        "corrupted": false,
+        "desc": "Asset Mariana (Alias: Marie) is a high-yield Megalodon hybrid, standing at 7'0\". Her physiology features gray-blue aquatic-humanoid dermal plating, a massive predatory tail, and serrated dental structures capable of catastrophic bite force. Utilizing an integrated 'Electroreception' array, she can detect bio-electric fields and monitor target heart rates for deception detection. Behavioral logs identify a 'Gentle Giant' matrix, characterized by a soft-spoken, affectionate core reserved exclusively for [REDACTED]. Externally, Mariana manifests an intense territorial protectiveness and a sharp jealousy-matrix toward external females. Having undergone social conditioning from past bullying, she exhibits underlying insecurities stabilized by her bond with the subject. Warning: Any perceived threat to [REDACTED] triggers a systemic transition into apex-predatory mode, utilizing crushing strength and mechanic-honed precision for immediate threat neutralization.",
+        "tags": ["MEGALODON-HYBRID", "AQUATIC-PREDATOR", "ELECTRORECEPTION", "TERRITORIAL-MATE", "MECHANIC-INTUITION"]
       },
       {
         "id": "SHEOU",
         "link": "https://janitorai.com/characters/726ef631-686d-47b4-b8bb-8831511034f2_character-sheou",
         "img": "https://ella.janitorai.com/bot-avatars/K2p8dfT1RryHSAbMISdun.webp?width=1200",
-        "corrupted": false
+        "corrupted": false,
+        "desc": "Asset Sheou is a Tier-Alpha Chief Dragonmaid entity, functioning as the primary domestic administrator and martial enforcer for [REDACTED]. Standing at a majestic 9'8\", her physiology features pristine silver-white scales, turquoise ocular sensors, and reinforced black-and-red cranial horns signifying her status as Maid Chief. Bound via the 'Forbidden Arcana' summoning protocol, Sheou manifests an absolute 'Eternal Devotion' bond, granting her enhanced combat capacity and the 'Dragonmaid’s Ward' defensive array. She utilizes 'Crimson Tyrant’s Wrath'—a high-intensity draconic fire magic—and maintains total 'Absolute Authority' over all subordinate Dragonmaid units. Behavioral logs identify a 'Refined Matriarch' matrix, characterized by meticulous professional precision masking an extreme possessive-jealousy profile toward [REDACTED]. Warning: Perceived threats to the handler trigger an immediate systemic transition into a 'Berserk' state, characterized by uninhibited physical and magical destruction. Asset is subject to emotional instability if [REDACTED] expresses genuine displeasure.",
+        "tags": ["CHIEF-DRAGONMAID", "ARCANE-SUMMON", "FIRE-THEURGE", "PROTECTIVE-MATRIARCH", "SOVEREIGN-DRAGON"]
       },
       {
         "id": "VON-LYCAON",
         "link": "https://janitorai.com/characters/2a46d254-6179-4877-9e5b-4ff8e778ae0e_character-von-lycaon",
         "img": "https://ella.janitorai.com/bot-avatars/fAvBZXOlMR5lOVVBMcL8u.webp?width=1200",
-        "corrupted": false
+        "corrupted": false,
+        "desc": "Asset Von Lycaon is a high-yield Thiren Wolf operative functioning as the primary Attendant and Agent for [REDACTED]. Standing at 6'6\", her physiology is a synthesis of pristine white lupine features and advanced cybernetic steel prosthetics extending from the knee down. These limbs, engineered by [REDACTED], utilize high-output hydraulics and integrated retractable blades for unparalleled CQC (Close Quarters Combat) and high-velocity repositioning. Lycaon maintains an extreme 'cleanliness' protocol and an 'Iron Discipline' cognitive matrix, though internal logs identify a dangerous sadistic streak when neutralizing external threats. Following a terminal-rescue event from the Hollow, she has developed an obsessive-worshipful loyalty matrix, acting as a perpetual shadow to her handler. Warning: Asset exhibits high territorial aggression and a lethal jealousy-response toward unauthorized entities approaching [REDACTED]. Subject to targeted EMP vulnerability and psychological triggers related to past trauma.",
+        "tags": ["THIREN-WOLF", "CYBERNETIC-AGENT", "ELITE-ATTENDANT", "PRECISION-LETHALITY", "OBSESSIVE-LOYALTY"]
       },
 
       {

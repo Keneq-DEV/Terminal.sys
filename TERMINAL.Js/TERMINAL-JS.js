@@ -4,6 +4,8 @@
 const clickSnd = document.getElementById('snd-click');
 const errorSnd = document.getElementById('snd-error');
 const closeSnd = document.getElementById('snd-close');
+const clicksnd2 = document.getElementById('snd-click2');
+const closesnd2 = document.getElementById('snd-close2');
 const launchSnd = document.getElementById('snd-launch');
 const neutralizeSnd = document.getElementById('snd-neutralize');
 const ambienceSnd = document.getElementById('snd-ambience');
@@ -21,8 +23,10 @@ window.addEventListener('load', () => {
         ambienceSnd.volume = 0.3;
         ambienceSnd.play().catch(e => console.log("Autoplay bloqueado por el navegador"));
     }
-    if (clickSnd) clickSnd.volume = 0.4;
-    if (closeSnd) closeSnd.volume = 0.4;
+    if (clickSnd) clickSnd.volume = 1;
+    if (clicksnd2) clicksnd2.volume = 1;
+    if (closesnd2) closesnd2.volume = 1;
+    if (closeSnd) closeSnd.volume = 1;
     if (errorSnd) errorSnd.volume = 0.6;
     if (neutralizeSnd) neutralizeSnd.volume = 0.4;
 
@@ -93,7 +97,7 @@ function closeModal(id) {
     const modal = document.getElementById(id);
     if (!modal) return;
 
-    if (closeSnd) { closeSnd.currentTime = 0; closeSnd.play(); }
+    if (closesnd2) { closesnd2.currentTime = 0; closesnd2.play(); }
 
     modal.classList.add('closing');
     setTimeout(() => {
@@ -107,7 +111,7 @@ function closeModal(id) {
 //    MOTOR DE CARPETAS (FETCH JSON)
 // ==========================================
 async function openFolderContent(folderId) {
-    if (typeof clickSnd !== 'undefined') { clickSnd.currentTime = 0; clickSnd.play(); }
+    if (typeof clicksnd2 !== 'undefined') { clicksnd2.currentTime = 0; clicksnd2.play(); }
 
     generateUnitTechData();
     startIdScrambler(); // <--- Fuerza el reinicio del escáner al abrir carpeta
@@ -365,7 +369,7 @@ function toggleFullScreen() {
 }
 
 function setViewSize(sizeClass) {
-    if (clickSnd) { clickSnd.currentTime = 0; clickSnd.play(); }
+    if (clicksnd2) { clicksnd2.currentTime = 0; clicksnd2.play(); }
 
     document.querySelectorAll('.view-btn').forEach(btn => btn.classList.remove('active'));
     if(window.event) window.event.target.classList.add('active');
@@ -413,28 +417,85 @@ let allBotsCache = []; // Para no cargar el JSON cada vez
 
 async function loadArchives() {
     if(clickSnd) clickSnd.play();
-    
-    // Cargar JSON y aplanar la lista (sacar bots de las carpetas)
-    const response = await fetch(`TERMINAL.DATA/UNITS.json?t=${new Date().getTime()}`);
-    const data = await response.json();
-    
-    allBotsCache = [];
-    // Recorremos todas las categorías para hacer una sola lista
-    Object.values(data).forEach(list => {
-        allBotsCache = allBotsCache.concat(list);
-    });
 
-    // Llenar la barra lateral
     const listContainer = document.getElementById('archive-list');
-    listContainer.innerHTML = '';
-    
-    allBotsCache.forEach((bot, index) => {
-        const item = document.createElement('div');
-        item.className = 'archive-item';
-        item.innerText = `> ${bot.id}`;
-        item.onclick = () => showDossier(index);
-        listContainer.appendChild(item);
-    });
+    listContainer.innerHTML = '<p style="padding:20px; opacity:0.5;">DECRYPTING_INDEX...</p>';
+
+    try {
+        const [xmlRes, jsonRes] = await Promise.all([
+            fetch(`TERMINAL.DATA/NODE_FOLDER.xml?t=${Date.now()}`),
+            fetch(`TERMINAL.DATA/UNITS.json?t=${Date.now()}`)
+        ]);
+
+        const xmlText = await xmlRes.text();
+        const xmlDoc = new DOMParser().parseFromString(xmlText, "text/xml");
+        const botData = await jsonRes.json();
+
+        listContainer.innerHTML = ''; 
+        allBotsCache = []; 
+
+        const sectors = xmlDoc.querySelectorAll('sidebar node, folder-list node');
+        const processedSectors = new Set();
+
+        sectors.forEach(sectorNode => {
+            const sectorId = sectorNode.getAttribute('id');
+            const sectorLabel = sectorNode.getAttribute('label');
+
+            if (processedSectors.has(sectorId)) return;
+            processedSectors.add(sectorId);
+
+            const botsInSector = botData[sectorId];
+
+            if (botsInSector && botsInSector.length > 0) {
+                const sectorGroup = document.createElement('div');
+                sectorGroup.className = 'archive-sector-group';
+
+                const header = document.createElement('div');
+                header.className = 'sector-header';
+                header.innerText = sectorLabel;
+
+                const content = document.createElement('div');
+                content.className = 'sector-content';
+
+                botsInSector.forEach(bot => {
+                    allBotsCache.push(bot); 
+                    const currentIndex = allBotsCache.length - 1;
+
+                    const item = document.createElement('div');
+                    item.className = 'archive-item';
+                    item.innerText = `> ${bot.id}`;
+                    
+                    item.onclick = (e) => {
+                        e.stopPropagation();
+                        
+                        // 1. Quitar el resaltado de CUALQUIER otro bot seleccionado
+                        document.querySelectorAll('.archive-item').forEach(el => el.classList.remove('selected-node'));
+                        
+                        // 2. Resaltar este bot
+                        item.classList.add('selected-node');
+                        
+                        // 3. Mostrar el dossier
+                        showDossier(currentIndex);
+                    };
+                    content.appendChild(item);
+                });
+
+                header.onclick = () => {
+                    if(clicksnd2) { clicksnd2.currentTime = 0; clicksnd2.play(); }
+                    header.classList.toggle('active');
+                    content.classList.toggle('show');
+                };
+
+                sectorGroup.appendChild(header);
+                sectorGroup.appendChild(content);
+                listContainer.appendChild(sectorGroup);
+            }
+        });
+
+    } catch (e) {
+        console.error("Error cargando archivos clasificados:", e);
+        listContainer.innerHTML = '<p style="color:red; padding:20px;">ERROR: INDEX_CORRUPTED</p>';
+    }
 }
 
 function showDossier(index) {
@@ -573,7 +634,7 @@ const systemThemes = [
         name: "DEUS",
         className: "theme-deus",
         version: "7.7",
-        background: "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/daf1bb7d-a169-4d23-9c87-d366dd55c308/d5m9i1v-35a83177-46f2-412f-b148-4faabdfd0eeb.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiIvZi9kYWYxYmI3ZC1hMTY5LTRkMjMtOWM4Ny1kMzY2ZGQ1NWMzMDgvZDVtOWkxdi0zNWE4MzE3Ny00NmYyLTQxMmYtYjE0OC00ZmFhYmRmZDBlZWIuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.V-LReT9eueKlKuCTe6L47Vz1faBg13IyCqXzq_ANDKg",
+        background: "TERMINAL.DATA/Deus_ex.webp",
         folder: "Deus", // Carpeta: TERMINAL.Audio/Deus/
         tracks: [
             "Main Menu.mp3",
@@ -582,7 +643,9 @@ const systemThemes = [
             "Icarus.mp3",
             "Namir.mp3",
             "Endings.mp3",
-            "Opening Credits.mp3"
+            "Opening Credits.mp3",
+            "Ending - Bill Taggert's.mp3",
+            "Ending - David Sarif's.mp3"
             
         ]
     },
@@ -591,7 +654,7 @@ const systemThemes = [
         name: "EX",
         className: "theme-ex",
         version: "9.9",
-        background: "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExY2F2cnJzbmJtN3dvdTc5ZHBvdnAxaGYydDltaTAwNW9pZHF5OHdpcCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/VeWkxETRDSWJcgRTLQ/giphy.gif",
+        background: "TERMINAL.DATA/rally.webp",
         folder: "Ex", // Carpeta: TERMINAL.Audio/Ex/
         tracks: [
             "Cargo.mp3",
@@ -949,9 +1012,9 @@ function selectSpecificTrack(filename, displayName) {
 
 function closeDashboard() {
     // Sonido de cierre
-    if (typeof closeSnd !== 'undefined') {
-        closeSnd.currentTime = 0;
-        closeSnd.play();
+    if (typeof closesnd2 !== 'undefined') {
+        closesnd2.currentTime = 0;
+        closesnd2.play();
     }
     
     // Ocultar el contenedor del Dashboard
@@ -1231,7 +1294,7 @@ window.addEventListener('load', () => {
 });
 
 function prepareLaunch(element) { 
-    if (clickSnd) { clickSnd.currentTime = 0; clickSnd.play(); }
+    if (clicksnd2) { clicksnd2.currentTime = 0; clicksnd2.play(); }
 
     // Extraemos los datos ocultos del botón que clickeaste
     const id = element.getAttribute('data-botid');

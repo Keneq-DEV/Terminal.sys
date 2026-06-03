@@ -53,11 +53,11 @@
 
     /* --- TEMA 4: ERROR MONOCHROME (Blanco y Negro) --- */
     body.theme-ex {
-        --bg-negro:    #000000;
+        --bg-negro:    #262626;
         --verde-base:  #ffffff; /* Blanco puro */
         --verde-high:  #ffffff;
         --borde-dark:  #333333; /* Gris oscuro */
-        --rojo-error:  #666666; /* Gris medio para el error */
+        --rojo-error:  #9a2f2f; /* Gris medio para el error */
         --gris-dim:    #999999; /* Gris claro */
         --glow: 0 0 0px transparent; /* CERO BRILLO: Este tema es seco y crudo */
     }
