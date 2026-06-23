@@ -21,7 +21,7 @@ window.addEventListener('load', () => {
     // 1. Configurar volúmenes
     if (ambienceSnd) {
         ambienceSnd.volume = 0.3;
-        ambienceSnd.play().catch(e => console.log("Autoplay bloqueado por el navegador"));
+        ambienceSnd.play().catch(e => console.log("Autoplay blocked by browser"));
     }
     if (clickSnd) clickSnd.volume = 1;
     if (clicksnd2) clicksnd2.volume = 1;
@@ -60,7 +60,7 @@ function playRandomTrack() {
     sequencer.volume = 0.4;
 
     sequencer.play().catch(e => {
-        console.log("El navegador bloqueó el autoplay. La música empezará al primer clic.");
+        console.log("Browser blocked autoplay. Music will start on first click.");
     });
 
     console.log("Track cargado:", selectedTrack);
@@ -940,8 +940,8 @@ function changeMusic(theme) {
     sequencer.src = path;
     sequencer.loop = true;
     sequencer.play().catch(e => console.log("Audio esperando interacción."));
-    
-    console.log("Reproduciendo:", path); // Para que verifiques en consola si la ruta está bien
+
+    console.log("Playing:", path); 
 }
 
 

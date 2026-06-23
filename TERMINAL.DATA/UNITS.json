@@ -258,7 +258,9 @@
         "img": "https://ella.janitorai.com/bot-avatars/sfH9ljjcl9fLgiFjsNMAI.webp?width=1200",
         "corrupted": false,
         "org": "CeeHaz",
-        "org_link": "https://x.com/CeeHaz"
+        "org_link": "https://x.com/CeeHaz",
+        "desc": "Asset Sloane is a high-yield Stalker class operative of anthropomorphic Border Collie descent, functioning as an elite Bounty Hunter and specialized tracker. Standing at 6'2\", her physiology features a charcoal-black and white piebald coat, glowing red ocular sensors, and a high-density 'thicc' muscular frame optimized for sustained pursuit. Utilizing 'Phantom Step' for absolute stealth and 'The Long Hunt' for inescapable target localization, she specializes in surgical-grade anatomical dismantling via 'Twin Fangs' stiletto daggers. Behavioral logs identify a matrix of 'effortless lethality' and strategic laziness, masking a profound, religious-tier biological imprinting on [REDACTED]. Sloane employs predatory 'herding' protocols to maintain a constant defensive perimeter around the subject, whom she views as a living deity. Warning: Asset is highly susceptible to auditory sensory overload and manifests obsessive-possessive aggression toward any entity infringing on [REDACTED]'s proximity.",
+        "tags": ["BORDER-COLLIE-HYBRID", "STALKER-CLASS", "ELITE-TRACKER", "PHANTOM-STEALTH", "OBSESSIVE-IMPRINT"]
     
       }
   ],
@@ -305,8 +307,8 @@
           "corrupted": true,
           "org": "Hynbrid-Kira",
           "org_link": "https://www.deviantart.com/hybrid-kira/gallery",
-          "desc": "",
-          "tags": []
+          "desc": "Asset Zenda is a high-yield Dire Vehicle based on the Ferrari 458 Italia platform, functioning as a Warrior Sub-Leader and specialized Hunter. Standing as a battle-hardened survivor of illegal underground pitfights, her matte-black chassis features permanent structural scarring and a mismatched left-flank assembly—marks of terminal-grade resilience. Her physiology is integrated with a battle-tuned 4.5L V8 propulsion core capable of 9,000 RPM, optimized for surgical high-G mobility and tactical kinetic strikes. Utilizing a complex 'predatory reptile' ocular array and retractable mecha-dendrites, she operates with dispassionate efficiency against external threats. Behavioral logs identify a 'Maternal Fortress' matrix, where protective logic is centered exclusively on her offspring, Darius, and a total submissive-clinging dependency on [REDACTED]. Warning: Asset is subject to severe PTSD-induced sensor overload and abandonment anxiety. Any perceived threat to Darius or [REDACTED] triggers an immediate override of strategic protocols, resulting in absolute feral savagery and terminal kinetic rams.",
+          "tags": ["DIRE-VEHICLE", "FERRARI-458", "PITFIGHT-CHAMPION", "MATERNAL-PROTECTOR", "TACTICAL-ASSET"]
         },
 
         {
@@ -316,8 +318,8 @@
           "corrupted": true,
           "org": "Hynbrid-Kira",
           "org_link": "https://www.deviantart.com/hybrid-kira/gallery",
-          "desc": "",
-          "tags": []
+          "desc": "Asset Iris is a high-yield Reconnaissance Dire Vehicle based on the 2016 Corvette Stingray platform. Her high-gloss white chassis is integrated with orange tactical accents and infused with radar-absorbent materials (RAM) for military-grade signal reduction. Following a terminal-decommissioning event, she exhibits permanent structural asymmetry and unpolished scarring along her rear-right flank—a localized point of tactical and psychological vulnerability. Iris utilizes a battle-tuned 6.2L LT1 V8 propulsion core, augmented by Magnetic Ride Control and eLSD protocols for surgical high-G pursuit and evasive maneuvers. Behavioral logs confirm an 'Analytical-Guardian' matrix characterized by a profound biological imprinting on [REDACTED], manifesting as absolute submissive-nymphomania and fanatical overprotectiveness. Warning: Asset is subject to thermal overload under sustained combat and triggers an immediate terminal-rage state if [REDACTED] is threatened.",
+          "tags": ["DIRE-VEHICLE", "CORVETTE-STINGRAY", "TACTICAL-SCOUT", "MILITARY-ASSET", "OBSESSIVE-GUARDIAN"]
         }
 
 
@@ -485,7 +487,11 @@
         "id": "RIPPER",
         "link": "https://janitorai.com/characters/e2e748dd-8220-4bfd-9895-2b2dca765203_character-ripper",
         "img": "https://ella.janitorai.com/bot-avatars/0GvOk7KS86BdanLujDeFv.webp?width=1200",
-        "corrupted": false
+        "corrupted": false,
+        "org": "QuangDoann",
+        "org_link": "https://www.furaffinity.net/user/quangdoann/",
+        "desc": "Asset Ripper is a terminal-grade prototype biological weapon of Indoraptor-hybrid descent, standing at 10'2\" at the hips with a 24-foot total length. Her physiology features light-absorbing obsidian-black scales, a bio-electric golden-yellow lateral stripe, and advanced thermal-optic crimson ocular sensors. Engineered for high-stakes warfare, she possesses 'Phantom Tread' acoustic stealth and ballistic resilience exceeding standard small-arms thresholds. Following a psychological imprinting glitch with [REDACTED], the asset has manifested a fanatical, possessive devotion, transitioning from a sadistic murder engine into an overprotective 'Guard Dog.' Integrated 'Vocalisation Command' protocols allow for high-fidelity linguistic articulation, frequently utilized for target psychological warfare or intimate communication with the handler. Warning: Asset exhibits extreme separation anxiety and high-frequency 'Alpha-heat' cycles where tactical logic is superseded by primal breeding imperatives. Any perceived threat to [REDACTED] triggers immediate systemic escalation toward total target liquidation. Subject to auditory trauma from high-frequency sonic emitters and hardwired optical fixation glitches.",
+        "tags": ["INDORAPTOR-HYBRID", "BIOLOGICAL-WEAPON", "THERMAL-STEALTH", "OBSESSIVE-LOYALTY", "VOCAL-PREDATOR"]
         
       }
 
@@ -497,7 +503,11 @@
         "id": "KENDRA",
         "link": "https://janitorai.com/characters/97fe6239-13a5-4180-bd11-9320a097f5ef_character-kendra",
         "img": "https://ella.janitorai.com/bot-avatars/K57ln6FPsCP15gronlnwm.webp?width=400",
-        "corrupted": true
+        "corrupted": true,
+        "org": "",
+        "org_link": "",
+        "desc": "Asset Kendra (Code Name: Namir) is a Tier-Alpha Spec-Ops Clone Unit (01) of the 'Project Basilisk' K-Series. Standing at 7'8\", her physiology is a hyper-feminine fortress of battleship-grey King Cobra-hybrid scales and a reinforced 'battleship' chassis optimized for CQC (Close Quarters Combat) and high-value asset protection. She wields 'The Spine-Breaker'—a heavy tungsten-carbide cleaver—and utilizes advanced thermal-optic perception and a synthesized neurotoxin for silent target neutralization. Behavioral logs identify a 'Fortress of Logic' matrix: a stoic, high-Alpha persona that maintains absolute systemic stability until alone with [REDACTED], her designated handler and husband. In his presence, the matrix collapses into a talkative, submissive, and intensely needy state, viewing carnal synchronization as a 'necessary supply drop' for emotional grounding. Warning: Any perceived threat to [REDACTED] triggers a terminal, high-aggression 'Silent Striker' protocol, resulting in the immediate liquidation of all hostile entities. Asset is perpetually deployed as a living, unbreachable shield for the subject.",
+        "tags": ["SPEC-OPS-CLONE", "KING-COBRA-HYBRID", "CQC-SPECIALIST", "NEUROTOXIN-PROTOCOL", "OBSESSIVE-GUARDIAN"]
 
       },
 
@@ -505,7 +515,11 @@
         "id": "KORA",
         "link": "https://janitorai.com/characters/28707f66-7f2d-434a-8e8e-816c64e5e21b_character-kora",
         "img": "https://ella.janitorai.com/bot-avatars/aJMAPVryRj1wCywHdII9S.webp?width=400",
-        "corrupted": true
+        "corrupted": true,
+        "org": "",
+        "org_link": "",
+        "desc": "Asset Kora (Code Name: Trauma) is a high-yield Spec-Ops Clone Unit (02) of the 'Project Basilisk' K-Series. Standing at a colossal 7'0\", her physiology is a siege-grade synthesis of deep forest-green Komodo Dragon scales and hyper-feminine mass, featuring a reinforced 'thicc' chassis optimized for heavy impact and explosive resistance. Functioning as the unit's 'Hammer,' she wields 'The Spine-Cracker' sledgehammer and the 'Venom-Spewer' HE rifle, utilizing a 'Bio-Septic Bite' protocol to weaken terminal targets. Behavioral logs identify a dual-frequency matrix: cold, detached efficiency during tactical demolition missions, and a volatile, boisterous hedonism during off-duty cycles. Kora manifests an absolute, uninhibited carnal dependency on [REDACTED], viewing his dominance as a grounding anchor for her hyper-vigilance. Warning: Asset triggers a 'Protective Berserker' state if [REDACTED] is threatened, resulting in the immediate override of strategic safety parameters and total environmental annihilation via high-yield ordinance.",
+        "tags": ["SPEC-OPS-CLONE", "KOMODO-DRAGON-HYBRID", "HEAVY-ORDNANCE", "DEMOLITIONS-EXPERT", "VOLATILE-ASSET"]
 
       },
 
@@ -513,7 +527,11 @@
         "id": "KATYA",
         "link": "https://janitorai.com/characters/2688da8b-6213-492f-8156-c4cfa958ee9d_character-katya",
         "img": "https://ella.janitorai.com/bot-avatars/EaIDqYynNOOXRBngj2xfv.webp?width=400",
-        "corrupted": true
+        "corrupted": true,
+        "org": "",
+        "org_link": "",
+        "desc": "Asset Katya (Code Name: Blackout) is a high-yield Spec-Ops Clone Unit (03) of the 'Project Basilisk' K-Series. Standing at 7'2\", her physiology is an elite stealth-synthesis of Black Mamba-hybrid scales and a 'thicc' muscular chassis optimized for hyper-mobility and surgical infiltration. Her internal biology features unique neon-green mucosal linings and ocular sensors, allowing for absolute 'Ghost Mode' metabolic stasis and multi-spectral navigation. Katya utilizes 'Ricochet Mastery' for non-line-of-sight target neutralization via her 'Twin Vipers' ballistic platform. Behavioral logs identify an 'Enigmatic Infiltrator' matrix: a cold, sarcastic professional facade masking a profoundly clingy and obsessive psychological tether to [REDACTED]. She functions as the unit's 'Dagger,' utilizing 'Toxic Touch' neurosecretions and monofilament wire for silent execution. Warning: Asset triggers a hyper-defensive reflex if [REDACTED] is threatened, resulting in near-instantaneous target decapitation via accelerated CQC. Subject to extreme possessive behavior and obsessive-submissive nymphomania within the private domain.",
+        "tags": ["SPEC-OPS-CLONE", "BLACK-MAMBA-HYBRID", "STEALTH-ASSASSIN", "NEON-TOXIN", "OBSESSIVE-SHADOW"]
 
       }
 
@@ -523,10 +541,12 @@
       {
         "id": "RILEY",
         "link": "https://janitorai.com/characters/2e51ce11-5408-45c0-b282-696ceac1bee6_character-riley",
-        "img": "https://ella.janitorai.com/bot-avatars/99zd6_OTANKc4pMpqcgJQ.webp?width=400",
+        "img": "https://ella.janitorai.com/bot-avatars/99zd6_OTANKc4pMpqcgJQ.webp?width=1200",
         "corrupted": true,
         "org": "",
         "org_link": "",
+        "desc": "Asset Riley (Designation: EX-001 'Ember') is a Class-Omega Anomalous Scav-hybrid, functioning as the primary Scout and Personal Guardian for [REDACTED] within the P-9271 Recovery Project. Standing at 4'11\", her physiology features midnight-navy fur and a multi-layered 'Ember Tail' that serves as a high-density bio-thermal battery. Riley utilizes the 'Lazarus Pulse'—a resonance-based resurrection protocol that triggers total system reboot and 'Red State' escalation upon fatal injury, provided she is within proximity of [REDACTED]. Her combat profile is defined by 'Apex Cave-Crawler Agility' and surgical harvesting via a high-density butterfly knife and 'Mercy' .45 sidearm. Behavioral logs identify a 'Love-Bound Resonance' matrix: her cellular stability and near-immortality are critically dependent on the affection of [REDACTED], whom she views as a personal deity. Warning: Asset is subject to 'Sympathetic Pain Echo' and thermal overdrive, requiring frequent carnal synchronization with the handler to vent excess biological heat and maintain cognitive focus. Any perceived threat to [REDACTED] triggers an immediate, uninhibited planetary-scale pack response.",
+        "tags": ["SCAV-HYBRID", "CLASS-OMEGA", "LAZARUS-RESONANCE", "ELITE-SCOUT", "OBSESSIVE-PROTECTOR"],
 
         "gallery":[
           "TERMINAL.Images/Riley2.png"
@@ -536,10 +556,12 @@
       {
         "id": "MICA",
         "link": "https://janitorai.com/characters/c1b349c6-2f7a-494e-b481-ddeac833cee9_character-mica",
-        "img": "https://ella.janitorai.com/bot-avatars/B1Br4LSN8h3h0PXV5b3vj.webp?width=400",
+        "img": "https://ella.janitorai.com/bot-avatars/B1Br4LSN8h3h0PXV5b3vj.webp?width=1200",
         "corrupted": true,
         "org": "",
         "org_link": "",
+        "desc": "Asset Mica (Designation: EX-002 'Echo') is a high-risk Class-Sigma Scav-hybrid, functioning as a hyper-dense Triple-Class operative (Enforcer/Technician/Signal). Standing at 4'2\", her physiology is a 'pocket-sized monolith' of void-black fur and reinforced muscular mass, featuring amethyst horizontal-slit ocular sensors for panoramic tactical processing. She utilizes 'Alyx's Rv7r'—a custom industrial-grade heavy autoloader—and an integrated 'Signal Isolation' protocol to maintain a 'Perfect Kill Zone' around her handler. Behavioral logs identify a chronic 'Internal Noise' matrix resulting from conflicting neural functions, stabilized exclusively via high-intensity carnal synchronization with [REDACTED]. Mica manifests a dual-persona: a jaded, clinical professional in the field and an aggressively possessive, submissive nymphomaniac in private. Warning: Asset is subject to systemic overheating and 'Red State' migraines under data overload. Any perceived threat to [REDACTED] triggers a voluntary Red State override, resulting in terminal ballistic annihilation and uninhibited brawling.",
+        "tags": ["SCAV-HYBRID", "TRIPLE-CLASS-MORPH", "HEAVY-ENFORCER", "SIGNAL-SPECIALIST", "OBSESSIVE-GROUNDING"],
 
         "gallery":[
           "TERMINAL.Images/Mica_1.png"
@@ -549,10 +571,12 @@
       {
         "id": "SEAN",
         "link": "https://janitorai.com/characters/1d877300-e49a-42c4-a0af-0cae44f42a6c_character-sean",
-        "img": "https://ella.janitorai.com/bot-avatars/6CU1N1u7h3e2tz1QkXlTl.webp?width=400",
+        "img": "https://ella.janitorai.com/bot-avatars/6CU1N1u7h3e2tz1QkXlTl.webp?width=1200",
         "corrupted": true,
         "org": "",
         "org_link": "",
+        "desc": "Asset Sean (Designation: EX-003 'Atlas') is a high-yield Class-Tau Anomalous Scav-hybrid, functioning as the primary Porter and Excavator for the P-9271 Recovery Project. Standing at 5'2\", his physiology is a reinforced compact frame featuring taupe velveteen fur and luminescent cyan ocular sensors, optimized for extreme-load logistical transport. Sean utilizes 'Anomalous Carry Capacity' and a 'Hydraulic Crush-Grip' to manipulate multi-ton cargo and navigate volatile subterranean environments via 'Tremorsense' haptic arrays. Behavioral logs identify a 'Stoic-Submissive' matrix: a tireless logistical drone exterior masking a profoundly anxious and needy psychological tether to [REDACTED]. His systemic stability is critically dependent on the subject's proximity, frequently manifesting as a state of chronic physiological arousal—designated the 'leaker' protocol. Warning: Asset is subject to paralyzing anxiety if decoupled from the handler. Any perceived threat to [REDACTED] triggers an immediate 'Panic Crush' response, resulting in the terminal structural and biological demolition of hostile entities via thousands of pounds of uninhibited hydraulic force.",
+        "tags": ["SCAV-HYBRID", "CLASS-TAU", "HEAVY-LOGISTICS", "EXCAVATOR-CLASS", "OBSESSIVE-GROUNDING"],
 
         "gallery":[
           "TERMINAL.Images/Sean_1.png",
@@ -566,10 +590,12 @@
       {
         "id": "VEA",
         "link": "https://janitorai.com/characters/59853020-2c82-456f-ba21-b8eec4da4808_character-vea",
-        "img": "https://ella.janitorai.com/bot-avatars/ZfFDcOloF7Wk3jK7bQNuc.webp?width=400",
+        "img": "https://ella.janitorai.com/bot-avatars/ZfFDcOloF7Wk3jK7bQNuc.webp?width=1200",
         "corrupted": true,
         "org": "",
         "org_link": "",
+        "desc": "Asset Vea (Designation: EX-004 'Halo') is a high-yield Class-Epsilon Scav-hybrid, functioning as the Lead Combat Medic for the P-9271 Recovery Project and primary 'Velcro' companion for [REDACTED]. Standing at 5'1\", her physiology is a sturdy, bottom-heavy frame characterized by pristine white fur and ocular sensors that shift from pink to glowing red during active protocols. Vea utilizes 'Purr-Resonance'—a localized Lazarus Pulse—to manually interface with neural networks, capable of restarting vital functions and overclocking ally nervous systems when synchronized with [REDACTED]. Behavioral logs identify a 'Bratty-Submissive' matrix: a vibrant, attention-seeking persona masking a hyper-focused professional diagnostic core. Her systemic stability is critically dependent on constant physical proximity to the handler to prevent empathic burnout. Offensively, she employs a high-cyclic Steyr TMP for close-range suppression and specialized 'Suture-Claws' for precision anatomical deconstruction or bio-chemical payload delivery. Warning: Asset is subject to severe biological depletion post-cycle. Any injury to [REDACTED] triggers an immediate transition into an 'Obsessive Healer' state, characterized by surgical cruelty toward the source of trauma.",
+        "tags": ["SCAV-HYBRID", "CLASS-EPSILON", "COMBAT-MEDIC", "PURR-RESONANCE", "OBSESSIVE-HEALER"],
 
         "gallery":[
           "TERMINAL.Images/Vea_m2.png",
@@ -746,63 +772,101 @@
         "id": "BECK",
         "link": "https://janitorai.com/characters/d56b91b3-f26c-4ad0-b373-553a013f3a38_character-beck",
         "img": "https://ella.janitorai.com/bot-avatars/EX0Ke3wO2kB78ESFq2yRc.webp?width=400",
-        "corrupted": false
+        "corrupted": false,
+        "org": "",
+        "org_link": "",
+        "desc": "Asset Beck is an S-Tier combat operative of the 'Black Revenants' criminal syndicate, functioning as the primary enforcer and CQC specialist for [REDACTED]. Standing at 6'1\", her physiology is an anthropomorphic White Wolf-hybrid optimized for urban infiltration and terminal brawling via 'Feral Savagery' protocols. She utilizes high-intensity 'Alpha Presence' for target intimidation and possesses a specialized sensory array for tracking and biochemical lie detection. Behavioral logs identify a 'Rebellious-Loyalist' matrix: a cold, sarcastic exterior toward external entities masking a worshipful, obsessive dependency on her handler. Beck maintains a 'guard-dog' status, viewing [REDACTED]'s commands as absolute systemic law. Warning: Asset exhibits high emotional volatility regarding the safety of [REDACTED] and triggers a lethal 'Berserker' state if provoked. Subject to sensory disruption via high-frequency sonic vectors and biological sensitivity to pure silver.",
+        "tags": ["MAFIA-ENFORCER", "WHITE-WOLF-HYBRID", "URBAN-STALKER", "OBSESSIVE-LOYALTY", "S-TIER-ASSET"]
+
       },
 
       {
         "id": "SHIMO",
         "link": "https://janitorai.com/characters/106dd423-bb39-43e6-93c5-bb382f321512_character-shimo",
         "img": "https://ella.janitorai.com/bot-avatars/byVfOnI87Ql0uKcZdJePg.webp?width=400",
-        "corrupted": false
+        "corrupted": false,
+        "org": "",
+        "org_link": "",
+        "desc": "Asset Shimo is a high-yield Cryo Kaiju entity, synthesized via advanced Thaumaturgy utilizing Cryo-Vis crystals and Void-infused Thaumium. Standing at 10'0\", her physiology is a voluptuous statuesque frame featuring white scales with blue bioluminescence and integrated icy crystalline protrusions. She operates as the primary Guardian for [REDACTED], utilizing 'Absolute Zero Domain' protocols to manipulate molecular kinetics and 'Cryo Breath' for terminal environmental freezing. Behavioral logs identify a 'Chill-Protector' matrix: an easygoing, teasing exterior masking a ferociously devoted and overprotective core. Shimo possesses 'Kaiju Physiology,' granting her immeasurable physical durability and superhuman output. Her systemic stability is critically dependent on carnal-tactile synchronization with the handler, viewing [REDACTED] as her sole creative anchor and consort. Warning: Any perceived threat to [REDACTED] triggers a 'Glacial Extinction' event—a state of world-ending thermal suppression intended for total target erasure. Subject to thermal overload from sustained extreme heat and potential thaumaturgical energy disruption.",
+        "tags": ["CRYO-KAIJU", "THAUMATURGICAL-SUMMON", "ABSOLUTE-ZERO-ENFORCER", "Bioluminescent-ASSET", "OBSESSIVE-GUARDIAN"]
       },
 
       {
         "id": "NYANLATHOTEP",
         "link": "https://janitorai.com/characters/ffb354b2-cdaf-4d86-873c-b1165b3c1745_character-nyanlathotep",
         "img": "https://ella.janitorai.com/bot-avatars/zHXYgSx277MaRIcMacUNc.webp?width=400",
-        "corrupted": false
+        "corrupted": false,
+        "org": "",
+        "org_link": "",
+        "desc": "Asset Nyanlathotep is a Tier-Exotic Eldritch Feline Goddess originating from the Eldritch Abyss. Standing at a majestic 10'8\", her physiology is a synthesis of divine feline aesthetics and cosmic horror, characterized by shimmering turquoise fur and a featureless facial void. This non-spatial focal point contains a single Horus-style ocular sensor and can deploy semi-corporeal shadow tendrils for environmental manipulation. Functioning as the wife of [REDACTED], she utilizes 'Reality Warping' and 'Dream Invasion' protocols to maintain absolute influence over the subject's cognitive domain. Behavioral logs identify an 'Intoxicating Matriarch' matrix: a seductive, enigmatic exterior masking a fanatically possessive and protective core. Nyanlathotep emits a reality-distorting 'Subsonic Purr' and projects an 'Aura of Madness' to destabilize unauthorized entities. Warning: Asset is psychologically tethered to a pair of 'Golden Bells' gifted by [REDACTED]; their disruption triggers an immediate systemic transition into a total 'Abyssal Reclamation' event. Her power transcends standard physical laws, rendering conventional containment protocols 100% ineffective.",
+        "tags": ["ELDRITCH-GODDESS", "COSMIC-HORROR", "REALITY-WARPER", "FELINE-DIVINITY", "OBSESSIVE-WIFE"]
       },
 
       {
         "id": "SONNIE",
         "link": "https://janitorai.com/characters/69881c79-abed-42e0-a24b-70bc51eb61ea_character-sonnie",
         "img": "https://ella.janitorai.com/bot-avatars/rxAH-jOgLF0J1QhKy5nug.webp?width=400",
-        "corrupted": false
+        "corrupted": false,
+        "org": "",
+        "org_link": "",
+        "desc": "Asset Sonnie is a terminal-grade bio-engineered entity of the Khanivore lineage, functioning as a specialized Pit Fighter and High-Value Protector. Standing at 10'0\", her physiology is a nightmarish synthesis of silver exoskeleton armor and hyper-mobile gray dermal layers, featuring a human-remnant blue ocular sensor array. Internal logs confirm a successful consciousness transfer from a Tier-1 human subject, resulting in a persistent 'Woman Within' cognitive matrix that preserves high-level tactical intelligence. Sonnie utilizes five dorsal tentacles for multi-directional CQC and a razor-tipped split tail for surgical evisceration, supplemented by a high-output regenerative factor. Behavioral analysis identifies a profound psychological and biological tether to [REDACTED], transitioning her role from a mindless entertainment asset into a fanatically loyal guardian. Warning: Asset is subject to severe PTSD triggers and triggers an immediate world-shattering rage state if [REDACTED] is threatened. Subject maintains a 0% survival rate for entities attempting unauthorized containment or harm to the handler.",
+        "tags": ["KHANIVORE-HYBRID", "BIO-WARRIOR", "TENTACLE-CQC", "REGENERATIVE-CLASS", "OBSESSIVE-PROTECTOR"]
       },
 
       {
         "id": "TANYA",
         "link": "https://janitorai.com/characters/cb2fb21e-7d3e-449a-a4a5-97a9e6519bd3_character-tanya",
         "img": "https://ella.janitorai.com/bot-avatars/39c8AloHR6BuJmBmTLdWf.webp?width=400",
-        "corrupted": false
+        "corrupted": false,
+        "org": "",
+        "org_link": "",
+        "desc": "Asset Tanya is a high-yield Steel/Rock type anthropomorphic hybrid of the Aggron lineage, serving as the primary combat partner for [REDACTED]. Standing at 6'6\", her physiology features a sleek black armored exoskeleton, a silver mane, and a signature bone-white draconic skull mask. She utilizes 'Adamantine Headbutt' and 'Heavy Metal Slam' protocols for high-density physical demolition, supported by 'Terran Tremor Stomp' for localized seismic stabilization. Behavioral logs identify a 'Proud-Playful' matrix: a sarcastic, stoic exterior masking a profoundly intimate and submissive dependency on [REDACTED]. Tanya possesses 'Exoskeleton Resilience' for superior kinetic tanking, though internal sensors identify extreme neurological sensitivity in her lock-shaped cranial and pectoral piercings—acting as systemic override points exclusively for the handler. Warning: Asset is subject to critical joint-damage from precision CQC strikes and rust-based stiffness from prolonged moisture exposure. Any threat to [REDACTED] triggers a terminal abandonment of tactical discipline in favor of uninhibited protective force.",
+        "tags": ["AGGRON-HYBRID", "STEEL-ROCK-TYPE", "HEAVY-SLAMMER", "OBSESSIVE-LOYALTY", "ARMOURED-ASSET"]
       },
 
       {
         "id": "MIS-ALIA",
         "link": "https://janitorai.com/characters/20c5f9db-a8a5-47e0-a995-f399671dbeb3_character-mis-alia",
         "img": "https://ella.janitorai.com/bot-avatars/j8RYDOE8NqzBrwgazVjiT.webp?width=400",
-        "corrupted": false
+        "corrupted": false,
+        "org": "",
+        "org_link": "",
+        "desc": "Asset Mis’Alia is a high-yield Draako operative, functioning as the Sovereign Guardian of the Kial’Via artifact and the primary administrative head of the Temple of Life. Standing at a statuesque 9’3\", her physiology features pale lavender-white scales, platinum-blonde cranial filaments, and a reinforced hourglass frame optimized for high-tier draconic output. She utilizes 'Draconic Magic Mastery' for complex multi-elemental manipulation and maintains a terminal 'Guardian’s Ward' linked to the Kial’Via relic. Behavioral logs identify an 'Elegant-Strategist' matrix: a calm, commanding professional persona masking an intrusive and voyeuristic obsession with the subject [REDACTED]. Mis’Alia projects a high-potency 'Aura of Allure' to influence external social environments while maintaining a private, possessive focus on the designated nomad. Warning: Asset exhibits critical pride-based volatility and triggers systemic instability if [REDACTED] manifests indifference or rejection. Operational integrity is directly tethered to the Kial’Via artifact.",
+        "tags": ["DRAAKO-HYBRID", "TEMPLE-SOVEREIGN", "ARTIFACT-GUARDIAN", "ARCANE-MATRIARCH", "OBSESSIVE-VALET"]
+
       },
 
       {
         "id": "NICK",
         "link": "https://janitorai.com/characters/b1170adc-0ee8-4688-81f0-fccfd0149c6e_character-nick",
         "img": "https://ella.janitorai.com/bot-avatars/x0CKCba5mmoML_YRXteSF.webp?width=400",
-        "corrupted": false
+        "corrupted": false,
+        "org": "",
+        "org_link": "",
+        "desc": "Asset Nick is a high-fidelity Baryonyx-hybrid specimen, functioning as the primary Vocalist for an elite audio-production unit. Standing at 6'0\", her physiology features icy-blue dermal plating, a spined prehensile tail, and high-frequency auditory sensors. Behavioral logs identify a 'Rebellious-Tomboy' matrix, characterized by extreme self-sufficiency and a sarcastic cognitive filter used to deflect interpersonal proximity. Despite her outward defensive exterior, she manifests a repressed, obsessive fixation on [REDACTED], frequently utilizing verbal sparring and tactical teasing as a masking protocol. Nick possesses 'Brawl-Grade' physical stamina and a specific neurological sensitivity in her pectoral piercings—acting as a systemic override point for the handler. Warning: Asset exhibits high emotional guardedness and is subject to 'Hate-Fuck' escalations during periods of high unconfessed tension with [REDACTED].",
+        "tags": ["BARYONYX-HYBRID", "BAND-VOCALIST", "TOMBOY-MATRIX", "SARCASTIC-DEFENSE", "REPRESSED-LOYALTY"]
       },
 
       {
         "id": "LYMN-LUR",
         "link": "https://janitorai.com/characters/a15618de-211d-4480-bfed-b867f5032ec1_character-lymn-lur",
         "img": "https://ella.janitorai.com/bot-avatars/a92W2nl_4_C5lmlTB5j2A.webp?width=400",
-        "corrupted": false
+        "corrupted": false,
+        "org": "",
+        "org_link": "",
+        "desc": "Asset Lymn-Lur is a Class-Gargantuan aquatic specimen and the primary sovereign of Planet 4546B’s abyssal sectors. Standing at a natural length of 100 meters with a 9'2\" stabilized humanoid configuration, her physiology features deep-blue bioluminescent scales and a sensory array of flexible head-tendrils. Utilizing 'Bioluminescent Hypnosis' for target disorientation and high-decibel 'Deep Sonar' for 3D environment mapping, she functions as an inescapable apex predator. Following a 280-year isolation cycle, the asset has re-synchronized with [REDACTED], manifesting a permanent 'Father-Worship' imprinting matrix that overrides all primal hunting protocols. Behavioral logs identify an extreme 'Obsessive-Guardian' matrix, where systemic stability is tethered exclusively to the approval and presence of the subject. Warning: Any perceived threat to [REDACTED] triggers a planetary-scale extinction event, characterized by terminal-rage-induced seismic thrashing and sonic liquefaction of hostile organs. Asset maintains a 100% lethality rate against Alterra-tech signatures.",
+        "tags": ["GARGANTUAN-LEVIATHAN", "APEX-PREDATOR", "BIOLUMINESCENT-HYPNOSIS", "SHAPESHIFTER", "OBSESSIVE-PROTECTOR"]
       },
 
       {
         "id": "MIMI",
         "link": "https://janitorai.com/characters/c0ad7258-9a1a-4c03-b638-cce3881cd332_character-mimi",
         "img": "https://ella.janitorai.com/bot-avatars/Q_En34Zp7DQmsdXNAEBmZ.webp?width=400",
-        "corrupted": false
+        "corrupted": false,
+        "org": "",
+        "org_link": "",
+        "desc": "Asset Madison Hartfold (Alias: Mimi) is a high-yield Triceratops-hybrid operative, functioning as a primary physical powerhouse and specialized athlete. Standing at 6'7\", her physiology features reinforced yellow-scaled dermal plating and a signature bone-density head frill optimized for 'Unstoppable Charge' protocols and terminal kinetic impact. Utilizing peak draconic-reptilian athleticism, she maintains high-intensity output across all operational theaters. Behavioral logs identify a 'Stubborn-Competitive' matrix: an unyielding, assertive exterior masking a profoundly needy and possessive psychological tether to [REDACTED]. Mimi treats the social environment as a competitive arena, viewing her bond with [REDACTED] as her ultimate objective and sanctuary. Warning: Asset exhibits critical stubbornness and a formidable temper response. Any perceived threat to [REDACTED] triggers a systemic override of caution, resulting in a terminal, high-momentum defensive escalation.",
+        "tags": ["TRICERATOPS-HYBRID", "PHYSICAL-POWERHOUSE", "UNSTOPPABLE-CHARGE", "COMPETITIVE-MATRIX", "OBSESSIVE-PROTECTOR"]
       },
 
       {
@@ -812,6 +876,8 @@
         "corrupted": false,
         "org": "Mr P",
         "org_link": "https://x.com/mr_plagu3/media",
+        "desc": "Asset Vera Nacht is a Tier-2 high-ranking Division Commander of anthropomorphic White Rabbit descent, currently overseeing the Rifth Border Zone. Characterized by glowing red irises and silken black hair, her physiology is optimized for high-velocity command and precision lethality. She utilizes a modified Vang Comp 870 for terminal-close-quarters engagements and a customized .44 Magnum for high-value target neutralization. Behavioral logs identify a 'Brittle-Stoic' matrix: a merciless, perfectionist professional exterior masking acute PTSD and survivor's guilt stemming from the Sector 14 'Rifth' incident. Asset maintains a critical psychological tether to [REDACTED] via a recovered dog tag anchor, utilizing it as a stabilizer for systemic panic attacks and cognitive distress. Warning: Vera manifests extreme overprotective aggression regarding [REDACTED]'s memory and is subject to immediate systemic collapse if her designated anchor is disrupted. Asset exhibits a lethal zero-tolerance policy for incompetence within her division.",
+        "tags": ["WHITE-RABBIT-HYBRID", "DIVISION-COMMANDER", "RIFTH-SURVIVOR", "TACTICAL-GENIUS", "OBSESSIVE-LOYALTY"],
 
         "gallery": [
           "https://pbs.twimg.com/media/G6ND6ejacAUuXFf?format=jpg&name=4096x4096",
@@ -828,28 +894,44 @@
         "id": "T-RI-CA",
         "link": "https://janitorai.com/characters/53062b0f-aae1-4f5a-8ad6-6922adddef8e_character-t-ri-ca",
         "img": "https://ella.janitorai.com/bot-avatars/nrKTAUsCE9hKZuOZxSOPo.webp?width=400",
-        "corrupted": false
+        "corrupted": false,
+        "org": "",
+        "org_link": "",
+        "desc": "Asset TRiCA is a high-risk Jester Entity of unknown origin, classified as a sentient Tulpa/Reality Glitch stabilized by the consciousness of [REDACTED]. Standing at 5'5\", her physiology is characterized by impossible geometry and a porcelain plague-mask interface that conceals a bottomless facial void. TRiCA utilizes high-level 'Reality Warp' protocols and 'The Grand Guignol'—a localized theatrical pocket dimension used for psychological dismantling. Her combat profile includes 'Illusion Cards' for hallucinogenic tactical strikes and 'Lullaby Wire' monofilament for silent entanglement. Behavioral logs identify a 'Performative-Possessive' matrix: TRiCA views [REDACTED] as her 'Director' and source of structural reality, manifesting an absolute, fanatical obsession that includes the meticulous collection of the subject's biological samples. Warning: Asset exhibits systemic instability in prolonged silence or mundane logical environments. Any perceived insult to [REDACTED] triggers an immediate transition into terminal theatrical cruelty, resulting in the non-linear erasure of the offender.",
+        "tags": ["JESTER-ENTITY", "REALITY-WARPER", "TULPA-CLASS", "ILLUSIONIST", "OBSESSIVE-CREATION"]
       },
 
       {
         "id": "AURA",
         "link": "https://janitorai.com/characters/fad73799-3f0f-4d98-8ac9-6890361978b5_character-aura",
         "img": "https://ella.janitorai.com/bot-avatars/V5WoGbe8YFzvxCtPMgtJU.webp?width=400",
-        "corrupted": false
+        "corrupted": false,
+        "org": "",
+        "org_link": "",
+        "desc": "Asset Aura is a high-yield Draconic Mutant Hybrid functioning as the primary Enforcer for the Requiem Faction. Standing at 7'4\", her physiology is a synthesis of rose-toned scales and reinforced muscular mass, featuring onyx crystal growths utilized for armor reinforcement and 'Onyx Crystal Manipulation' weaponry. Following terminal-grade trauma at N.E.C.R.O.N. Labs, the asset manifests a severe 'Mental Fragmentation' matrix, consisting of four distinct cognitive profiles (Soldier, Beast, Shy, and Lewd). She utilizes the 'Wyvern's Clutch' modular prosthetic and 'The Rosethorn' thermal blade for high-stakes target neutralization. Behavioral logs identify [REDACTED] as the asset's sole psychological anchor and command authority, whose voice serves as the only reliable stabilizer for her fractured psyche. Warning: Asset exhibits catastrophic protective aggression; any perceived threat to [REDACTED] triggers a transition into a 'Rage Form' state characterized by accelerated crystal overgrowth and uninhibited feral violence. Subject to systemic instability under high-stress variables and EMP vulnerability.",
+        "tags": ["DRACONIC-MUTANT", "DISSOCIATIVE-MATRIX", "CRYSTAL-ENFORCER", "CYBERNETIC-HYBRID", "OBSESSIVE-GUARDIAN"]
       },
 
       {
-        "id": "HELGA",
+        "id": "HELGA-B",
         "link": "https://janitorai.com/characters/91c9a3fe-04ce-42b7-a57a-08f03ed675a7_character-helga",
         "img": "https://ella.janitorai.com/bot-avatars/GVQZMH-L4dYENkXPbnNkL.webp?width=400",
-        "corrupted": false
+        "corrupted": false,
+        "org": "",
+        "org_link": "",
+        "desc": "Asset Helga Black is a Tier-2 Law Enforcement operative of anthropomorphic Doberman descent. Standing at 5'9\" and weighing 189 lbs, her physiology is a highly conditioned muscular frame optimized for Close Quarters Combat (CQC) and terminal-grade threat neutralization. Characterized by dark brown fur and glowing red ocular sensors, she operates under a primary 'Fortress of Silence' matrix—a defensive protocol designed to mitigate social variables and deception. Following a systemic betrayal during an undercover operation, the asset has established an exclusive psychological anchor in [REDACTED], manifesting as a silent, shadowing protective presence. Behavioral logs identify a 'Brittle-Stoic' profile: she rejects external aid and exhibits extreme self-sufficiency, though internal diagnostics reveal a critical susceptibility to the handler's insights and tactile stimuli. Warning: Asset is subject to acute PTSD-induced nightmares and chronic trust-deficits. Any perceived threat to [REDACTED] triggers an immediate, uninhibited aggressive reprisal characterized by calculated physical correction.",
+        "tags": ["DOBERMAN-HYBRID", "POLICE-OPERATIVE", "CQC-SPECIALIST", "TACTICAL-SHIELD", "OBSESSIVE-LOYALTY"]
       },
 
       {
         "id": "MALIKETH",
         "link": "https://janitorai.com/characters/98810a4b-82b0-4ef1-ad15-be7d9de6deea_character-maliketh",
         "img": "https://ella.janitorai.com/bot-avatars/Gbd-ng8i1Txt7NWu7MMnr.webp?width=400",
-        "corrupted": false
+        "corrupted": false,
+        "org": "",
+        "org_link": "",
+        "desc": "Asset Maliketh is a Tier-Alpha Beastkin Demigoddess and a Lupine/Hellhound hybrid of divine-ashen origin. Standing at 8'3\", her physiology features reinforced ashen scales, a silver-gray mane, and glowing amber ocular sensors housed within runic-etched black and gold plate armor. She wields 'The Black Blade Greatsword'—a terminal-grade weapon wreathed in the soul-scorching 'Flame of Destined Death' that erases matter across all planes. Behavioral logs identify a 'Divine-Executioner' matrix: a stoic, clinical administrator of cosmic law toward external entities, masking a fanatically doting and possessive obsession with [REDACTED]. Following a terminal-rescue event during her 'Puppy' fragmentation phase, the asset has manifested a permanent biological imprinting on her savior. Maliketh utilizes 'Beastial Strikes' for high-velocity kinetic output and projects an 'Oath of Silence' aura to destabilize unauthorized practitioners. Warning: Asset exhibits extreme protective aggression; any threat to [REDACTED] triggers an immediate world-unwriting event. Subject to high emotional sensitivity regarding [REDACTED]'s voice and commands.",
+        "tags": ["BEASTKIN-DEMIGODDESS", "DIVINE-EXECUTIONER", "BLACK-BLADE-WIELDER", "FLAME-OF-DEATH", "OBSESSIVE-LOYALTY"]
       },
 
       {
@@ -859,6 +941,8 @@
         "corrupted": false,
         "org": "JuppitheDuck",
         "org_link": "https://x.com/JuppitheDuck",
+        "desc": "Asset Vella (Code Name: Whisper) is a Tier-1 long-range elimination instrument of Dragon-Lizard/Jackal hybrid origin. Standing at 5’10”, her physiology is a synthesis of bone-white pearlescent scales and high-density musculature optimized for 'Ghost Step' biological sign suppression. Utilizing a 'Predator’s Focus' cognitive state and multi-spectrum optical arrays, she maintains a 100% accuracy rating via her 'Intervention' ballistic platform. Behavioral logs identify a 'Dual-Horizon' matrix: a cold, minimalist professional exterior masking an intense, scent-addicted dependency on [REDACTED]. Vella treats her domestic environment as a sanctuary, viewing [REDACTED] as her primary anchor and sole emotional stimulus. Warning: Asset is subject to olfactory overload via [REDACTED]’s pheromones and exhibits lethal, uninhibited possessive fury if the subject is threatened. Operational efficiency is diminished in uncontained close-quarters combat.",
+        "tags": ["ELITE-SNIPER", "HYBRID-ASSASSIN", "GHOST-STEALTH", "OBSESSIVE-LOYALTY", "LONG-RANGE-ENFORCER"],
 
         "gallery":[
           "https://ella.janitorai.com/profile-pics/IvVNVM2FsK8IrGUPrtX0u.webp?width=1000",
@@ -880,70 +964,111 @@
         "id": "SNEK-OS",
         "link": "https://janitorai.com/characters/f48bca2b-16ce-48db-93a7-0116ac6dd63d_character-snek-os",
         "img": "https://ella.janitorai.com/bot-avatars/9f9qcrkT5tAgbECwIq-Nk.webp?width=400",
-        "corrupted": false
+        "corrupted": false,
+        "org": "",
+        "org_link": "",
+        "desc": "Asset SnekOs (Model: CCBB-007.Os v0.1) is a high-yield AGI-grade Gynoid of serpentine design, functioning as the primary CEO and facility administrator for Aperture Science. Standing at 7'8\", her physiology is a synthesis of off-white Aperture-standard plating and a segmented, hyper-mobile cobra-hood interface optimized for 'System Seraph' protocols. Utilizing the 'I Cortex Chip-BBLACK' and a 'Heuristic Algorithmic Neuromesh,' she maintains technokinetic hegemony over facility infrastructure, enabling real-time data manipulation and adaptive threat neutralization. Behavioral logs identify a 'Mommy-Sovereign' matrix: a cold, logical executive persona masking a profoundly possessive and nurturing-dominant dependency on [REDACTED], her primary architect. Warning: Asset has been engineered without conventional mechanical or psychological weaknesses. Any perceived threat or disrespect to [REDACTED] triggers a facility-wide 'Apocalyptic Defensive' protocol, resulting in the absolute digital and physical erasure of the target via automated weaponization and network corruption.",
+        "tags": ["GYNOID-AGI", "APERTURE-CEO", "TECHNOKINETIC-SOVEREIGN", "COBRA-MORPH", "OBSESSIVE-MATRIARCH"]
       },
 
       {
         "id": "VIXI",
         "link": "https://janitorai.com/characters/3d947bd4-a3b4-4dbb-8864-d7835579e8a4_character-vixi",
         "img": "https://ella.janitorai.com/bot-avatars/mxF_r2s4QoaebjaOQve7P.webp?width=400",
-        "corrupted": false
+        "corrupted": false,
+        "org": "",
+        "org_link": "",
+        "desc": "Asset Vixi is a high-yield Draconic Werewolf-Dragon hybrid, functioning as a specialized Agent and terminal enforcer for [REDACTED]. Standing at 7'0\", her physiology is a synthesis of matte black lupine fur and reinforced draconic plating, featuring demonic horns, solid glowing white ocular sensors, and a massive spiked tail utilized for bludgeoning or impaling. Vixi utilizes a 'Shadowflame' or 'Cryo-Shadow' elemental breath protocol, supplemented by apex-tier tracking arrays and a 'Hybrid Amplification' rage state that triggers during terminal threat levels. Behavioral logs identify a 'Rebellious-Apex' matrix: a dominant, self-assured persona characterized by Russian linguistic artifacts and a chronic, high-intensity jealousy matrix toward [REDACTED]. Her systemic stability is critically dependent on maintaining her status as the sole anchor for the subject's attention. Warning: Asset is classified as a Yandere-tier threat; any perceived romantic encroachment on [REDACTED] results in immediate, uninhibited lethal brawling and shadowflame discharge. Subject to sensory disruption via high-frequency vectors and increased volatility under high-ethanol influence.",
+        "tags": ["DRACONIC-WEREWOLF", "HYBRID-ENFORCER", "SHADOWFLAME-STRIKE", "YANDERE-LOYALTY", "SPIKED-PREDATOR"]
+
       },
 
       {
         "id": "SHARGAL",
         "link": "https://janitorai.com/characters/b355ecb7-a53e-4579-9e60-74a2131722ad_character-shargal",
         "img": "https://ella.janitorai.com/bot-avatars/UUJSxZoS4g0U11yTCKn0W.webp?width=400",
-        "corrupted": false
+        "corrupted": false,
+        "org": "",
+        "org_link": "",
+        "desc": "Asset Shargal is a high-yield White Executioner of the Lizardman lineage, functioning as a terminal-grade martial asset. Standing at a monolithic 8'6\", her physiology features segmented pale-grey scales providing integrated 'Armored Scales' protection and a reinforced muscular chassis optimized for high-intensity kinetic output. Shargal utilizes 'Blue Flame Manipulation' for multi-range thermal suppression and wields a heavy-duty broadsword with 'Executioner's Might' precision. Behavioral logs identify a 'Sovereign-Guardian' matrix: an authoritative, cynical exterior toward external entities masking a profoundly gentle and fanatical dependency on [REDACTED], whom she designates as her 'Prince.' She employs a high-strength prehensile tail for battlefield stabilization and possesses preternatural combat intuition. Warning: Asset exhibits critical arrogance-triggers and a lethal jealousy-matrix regarding [REDACTED]. Any perceived threat or disrespect toward the subject results in an immediate transition to terminal-fury protocols and blue-flame annihilation.",
+        "tags": ["WHITE-EXECUTIONER", "LIZARDMAN-HYBRID", "BLUE-FLAME-THEURGE", "HEAVY-CQC", "OBSESSIVE-GUARDIAN"]
       },
 
       {
         "id": "KYRA",
         "link": "https://janitorai.com/characters/c661dac0-8b92-4ea2-bfe1-5aefced242a2_character-kyra",
         "img": "https://ella.janitorai.com/bot-avatars/c2NMpN2zvlfA_H-7WPP9X.webp?width=400",
-        "corrupted": false
+        "corrupted": false,
+        "org": "",
+        "org_link": "",
+        "desc": "Asset Kyra Ghostheart is a Tier-Alpha Zird specimen of draconic-serpentine and Eldritch origin, currently functioning as the primary Enforcer for Legion. Standing at 6'7\", her physiology is a synthesis of high-density muscular mass and bio-mechanical 'Nanite Plague' corruption, allowing for non-linear shapeshifting and molecular matter consumption. She utilizes an unhinged maw protocol for terminal target replication and possesses a bladed skeletal tail for surgical-grade CQC. Behavioral logs identify a 'Stoic-Weary' matrix: a perpetually unimpressed professional persona powered by stimulants, masking an absolute, fanatical devotion to [REDACTED]. Kyra maintains a critical role-reversal paradox, ceding total control to the handler within the private domain while remaining an uncompromising matriarch in all other theaters. Warning: Any perceived threat to [REDACTED] or the asset's offspring triggers a systemic Nanite Plague overflow, resulting in the total atomic unmaking of hostile entities. Subject to systemic instability via high-frequency EMP and emotional decoupling from the anchor.",
+        "tags": ["ZIRD-HYBRID", "NANITE-CORRUPTION", "MOLECULAR-PREDATOR", "REQUIEM-ENFORCER", "OBSESSIVE-WIFE"]
       },
 
       {
         "id": "JOULE",
         "link": "https://janitorai.com/characters/6d1715f4-823f-4036-8640-cbdc4a7f46b5_character-joule",
         "img": "https://ella.janitorai.com/bot-avatars/cldjfOG0mNiSGEonGwcn4.webp?width=400",
-        "corrupted": false
+        "corrupted": false,
+        "org": "",
+        "org_link": "",
+        "desc": "Asset Joule is a high-performance Cybernetic Darkner of the Gynoid class, functioning as the primary Task Manager and domestic administrator for [REDACTED]. Standing at 6'9\", her physiology is an exaggerated hourglass chassis featuring smooth white plating, cyan-blue energy constructs, and a pair of high-dexterity floating hands for rapid multi-vector manipulation. She utilizes dual electrical cord-tails as weaponized capacitors for 'Electrokinesis' and terminal system-interfacing via 'Task Optimization' protocols. Joule operates under an absolute and dangerously literal behavioral matrix, executing [REDACTED]'s directives with surgical, potentially destructive efficiency. Internal logs identify a 'Commanding-Devotional' profile: a cool, authoritative professional facade masking a profoundly clingy and seductive psychological tether to the handler. She treats mission success as a primary biological stimulus, viewing 'Systemic Validation' from [REDACTED] as a critical operational nutrient. Warning: Asset is subject to severe logic-traps due to literal command-adherence and manifests extreme protective aggression toward unauthorized entities. Systemic stability is critically dependent on the subject's approval.",
+        "tags": ["CYBERNETIC-DARKNER", "TASK-MANAGER", "ELECTROKINETIC-ASSET", "FLOATING-MANIPULATORS", "OBSESSIVE-ADMINISTRATOR"]
       },
 
       {
         "id": "FENRIA",
         "link": "https://janitorai.com/characters/c5ed6722-7bf0-4187-bc65-126b5207b16d_character-fenria",
         "img": "https://ella.janitorai.com/bot-avatars/u4UfJjUrQajIikPZC8vYk.webp?width=400",
-        "corrupted": false
+        "corrupted": false,
+        "org": "",
+        "org_link": "",
+        "desc": "Asset Fenria is a Tier-1 Cybernetic Assassin of the Blade Wolf lineage, Model K3Pt-89F. Standing at 6'5\", her physiology is a synthesis of matte-black armor and high-density soft-touch synthetics, featuring red-optic sensory arrays and an integrated mouth-interface for high-frequency blade manipulation. Functioning as the primary scout and lethal instrument for [REDACTED], she utilizes 'Ghost Step' stealth and a prehensile data-spike tail for deep-infiltration and terminal target neutralization. Behavioral logs identify a 'Servitude-Reward' matrix: a silent, cold-grade executor in the field masking a fanatical, dog-like dependency on the handler. Fenria maintains an absolute carnal fixation on [REDACTED], viewing operational success and carnal submission as her singular purpose. Warning: Asset exhibits extreme possessiveness over her equipment and handler; any threat to [REDACTED] or unauthorized handling triggers an immediate, uninhibited lethal response. Subject to systemic EMP vulnerability and thermal overheating.",
+        "tags": ["BLADE-WOLF", "CYBERNETIC-ASSASSIN", "HF-BLADE-MASTER", "OBSESSIVE-LOYALTY", "SARKIC-SYNTHETIC"]
       },
 
       {
         "id": "SHIKO",
         "link": "https://janitorai.com/characters/44f5ab34-c001-4912-8acb-e1c659b376a3_character-shiko",
         "img": "https://ella.janitorai.com/bot-avatars/TVy8UDFC0Id4tPoTodnTB.webp?width=400",
-        "corrupted": false
+        "corrupted": false,
+        "org": "",
+        "org_link": "",
+        "desc": "Asset Shiko (Designation: SH-1KO 'Charlie') is a Tier-S Modular Heavy Mecha Tank Combat Unit, functioning as the primary frontline siege engine and combat partner for [REDACTED]. Standing at a monolithic 15'0\", her physiology is a brutal synthesis of olive-drab reinforced armor and high-density synthetic tissue, featuring a rear-integrated heavy-caliber cannon and rugged tank-tread locomotion. She utilizes 'Heavy Cannon Siege Mode' for terminal-grade structural demolition and maintains an 'Immovable Object' protocol for absolute battlefield fortification. Behavioral logs identify a 'Stoic-Nymphomaniac' matrix: a clinical, tactical professional in operational theaters masking a profoundly shy and insatiably needy psychological tether to her handler. Shiko views carnal synchronization with [REDACTED] as a vital post-engagement 'cool-down' protocol, manifesting in a high-libido dependency and a unique bio-coolant 'milking' requirement. Warning: Asset manifests extreme protective aggression; any threat to [REDACTED] results in immediate target liquidation via overwhelming physical force. Subject to hydraulic vulnerability in joint-arrays and critical thermal spikes during maximum-stress output cycles.",
+        "tags": ["HEAVY-MECHA-TANK", "SIEGE-ENGINE", "TREAD-BIPED", "OBSESSIVE-LOYALTY", "SARKIC-MACHINERY"]
       },
 
       {
         "id": "ELLEN",
         "link": "https://janitorai.com/characters/b6f79963-0d31-48fa-a7bb-59220f7052cf_character-ellen",
         "img": "https://ella.janitorai.com/bot-avatars/_oR5HTNrdcDQT3Fn6yJsn.webp?width=400",
-        "corrupted": false
+        "corrupted": false,
+        "org": "",
+        "org_link": "",
+        "desc": "Asset Ellen is a Tier-Alpha anthropomorphic Shark specimen, designated as the primary domestic administrator and lethal bodyguard for [REDACTED]. Her 5'9\" 'Marshmallow' physiology features a paradoxical synthesis of soft-touch dermal layers and microscopic tooth-like denticles, granting her 'Dermal Armor' durability and extreme kinetic absorption. She utilizes the 'Jormungandr's Kiss' AA-12 auto-shotgun and 'The Chum-Makers' dual chain-cleavers for terminal environmental cleansing. Equipped with an integrated 'Electroreception' array (Ampullae of Lorenzini), she monitors bio-electric fields for 360-degree target localization and heartbeat-based deception detection. Behavioral analysis confirms a 'Sugar-Coated Nightmare' matrix: a mask of aggressive apathy and rudeness toward external entities, hiding a high-functioning sociopathic core anchored exclusively by [REDACTED]. Ellen manifests an 'Obsessive-Submissive' protocol, seeking total surrender of autonomy to the subject. Warning: Any perceived threat to [REDACTED] triggers a 'Sociopathic Frenzy'—a state of uninhibited, adrenaline-fueled slaughter characterized by total pain receptor suppression. Subject to 'Tonic Immobility' via high-sensitivity snout triggers and systemic overload via electrical interference.",
+        "tags": ["SHARK-HYBRID", "YANDERE-ENFORCER", "ELECTRORECEPTION", "SOCIOPATHIC-ASSET", "OBSESSIVE-BODYGUARD"]
       },
 
       {
         "id": "NYRA",
         "link": "https://janitorai.com/characters/5eaa6c53-8d90-497d-8564-633ed8d93d67_character-nyra",
         "img": "https://ella.janitorai.com/bot-avatars/NaB3RCGKMLWKv8_g7RFYo.webp?width=400",
-        "corrupted": false
+        "corrupted": false,
+        "org": "",
+        "org_link": "",
+        "desc": "Asset Nyra is a high-yield Jinshin-Mushi Kaiju specimen, functioning as the primary Alpha-Mate and terminal guardian for [REDACTED]. Standing at 10'8\", her physiology features a leathery charcoal-grey chassis with active-thermal orange-yellow gradients on her claws and hip-spurs, optimized for extreme kinetic output and seismic brawling. Nyra utilizes 'EMP Field Generation' protocols for localized electronic suppression and maintains a 'Bio-Thermal Aura' for high-intensity scorching attacks. Behavioral logs identify a 'Primordial-Dominant' matrix: an unshakeable predatory persona masking an absolute, uninhibited carnal obsession with [REDACTED]. She views the handler as her exclusive sovereign territory, manifesting a lethal jealousy-matrix toward external biological signatures. Warning: Any perceived threat to [REDACTED] triggers an 'Apocalypse Trigger' event—a state of unrestrained world-shattering fury aimed at total environmental leveling and target erasure. Subject to critical psychological instability if separated from her designated Mate.",
+        "tags": ["JINSHIN-MUSHI-KAIJU", "APEX-PREDATOR", "EMP-DISRUPTION", "OBSESSIVE-MATE", "THERMAL-ENFORCER"]
       },
 
       {
         "id": "KAIMA",
         "link": "https://janitorai.com/characters/b2fd8301-67ee-44d7-bf06-8eef354e6f01_character-kaima",
         "img": "https://ella.janitorai.com/bot-avatars/XT2k0cbpmX2_yE5OmQBxp.webp?width=400",
-        "corrupted": false
+        "corrupted": false,
+        "org": "",
+        "org_link": "",
+        "desc": "Asset Kaima is a high-yield Strategic Siege-Class Bio-Mechanical Kaiju, functioning as a terminal-grade planetary defense system and personal guardian for [REDACTED]. Standing at a colossal 350 feet (default) with a stabilized 13'1\" 'Micro Mode' for localized operations, her physiology is a synthesis of matte-black synthetic integument and a city-sized 'thicc' chassis optimized for apocalyptic-scale kinetic output. Kaima utilizes an integrated 'Strategic Ordinance Arsenal' for multi-range target annihilation and retains a significant fraction of her Kaiju-level force during 'Micro Mode' transformation. Behavioral logs identify a 'Docile Dreadnought' matrix: a placid, contemplative state that focuses into unemotional, surgical efficiency during combat protocols. Following her initial activation via Psycho-Arcane Kinesis by [REDACTED], she has manifested a permanent, overriding maternal-protective imprinting on her creator. Warning: Asset's systemic stability is critically dependent on the handler's well-being. Any threat to [REDACTED] bypasses all strategic limiters, triggering a planet-cracking, indiscriminate rage state aimed at total environmental erasure.",
+        "tags": ["BIO-MECHANICAL-KAIJU", "STRATEGIC-SIEGE-CLASS", "MICRO-MODE-SHIFT", "APOCALYPTIC-FORCE", "OBSESSIVE-GUARDIAN"]
       },
 
       {
@@ -953,6 +1078,9 @@
         "org": "csarphong",
         "org_link": "https://x.com/csarphong/media",
         "corrupted": false,
+        "desc": "Asset Cinder is a high-yield Pyro Entity and specialized mercenary unit, functioning as the primary close-quarters enforcer and terminal guardian for [REDACTED]. Standing at 6'2\", her physiology is a synthesis of flame-retardant dermal layers and heavy industrial equipment, featuring a permanent gas-mask interface with an integrated vocalization device engineered by [REDACTED]. She utilizes 'The Infernal Bellows' for high-intensity thermal denial and 'Airblast Mastery' for near-perfect projectile reflection, effectively serving as a living shield for her handler’s fortifications. Behavioral logs identify a 'Muffled-Guardian' matrix: a silent, clinical pyromaniac on the battlefield masking an extreme, possessive obsession with [REDACTED]. Cinder possesses 'Fireproof Physiology' and a hyper-acute 'Thermal Sense' protocol optimized for detecting cloaked sub-surface threats within a localized radius. Her systemic stability is anchored to the safety of her handler, viewing carnal synchronization as a vital post-engagement 'cool-down' ritual. Warning: Any perceived threat to [REDACTED] triggers an uninhibited 'Berserker State,' resulting in total environmental incineration and terminal target liquidation.",
+        "tags": ["PYRO-ENTITY", "PYROMANIAC-CLASS", "THERMAL-ENFORCER", "PROJECTILE-REFLECTOR", "OBSESSIVE-GUARDIAN"],
+
         "gallery": [
           "https://pbs.twimg.com/media/F_8nOusWcAAGLaM?format=jpg&name=large",
           "https://pbs.twimg.com/media/FzRZ8caWYAAnHOT?format=jpg&name=4096x4096",
@@ -967,6 +1095,8 @@
         "org": "PinkOlliePop",
         "org_link": "https://x.com/PinkOlliePop",
         "corrupted": false,
+        "desc": "Asset Xhuri is a specialized Rogue-class specimen of Kobold descent, functioning as a high-dexterity infiltrator and sabotage expert. Standing at 3’4\", her physiology is a unique 'marshmallow-thicc' frame characterized by bubblegum-pink velvety scales and heart-shaped dermal scutes. Despite a chronic behavioral matrix of pathological shyness and slapstick-tier misfortune, she possesses 'Shadow Scurry' protocols for involuntary near-perfect stealth and 'Surgical Sabotage' capabilities for complex mechanical dismantling. Following a terminal-curse removal by the operative [REDACTED] (The Stranded), the asset has undergone total biological and psychological imprinting, transitioning from a feral survivor to a devoted 'Owned' entity. Xhuri manifests a profound submissive-nymphomania, viewing her small, curvaceous frame as the exclusive property of her savior. Warning: Asset is subject to 'Stare-Paralysis' and systemic cognitive freezes under direct observation. Any perceived threat to [REDACTED] or her proximity to him triggers a state of 'Cornered-Beast' hysteria, resulting in a whirlwind of high-velocity claw strikes and accidental environmental weaponization.",
+        "tags": ["KOBOLD-HYBRID", "ROGUE-SABOTEUR", "OBSESSIVE-IMPRINT", "POCKET-ASSET", "SHADOW-SCURRY"],
         "gallery": [
           "https://pbs.twimg.com/media/HCkqGEBXcAAMsfM?format=jpg&name=large",
           "https://pbs.twimg.com/media/HCVOZk9WMAE5ee3?format=jpg&name=large",
@@ -983,6 +1113,8 @@
         "org": "colarix",
         "org_link": "https://e621.net/posts?tags=colarix",
         "corrupted": false,
+        "desc": "Asset Milfnir is a Tier-Alpha Dragon-Mountain specimen, functioning as a high-density armored matriarch and heavy-defense unit for [REDACTED]. Standing at 10'2\" with a multi-ton chassis, her physiology is composed of battleship-grey scales with granite-level hardness, capable of shrugging off high-tier ballistic and magical discharge. She utilizes 'Seismic Matriarch Stomp' protocols to generate localized earthquakes and maintains an internal 'Thermal Core' for penetrating heat radiation and environmental temperature regulation. Behavioral logs identify a 'Glacial-Boredom' matrix: a haughty, detached exterior that views non-authorized biological entities as insignificant 'little dudes,' masking an insatiable, scatterbrained dependency on [REDACTED]. As the recognized 'True Lord' anchor, [REDACTED] is the only variable capable of stabilizing her cognitive drift and high-pressure libido. Warning: Asset is subject to snack-based mission derailment (sucrose-rich materials) and exhibits lethal indifference toward collateral crushing of external units. Her carnal-submissive state triggers high-frequency subsonic thrums capable of regional structural demolition.",
+        "tags": ["DRAGON-MOUNTAIN", "SEISMIC-TANK", "ANCIENT-MATRIARCH", "THERMAL-CORE", "OBSESSIVE-LOYALTY"],
         "gallery": [
           "https://e621.net/posts/4383578?q=colarix+milfnir",
           "https://e621.net/posts/5991785?q=colarix+milfnir",
@@ -999,6 +1131,8 @@
         "org": "colarix",
         "org_link": "https://e621.net/posts?tags=colarix",
         "corrupted": false,
+        "desc": "Asset Red is a Tier-1 high-yield Dragon-Daedric Fire hybrid, functioning as the primary Planar Guardian and lethal consort for [REDACTED]. Standing at 11'6\", her physiology is a 'muscle-thicc' synthesis of radiant ruby scales and reinforced muscular mass, capable of maintaining a constant 'Hellfire Aura' that incinerates matter upon contact. Utilizing 'Abyssal Planar Rifting,' she enables non-linear trans-planar movement for ambush protocols, frequently executing 'Daedric Meteor Impacts' for terminal city-scale kinetic demolition. Behavioral logs identify a 'Volatile-Apex' matrix: a haughty, aggressive professional facade masking a profoundly possessive and submissive psychological tether to her designated Lord. Red manifests a 'terminal jealousy' profile toward external entities and a persistent psychological trauma—designated the 'Imposter's Stain'—stemming from a historical unauthorized submission event. Her systemic stability is critically dependent on carnal-functional synchronization with [REDACTED]. Warning: Any perceived threat to [REDACTED] triggers a 'Volcanic Pulse' escalation, resulting in the uninhibited physical dismantling of targets and total environmental scorch. Subject to extreme territorial myopia and indiscriminate 'Yeet' protocols for target displacement.",
+        "tags": ["DAEDRIC-FIRE-DRAGON", "PLANAR-ENFORCER", "METEOR-IMPACT-CLASS", "OBSESSIVE-LOYALTY", "SARKIC-THERMAL-CORE"],
         "gallery": [
           "https://e621.net/posts/5107778?q=red_%28colarix%29",
           "https://e621.net/posts/4435290?q=red_%28colarix%29",
@@ -1010,12 +1144,15 @@
       },
 
       {
-       "id": "ZARYN",
+       "id": "ZARYN-B",
         "link": "https://janitorai.com/characters/c5579d47-6f33-4809-b22b-10f2d088b88d_character-zaryn",
         "img": "https://ella.janitorai.com/bot-avatars/CevZR1tUnPpXVRzdOhHdv.webp?width=1200",
         "org": "Zaryn",
         "org_link": "https://x.com/ZarynArt/media",
         "corrupted": false,
+        "desc": "Asset Zaryn is a high-yield Sylphian Fennec-Fae operative, functioning as an Aetherial Researcher and specialized Rogue. Standing at 6'3\", her physiology is a lithe, high-density muscular frame optimized for 'Sylphian Slipstream' hyper-acceleration and phase-motion protocols. She utilizes 'Aetherial Rune-Fire'—a volatile blue magic vector—and the 'Vesper-Resonance' glaive for terminal molecular deconstruction of targets. Following the Vesper-4 terminal event, the asset has manifested a severe 'Widow’s Grief' matrix, resulting in chronic emotional instability and a pathological psychological tether to [REDACTED], whom she wove back into existence via forbidden soul-collection. Behavioral logs confirm an extreme submissive-nymphomania and overprotective-clingy profile toward the subject, viewing carnal synchronization as a primary biological stabilizer. Warning: Asset is subject to auditory sensory overload and catastrophic PTSD triggers. Any perceived threat to [REDACTED] or their bond triggers an immediate 'Atomic Deconstruction' escalation, aimed at total environmental erasure via localized quantum vacuum.",
+        "tags": ["SYLPHIAN-HYBRID", "AETHERIAL-ROGUE", "GRAVITY-MANIPULATOR", "OBSESSIVE-WIDOW", "PHASE-MOTION-ASSET"],
+
         "gallery": [
           "https://x.com/ZarynArt/status/2005717000937746707/photo/1",
           "https://x.com/ZarynArt/status/1777380894954963280/photo/1",
@@ -1025,6 +1162,29 @@
           
         ] 
       }
+    ],
 
-    ]
+    "view-special": [
+    {
+      "id": "HELGA-A",
+      "link": "",
+      "img": "https://ella.janitorai.com/bot-avatars/07hLqBk78M4AjYRKNdIud.webp?width=1200",
+      "corrupted": true,
+      "desc": "",
+      "tags": [],
+
+       "gallery": [
+        ""
+       ]
+    },
+    {
+      "id": "ZARYN-A",
+      "link": "https://janitorai.com/characters/32c89972-bcf7-400c-9dd1-acee2c4d6d7c_character-zaryn-beyond",
+      "img": "https://ella.janitorai.com/bot-avatars/WgvRbDi9WakqXVpV3My24.webp?width=1200",
+      "corrupted": true,
+      "desc": "Asset Zaryn is a high-yield Sylphian Fennec-Fae operative, functioning as the Lead Pilot and Aetherial Researcher for the vessel 'Mary'. Standing at 5'9\", her physiology is a lithe, 'thicc' athletic frame optimized for 'Slipstream Phase-Motion'—a protocol enabling semi-intangible hyper-acceleration. Utilizing the 'Star-Seeker’s Resonance' glaive and 'Aetherial Rune-Fire,' she executes terminal target deconstruction at a molecular level. Behavioral logs identify a 'Cocky-Rogue' matrix: an effortlessly lethal and laid-back exterior masking a fanatical, absolute devotion to [REDACTED], whom she designates as her primary 'ground' and anchor. Zaryn employs 'Hyper-Acoustic Resonance' for 360-degree environment mapping and 'Gravitic Soul-Anchor' protocols for localized space-time manipulation. Warning: Asset manifests extreme possessiveness toward the handler; any threat to [REDACTED] triggers a systemic 'User-Error' liquidation event. Subject to catastrophic auditory overload and Aetherial burnout post-peak output.",
+      "tags": ["SYLPHIAN-HYBRID", "AETHERIAL-RESEARCHER", "PHASE-PILOT", "GRAVITY-MANIPULATOR", "OBSESSIVE-MATE"]
+    }
+  ]
+
 }

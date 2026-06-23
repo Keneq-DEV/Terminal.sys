@@ -1,0 +1,57 @@
+VERSION: NULL_PTR-0.9 // DATE: 2026-06-08
+- ADDED: Gradual fade-in for ambient background audio (2s transition).
+- FIXED: Audio "pop" on terminal initialization.
+- STABILIZED: Ambience volume control persistence and slider sync.
+---
+VERSION: NULL_PTR-0.8 // DATE: 2026-06-08
+- FIXED: Universal Browser Link Execution (PC/Mobile).
+- ADDED: Final Authorization Protocol (Manual click to bypass popup blockers).
+- SYNC: Optimized boot text layout for launch prompt visibility.
+---
+VERSION: NULL_PTR-0.7 // DATE: 2026-06-08
+- REVERTED: Proxy Window protocol (Link now opens strictly after animation).
+- FIXED: Removed premature blank tab opening.
+- NOTICE: Operator must enable Popups to bypass browser security timeouts.
+- STABILIZED: Post-boot execution flow logic.
+---
+VERSION: NULL_PTR-0.6 // DATE: 2026-06-08
+- FIXED: Popup blocker bypass for asynchronous module execution.
+- STABILIZED: Proxy Window protocol for seamless external uplinks.
+- IMPROVED: Kernel-to-Web link redirection reliability.
+---
+VERSION: NULL_PTR-0.5 // DATE: 2026-06-08
+- OPTIMIZED: Boot Sequence timing reduced from 18s to 9s.
+- FIXED: Module execution link trigger (Final sequence redirection).
+- IMPROVED: Diagnostic step frequency in boot-loader.
+---
+VERSION: NULL_PTR-0.4 // DATE: 2026-06-08
+- SYNC: Boot Sequence logic synchronized with 18s hardware audio track.
+- FIXED: Boot steps speed and timing intervals for technical immersion.
+- ADDED: Automatic hot-swap protocol for DRIVE_A module replacement.
+- ADDED: Visual socket state tracking (picked-up/mounted indicators).
+- ADDED: EJECT_MODULE hardware interface.
+- FIXED: Sidebar navigation layout constraints.
+---
+VERSION: NULL_PTR-0.3 // DATE: 2026-06-07
+- RECONSTRUCTION: Node Database (Access 02) technical architecture.
+- FIXED: Sidebar scrolling mechanics and window container overflow.
+- ADDED: Collapsible navigation groups (Quick Access / Categories).
+- ADDED: Responsive breadcrumb system (C:\NODES > SECTOR).
+- ADDED: Dossier grid with staggered loading animations and blur focus.
+- ADDED: Live telemetry visualization (RAM & Frequency monitoring) per node.
+- ADDED: Ghost Data protocol for redacted/missing node metadata.
+- ADDED: Security Gate protocol with glitch-sync animations for corrupted nodes.
+- ADDED: Bitstream collapse animation for terminal failure events.
+---
+VERSION: NULL_PTR-0.2 // DATE: 2026-06-07
+- FIXED: DEL button event bubbling in playlists.
+- FIXED: Shuffle/Loop mutual exclusion logic.
+- ADDED: Dynamic color wheel marker and real-time drag.
+- ADDED: Custom Level Label editor for NONE mode.
+---
+VERSION: NULL_PTR-0.1 // DATE: 2026-06-06
+- Audio sequencer persistence fixed.
+- User sessions tracking enabled (Last Access).
+---
+VERSION: NULL_PTR // DATE: 2026-06-05
+- Initial terminal recovery sequence established.

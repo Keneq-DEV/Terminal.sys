@@ -1,8 +1,9 @@
 <system-terminal>
     <quick-access>
         <node id="view-root" label="Home" icon="⬣" />
-        <node id="view-request" label="REQUESTS" icon="✉️" />
+        <node id="view-request" label="REQUESTS" icon="🖃" />
         <node id="view-special" label="SPECIAL" icon="✦" />
+        <node id="view-group" label="NODE.GROUP" icon="⍄"/>
     </quick-access>
 
     <sidebar>
@@ -10,7 +11,7 @@
         <node id="view-uncat" label="UNCAT" icon="☄" />
         <node id="view-dogknights" label="DOGKNIGHTS" icon="☵" />
         <node id="view-tdg" label="DRACONIC_GRIMORE" icon="Δ" />
-        <node id="view-tdk" label="DINOSAUR_KINDOM" icon="📂" />
+        <node id="view-tdk" label="DINOSAUR_KINDOM" icon="🗀" />
         <node id="view-tsc" label="STOCKHOLM_COMPENDIUM" icon="✠" />
         <node id="view-httyd" label="HTTYD" icon="♀" />
         <node id="view-pk" label="PROTOCOL_K" icon="※" />

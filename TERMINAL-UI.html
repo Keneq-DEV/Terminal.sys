@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KENEQ.SYS // RECOVERED_TERMINAL</title>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="TERMINAL.CSS/TERMINAL-UI.css">
+</head>
+<body class="recovered-ui">
+    <div class="crt-overlay"></div>
+    <video id="ui-video-bg" autoplay loop muted playsinline></video>
+    <audio id="terminal-sequencer" preload="auto"></audio>
+
+    <div class="adv-layout">
+        <!-- BARRA SUPERIOR (HEADER) -->
+        <header class="ui-header">
+            <div class="h-left">
+                <span class="logo-tri">▼</span>
+                <span class="logo-txt">KENEQ.SYS</span>
+                <span class="logo-ver glitch-ver" data-text="[ SYNC_LOSS // NULL_PTR ]">[ SYNC_LOSS // NULL_PTR ]</span>
+            </div>
+            <div class="h-center">
+    NODE: <span id="node-name" class="white"></span>-<span id="node-symbol" class="white"></span>-<span id="node-number" class="white"></span> // LINK: <span class="stable">STABLE</span> <span class="dot">●</span>
+</div>
+            <div class="h-right">
+                <button class="btn-ui-mini" style="margin-right: 20px; padding: 4px 12px; font-size: 0.75rem; letter-spacing: 1px;">COUNCIL</button>
+                <div class="time-block">
+                    <span class="time" id="ui-clock">18:28:15</span>
+                    <span class="time-label">SYS TIME</span>
+                </div>
+                <div class="classification" onclick="openModal('modal-classification')" style="cursor: pointer;">
+
+                    <div class="c-top">CLASSIFICATION</div>
+                    <div class="c-bottom">LEVEL NONE // NONE</div>
+                </div>
+            </div>
+        </header>
+
+        <!-- 1. LIVE FEED (OCUPA COLUMNA 1 Y 2 ARRIBA) -->
+        <section class="ui-panel live-feed-box">
+            <div class="text-feed">• LIVE FEED</div>
+            <div class="feed-viewport">
+                <!-- Esquinas de visor de cámara -->
+                <div class="bracket tl"></div><div class="bracket tr"></div>
+                <div class="bracket bl"></div><div class="bracket br"></div>
+                
+                <!-- Escala de ticks laterales simulada en HTML -->
+                <div class="ruler-left"></div>
+                <div class="ruler-right"></div>
+                
+                <div class="feed-bottom-left">
+                    <div class="quality-txt">FEED QUALITY <span class="bright">97% |||||||||||</span></div>
+                    <div class="quality-bar"><div class="fill"></div></div>
+                </div>
+                
+                <div class="feed-bottom-right">
+                    MODE: <span class="bright">NIGHT</span><br>
+                    ZOOM: 1.0x
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. SIGNAL STATUS (OCUPA COLUMNA 3 ARRIBA) -->
+        <aside class="ui-panel signal-box">
+            <div class="panel-tag">> SIGNAL STATUS</div>
+            <div class="signal-content">
+                <div class="sig-header">
+                    <span>SIGNAL: STABILIZED</span>
+                    <!-- NUEVO ICONO NEXUS -->
+                    <div class="signal-nexus">
+                        <div class="nexus-core"></div>
+                        <div class="nexus-ring"></div>
+                        <div class="nexus-waves">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="sig-info">FREQUENCY: 7.83 GHZ<br>ENCRYPTION: AES-256</div>
+                
+                <div class="waveform-box">
+                    <canvas id="canvas-signal"></canvas>
+                </div>
+
+                <div class="noise-section">
+                    <div class="noise-txt">FREQUENCY WAVEFORM <br><span class="bright" id="audio-freq-label">0.00 KHZ</span></div>
+                    <canvas id="canvas-music-wave"></canvas>
+                </div>
+            </div>
+        </aside>
+
+        <!-- 3. EVENT LOG (OCUPA COLUMNA 1 ABAJO) -->
+        <section class="ui-panel event-log-box">
+            <div class="panel-tag">> EVENT LOG</div>
+            <div id="log-stream" class="log-container">
+                <!-- Se inyecta desde TERMINAL-UI.js -->
+            </div>
+            <div class="log-footer">» LOG STREAMING...</div>
+        </section>
+
+        <!-- 4. MEMORY FRAGMENTS (OCUPA COLUMNA 2 ABAJO - ARRIBA) -->
+        <section class="ui-panel fragments-box">
+            <div class="panel-tag">> MEMORY FRAGMENTS</div>
+            <div class="frag-content">
+                <div class="frag-header">12 FRAGMENTS RECOVERED</div>
+                <div class="frag-browser">
+                    <span class="arr">〈</span>
+                    <div class="frag-window"> <!-- Ventana de recorte -->
+                        <div class="frag-tape" id="frag-tape">
+                            <!-- Los fragmentos se inyectan aquí con JS -->
+                        </div>
+                    </div>
+                    <span class="arr">〉</span>
+                </div>
+                <div class="frag-scroll-bar"><div class="fill"></div></div>
+            </div>
+        </section>
+
+        <!-- 5. BIOMETRIC MONITOR (OCUPA COLUMNA 2 ABAJO - ABAJO) -->
+        <section class="ui-panel biometric-box">
+            <div class="panel-tag">> BIOMETRIC MONITOR</div>
+            <div class="bio-content">
+                <canvas id="canvas-bio"></canvas>
+                <div class="bpm-counter">BPM<br><span class="bpm-num">72</span> <span class="heart">♥</span></div>
+            </div>
+        </section>
+
+        <!-- 6. QUICK ACCESS (OCUPA COLUMNA 3 ABAJO - ARRIBA) -->
+        <nav class="ui-panel access-box">
+            <div class="panel-tag">> QUICK ACCESS</div>
+            <div class="access-list">
+                <div class="acc-item" onclick="openModal('modal-dashboard')">
+                    <div class="acc-icon">⬣</div>
+                    <div class="acc-txt"><span>DASHBOARD</span><br><small>Overview & Analytics</small></div>
+                    <div class="acc-num">01</div>
+                </div>
+                <div class="acc-item" onclick="openModal('modal-nodes'); initNodeDatabase();">
+                    <div class="acc-icon">☰</div>
+                    <div class="acc-txt"><span>NODE DATABASE</span><br><small>System Nodes & Logs</small></div>
+                    <div class="acc-num">02</div>
+                </div>
+                <div class="acc-item" onclick="openTerminal()">
+                    <div class="acc-icon">🗀</div>
+                    <div class="acc-txt"><span>CLASSIFIED ARCHIVES</span><br><small>Restricted Data Fragments</small></div>
+                    <div class="acc-num">03</div>
+                </div>
+                <div class="acc-item">
+                    <div class="acc-icon">⦿</div>
+                    <div class="acc-txt"><span>SYSTEM STATUS</span><br><small>Core Systems Monitor</small></div>
+                    <div class="acc-num">04</div>
+                </div>
+                <div class="acc-item">
+                    <div class="acc-icon">▲</div>
+                    <div class="acc-txt"><span>RETURN TO JAI</span><br><small>Exit Terminal</small></div>
+                    <div class="acc-num">05</div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- 7. USER INFO (OCUPA COLUMNA 3 ABAJO - ABAJO) -->
+        <section class="ui-panel user-box">
+            <div class="user-layout">
+                <div class="user-meta">
+                    USER: <span id="node-name-ui" class="white"></span>-<span id="node-symbol-ui" class="white"></span>-<span id="node-number-ui" class="white"></span><br>
+                    CLEARANCE: <span class="orange-txt">LIMITED</span><br><br>
+                    <span class="tiny">SESSION ID: <span id="session-id">KQ-88HF-7K2</span></span><br>
+                    <span class="tiny">LAST ACCESS: <span id="last-access-time">--:--:--</span></span>
+                </div>
+                <div class="finger-print"></div>
+            </div>
+        </section>
+    </div>
+
+    <!-- MODAL DE CONFIGURACIÓN Y CLASIFICACIÓN -->
+    <div id="modal-classification" class="modal">
+        <div class="class-window">
+            <!-- CABECERA DE LA VENTANA -->
+            <header class="class-win-header">
+                <div class="win-title">// SYSTEM_CONFIGURATION_CONSOLE</div>
+                <a href="javascript:closeModal('modal-classification')" class="win-close-btn">×</a>
+            </header>
+
+            <!-- CUERPO DE LA VENTANA -->
+            <div class="class-win-body">
+                <!-- BARRA LATERAL (PESTAÑAS) -->
+                <aside class="class-sidebar">
+                    <button class="tab-btn active" onclick="switchClassTab(this, 'tab-user')">USER</button>
+                    <button class="tab-btn" onclick="switchClassTab(this, 'tab-custom')">CUSTOM</button>
+                    <button class="tab-btn" onclick="switchClassTab(this, 'tab-log')">UPDATE-LOG</button>
+                    <button class="tab-btn" onclick="switchClassTab(this, 'tab-diag')">SYSTEM_DIAG</button>
+                </aside>
+
+                <!-- VISOR DE CONTENIDO (DERECHA) -->
+                <main class="class-viewport">
+                    <!-- PESTAÑA USER: REGISTRO DE OPERADOR -->
+                    <div id="tab-user" class="tab-content active">
+    <h3 style="color: var(--main-ui); margin-bottom: 15px;">> OPERATOR_UPLINK_REGISTRATION</h3>
+    
+    <div class="user-grid">
+        <!-- FORMULARIO DE TEXTO -->
+        <div class="user-fields">
+            <div class="form-row">
+                <label>OPERATOR_NAME:</label>
+                <input type="text" id="reg-name" class="class-input" placeholder="name" maxlength="12">
+            </div>
+            <div class="form-row">
+                <label>ACCESS_SYMBOL:</label>
+                <input type="text" id="reg-symbol" class="class-input" placeholder="char" maxlength="1" style="width: 45px; text-align: center;">
+            </div>
+            <div class="form-row">
+                <label>HEX_INDEX:</label>
+                <input type="text" id="reg-number" class="class-input" placeholder="number" maxlength="3" style="width: 70px; text-align: center;">
+            </div>
+            <div style="margin-top: 20px;">
+                <button class="btn-ui" onclick="registerOperator()">[ REGISTER_OPERATOR_CORE ]</button>
+            </div>
+        </div>
+
+        <!-- SELECTOR DE COLOR TIPO WINDOWS PAINT -->
+        <div class="color-section">
+            <div class="color-targets">
+                <button class="target-btn active" onclick="switchColorTarget(this, 'name')">NAME</button>
+                <button class="target-btn" onclick="switchColorTarget(this, 'symbol')">SYMBOL</button>
+                <button class="target-btn" onclick="switchColorTarget(this, 'number')">NUMBER</button>
+            </div>
+
+            <div class="picker-layout">
+                <!-- PANEL IZQUIERDO (Rueda y Paleta Básica) -->
+                <div class="picker-left">
+                    <canvas id="color-wheel" width="120" height="120"></canvas>
+                    
+                    <div class="preset-palette">
+                        <span class="color-sq" style="background:#ff0000" onclick="selectPreset('#ff0000')"></span>
+                        <span class="color-sq" style="background:#ff7f00" onclick="selectPreset('#ff7f00')"></span>
+                        <span class="color-sq" style="background:#ffff00" onclick="selectPreset('#ffff00')"></span>
+                        <span class="color-sq" style="background:#00ff00" onclick="selectPreset('#00ff00')"></span>
+                        <span class="color-sq" style="background:#00ffff" onclick="selectPreset('#00ffff')"></span>
+                        <span class="color-sq" style="background:#0000ff" onclick="selectPreset('#0000ff')"></span>
+                        <span class="color-sq" style="background:#808080" onclick="selectPreset('#808080')"></span>
+                        <span class="color-sq" style="background:#ffffff" onclick="selectPreset('#ffffff')"></span>
+                    </div>
+
+                    <button id="btn-toggle-more" class="btn-ui-mini" onclick="toggleAdvancedPanel()">More >></button>
+                </div>
+
+                <!-- PANEL DERECHO COLAPSABLE (Sliders RGB / HEX) -->
+                <div class="picker-right" id="adv-panel" style="display: none;">
+                    <div class="rgb-sliders">
+                        <div class="slider-row">
+                            <span class="s-label">R:</span>
+                            <input type="range" id="slide-r" min="0" max="255" value="0" oninput="updateColorsFromSliders()">
+                            <input type="text" id="num-r" class="class-input" value="0" readonly style="width: 35px; padding: 2px; font-size: 0.75rem;">
+                        </div>
+                        <div class="slider-row">
+                            <span class="s-label">G:</span>
+                            <input type="range" id="slide-g" min="0" max="255" value="122" oninput="updateColorsFromSliders()">
+                            <input type="text" id="num-g" class="class-input" value="122" readonly style="width: 35px; padding: 2px; font-size: 0.75rem;">
+                        </div>
+                        <div class="slider-row">
+                            <span class="s-label">B:</span>
+                            <input type="range" id="slide-b" min="0" max="255" value="255" oninput="updateColorsFromSliders()">
+                            <input type="text" id="num-b" class="class-input" value="255" readonly style="width: 35px; padding: 2px; font-size: 0.75rem;">
+                        </div>
+                    </div>
+
+                    <div class="hex-row">
+                        <span>Hex:</span>
+                        <input type="text" id="hex-val" class="class-input" value="007AFF" maxlength="6" oninput="updateColorsFromHex()">
+                        <div class="color-preview" id="color-preview"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CONTROL DE AUDIO (MÚSICA Y SFX) -->
+        <div class="audio-controls" style="margin-top: 15px; border-top: 1px dashed var(--main-ui); padding-top: 10px;">
+            <h4 style="color: var(--second-ui); margin-bottom: 8px; font-size: 0.8rem;">// AUDIO_OUTPUT_CONTROL</h4>
+            <div class="slider-row" style="grid-template-columns: 50px 1fr 40px; margin-bottom: 4px;">
+                <span class="s-label">MUSIC</span>
+                <input type="range" id="vol-music" min="0" max="1" step="0.01" value="0.4" oninput="updateMusicVolume(this.value)">
+                <span id="txt-vol-music" class="tiny" style="opacity:1; text-align:right;">40%</span>
+            </div>
+            <div class="slider-row" style="grid-template-columns: 50px 1fr 40px; margin-bottom: 4px;">
+                <span class="s-label">SFX</span>
+                <input type="range" id="vol-sfx" min="0" max="1" step="0.01" value="0.8" oninput="updateSFXVolume(this.value)">
+                <span id="txt-vol-sfx" class="tiny" style="opacity:1; text-align:right;">80%</span>
+            </div>
+            <div class="slider-row" style="grid-template-columns: 50px 1fr 40px;">
+                <span class="s-label">AMB</span>
+                <input type="range" id="vol-ambience" min="0" max="1" step="0.01" value="0.3" oninput="updateAmbienceVolume(this.value)">
+                <span id="txt-vol-ambience" class="tiny" style="opacity:1; text-align:right;">30%</span>
+            </div>
+            <div class="slider-row" style="grid-template-columns: 50px 1fr 40px; margin-top: 4px;">
+                <span class="s-label">BOOT</span>
+                <input type="range" id="vol-boot-speed" min="0.1" max="4" step="0.1" value="1.0" oninput="updateBootSpeed(this.value)">
+                <span id="txt-vol-boot-speed" class="tiny" style="opacity:1; text-align:right;">1.0x</span>
+            </div>
+        </div>
+    </div>
+</div>
+                    <!-- PESTAÑA CUSTOM: SELECTOR DE NIVELES (COLORES) -->
+<!-- PESTAÑA CUSTOM: SELECTOR DE NIVELES Y EDITOR DE VARIABLES CSS -->
+<!-- PESTAÑA CUSTOM EN VERTICAL (CORREGIDA: TODO HACIA ABAJO) -->
+<div id="tab-custom" class="tab-content">
+    
+    <!-- 1. SELECCIÓN DE NIVELES (ARRIBA) -->
+    <h3 style="color: var(--main-ui); margin: 0 0 10px 0; font-size: 0.95rem;">> SYSTEM_SECURITY_LEVEL_OVERRIDE</h3>
+    <div class="level-selector-grid">
+        <button class="level-btn" onclick="selectSystemLevel(0)">
+            <span>[ LEVEL_NONE ]</span> <small>CUSTOM_USER_COMPILER</small>
+        </button>
+        <button class="level-btn" onclick="selectSystemLevel(1)">
+            <span>[ LEVEL_0 ]</span> <small>GREEN_ANOMALY_MONITOR</small>
+        </button>
+        <button class="level-btn" onclick="selectSystemLevel(2)">
+            <span>[ LEVEL_1 ]</span> <small>PINK_TACTICAL_LOGS</small>
+        </button>
+        <button class="level-btn" onclick="selectSystemLevel(3)">
+            <span>[ LEVEL_2 ]</span> <small>AMBER_SYSTEM_STATUS</small>
+        </button>
+        <button class="level-btn" onclick="selectSystemLevel(4)">
+            <span>[ LEVEL_3 ]</span> <small>ORANGE_CLASSIFIED_CORE</small>
+        </button>
+        <button class="level-btn" onclick="selectSystemLevel(5)">
+            <span>[ LEVEL_4 ]</span> <small>GREY_OFFLINE_STORAGE</small>
+        </button>
+        <button class="level-btn" onclick="selectSystemLevel(6)">
+            <span>[ LEVEL_5 ]</span> <small>CYAN_NETWORK_GATEWAY</small>
+        </button>
+    </div>
+
+    <!-- 2. EDITOR DE VARIABLES (MÉTODO COLAPSABLE) -->
+    <div id="custom-vars-editor" style="display: none; margin-top: 15px; border-top: 1px dashed var(--main-ui); padding-top: 12px;">
+        <h4 style="color: var(--second-ui); margin: 0 0 10px 0; font-size: 0.8rem;">// CUSTOM_VARIABLES_EDITOR</h4>
+        <div class="custom-vars-grid">
+            <div class="var-row"><span>LVL_NUM:</span> <input type="text" id="v-lvl-num" class="class-input" maxlength="3" placeholder="000" oninput="updateCustomLevelLabel()"> <button class="btn-ui-mini" onclick="resetCustomLevelLabel('num')">-</button></div>
+            <div class="var-row"><span>LVL_TXT:</span> <input type="text" id="v-lvl-txt" class="class-input" placeholder="NONE" oninput="updateCustomLevelLabel()"> <button class="btn-ui-mini" onclick="resetCustomLevelLabel('txt')">-</button></div>
+            <div class="var-row"><span>--main:</span> <input type="text" id="v-main" class="class-input" oninput="applyCustomVar('--main', this.value)"> <button class="btn-ui-mini" onclick="resetVar('--main')">-</button></div>
+            <div class="var-row"><span>--main-dim:</span> <input type="text" id="v-main-dim" class="class-input" oninput="applyCustomVar('--main-dim', this.value)"> <button class="btn-ui-mini" onclick="resetVar('--main-dim')">-</button></div>
+            <div class="var-row"><span>--main-glow:</span> <input type="text" id="v-main-glow" class="class-input" oninput="applyCustomVar('--main-glow', this.value)"> <button class="btn-ui-mini" onclick="resetVar('--main-glow')">-</button></div>
+            <div class="var-row"><span>--white:</span> <input type="text" id="v-white" class="class-input" oninput="applyCustomVar('--white', this.value)"> <button class="btn-ui-mini" onclick="resetVar('--white')">-</button></div>
+            <div class="var-row"><span>--bg-black:</span> <input type="text" id="v-bg-black" class="class-input" oninput="applyCustomVar('--bg-black', this.value)"> <button class="btn-ui-mini" onclick="resetVar('--bg-black')">-</button></div>
+            <div class="var-row"><span>--second-bg:</span> <input type="text" id="v-second-bg" class="class-input" oninput="applyCustomVar('--second-bg', this.value)"> <button class="btn-ui-mini" onclick="resetVar('--second-bg')">-</button></div>
+            <div class="var-row"><span>--main-ui:</span> <input type="text" id="v-main-ui" class="class-input" oninput="applyCustomVar('--main-ui', this.value)"> <button class="btn-ui-mini" onclick="resetVar('--main-ui')">-</button></div>
+            <div class="var-row"><span>--second-ui:</span> <input type="text" id="v-second-ui" class="class-input" oninput="applyCustomVar('--second-ui', this.value)"> <button class="btn-ui-mini" onclick="resetVar('--second-ui')">-</button></div>
+            <div class="var-row"><span>--third-ui:</span> <input type="text" id="v-third-ui" class="class-input" oninput="applyCustomVar('--third-ui', this.value)"> <button class="btn-ui-mini" onclick="resetVar('--third-ui')">-</button></div>
+            <div class="var-row"><span>--err-main:</span> <input type="text" id="v-error-main" class="class-input" oninput="applyCustomVar('--error-main', this.value)"> <button class="btn-ui-mini" onclick="resetVar('--error-main')">-</button></div>
+            <div class="var-row"><span>--err-bg:</span> <input type="text" id="v-error-bg" class="class-input" oninput="applyCustomVar('--error-bg', this.value)"> <button class="btn-ui-mini" onclick="resetVar('--error-bg')">-</button></div>
+            <div class="var-row"><span>--err-dim:</span> <input type="text" id="v-error-dim" class="class-input" oninput="applyCustomVar('--error-dim', this.value)"> <button class="btn-ui-mini" onclick="resetVar('--error-dim')">-</button></div>
+            <div class="var-row"><span>--err-glow:</span> <input type="text" id="v-error-glow" class="class-input" oninput="applyCustomVar('--error-glow', this.value)"> <button class="btn-ui-mini" onclick="resetVar('--error-glow')">-</button></div>
+            <div class="var-row"><span>--err-main:</span> <input type="text" id="v-error-main" class="class-input" oninput="applyCustomVar('--error-main', this.value)"> <button class="btn-ui-mini" onclick="resetVar('--error-main')">-</button></div>
+            <div class="var-row"><span>--err-bg:</span> <input type="text" id="v-error-bg" class="class-input" oninput="applyCustomVar('--error-bg', this.value)"> <button class="btn-ui-mini" onclick="resetVar('--error-bg')">-</button></div>
+            <div class="var-row"><span>--err-dim:</span> <input type="text" id="v-error-dim" class="class-input" oninput="applyCustomVar('--error-dim', this.value)"> <button class="btn-ui-mini" onclick="resetVar('--error-dim')">-</button></div>
+            <div class="var-row"><span>--err-glow:</span> <input type="text" id="v-error-glow" class="class-input" oninput="applyCustomVar('--error-glow', this.value)"> <button class="btn-ui-mini" onclick="resetVar('--error-glow')">-</button></div>
+        </div>
+        <div style="text-align: right; margin-top: 12px;">
+            <button class="btn-ui-mini" onclick="saveCustomVars()">[ SAVE_VARIABLES_CORE ]</button>
+        </div>
+    </div>
+
+    <!-- 3. REPRODUCTOR DE DISCO (DEBAJO DE LOS NIVELES) -->
+    <div class="custom-disc-section" style="margin-top: 20px; border-top: 1px dashed var(--main-ui); padding-top: 15px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+            <h3 style="color: var(--main-ui); margin: 0; font-size: 0.95rem;">> COGNITIVE_UPLINK_DECK</h3>
+            
+            <!-- SELECTOR DE MÓDULO SONORO INDEPENDIENTE -->
+            <div style="display: flex; align-items: center; gap: 8px; border: 1px solid var(--main-dim); padding: 2px 5px; background: rgba(0,0,0,0.2);">
+                <button class="btn-ui-mini" onclick="cycleSoundModule(-1)" style="border:none; padding: 0 5px; cursor:pointer;">〈</button>
+                <span id="current-module-label" style="font-size: 0.6rem; color: var(--second-ui); min-width: 80px; text-align: center; letter-spacing: 1px; font-weight: bold;">MODULE: NONE</span>
+                <button class="btn-ui-mini" onclick="cycleSoundModule(1)" style="border:none; padding: 0 5px; cursor:pointer;">〉</button>
+            </div>
+        </div>
+        
+        <div id="music-playground" style="margin-bottom: 10px;">
+            <button class="btn-ui-mini" onclick="document.getElementById('upload-mp3').click()">+ UPLOAD_MP3_MODULE</button>
+            <input type="file" id="upload-mp3" accept="audio/mpeg" style="display:none" onchange="handleMusicUpload(event)">
+        </div>
+
+        <div class="disc-deck">
+            <!-- Disco físico giratorio -->
+            <div class="disc-vinyl" id="ui-disc-vinyl">
+                <div class="disc-grooves"></div>
+                <div class="disc-center"></div>
+            </div>
+            
+            <!-- Controles de Modo -->
+            <div class="disc-controls">
+                <div style="display: flex; gap: 5px; margin-bottom: 5px;">
+                    <button id="btn-play-pause" class="btn-ui-mini" onclick="togglePlayPauseMusic()" style="flex:1">[ PLAY ]</button>
+                    <button class="btn-ui-mini" onclick="stopMusic()" style="flex:1">[ STOP ]</button>
+                    <button class="btn-ui-mini" onclick="playNextTrack()" style="flex:1">[ NEXT ]</button>
+                </div>
+                <button id="btn-disc-loop" class="btn-ui-mini" onclick="toggleDiscLoop()">[ LOOP: OFF ]</button>
+                <button id="btn-disc-shuffle" class="btn-ui-mini" onclick="toggleDiscShuffle()">[ SHUFFLE: OFF ]</button>
+            </div>
+        </div>
+
+        
+
+        <!-- Listado de canciones del nivel seleccionado -->
+        <div class="disc-playlist" style="margin-top: 12px;">
+            <div class="playlist-header">// UPLINK_CHANNELS_LIST</div>
+            <div id="disc-playlist-stream" class="playlist-stream">
+                <!-- Se llena con JS según el nivel elegido -->
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="cassette-deck">
+            <div id="cassette-playground" style="padding: 5px 10px; border-bottom: 1px dashed var(--main-ui);">
+                <button class="btn-ui-mini" onclick="document.getElementById('upload-tape').click()">+ INSERT_CUSTOM_TAPE (GIF/WEBP)</button>
+                <input type="file" id="upload-tape" accept="image/gif, image/webp" style="display:none" onchange="handleCassetteUpload(event)">
+            </div>
+            <div class="playlist-header">// CASSETTE_TAPES_DECK [BG_SELECTOR]</div>
+            <div id="cassette-stream" class="playlist-stream" style="height: 110px;">
+                <!-- Se llena dinámicamente con JS leyendo los temas -->
+            </div>
+        </div>
+</div>
+
+                    <div id="tab-log" class="tab-content">
+                        <h3>> SYSTEM_UPDATE_LOG</h3>
+                        <div id="update-log-stream" style="margin-top:15px;">
+                            <p style="opacity: 0.5;">LOADING_LOG_DATA...</p>
+                        </div>
+                    </div>
+                    <div id="tab-diag" class="tab-content">
+                        <h3 style="color: var(--second-ui); margin-bottom: 10px;">> SYSTEM_DIAGNOSTIC_MATRIX</h3>
+                        
+                        <div class="diag-grid-container">
+                            <!-- REPRESENTACIÓN VISUAL DEL NÚCLEO -->
+                            <div class="diag-core-visual">
+                                <div class="diag-core-pulse"></div>
+                                <div class="diag-core-ring"></div>
+                                <div class="diag-core-ring outer"></div>
+                                <div class="diag-core-label">CORE_SYNC</div>
+                            </div>
+
+                            <!-- ESCÁNER DE NODOS (USANDO IDS DE UNIDADES) -->
+                            <div class="diag-process-list">
+                                <div class="diag-section-header">// NEURAL_NODE_SCANNER</div>
+                                <div id="diag-unit-scanner" class="diag-unit-scanner">
+                                    <!-- Se llena dinámicamente -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="diag-footer-stats" style="margin-top: 15px; border-top: 1px solid var(--main-dim); padding-top: 10px;">
+                            STATUS: <span class="white">STABLE</span> // UPLINK: <span class="white" id="diag-uplink-val">7.83 GHz</span> // BUFFER: <span class="white" id="diag-buffer-val">0%</span>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL DE CONFIRMACIÓN DE PURGA -->
+    <div id="modal-purge" class="modal">
+        <div class="class-window" style="height: auto; width: 400px;">
+            <header class="class-win-header">
+                <div class="win-title">// DATA_PURGE_CONFIRMATION</div>
+                <a href="javascript:closeModal('modal-purge')" class="win-close-btn">×</a>
+            </header>
+            <div class="class-viewport" style="padding: 20px; text-align: center;">
+                <p id="purge-msg" style="margin-bottom: 20px; font-size: 0.85rem; color: var(--white); line-height: 1.4;"></p>
+                <button class="btn-ui" style="border-color: #ff4444; color: #ff4444;" onclick="executeDeletion()">[ PURGE_DATA_CORE ]</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL SECURITY GATE: ACCESO DENEGADO POR CORRUPCIÓN -->
+    <div id="modal-security-gate" class="modal">
+        <div class="class-window glitch-window" style="height: auto; width: 450px; border-color: var(--error-main);">
+            <header class="class-win-header" style="background: rgba(255, 0, 0, 0.15);">
+                <div class="win-title" style="color: var(--error-main); letter-spacing: 2px;">[!] SECURITY_GATE // ACCESS_DENIED</div>
+                <a href="javascript:closeSecurityGate()" class="win-close-btn" style="color: var(--error-main);">×</a>
+            </header>
+            <div class="class-viewport" style="padding: 25px; text-align: center; background: rgba(15, 5, 5, 0.6);">
+                <div style="font-size: 1.1rem; color: var(--error-main); margin-bottom: 20px; font-weight: bold; text-shadow: 0 0 10px rgba(255, 0, 0, 0.4); border: 1px dashed var(--error-main); padding: 10px;">
+                    CRITICAL_NODE_CORRUPTION
+                </div>
+                <p style="font-size: 0.8rem; color: var(--white); line-height: 1.6; opacity: 0.9; text-align: left;">
+                    <span style="color: #ff4444;">> ERROR:</span> UNABLE_TO_ESTABLISH_NEURAL_LINK<br>
+                    <span style="color: #ff4444;">> CAUSE:</span> KERNEL_DATA_IS_FRAGMENTED<br>
+                    <span style="color: #ff4444;">> STATUS:</span> AUTO_DECRYPTION_IN_PROGRESS...<br><br>
+                    The selected NODE has suffered a terminal kernel failure. Access is restricted while the terminal attempts to stabilize and reconstruct the bitstream.
+                </p>
+                <div style="margin-top: 25px; border-top: 1px solid rgba(255, 68, 68, 0.2); padding-top: 15px;">
+                    <button class="btn-ui" style="border-color: #ff4444; color: #ff4444;" onclick="closeSecurityGate()">
+                        [ ACKNOWLEDGE_TERMINAL_FAILURE ]
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL DASHBOARD: MANIFIESTO Y PROTOCOLOS -->
+    <div id="modal-dashboard" class="modal">
+        <div class="class-window" style="width: 700px; height: 620px;">
+            <header class="class-win-header">
+                <div class="win-title">// SYSTEM_MANIFESTO_AND_PROTOCOLS</div>
+                <a href="javascript:closeModal('modal-dashboard')" class="win-close-btn">×</a>
+            </header>
+            <div class="class-viewport" style="padding: 25px; line-height: 1.5; font-size: 0.85rem;">
+                <div style="color: var(--second-ui); font-family: inherit; white-space: pre-wrap;">
+====================================================================
+[ KENEQ.SYS // MANIFESTO & PROTOCOLS ]
+====================================================================
+
+&gt; "We don't create bots; we launch narrative simulations."
+
+====================================================================
+// SYSTEM DEFINITION: WHAT IS A NARRATIVE SIMULATION?
+====================================================================
+
+A narrative simulation is not a conventional chat assistant or a 
+simple roleplay bot. It is a high-density, rules-bound text 
+environment integrating complex architectures of 4,000 to over 
+9,000+ total tokens. 
+
+Within this structure, permanent tokens—specifically calibrated for 
+core personality and system directives—maintain absolute behavioral 
+consistency, while the total tokens scale dynamically based on the 
+unit's complexity. It is a reactive sandbox engineered to compute 
+and enforce the specific physical, biological, and psychological 
+laws of a defined reality.
+
+====================================================================
+// CRITICAL SYSTEM ALERT: OPERATOR COMPLIANCE
+====================================================================
+
+[ SYSTEM ALERT: OPERATOR ERROR ]
+
+Our simulations are engineered using a heavy token architecture 
+(typically ranging from 4,000 to over 9,000+ total tokens). If you 
+experience "hallucinations," data-loss, or a degradation of the 
+lore during your session:
+
+<span style="color: var(--white); font-weight: bold; text-shadow: var(--main-glow);">THE FAULT LIES WITH YOU.</span>
+
+As the Operator, you have failed to select an LLM (Language Model) 
+capable of supporting this level of cognitive architecture. Do not 
+blame the simulation for the limitations of a low-context, low-tier 
+model. 
+
+For optimal performance, run this software on high-capacity LLMs 
+designed for massive context windows.
+
+====================================================================
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL NODE DATABASE (FULLSCREEN ARCHITECTURE) -->
+    <div id="modal-nodes" class="modal">
+        <div class="class-window" style="width: 98vw; height: 95vh; max-width: none;">
+            <header class="class-win-header">
+                <div class="win-title">// NODE_INDEX_DATABASE_CORE</div>
+                <a href="javascript:closeModal('modal-nodes')" class="win-close-btn">×</a>
+            </header>
+            
+            <div class="win-path-bar">
+                <div style="display: flex; gap: 15px; align-items: center; width: 100%;">
+                    <span class="path-root" onclick="initNodeDatabase()">C:\NODES</span>
+                    <span id="nodes-path-ext"></span>
+                    <div class="node-search-box" style="margin-left: 20px;">
+                        <span style="opacity: 0.5;">ID_QUERY:</span>
+                        <input type="text" id="node-search-input" class="class-input" placeholder="filter id..." oninput="filterNodesBySearch(this.value)">
+                    </div>
+                </div>
+            </div>
+
+            <div class="class-win-body">
+                <aside class="class-sidebar" id="nodes-sidebar-container">
+                    <div class="sidebar-scrollable">
+                        <details class="node-side-group" open>
+                            <summary class="side-label-btn">// QUICK_ACCESS</summary>
+                            <div id="nodes-side-qa"></div>
+                        </details>
+                        
+                        <details class="node-side-group" open>
+                            <summary class="side-label-btn">// CATEGORIES</summary>
+                            <div id="nodes-side-cats"></div>
+                        </details>
+                    </div>
+
+                    <div id="floppy-drive-slot" class="floppy-drive-slot">
+                        <div id="drive-status-txt" class="drive-status">DRIVE_A: [ EMPTY ]</div>
+                        <div class="drive-led"></div>
+                        <div class="drive-chassis">
+                            <div id="inserted-floppy" class="floppy-inserted"></div>
+                            <div class="drive-mouth"></div>
+                        </div>
+                        <button id="btn-drive-execute" class="btn-ui-mini" style="display:none; margin-top:10px; width:100%; border-color: var(--second-ui); color: var(--second-ui);">[ EXECUTE_MODULE ]</button>
+                        <button id="btn-drive-eject" class="btn-ui-mini" style="display:none; margin-top:5px; width:100%; border-color: #ff4444; color: #ff4444;">[ EJECT_MODULE ]</button>
+                    </div>
+                </aside>
+                
+                <main class="class-viewport" id="nodes-viewport">
+                    <div style="opacity:0.2; height:100%; display:flex; align-items:center; justify-content:center; font-size:1.5rem; text-align:center;">
+                        UPLINK_ESTABLISHED<br>SELECT_NODE_FOR_DATA_DUMP
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+    
+
+    <!-- MODAL TERMINAL (ACCESO 03) -->
+    <div id="modal-terminal" class="modal">
+        <div class="terminal-container">
+            <header class="terminal-header">
+                <div class="win-title">// CLASSIFIED_ARCHIVES_CLI_UPLINK</div>
+                <a href="javascript:closeModal('modal-terminal')" class="win-close-btn">×</a>
+            </header>
+            <div id="terminal-output" class="terminal-output"></div>
+            <div class="terminal-input-bar">
+                <span class="terminal-prompt">C:\ROOT\TERMINAL></span>
+                <input type="text" id="terminal-input" class="terminal-field" autofocus spellcheck="false" autocomplete="off">
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL BOOT SEQUENCE: PANTALLA DE ARRANQUE DE MÓDULO -->
+    <div id="modal-boot-sequence" class="modal" style="background: #000; z-index: 40000;">
+        <div id="boot-screen" class="boot-screen-content">
+            <a href="javascript:closePanicMonitor()" id="boot-panic-close" class="win-close-btn" style="display:none; position:absolute; top:10px; right:15px; color:#ff4444; z-index:100;">×</a>
+            <div id="boot-text-container" class="boot-text"></div>
+            <div class="boot-glitch-line"></div>
+        </div>
+    </div>
+
+    <!-- VISOR DE TRANSMISIÓN DE IMÁGENES (PROTOCOLO UPLINK) -->
+    <div id="modal-transmission" class="modal" style="z-index: 50000; background: rgba(0,0,0,0.9);">
+        <div class="class-window" style="width: 80vw; height: 80vh; max-width: 1000px; border-color: var(--white);">
+            <header class="class-win-header" style="background: var(--main-dim);">
+                <div class="win-title" id="transmission-title">// IMAGE_STREAM_UPLINK :: NULL</div>
+                <a href="javascript:closeTransmission()" class="win-close-btn">×</a>
+            </header>
+            <div class="class-viewport" style="display: flex; align-items: center; justify-content: center; position: relative; background: #000; overflow: hidden; padding: 0;">
+                <!-- Controles de navegación -->
+                <button class="arr" onclick="changeTransmissionImg(-1)" style="position: absolute; left: 20px; z-index: 10; font-size: 3rem; background: none; border: none; color: var(--white); text-shadow: 0 0 10px #000;">〈</button>
+                <button class="arr" onclick="changeTransmissionImg(1)" style="position: absolute; right: 20px; z-index: 10; font-size: 3rem; background: none; border: none; color: var(--white); text-shadow: 0 0 10px #000;">〉</button>
+                
+                <!-- Imagen de alta resolución -->
+                <img id="transmission-img" src="" style="max-width: 90%; max-height: 90%; object-fit: contain; filter: contrast(1.1);">
+                
+                <!-- Info de pie -->
+                <div id="transmission-counter" style="position: absolute; bottom: 20px; width: 100%; text-align: center; font-size: 0.8rem; color: var(--main-ui); letter-spacing: 2px;">FRAME: 0 / 0</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MENÚ CONTEXTUAL CLI (POP-OUT) -->
+    <div id="terminal-context-menu" style="display: none; position: fixed; z-index: 60000; background: var(--third-ui); border: 1px solid var(--main-ui); box-shadow: 5px 5px 15px rgba(0,0,0,0.5); padding: 5px; min-width: 150px;">
+        <div class="tab-btn" onclick="executeTransmission()" style="font-size: 0.8rem; padding: 8px 12px; cursor: pointer; text-align: left;">
+            > TRANSMITIR_DATA
+        </div>
+    </div>
+
+    <script src="TERMINAL.UI\TERMINAL-UIX.js"></script>
+
+    
+</body>
+</html>

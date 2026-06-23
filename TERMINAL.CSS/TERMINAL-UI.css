@@ -1,0 +1,2379 @@
+/* ===================================================
+   SYSTEM DESIGN SYSTEM: RECOVERED_TERMINAL
+   =================================================== */
+
+:root {
+    --main: #007aff; 
+    --main-dim: #007aff1a;
+    --main-glow: 0 0 10px #007aff33;
+    --white: #e0e0e0;
+    --bg-black: #080a0e; 
+    --second-bg: #273144;
+    --main-ui: #4d9eff;
+    --second-ui: #00b7ff;
+    --third-ui: #162031;
+
+    --error-main: #7a5cff;
+    --error-bg: #110d24;
+    --error-dim: rgba(122, 92, 255, 0.15);
+    --error-glow: 0 0 10px rgba(122, 92, 255, 0.25);
+}
+
+/*LEVELS*/
+
+:root.level-0 {
+    --main: #9ec29e;
+    --main-dim: rgba(0, 255, 153, 0.15);
+    --main-glow: 0 0 12px rgba(0, 255, 153, 0.25);
+    --white: #ffffff;
+    --bg-black: #050505;
+    --second-bg: #1a201a;
+    --main-ui: #cceecc;
+    --second-ui: #ffffff;
+    --third-ui: #121812;
+
+    --error-main: #b77c56;
+    --error-bg: #1a110b;
+    --error-dim: rgba(183, 124, 86, 0.15);
+    --error-glow: 0 0 12px rgba(183, 124, 86, 0.25);
+
+    
+}
+:root.level-1 {
+    --main: #ff0073;
+    --main-dim: rgba(255, 0, 115, 0.15);
+    --main-glow: 0 0 12px rgba(255, 0, 115, 0.25);
+    --white: #ffffff;
+    --bg-black: #20070e;
+    --second-bg: #2d0a18;
+    --main-ui: #ff509a;
+    --second-ui: #ffd8e6;
+    --third-ui: #1a050d;
+
+    --error-main: #b3002d;
+    --error-bg: #1c0208;
+    --error-dim: rgba(179, 0, 45, 0.15);
+    --error-glow: 0 0 12px rgba(179, 0, 45, 0.25);
+
+}
+:root.level-2 {
+    --main: #cbc245;
+    --main-dim: #0e172a26;
+    --main-glow: 0 0 12px rgba(14, 23, 42, 0.25);
+    --white: #ffffff;
+    --bg-black: #121329;
+    --second-bg: #1c222d;
+    --main-ui: #f7b000;
+    --second-ui: #ffffff;
+    --third-ui: #2f343d;
+
+    --error-main: #00a896;
+    --error-bg: #031c19;
+    --error-dim: #00a89626;
+    --error-glow: 0 0 12px rgba(0, 168, 150, 0.25);
+}
+:root.level-3 {
+    --main: #ff8c00;
+    --main-dim: rgba(255, 140, 0, 0.15);
+    --main-glow: 0 0 12px rgba(255, 140, 0, 0.25);
+    --white: #ffffff;
+    --bg-black: #180c06;
+    --second-bg: #1a1100;
+    --main-ui: #ffcc00;
+    --second-ui: #ffe066;
+    --third-ui: #130d00;
+
+    --error-main: #a21caf;
+    --error-bg: #1a051d;
+    --error-dim: rgba(162, 28, 175, 0.15);
+    --error-glow: 0 0 12px rgba(162, 28, 175, 0.25);
+
+}
+:root.level-4 {
+    --main: #cbcbcb;
+    --main-dim: rgba(203, 203, 203, 0.15);
+    --main-glow: 0 0 12px rgba(203, 203, 203, 0.25);
+    --white: #ffffff;
+    --bg-black: #050505;
+    --second-bg: #333333;
+    --main-ui: #ffffff;
+    --second-ui: #999999;
+    --third-ui: #1a1a1a;
+
+    --error-main: #e60000;
+    --error-bg: #1e0a0a;
+    --error-dim: rgba(230, 0, 0, 0.15);
+    --error-glow: 0 0 12px rgba(230, 0, 0, 0.25);
+
+}
+:root.level-5 {
+    --main: #00b7ff;
+    --main-dim: rgba(0, 183, 255, 0.15);
+    --main-glow: 0 0 12px rgba(0, 183, 255, 0.25);
+    --white: #ffffff;
+    --bg-black: #050505;
+    --second-bg: #1d2a33;
+    --main-ui: #32e1ff;
+    --second-ui: #ffffff;
+    --third-ui: #0b1115;
+
+    --error-main: #ec4899;
+    --error-bg: #1c0612;
+    --error-dim: rgba(236, 72, 153, 0.15);
+    --error-glow: 0 0 12px rgba(236, 72, 153, 0.25);
+
+}
+
+body {
+    margin: 0;
+    background: var(--bg-black);
+    color: var(--main);
+    font-family: 'Share Tech Mono', monospace;
+    overflow: hidden;
+    line-height: 1.3;
+}
+
+/* CONTENEDOR GENERAL */
+.adv-layout {
+    display: grid;
+    height: 100vh;
+    padding: 10px 30px;
+    box-sizing: border-box;
+    grid-template-columns: 350px 1fr 380px;
+    /* Reducimos las filas inferiores al mínimo para que el LIVE FEED (1fr) ocupe casi toda la pantalla */
+    grid-template-rows: auto 1fr 140px 110px; 
+    gap: 20px;
+    grid-template-areas:
+        "header header header"
+        "feed feed signal"
+        "log frag access"
+        "log bio user";
+}
+
+/* ELEMENTOS DEL HEADER (Fuera del Grid Principal) */
+.ui-header {
+    grid-area: header;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--main-dim);
+    padding-bottom: 10px;
+}
+
+.h-left { display: flex; align-items: center; }
+.logo-tri { font-size: 1.1rem; margin-right: 10px; text-shadow: var(--main-glow); }
+.logo-txt { font-weight: bold; font-size: 1.5rem; letter-spacing: 1px; }
+.logo-ver { 
+    opacity: 0.7; 
+    font-size: 0.75rem; 
+    margin-left: 15px; 
+    position: relative; 
+    display: inline-block;
+}
+
+/* EFECTO GLITCH PARA EL HEADER */
+.glitch-ver {
+    color: var(--main-ui);
+    animation: ui-glitch-skew 4s infinite linear alternate-reverse;
+}
+.glitch-ver::before, .glitch-ver::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: var(--bg-black);
+    clip: rect(0, 900px, 0, 0);
+}
+.glitch-ver::before {
+    left: -2px;
+    text-shadow: 2px 0 #ff00c1;
+    animation: ui-glitch-anim 3s infinite linear alternate-reverse;
+}
+.glitch-ver::after {
+    left: 2px;
+    text-shadow: -2px 0 #00fff9;
+    animation: ui-glitch-anim-2 2s infinite linear alternate-reverse;
+}
+
+@keyframes ui-glitch-anim {
+    0% { clip: rect(10px, 9999px, 20px, 0); }
+    20% { clip: rect(30px, 9999px, 5px, 0); }
+    100% { clip: rect(15px, 9999px, 25px, 0); }
+}
+@keyframes ui-glitch-anim-2 {
+    0% { clip: rect(5px, 9999px, 15px, 0); }
+    100% { clip: rect(25px, 9999px, 5px, 0); }
+}
+@keyframes ui-glitch-skew {
+    0% { transform: skew(0deg); }
+    5% { transform: skew(5deg); }
+    10% { transform: skew(-5deg); }
+    15% { transform: skew(0deg); }
+}
+
+.h-center { font-size: 0.95rem; align-self: center; }
+.white { color: var(--white); }
+.cyan { color: #00ffaa; text-shadow: 0 0 8px rgba(0, 255, 170, 0.4); }
+.dot { animation: pulse-dot 1s infinite; }
+
+.h-right { display: flex; align-items: center; }
+.time-block { text-align: right; margin-right: 25px; }
+.time { display: block; font-size: 1.4rem; color: var(--white); font-weight: bold; }
+.time-label { font-size: 0.55rem; opacity: 0.5; letter-spacing: 2px; }
+
+.classification { border: 1px solid var(--main); min-width: 140px; text-align: center; }
+.c-top { font-size: 0.55rem; padding: 3px; border-bottom: 1px solid var(--main); opacity: 0.8; }
+.c-bottom { background: var(--main); color: #000; padding: 4px; font-weight: bold; font-size: 0.8rem; }
+
+/* CONFIGURACIÓN DE PANELES (BLOQUES) */
+.ui-panel {
+    border: 1px solid var(--main-dim);
+    background: rgba(10, 5, 0, 0.2);
+    position: relative;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+/* Etiqueta de la esquina superior izquierda de cada panel */
+.panel-tag {
+    position: absolute;
+    top: -9px;
+    left: 15px;
+    background: var(--bg-black);
+    padding: 0 8px;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+}
+
+.text-feed {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: var(--bg-black);
+    padding: 0 8px;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+}
+
+/* DISTRIBUCIÓN POR ZONAS */
+.live-feed-box { grid-area: feed; padding: 0; overflow: hidden; }
+.signal-box {
+    height: 210px !important; /* Fuerza a la caja a ser compacta como la imagen */
+    align-self: start; /* Impide que se estire hacia abajo ocupando toda la columna */
+    box-sizing: border-box;
+}
+.event-log-box { grid-area: log; display: flex; flex-direction: column; }
+.fragments-box { grid-area: frag; }
+.biometric-box { grid-area: bio; }
+.access-box { 
+    grid-area: access; 
+    height: 290px !important;
+    align-self: end;
+    
+}
+.user-box { grid-area: user; }
+
+/* VISOR DEL LIVE FEED */
+.feed-viewport { 
+    height: 100%; 
+    position: relative; 
+    border: 1px solid rgba(255, 140, 0, 0.03); 
+}
+#ui-video-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; opacity: 0.35; filter: sepia(1) contrast(1.15) brightness(0.6); }
+
+/* Esquinas (Brackets) del visor */
+.bracket { position: absolute; width: 15px; height: 15px; border: 1.5px solid var(--main); }
+.tl { top: 15px; left: 15px; border-right: 0; border-bottom: 0; }
+.tr { top: 15px; right: 15px; border-left: 0; border-bottom: 0; }
+.bl { bottom: 15px; left: 15px; border-right: 0; border-top: 0; }
+.br { bottom: 15px; right: 15px; border-left: 0; border-top: 0; }
+
+/* Reglas de graduación interna del Feed */
+.ruler-left, .ruler-right { position: absolute; top: 40px; bottom: 40px; width: 5px; opacity: 0.3; }
+.ruler-left { left: 15px; border-left: 2px dashed var(--main); }
+.ruler-right { right: 15px; border-right: 2px dashed var(--main); }
+
+.feed-bottom-left { position: absolute; bottom: 20px; left: 25px; }
+.quality-txt { font-size: 0.8rem; margin-bottom: 5px; }
+.quality-bar { width: 150px; height: 4px; background: rgba(255, 140, 0, 0.1); }
+.quality-bar .fill { width: 97%; height: 100%; background: var(--main); box-shadow: var(--main-glow); }
+
+.feed-bottom-right { position: absolute; bottom: 20px; right: 25px; text-align: right; font-size: 0.7rem; line-height: 1.4; opacity: 0.8; }
+
+/* EVENT LOG (Streaming) */
+.log-container { flex: 1; overflow: hidden; font-size: 0.7rem; opacity: 0.8; padding-top: 10px; }
+.log-entry { margin-bottom: 5px; display: flex; justify-content: space-between; }
+.log-footer { font-size: 0.65rem; opacity: 0.4; margin-top: 5px; }
+
+/* ===================================================
+   QUICK ACCESS (CÁLCULO DE ALTA FIDELIDAD VISUAL)
+   =================================================== */
+
+/* Contenedor del panel de accesos */
+.access-box { 
+    grid-area: access; 
+    height: 240px !important;
+    align-self: end;
+    padding: 10px 15px !important; /* Control de espacio interno */
+    box-sizing: border-box !important;
+    
+}
+
+
+/* Contenedor de la lista de botones */
+.access-list {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 6px !important; /* Espaciado uniforme idéntico a la imagen */
+    height: 100% !important;
+    justify-content: space-between !important;
+    box-sizing: border-box !important;
+}
+
+/* El botón contenedor (La caja con borde fino y esquinas suavizadas) */
+.acc-item {
+    border: 1px solid var(--main-dim) !important;
+    border-radius: 4px !important;
+    padding: 4px 12px !important;
+    display: grid !important;
+    grid-template-columns: 24px 1fr 20px !important;
+    align-items: center !important;
+    height: 36px !important; /* Altura calculada para que quepan las 5 de forma exacta */
+    box-sizing: border-box !important;
+    background: rgba(0, 0, 0, 0.2) !important;
+    
+}
+
+/* El recuadro del icono a la izquierda (Copia exacta de la imagen) */
+.acc-icon {
+    width: 24px !important;
+    height: 24px !important;
+    border: 1px solid var(--main-dim) !important;
+    border-radius: 3px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 0.9rem !important;
+    box-sizing: border-box !important;
+    transform: translateY(-9px); /* Para evitar que el hover mueva el botón */
+}
+
+/* El bloque de texto central (Título en color + Subtítulo abajo) */
+.acc-txt {
+    padding-left: 12px !important;
+    line-height: 1.1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+}
+
+.acc-txt span {
+    font-weight: bold;
+    font-size: 0.8rem !important;
+    color: var(--main) !important;
+}
+
+.acc-txt small {
+    font-size: 0.58rem !important;
+    opacity: 0.5;
+    display: block;
+    transform: translateY(-10px); /* Ajuste fino para acercar el subtítulo al título */
+}
+
+/* El número de la derecha (Alineado y flotando al extremo) */
+.acc-num {
+    text-align: right;
+    opacity: 0.4;
+    font-size: 0.7rem !important;
+    font-weight: bold;
+}
+
+/* Efecto Hover del botón */
+.acc-item:hover {
+    background: var(--main) !important;
+}
+.acc-item:hover .acc-icon,
+.acc-item:hover .acc-txt span,
+.acc-item:hover .acc-txt small,
+.acc-item:hover .acc-num {
+    color: #000000 !important;
+    opacity: 1 !important;
+    border-color: rgba(0,0,0,0.3) !important;
+}
+
+/* MONITORES DE CANVAS (Bio y Señal) */
+.signal-content {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    height: 100% !important;
+    padding-top: 2px !important;
+    box-sizing: border-box;
+}
+
+#canvas-music-wave {
+    width: 100%;
+    height: 40px;
+    margin-top: 5px;
+    border-top: 1px solid var(--main-dim);
+    
+}
+
+#canvas-signal {
+    height: 10px !important; /* Reduce el gráfico para ganar espacio */
+}
+
+.sig-header { display: flex; justify-content: space-between; font-size: 1rem; font-weight: bold; }
+.sig-info { 
+    font-size: 0.7rem; 
+    opacity: 0.6; 
+    line-height: 1.4; 
+    transform: translateY(-80px); /* Ajuste fino para alinear con el canvas */
+     
+}
+.noise-section { font-size: 0.7rem; transform: translateY(-25px); /* Ajuste fino para acercar al canvas */ }
+.noise-bar { height: 4px; background: rgba(255, 140, 0, 0.1); margin-top: 4px; }
+.noise-bar .fill { width: 12%; height: 100%; background: var(--main); }
+
+.bio-content { display: flex; align-items: center; height: 100%; justify-content: space-between; }
+.bpm-counter { text-align: right; font-size: 0.7rem; line-height: 1.1; }
+.bpm-num { font-size: 1.8rem; font-weight: bold; color: var(--white); }
+.heart { color: #ff3333; animation: beat 0.8s infinite; display: inline-block; }
+
+/* MEMORY FRAGMENTS */
+/* ===================================================
+   MEMORY FRAGMENTS (BLOQUE INTEGRAL CORREGIDO)
+   =================================================== */
+
+.fragments-box {
+    grid-area: frag;
+    display: block !important;
+    width: 100% !important;
+    min-width: 0 !important;
+}
+
+.frag-content { 
+    display: flex !important; 
+    flex-direction: column !important; 
+    height: 100%; 
+    width: 100% !important;
+    justify-content: space-between; 
+    box-sizing: border-box;
+}
+
+.frag-header { 
+    font-size: 0.75rem; 
+    opacity: 0.6; 
+}
+
+/* Fuerza la fila horizontal en la barra del buscador */
+.frag-browser { 
+    display: flex !important; 
+    flex-direction: row !important; 
+    align-items: center; 
+    justify-content: space-between; 
+    margin: 5px 0; 
+    width: 100% !important;
+    box-sizing: border-box;
+    overflow: hidden; /* Corta cualquier desborde */
+}
+
+.arr { 
+    font-size: 1.2rem; 
+    cursor: pointer; 
+    opacity: 0.7; 
+    user-select: none; 
+    flex-shrink: 0;
+}
+
+.arr:hover { 
+    color: var(--white); 
+    opacity: 1; 
+}
+
+/* CORRECCIÓN CLAVE: Aplicamos la fila horizontal tanto a la rejilla como a la cinta */
+.frag-grid, 
+#frag-track,
+.frag-track { 
+    display: flex !important; 
+    flex-direction: row !important; /* FUERZA HORIZONTAL SIEMPRE */
+    gap: 8px; 
+    flex: 1 !important; 
+    margin: 0 10px; 
+    min-width: 0 !important;
+}
+
+/* Cada caja individual */
+.f-box { 
+    /* BLOQUEADO: Cada cuadro medirá exactamente 110px de ancho y no se encogerá */
+    flex: 0 0 110px !important; 
+    height: 50px; 
+    border: 1px solid var(--main-dim); 
+    background: rgba(255, 140, 0, 0.03); 
+    position: relative; 
+    box-sizing: border-box;
+}
+
+.f-box.active { 
+    border-color: var(--main); 
+    box-shadow: inset 0 0 8px rgba(255, 255, 255, 0.15); 
+}
+
+.frag-label { 
+    position: absolute; 
+    bottom: 2px; 
+    right: 4px; 
+    font-size: 0.5rem; 
+    opacity: 0.5; 
+}
+
+.frag-scroll-bar { 
+    height: 2px; 
+    background: rgba(255, 140, 0, 0.1); 
+    width: 100% !important;
+}
+
+.frag-scroll-bar .fill { 
+    width: 30%; 
+    height: 100%; 
+    background: var(--main); 
+}
+
+
+
+/* USER INFO (Dedo y Datos) */
+.user-layout { display: flex; justify-content: space-between; align-items: center; height: 100%; }
+.user-meta { font-size: 0.75rem; line-height: 1.4; }
+.orange-txt { color: var(--main); font-weight: bold; }
+.tiny { font-size: 0.6rem; opacity: 0.5; }
+
+/* Simulación de Huella Dactilar mediante CSS Puro (Para evitar assets caídos) */
+.finger-print {
+    width: 45px; height: 55px;
+    border: 2px solid var(--main);
+    border-radius: 50% 50% 40% 40%;
+    position: relative; opacity: 0.8;
+    background: repeating-radial-gradient(circle, transparent, transparent 3px, var(--main) 3px, var(--main) 5px);
+    box-shadow: var(--main-glow);
+}
+
+
+/* ANIMACIONES */
+@keyframes pulse-dot { 0% { opacity: 0.3; } 50% { opacity: 1; } 100% { opacity: 0.3; } }
+@keyframes beat { 0% { transform: scale(1); } 30% { transform: scale(1.2); } 100% { transform: scale(1); } }
+
+canvas { display: block; width: 100%; height: 55px; }
+
+
+.log-area, 
+.fragments-area, 
+.bio-area, 
+.user-area {
+    padding: 10px 15px !important; /* Ganamos 30px de espacio vertical dentro de la caja */
+    box-sizing: border-box;
+}
+
+/* 2. AJUSTE DE BIOMETRIC MONITOR (Para que no se amontone abajo) */
+.bio-content {
+    display: flex;
+    align-items: center;
+    height: calc(100% - 10px);
+    justify-content: space-between;
+    padding-top: 5px !important; /* Despega el contenido del título */
+}
+
+#canvas-bio {
+    height: 45px !important; /* Reducimos la onda para dar aire al texto */
+    flex: 1;
+}
+
+.bpm-counter {
+    text-align: right;
+    font-size: 0.65rem;
+    line-height: 1;
+    margin-left: 10px;
+}
+
+.bpm-num {
+    font-size: 1.5rem !important; /* Tamaño equilibrado para que no se pegue abajo */
+    font-weight: bold;
+    color: var(--white);
+}
+
+/* 3. AJUSTE DE USER INFO (Para que salga completo todo el texto y la huella) */
+.user-layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: calc(100% - 10px);
+    padding-top: 5px !important; /* Despega el contenido del título */
+}
+
+.user-meta {
+    font-size: 0.7rem !important; /* Reducido para que quepan las 4 líneas */
+    line-height: 1.3 !important; /* Espaciado compacto pero legible */
+}
+
+.tiny {
+    font-size: 0.6rem !important;
+    opacity: 0.5;
+}
+
+
+/* ===================================================
+   SYSTEM DESIGN SYSTEM: RECOVERED_TERMINAL ICONS
+   =================================================== */
+
+/* CONTENEDOR PRINCIPAL */
+.signal-nexus {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px auto;
+}
+
+/* NÚCLEO: Un diamante sólido que palpita */
+.nexus-core {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: var(--main);
+    transform: rotate(45deg);
+    box-shadow: 0 0 15px var(--main);
+    animation: core-pulse 2s infinite ease-in-out;
+}
+
+/* ANILLO ROTATORIO: Estilo radar técnico */
+.nexus-ring {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border: 1px dashed var(--main);
+    border-radius: 50%;
+    opacity: 0.5;
+    animation: ring-rotate 4s linear infinite;
+}
+
+/* ONDAS DE TRANSMISIÓN: Arcos que se expanden hacia la derecha */
+.nexus-waves {
+    position: absolute;
+    left: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+.nexus-waves span {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    border: 2px solid var(--main);
+    border-left: transparent;
+    border-bottom: transparent;
+    border-top: transparent;
+    border-radius: 50%;
+    opacity: 0;
+    animation: wave-transmit 2s infinite linear;
+}
+
+/* Diferentes tamaños para cada onda */
+.nexus-waves span:nth-child(1) { width: 20px; height: 20px; animation-delay: 0s; }
+.nexus-waves span:nth-child(2) { width: 40px; height: 40px; animation-delay: 0.6s; }
+.nexus-waves span:nth-child(3) { width: 60px; height: 60px; animation-delay: 1.2s; }
+
+/* ANIMACIONES */
+
+@keyframes core-pulse {
+    0%, 100% { transform: rotate(45deg) scale(1); opacity: 1; }
+    50% { transform: rotate(45deg) scale(1.3); opacity: 0.7; }
+}
+
+@keyframes ring-rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes wave-transmit {
+    0% { transform: translateY(-50%) scale(0.5); opacity: 0; }
+    30% { opacity: 1; }
+    100% { transform: translateY(-50%) scale(1.5); opacity: 0; }
+}
+
+
+.frag-window {
+    flex: 1;
+    overflow: hidden; /* Corta lo que sale de la caja */
+    position: relative;
+    height: 75px;
+    border: 1px solid var(--orange-dim);
+}
+
+.frag-tape {
+    display: flex;
+    gap: 10px;
+    width: max-content; /* Se estira según los items */
+    animation: tape-scroll 20s linear infinite; /* Movimiento de cinta */
+}
+
+.f-box {
+    width: 120px;
+    height: 70px;
+    border: 1px solid var(--orange-dim);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.f-box::after {
+    content: attr(data-label);
+    position: absolute;
+    bottom: 2px;
+    right: 5px;
+    font-size: 0.5rem;
+    color: var(--white);
+    opacity: 0.7;
+}
+
+@keyframes tape-scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); } /* Se mueve la mitad para bucle infinito */
+}
+
+/* ===================================================
+   SYSTEM DESIGN SYSTEM: RECOVERED_TERMINAL LOG
+   =================================================== */
+
+/* ESTILO DE LÍNEA DE LOG */
+.log-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* Espacio entre líneas para que respiren */
+    padding: 10px 0;
+}
+
+.log-entry {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.62rem; /* Tamaño reducido para que quepa todo */
+    color: var(--orange);
+    opacity: 0.8;
+    white-space: nowrap; /* FUERZA A QUE NO SE ROMPA LA LÍNEA */
+    gap: 10px;
+    margin-bottom: 6px;
+}
+
+.log-text {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Si el texto es muy largo, pone "..." en vez de romperse */
+}
+
+.log-status {
+    color: var(--white);
+    font-weight: bold;
+    flex-shrink: 0; /* IMPIDE QUE EL CORCHETE SE APLASTE */
+    min-width: 65px;
+    text-align: right;
+}
+
+/**/
+
+.modal {
+    display: none; /* Oculto al inicio */
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.75); /* Fondo negro translúcido */
+    justify-content: center;
+    align-items: center;
+    z-index: 10000; /* Asegura que flote por encima de todo */
+}
+
+/* Contenedor de la ventana */
+.class-window {
+    display: flex;
+    flex-direction: column;
+    width: 600px; 
+    height: 650px; 
+    background: var(--second-bg);
+    border: 1px solid var(--main-ui);
+    box-shadow: 0 0 25px rgba(0, 183, 255, 0.2);
+    font-family: 'Share Tech Mono', monospace;
+    animation: win-zoom-in 0.3s cubic-bezier(0.1, 0.8, 0.2, 1) forwards;
+}
+
+/* Cabecera de la ventana */
+.class-win-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--third-ui);
+    padding: 10px 15px;
+    border-bottom: 1px solid var(--main-ui);
+}
+
+.win-title {
+    color: var(--second-ui);
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+.win-close-btn {
+    color: var(--main-ui);
+    text-decoration: none;
+    font-size: 1.4rem;
+    line-height: 1;
+    transition: color 0.15s;
+    
+}
+.win-close-btn:hover { color: var(--second-ui); }
+
+/* Cuerpo interno */
+.class-win-body {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    grid-template-columns: 180px 1fr;
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+}
+
+/* El Modal de Nodos requiere más espacio para los nombres de categorías y el hardware DRIVE_A */
+#modal-nodes .class-win-body {
+    grid-template-columns: 240px 1fr;
+}
+
+/* --- DOSSIER GRID ENGINE --- */
+.dossier-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 20px;
+    padding: 10px;
+}
+
+.dossier-card {
+    background: rgba(15, 25, 40, 0.4);
+    border: 1px solid var(--main-ui);
+    padding: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    /* Protocolo de Entrada Escalonada */
+    opacity: 0;
+    animation: dossier-appear 0.4s cubic-bezier(0.1, 0.8, 0.2, 1) forwards;
+    animation-delay: calc(var(--i, 0) * 0.05s);
+}
+
+@keyframes dossier-appear {
+    from { opacity: 0; transform: translateY(15px) scale(0.98); filter: blur(4px); }
+    to { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+}
+
+.dossier-card:hover {
+    background: rgba(77, 158, 255, 0.08);
+    box-shadow: inset 0 0 15px rgba(0, 183, 255, 0.1);
+    border-color: var(--second-ui);
+}
+
+/* Header: Imagen y Tags */
+.dossier-header {
+    display: flex;
+    gap: 12px;
+    height: 220px;
+}
+
+.dossier-img {
+    width: 150px;
+    height: 100%;
+    border: 1px solid var(--main-dim);
+    background: #000;
+    flex-shrink: 0;
+}
+
+.dossier-img img {
+    width: 100%; height: 100%; object-fit: cover;
+    filter: grayscale(0.5) contrast(1.1);
+}
+
+.dossier-tags {
+    flex: 1;
+    display: flex;
+    flex-direction: column; /* Apilamiento vertical para llenar la altura */
+    gap: 8px;
+    justify-content: flex-start;
+    height: 100%;
+    overflow: hidden;
+}
+
+.d-tag {
+    font-size: 0.8rem; /* Aumento significativo de legibilidad */
+    padding: 8px 12px;
+    border: 1px solid var(--main-dim);
+    color: var(--main-ui);
+    text-transform: uppercase;
+    background: rgba(77, 158, 255, 0.05); /* Fondo para dar volumen */
+    letter-spacing: 1px;
+    width: 100%;
+    box-sizing: border-box;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Datos Fantasma para nodos sin etiquetas */
+.ghost-tag {
+    border-style: dashed !important;
+    opacity: 0.8;
+    animation: ghost-pulse 4s infinite ease-in-out;
+    flex: 1; /* Fuerza a repartirse el espacio vertical restante */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    background: rgba(77, 158, 255, 0.02);
+    font-size: 0.9rem;
+}
+
+@keyframes ghost-pulse {
+    0%, 100% { opacity: 0.6; color: var(--main-ui); }
+    50% { opacity: 0.2; color: var(--second-ui); }
+}
+
+.dossier-divider {
+    height: 1px;
+    background: linear-gradient(90deg, var(--main-ui), transparent);
+    opacity: 0.4;
+}
+
+/* Mid: Info y Floppy */
+.dossier-mid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.d-name { font-size: 1.1rem; font-weight: bold; color: var(--white); }
+.d-cat { font-size: 0.6rem; opacity: 0.5; letter-spacing: 1px; }
+
+/* Floppy Disc Icon (CSS Puro) */
+.floppy-icon {
+    width: 42px; height: 38px;
+    background: var(--main-ui);
+    position: relative;
+    clip-path: polygon(0 0, 85% 0, 100% 15%, 100% 100%, 0 100%);
+    cursor: grab;
+    transition: transform 0.1s, opacity 0.2s;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+.floppy-icon::before {
+    content: ""; position: absolute; top: 3px; left: 8px; width: 22px; height: 14px;
+    background: rgba(255, 255, 255, 0.9);
+}
+.floppy-icon::after {
+    content: ""; position: absolute; bottom: 5px; left: 8px; width: 26px; height: 15px;
+    background: rgba(0, 0, 0, 0.4); border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Estado de socket vacío: Cuando el disquete está siendo arrastrado o está en el drive */
+.floppy-icon.picked-up {
+    background: rgba(0, 0, 0, 0.6) !important;
+    border: 1px dashed rgba(77, 158, 255, 0.2) !important;
+    box-shadow: none !important;
+    cursor: default;
+    pointer-events: auto; /* Permitir mousedown para el mensaje de aviso de ocupado */
+}
+
+/* Ocultar etiquetas del disquete para simular la ranura vacía */
+.floppy-icon.picked-up::before,
+.floppy-icon.picked-up::after {
+    display: none;
+}
+
+/* Estado de arrastre del Floppy */
+.floppy-dragging {
+    position: fixed;
+    pointer-events: none;
+    z-index: 30000;
+    animation: floppy-wiggle 0.25s infinite ease-in-out;
+    filter: drop-shadow(0 0 15px var(--second-ui));
+    opacity: 0.9;
+}
+
+@keyframes floppy-wiggle {
+    0%, 100% { transform: translate(-50%, -50%) rotate(-3deg); }
+    50% { transform: translate(-50%, -50%) rotate(3deg); }
+}
+
+/* --- DRIVE SLOT (Side Receiver) --- */
+.floppy-drive-slot {
+    flex-shrink: 0; /* Evita que la unidad se aplaste */
+    margin-top: 0;
+    padding: 20px 15px; /* Restaurado tamaño original para PC */
+    border-top: 1px solid var(--main-dim);
+    background: rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Restaurado espaciado original para PC */
+    align-items: center;
+    transition: all 0.3s;
+}
+
+.floppy-drive-slot.highlight {
+    background: rgba(77, 158, 255, 0.15);
+    box-shadow: inset 0 0 20px rgba(0, 183, 255, 0.2);
+}
+
+.drive-status { font-size: 0.6rem; color: var(--main-ui); opacity: 0.6; letter-spacing: 1px; }
+
+.drive-led {
+    width: 6px; height: 6px; background: #333; border-radius: 50%;
+    box-shadow: 0 0 5px #000;
+}
+
+.floppy-drive-slot.highlight .drive-led,
+.floppy-drive-slot.active-module .drive-led {
+    background: var(--second-ui);
+    animation: led-blink 0.4s infinite;
+}
+
+@keyframes led-blink { 0%, 100% { opacity: 1; box-shadow: 0 0 8px var(--second-ui); } 50% { opacity: 0.3; } }
+
+/* Contenedor mecánico para la ranura */
+.drive-chassis {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+.drive-mouth {
+    position: absolute;
+    bottom: 0;
+    width: 100%; height: 8px; background: #000;
+    border: 1px solid var(--main-dim);
+    z-index: 5;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.5);
+}
+
+.floppy-inserted {
+    position: absolute;
+    top: -50px; /* Oculto arriba del chasis */
+    width: 42px;
+    height: 38px;
+    background: var(--main-ui);
+    clip-path: polygon(0 0, 85% 0, 100% 15%, 100% 100%, 0 100%);
+    transition: top 0.8s cubic-bezier(0.1, 0.8, 0.2, 1), background 0.3s;
+    z-index: 1;
+}
+
+.floppy-inserted::before {
+    content: ""; position: absolute; top: 3px; left: 8px; width: 22px; height: 14px;
+    background: rgba(255, 255, 255, 0.9);
+}
+.floppy-inserted::after {
+    content: ""; position: absolute; bottom: 5px; left: 8px; width: 26px; height: 15px;
+    background: rgba(0, 0, 0, 0.4); border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Estado de inserción activa */
+.floppy-inserted.moving-in {
+    top: 25px; /* Inserción profunda en la ranura */
+}
+
+.floppy-inserted.corrupted {
+    background: var(--error-main);
+}
+
+/* Footer: Telemetría y Barras */
+.dossier-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 0.65rem;
+    color: var(--main-ui);
+}
+
+.telemetry-item { display: flex; align-items: center; gap: 8px; }
+
+.t-bar-bg { flex: 1; height: 4px; background: rgba(0,0,0,0.3); }
+.t-bar-fill { height: 100%; background: var(--main-ui); transition: width 1s; }
+
+.freq-visual { display: flex; align-items: flex-end; gap: 2px; height: 10px; }
+.f-bar { 
+    width: 2px; background: var(--second-ui); 
+    animation: freq-pulse var(--d) infinite ease-in-out; 
+}
+
+@keyframes freq-pulse { 
+    0%, 100% { height: 20%; } 
+    50% { height: 100%; } 
+}
+
+.kbin-ext { 
+    align-self: flex-end; 
+    font-weight: bold; 
+    color: var(--second-ui); 
+    opacity: 0.8;
+}
+
+/* --- ESTADO CORRUPTO --- */
+.dossier-card.corrupted {
+    border-color: var(--error-main) !important;
+    background: var(--error-dim) !important;
+    /* Forzamos visibilidad para que la animación no oculte la carta */
+    opacity: 1 !important;
+    filter: blur(0) !important;
+    animation: not-available-node 0.15s infinite !important;
+}
+.dossier-card.corrupted .d-name { color: var(--error-main); text-shadow: var(--error-glow); }
+.dossier-card.corrupted .floppy-icon { background: var(--error-main); }
+.dossier-card.corrupted .f-bar { background: var(--error-main); opacity: 0.8; }
+.dossier-card.corrupted .t-bar-fill { background: var(--error-main); }
+
+ @keyframes not-available-node {
+        0% { transform: translate(0); }
+        33% { transform: translate(1px, -1px); }
+        66% { transform: translate(-1px, 1px); }
+        100% { transform: translate(0); }
+}
+
+/* Sidebar de pestañas (Izquierda) */
+.class-sidebar {
+    background: var(--third-ui);
+    border-right: 1px solid var(--main-ui);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* El scroll ahora es interno */
+}
+
+/* Contenedor de scroll para categorías */
+.sidebar-scrollable {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* Estilos para los botones de grupo (Colapsables) */
+.node-side-group {
+    width: 100%;
+    border-bottom: 1px solid var(--main-dim);
+}
+
+.side-label-btn {
+    list-style: none;
+    cursor: pointer;
+    padding: 12px 15px;
+    font-size: 0.7rem;
+    color: var(--main-ui);
+    background: rgba(77, 158, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    letter-spacing: 1px;
+    transition: all 0.2s;
+    user-select: none;
+}
+
+.side-label-btn:hover {
+    background: rgba(77, 158, 255, 0.12);
+    color: var(--second-ui);
+}
+
+.side-label-btn::-webkit-details-marker {
+    display: none;
+}
+
+/* Indicador de estado dinámico */
+.side-label-btn::after {
+    content: "[+]";
+    opacity: 0.5;
+    font-size: 0.6rem;
+}
+
+.node-side-group[open] .side-label-btn::after {
+    content: "[-]";
+}
+
+/* Botones de pestaña */
+.tab-btn {
+    background: transparent;
+    border: 1px solid transparent;
+    color: var(--main-ui);
+    width: 100%;
+    font-family: inherit;
+    font-size: 0.9rem;
+    padding: 10px 20px;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.tab-btn:hover {
+    background: rgba(77, 158, 255, 0.1);
+    color: var(--second-ui);
+}
+
+/* Protocolo de apilamiento vertical para sub-listas */
+#nodes-side-qa, #nodes-side-cats {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Estado activo de la pestaña */
+.tab-btn.active {
+    background: var(--second-ui);
+    color: #000000;
+    font-weight: bold;
+}
+
+/* Scrollbar específica para la zona de categorías */
+.sidebar-scrollable::-webkit-scrollbar { width: 4px; }
+.sidebar-scrollable::-webkit-scrollbar-thumb {
+    background: var(--main-dim);
+}
+
+/* Visor de datos (Derecha) */
+.class-viewport {
+    padding: 25px;
+    background: rgba(10, 15, 25, 0.3);
+    overflow-y: auto; /* Activa el scroll vertical */
+    box-sizing: border-box;
+}
+
+.class-viewport::-webkit-scrollbar {
+    width: 6px; /* Muy delgada y discreta */
+}
+
+/* 2. El carril de fondo de la barra (Track) */
+.class-viewport::-webkit-scrollbar-track {
+    background: var(--third-ui);
+    border-left: 1px solid rgba(77, 158, 255, 0.2); /* Borde sutil con el color principal */
+}
+
+/* 3. El tirador de la barra (Thumb) */
+.class-viewport::-webkit-scrollbar-thumb {
+    background: var(--main-ui); /* Color azul principal */
+    border-radius: 0px; /* Esquinas rectas para estilo industrial */
+}
+
+.class-viewport::-webkit-scrollbar-thumb:hover {
+    background: var(--second-ui); /* Brillo cian al pasar el ratón */
+    box-shadow: 0 0 10px var(--second-ui);
+}
+
+.tab-content {
+    display: none; /* Oculto por defecto */
+    animation: tab-reveal 0.25s ease-out forwards;
+}
+
+.tab-content.active {
+    display: block; /* Solo se muestra la pestaña activa */
+}
+
+/* Animaciones */
+@keyframes win-zoom-in {
+    from { transform: scale(0.95); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes tab-reveal {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Animación para el flujo de texto inicial */
+.sync-text-anim {
+    animation: sync-flicker 1.5s infinite;
+}
+
+@keyframes sync-flicker {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 0.2; }
+}
+
+/* Prioridad Crítica para Puerta de Seguridad */
+#modal-security-gate {
+    z-index: 20000 !important;
+}
+
+@keyframes glitch-open {
+    0% { transform: scaleY(0.005) scaleX(0); opacity: 0; filter: hue-rotate(90deg); }
+    20% { transform: scaleY(0.005) scaleX(1.1); background: var(--main-ui); }
+    40% { transform: scaleY(1) scaleX(0.9); clip-path: inset(10% 0 40% 0); }
+    60% { clip-path: inset(30% 0 10% 0); transform: translateX(-10px) skewX(5deg); }
+    80% { clip-path: inset(0% 0 70% 0); transform: translateX(10px) skewX(-5deg); }
+    100% { transform: scale(1) skewX(0); opacity: 1; clip-path: inset(0 0 0 0); }
+}
+
+.glitch-window {
+    animation: glitch-open 0.4s cubic-bezier(.25,.46,.45,.94) both !important;
+}
+
+.modal.closing .class-window {
+    animation: win-zoom-out 0.25s cubic-bezier(0.8, 0, 0.9, 1) forwards;
+    animation: glitch-close 0.25s cubic-bezier(.25,.46,.45,.94) forwards !important;
+}
+
+
+/* Protocolo de Cierre Glicheado */
+.modal.closing .glitch-window {
+    animation: glitch-close 0.25s cubic-bezier(.25,.46,.45,.94) forwards !important;
+}
+
+@keyframes glitch-close {
+    0% { transform: scale(1); opacity: 1; }
+    30% { transform: scaleY(1) scaleX(1.1); clip-path: inset(40% 0 10% 0); }
+    70% { transform: scaleY(0.005) scaleX(1.1); background: var(--main-ui); }
+    100% { transform: scaleY(0.005) scaleX(0); opacity: 0; }
+}
+
+@keyframes win-zoom-out {
+    from { 
+        transform: scale(1); 
+        opacity: 1; 
+    }
+    to { 
+        transform: scale(0.95); 
+        opacity: 0; 
+    }
+}
+
+/* --- CORRUPTION PANIC LOOP --- */
+.corruption-panic {
+    border-color: var(--error-main) !important;
+    background: var(--error-bg) !important;
+    box-shadow: 0 0 40px var(--error-dim) !important;
+    transition: none !important;
+}
+
+/* --- BOOT SEQUENCE ENGINE --- */
+.boot-screen-content {
+    width: 500px;
+    height: 350px;
+    background: #050505;
+    border: 1px solid var(--second-ui);
+    padding: 30px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 40px rgba(0, 183, 255, 0.15);
+    transform: translateY(100vh);
+    transition: transform 0.6s cubic-bezier(0.1, 0.8, 0.2, 1), opacity 0.4s;
+    overflow: hidden;
+}
+
+.boot-screen-content.active {
+    transform: translateY(0);
+}
+
+.boot-screen-content.shutdown {
+    opacity: 0;
+    transform: scale(0.95) translateY(20px);
+}
+
+.boot-text {
+    color: var(--second-ui);
+    font-size: 0.85rem;
+    line-height: 1.8;
+    text-transform: uppercase;
+    font-family: 'Share Tech Mono', monospace;
+}
+
+.boot-line {
+    margin-bottom: 4px;
+    opacity: 0;
+}
+
+.boot-line.visible {
+    opacity: 1;
+}
+
+.boot-glitch-line {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 2px;
+    background: rgba(77, 158, 255, 0.1);
+    animation: boot-scan 3s infinite linear;
+    pointer-events: none;
+}
+
+/* Estilo para el prompt de lanzamiento */
+.launch-prompt {
+    margin-top: 20px !important;
+    text-align: center;
+    color: var(--white) !important;
+    animation: boot-flicker 0.8s infinite alternate;
+}
+
+@keyframes boot-flicker { from { opacity: 0.3; } to { opacity: 1; } }
+
+@keyframes boot-scan { 0% { top: 0; } 100% { top: 100%; } }
+
+/* --- FORMULARIO DE REGISTRO USER --- */
+.user-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.form-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.form-row label {
+    font-size: 0.8rem;
+    color: var(--main-ui);
+    width: 120px; /* Más compacto */
+}
+
+/* Campos de texto estilo consola */
+.class-input {
+    background: var(--third-ui);
+    border: 1px solid var(--main-ui);
+    color: var(--second-ui);
+    font-family: inherit;
+    font-size: 0.9rem;
+    padding: 6px 10px;
+    outline: none;
+    box-sizing: border-box;
+}
+.class-input:focus {
+    border-color: var(--second-ui);
+    box-shadow: 0 0 10px rgba(0, 183, 255, 0.15);
+}
+
+/* Botón interno de la consola */
+.btn-ui {
+    background: transparent;
+    border: 1px solid var(--main-ui);
+    color: var(--main-ui);
+    font-family: inherit;
+    font-size: 0.9rem;
+    padding: 8px 20px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.btn-ui:hover {
+    background: var(--main-ui);
+    color: #000000;
+    box-shadow: 0 0 15px var(--main-ui);
+}
+
+/* --- SELECTOR DE COLOR AVANZADO --- */
+.user-grid {
+    display: flex;
+    flex-direction: column; /* TODO EL CONTENIDO SE APILA EN VERTICAL */
+    gap: 15px;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 10px 0;
+}
+
+.user-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+}
+
+.color-section {
+    border-top: 1px dashed var(--main-ui); /* Línea divisoria horizontal */
+    border-left: none; /* Quitamos la línea vertical de antes */
+    padding-top: 15px;
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.color-targets {
+    display: flex;
+    gap: 4px;
+}
+
+.target-btn {
+    background: var(--third-ui);
+    border: 1px solid var(--main-ui);
+    color: var(--main-ui);
+    font-family: inherit;
+    font-size: 0.7rem;
+    padding: 3px 8px;
+    cursor: pointer;
+}
+.target-btn.active {
+    background: var(--main-ui);
+    color: #000;
+    font-weight: bold;
+}
+
+.picker-layout {
+    display: flex;
+    flex-direction: row; /* La rueda y los sliders se quedan cómodos abajo */
+    gap: 15px;
+    background: rgba(0,0,0,0.3);
+    border: 1px solid var(--main-ui);
+    padding: 10px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.picker-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+#color-wheel {
+    cursor: crosshair;
+    border: 1px solid var(--main-ui);
+    width: 90px; /* Ajustada para el nuevo ancho de la ventana */
+    height: 90px;
+}
+
+.preset-palette {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3px;
+}
+
+.color-sq {
+    width: 14px;
+    height: 14px;
+    border: 1px solid #fff;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.btn-ui-mini {
+    background: transparent;
+    border: 1px solid var(--main-ui);
+    color: var(--main-ui);
+    font-family: inherit;
+    font-size: 0.65rem;
+    padding: 1px 6px;
+    cursor: pointer;
+}
+
+.picker-right {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1; /* Ocupa el espacio restante al lado de la rueda */
+    box-sizing: border-box;
+}
+
+.rgb-sliders {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.slider-row {
+    display: grid;
+    grid-template-columns: 10px 1fr 30px;
+    align-items: center;
+    gap: 6px;
+}
+
+.s-label {
+    font-size: 0.75rem;
+    color: var(--second-ui);
+    font-weight: bold;
+}
+
+.slider-row input[type="range"] {
+    -webkit-appearance: none;
+    background: var(--third-ui);
+    height: 4px;
+    border: 1px solid var(--main-ui);
+    outline: none;
+}
+.slider-row input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 8px;
+    height: 12px;
+    background: var(--main-ui);
+    cursor: pointer;
+}
+
+.hex-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 5px;
+    font-size: 0.75rem;
+}
+
+.hex-row input {
+    width: 85px;
+    text-align: center;
+}
+
+.color-preview {
+    width: 30px;
+    height: 20px;
+    border: 1px solid var(--main-ui);
+    background: #007aff;
+}
+
+/* --- BOTONERA DE SELECCIÓN DE NIVELES --- */
+.level-selector-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    max-height: 250px;
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+/* Personalizar scrollbar del selector */
+.level-selector-grid::-webkit-scrollbar { width: 3px; }
+.level-selector-grid::-webkit-scrollbar-thumb { background: var(--main-ui); }
+
+.level-btn {
+    background: var(--third-ui);
+    border: 1px solid var(--main-ui);
+    color: var(--main-ui);
+    padding: 10px 15px;
+    text-align: left;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.15s;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.level-btn span {
+    font-weight: bold;
+    font-size: 0.85rem;
+}
+
+.level-btn small {
+    font-size: 0.6rem;
+    opacity: 0.5;
+}
+
+.level-btn:hover {
+    background: var(--main-ui);
+    color: #000000;
+    box-shadow: 0 0 10px var(--main-ui);
+}
+
+/* --- CONFIGURADOR DE VARIABLES CUSTOM --- */
+.custom-vars-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 6px;
+}
+
+.var-row {
+    display: grid;
+    grid-template-columns: 90px 1fr 24px;
+    align-items: center;
+    font-size: 0.75rem;
+    gap: 4px;
+}
+
+.var-row span {
+    color: var(--main-ui);
+    font-weight: bold;
+}
+
+.var-row input {
+    width: 100%;
+    font-size: 0.75rem;
+    padding: 2px 5px;
+}
+
+/* --- LAYOUT INTERNO DE DOS COLUMNAS --- */
+.custom-tab-layout {
+    display: grid;
+    grid-template-columns: 1fr 280px; /* Separamos el reproductor de los niveles */
+    gap: 25px;
+    height: 100%;
+}
+
+.custom-left-col {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.custom-right-col {
+    border-left: 1px dashed var(--main-ui);
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    box-sizing: border-box;
+}
+
+/* DECK DEL DISCO */
+.disc-deck {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(0,0,0,0.3);
+    border: 1px solid var(--main-ui);
+    padding: 10px 15px;
+    box-sizing: border-box;
+}
+
+/* El disco de vinilo en CSS puro */
+.disc-vinyl {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    border: 2px solid var(--main-ui);
+    background: repeating-radial-gradient(circle, #000, #353232 4px, var(--third-ui) 4px, var(--third-ui) 5px);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 15px rgba(0, 183, 255, 0.1);
+    animation: disc-spin 3s linear infinite;
+    animation-play-state: paused; /* Solo gira si suena música */
+    flex-shrink: 0;
+}
+
+.disc-center {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--second-bg);
+    border: 2px solid var(--main-ui);
+    z-index: 2;
+}
+
+/* Animación de rotación del disco */
+@keyframes disc-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.disc-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+/* LISTA DE REPRODUCCIÓN (PLAYLIST) */
+.disc-playlist {
+    flex: 1;
+    border: 1px solid var(--main-ui);
+    background: rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    min-height: 160px;
+    height: auto !important; /* Permite que el contenedor se estire al aparecer los botones */
+}
+
+.playlist-header {
+    background: var(--third-ui);
+    color: var(--second-ui);
+    font-size: 0.7rem;
+    padding: 6px 10px;
+    border-bottom: 1px solid var(--main-ui);
+    font-weight: bold;
+}
+
+.playlist-stream {
+    flex: 1;
+    overflow-y: auto;
+    padding: 5px 0;
+}
+
+.playlist-stream::-webkit-scrollbar {
+    width: 4px;
+}
+.playlist-stream::-webkit-scrollbar-track {
+    background: var(--third-ui);
+}
+.playlist-stream::-webkit-scrollbar-thumb {
+    background: var(--main-ui);
+}
+.playlist-stream::-webkit-scrollbar-thumb:hover {
+    background: var(--second-ui);
+}
+
+/* Botón individual de canción en la lista */
+.playlist-track {
+    padding: 6px 15px;
+    font-size: 0.75rem;
+    color: var(--main-ui);
+    cursor: pointer;
+    transition: all 0.15s;
+    display: flex;
+    justify-content: space-between;
+}
+.playlist-track:hover {
+    background: rgba(0, 183, 255, 0.1);
+    color: var(--second-ui);
+}
+.playlist-track.active {
+    background: var(--second-ui);
+    color: #000;
+    font-weight: bold;
+}
+
+/* --- DECK DE CASETES (SELECTOR DE FONDOS) --- */
+.cassette-deck {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--main-ui);
+    background: rgba(0,0,0,0.2);
+    overflow: visible; /* Permitimos que el preview sobresalga del contenedor */
+    min-height: 140px;
+    height: auto !important; /* Permite que el contenedor se estire al aparecer los botones */
+    margin-top: 15px;
+}
+
+/* Botón del casete */
+.cassette-item {
+    padding: 6px 12px;
+    border-bottom: 1px solid var(--third-ui);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    background: rgba(10, 15, 25, 0.2);
+    position: relative; /* Clave para el posicionamiento del preview */
+    transition: all 0.15s;
+}
+
+/* Estilos para que los botones de Upload no se vean amontonados */
+#music-playground, #cassette-playground {
+    display: none; /* Oculto por defecto, se activa en LEVEL NONE */
+    background: rgba(30, 31, 32, 0.1) !important;
+    padding: 10px !important;
+    border: 1px dashed var(--main-ui) !important;
+    margin: 10px 0 !important;
+}
+
+/* El casete dibujado en CSS */
+.cassette-shape {
+    width: 38px;
+    height: 24px;
+    border: 1.5px solid var(--main-ui);
+    border-radius: 3px;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    position: relative;
+    box-shadow: inset 0 0 5px rgba(0, 183, 255, 0.2);
+    flex-shrink: 0;
+}
+
+/* Engranajes internos del casete */
+.cassette-shape::before,
+.cassette-shape::after {
+    content: '⚙';
+    font-size: 0.6rem;
+    color: var(--main-ui);
+    display: inline-block;
+}
+
+/* EL PREVISUALIZADOR FLOTANTE (Solo visible en HOVER) */
+.cassette-preview {
+    display: none;
+    position: absolute;
+    right: 60px; /* Lo movemos al interior para evitar el recorte (clipping) del overflow */
+    top: -50px;  /* Lo elevamos un poco para que no tape el nombre del tape seleccionado */
+    width: 160px;
+    height: 95px;
+    border: 1px solid var(--second-ui);
+    background-size: cover;
+    background-position: center;
+    z-index: 10000; /* Aseguramos que flote por encima de cualquier otro elemento */
+    box-shadow: 0 0 15px rgba(0, 183, 255, 0.3);
+    animation: preview-fade 0.2s ease-out;
+    pointer-events: none; /* Evita parpadeos si el ratón entra accidentalmente en el preview */
+}
+
+/* Al pasar el ratón, mostramos el preview flotante */
+.cassette-item:hover .cassette-preview {
+    display: block;
+}
+
+.cassette-item:hover {
+    background: rgba(0, 183, 255, 0.1);
+    color: var(--second-ui);
+}
+
+.cassette-item.active {
+    background: var(--second-ui);
+    color: #000;
+    font-weight: bold;
+}
+.cassette-item.active .cassette-shape {
+    border-color: #000;
+}
+.cassette-item.active .cassette-shape::before,
+.cassette-item.active .cassette-shape::after {
+    color: #000;
+}
+
+@keyframes preview-fade {
+    from { opacity: 0; transform: scale(0.95) translateX(10px); }
+    to { opacity: 1; transform: scale(1) translateX(0); }
+}
+
+/* --- ESTILOS SYSTEM_DIAG: DIAGNOSTIC MATRIX --- */
+.diag-grid-container {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    min-height: 180px;
+    margin-top: 10px;
+}
+
+.diag-core-visual {
+    position: relative;
+    width: 130px; height: 130px;
+    border: 1px solid var(--main-dim);
+    display: flex; align-items: center; justify-content: center;
+    background: radial-gradient(circle, rgba(0, 122, 255, 0.05) 0%, transparent 70%);
+}
+
+.diag-core-pulse {
+    width: 8px; height: 8px;
+    background: var(--main-ui);
+    border-radius: 50%;
+    box-shadow: 0 0 15px var(--main-ui);
+    animation: core-pulse-fast 1.5s infinite ease-in-out;
+}
+
+.diag-core-ring {
+    position: absolute;
+    width: 35px; height: 35px;
+    border: 1px solid var(--main-ui);
+    border-radius: 50%;
+    opacity: 0.3;
+    animation: ring-expand 3s infinite linear;
+}
+
+.diag-core-ring.outer { width: 75px; height: 75px; animation-delay: 1.5s; }
+
+.diag-core-label {
+    position: absolute;
+    bottom: 5px; font-size: 0.55rem; color: var(--second-ui); opacity: 0.5;
+}
+
+.diag-unit-scanner {
+    font-size: 0.75rem;
+    height: 130px;
+    overflow: hidden;
+    border-left: 1px solid var(--main-ui);
+    padding-left: 15px;
+    display: flex; flex-direction: column; gap: 6px;
+}
+
+.scan-line { opacity: 0.5; transition: opacity 0.2s; }
+.scan-line.active { color: var(--second-ui); opacity: 1; font-weight: bold; }
+
+@keyframes core-pulse-fast {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(2); opacity: 0.6; }
+}
+
+@keyframes ring-expand {
+    0% { transform: scale(0.6); opacity: 0.7; }
+    100% { transform: scale(1.6); opacity: 0; }
+}
+
+/* --- SISTEMA EXPLORADOR DE ARCHIVOS --- */
+.win-path-bar {
+    background: var(--third-ui);
+    padding: 6px 15px;
+    border-bottom: 1px solid var(--main-ui);
+    font-size: 0.65rem;
+    color: var(--second-ui);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.path-root { cursor: pointer; text-decoration: underline; }
+.path-root:hover { color: var(--white); }
+
+.node-search-box {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.node-search-box .class-input {
+    width: 130px;
+    height: 18px;
+    padding: 0 8px;
+    font-size: 0.65rem;
+    border-color: var(--main-dim);
+}
+
+.node-explorer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 20px;
+    padding: 10px;
+}
+
+/* --- ESTILOS NODE_CARD (DOSSIER VIEW) --- */
+.node-db-grid {
+    display: flex; flex-direction: column; gap: 15px;
+}
+
+.db-card {
+    border: 1px solid var(--main-dim);
+    background: rgba(0, 0, 0, 0.4);
+    display: flex; padding: 12px; gap: 18px;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+.db-card:hover {
+    border-color: var(--second-ui);
+    background: rgba(77, 158, 255, 0.08);
+    box-shadow: inset 0 0 15px rgba(0, 183, 255, 0.1);
+}
+
+.db-img-box {
+    width: 140px; height: 90px;
+    border: 1px solid var(--main-ui);
+    background: #000; flex-shrink: 0;
+}
+.db-img-box img {
+    width: 100%; height: 100%; object-fit: cover;
+    filter: grayscale(0.4) contrast(1.1);
+    opacity: 0.8;
+}
+
+.db-info { flex: 1; display: flex; flex-direction: column; justify-content: center; min-width: 0; }
+.db-id {
+    font-size: 1.3rem; font-weight: bold; color: var(--white);
+    text-shadow: var(--main-glow); margin-bottom: 4px;
+}
+.db-meta {
+    font-size: 0.65rem; color: var(--main-ui); opacity: 0.8;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    border-top: 1px solid rgba(77, 158, 255, 0.2); padding-top: 5px;
+}
+.db-tags { display: flex; gap: 6px; margin-top: 8px; }
+.db-tag {
+    font-size: 0.55rem; border: 1px solid var(--second-ui);
+    padding: 1px 5px; color: var(--second-ui); opacity: 0.7;
+}
+
+/* --- EXPLORADOR DE CARPETAS (HOME VIEW) --- */
+.folder-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+    gap: 25px; padding: 10px;
+}
+.explorer-folder {
+    display: flex; flex-direction: column; align-items: center;
+    gap: 10px; cursor: pointer; padding: 15px; border: 1px solid transparent;
+}
+.explorer-folder:hover {
+    background: rgba(77, 158, 255, 0.1); border-color: var(--main-ui);
+}
+.folder-icon { font-size: 2.2rem; filter: drop-shadow(0 0 5px var(--main-ui)); }
+.folder-label {
+    font-size: 0.7rem; text-align: center; color: var(--white);
+    word-break: break-word;
+    max-width: 100px;
+    line-height: 1.2;
+}
+
+/* --- TERMINAL CLI ARCHIVES (ACCESO 03) --- */
+.terminal-container {
+    display: flex;
+    flex-direction: column;
+    width: 98vw;
+    height: 95vh;
+    background: var(--bg-black);
+    border: 1px solid var(--main-ui);
+    box-shadow: var(--main-glow);
+    animation: win-zoom-in 0.3s cubic-bezier(0.1, 0.8, 0.2, 1) forwards;
+}
+
+.modal.closing .terminal-container  {
+    animation: glitch-close 0.25s cubic-bezier(.25,.46,.45,.94) forwards !important;
+}
+
+.terminal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--third-ui);
+    padding: 8px 15px;
+    border-bottom: 1px solid var(--main-ui);
+}
+
+.terminal-output {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: var(--second-ui);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+/* --- ESTILO DE SCROLLBAR PARA CLI (ACCESO 03) --- */
+.terminal-output::-webkit-scrollbar {
+    width: 6px;
+}
+.terminal-output::-webkit-scrollbar-track {
+    background: #000;
+    border-left: 1px solid var(--main-dim);
+}
+.terminal-output::-webkit-scrollbar-thumb {
+    background: var(--main-ui);
+}
+.terminal-output::-webkit-scrollbar-thumb:hover {
+    background: var(--second-ui);
+}
+
+.terminal-input-bar {
+    display: flex;
+    align-items: center;
+    background: var(--bg-black);
+    padding: 10px 15px;
+    border-top: 1px solid var(--main-dim);
+    gap: 10px;
+}
+
+.terminal-prompt {
+    color: var(--main-ui);
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.terminal-field {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: var(--white);
+    font-family: inherit;
+    font-size: 0.85rem;
+    outline: none;
+}
+
+.t-line-cmd { color: var(--main-ui); font-weight: bold; margin-top: 10px; }
+.t-line-res { color: var(--white); opacity: 0.9; padding-left: 15px; }
+.t-line-warn { color: var(--orange-txt); }
+.t-line-err { color: #ff4444; }
+
+/* Cursor parpadeante simulado */
+.terminal-field::after {
+    content: "_";
+    animation: sync-flicker 1s infinite;
+}
+
+
+/* ===================================================
+   MOBILE OPTIMIZATION (RESPONSIVE OVERRIDE)
+   =================================================== */
+@media (max-width: 900px) {
+    .adv-layout {
+        display: block !important; /* Stack vertical natural para evitar amontonamiento */
+        height: 100vh;
+        overflow-y: auto;
+        overflow-x: hidden;
+        padding: 10px 15px;
+        grid-template-areas: none !important;
+        grid-template-columns: 1fr !important;
+    }
+
+    /* El fondo de video debe permanecer fijo */
+    #ui-video-bg {
+        position: fixed;
+    }
+
+    /* Ajustes del Header */
+    .ui-header {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .h-center { font-size: 0.8rem; }
+    .logo-txt { font-size: 1.2rem; }
+    .classification { width: 100%; }
+
+    /* Forzar que todos los paneles tengan altura automática para que el contenido respire */
+    .ui-panel {
+        height: auto !important;
+        min-height: 120px;
+        width: 100% !important;
+        margin-bottom: 20px !important; /* Espaciado entre paneles para evitar el amontonamiento */
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+    }
+
+    /* El Live Feed debe mantener un ratio visual */
+    .live-feed-box {
+        height: 250px !important;
+    }
+
+    /* Memory Fragments: Aseguramos que el scroll horizontal funcione bien */
+    .frag-window {
+        height: 85px;
+    }
+
+    /* Event Log: Limitamos la altura para que no empuje todo hacia abajo infinitamente */
+    .event-log-box {
+        max-height: 200px;
+    }
+
+    /* --- ADAPTACIÓN DE MODALES PARA MÓVIL --- */
+    
+    /* PROTOCOLO DE ENFRIAMIENTO: ELIMINACIÓN DE FILTROS PESADOS */
+    #ui-video-bg, #ui-image-bg, .dossier-img img, .feed-viewport {
+        filter: none !important;
+        backdrop-filter: none !important;
+    }
+
+    .crt-overlay {
+        background: none !important; /* Quitar scanlines pesadas */
+    }
+
+    .dossier-card {
+        animation: none !important; /* Desactivar animaciones de entrada en móvil */
+        transform: none !important;
+        opacity: 1 !important; /* REPARACIÓN CRÍTICA: Sin la animación, el opacity se quedaba en 0. Forzamos visibilidad inmediata. */
+    }
+
+    .class-window {
+        width: 95% !important;
+        height: 90vh !important;
+        max-height: 90vh;
+    }
+
+    /* Forzar que el modal de nodos no use el ancho fijo de 240px */
+    #modal-nodes .class-win-body {
+        grid-template-columns: 1fr !important;
+        grid-template-rows: auto 1fr !important;
+        display: flex !important;
+        flex-direction: column !important;
+        overflow: hidden !important; /* Evita que el body crezca con los nodos */
+    }
+
+    #modal-nodes .class-sidebar {
+        display: flex !important;
+        flex-direction: row !important;
+        height: auto !important;
+        max-height: 150px !important; /* Altura del contenedor (donde están las categorías) reducida al mínimo */
+        height: 100px !important; /* Reducción agresiva del perfil: ya no es un bloque "alto" */
+        max-height: 100px !important;
+        border-bottom: 1px solid var(--main-ui) !important;
+        flex-shrink: 0 !important; /* Impedir que la sidebar se aplaste */
+    }
+
+    #modal-nodes .sidebar-scrollable {
+        flex: 1 !important; /* Que las categorías ocupen lo que sobre del max-height */
+        min-height: 0;
+        border-right: 1px dashed var(--main-dim); /* Separador interno */
+    }
+
+    #modal-nodes .floppy-drive-slot {
+        width: 120px !important; /* Un poco más ancho para albergar los botones mejor */
+        padding: 5px !important;
+        gap: 3px !important;
+        background: rgba(0, 183, 255, 0.05);
+        flex-shrink: 0 !important; /* Prioridad absoluta de tamaño para el DRIVE_A */
+        height: 100% !important;
+        min-height: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+    }
+
+    #modal-nodes .floppy-drive-slot .btn-ui-mini {
+        font-size: 0.6rem !important;
+        padding: 3px !important;
+    }
+
+    #modal-nodes .drive-status {
+        font-size: 0.6rem !important;
+    }
+
+    #modal-nodes .drive-chassis {
+        height: 35px !important; /* Chasis más alto para que se vea la animación del disquete */
+        height: 40px !important; /* Chasis ajustado para que la animación mecánica sea visible */
+    }
+
+    #modal-nodes .floppy-inserted.moving-in {
+        top: 15px !important; /* Ajuste para que el disquete se vea insertado en el chasis */
+        top: 18px !important; /* Profundidad de inserción recalibrada */
+    }
+
+    #modal-nodes .class-viewport {
+        flex: 1 !important; /* El visor de dossiers toma todo el resto de la pantalla */
+        min-height: 0 !important;
+        overflow-y: auto !important;
+    }
+
+    .class-win-body {
+        grid-template-columns: 1fr; /* Una columna para el modal */
+        grid-template-rows: auto 1fr;
+    }
+
+    .class-sidebar {
+        flex-direction: row;
+        overflow-x: auto;
+        border-right: none;
+        border-bottom: 1px solid var(--main-ui);
+        padding: 5px;
+        gap: 10px;
+    }
+
+    .tab-btn {
+        padding: 8px 15px;
+        font-size: 0.75rem;
+        white-space: nowrap;
+    }
+
+    .class-viewport {
+        padding: 15px;
+    }
+
+    /* Reproductor y Casete en una sola columna */
+    .custom-tab-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .custom-right-col {
+        border-left: none;
+        border-top: 1px dashed var(--main-ui);
+        padding-left: 0;
+        padding-top: 20px;
+    }
+
+    .level-selector-grid {
+        grid-template-columns: 1fr;
+    }
+}
