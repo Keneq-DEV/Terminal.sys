@@ -3321,7 +3321,7 @@ async function loadKeneqStatus() {
 
     try {
         // Hacemos el fetch con un timestamp (?t=) para evitar que GitHub cachee tu estado antiguo
-        const response = await fetch(`keneq.txt?t=${Date.now()}`);
+        const response = await fetch(`TERMINAL.DATA/Keneq.txt`);
         if (!response.ok) throw new Error("STATUS_FILE_NOT_FOUND");
 
         const text = await response.text();
