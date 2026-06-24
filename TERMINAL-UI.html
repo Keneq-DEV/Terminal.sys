@@ -147,14 +147,14 @@
                     <div class="acc-txt"><span>CLASSIFIED ARCHIVES</span><br><small>Restricted Data Fragments</small></div>
                     <div class="acc-num">03</div>
                 </div>
-                <div class="acc-item">
+                <div class="acc-item" onclick="openModal('modal-status'); loadKeneqStatus();">
                     <div class="acc-icon">⦿</div>
                     <div class="acc-txt"><span>SYSTEM STATUS</span><br><small>Core Systems Monitor</small></div>
                     <div class="acc-num">04</div>
                 </div>
-                <div class="acc-item">
+                <div class="acc-item" onclick="openModal('modal-return')">
                     <div class="acc-icon">▲</div>
-                    <div class="acc-txt"><span>RETURN TO JAI</span><br><small>Exit Terminal</small></div>
+                    <div class="acc-txt"><span>RETURN TO</span><br><small>Exit Terminal</small></div>
                     <div class="acc-num">05</div>
                 </div>
             </div>
@@ -301,7 +301,7 @@
         </div>
     </div>
 </div>
-                    <!-- PESTAÑA CUSTOM: SELECTOR DE NIVELES (COLORES) -->
+                <!-- PESTAÑA CUSTOM: SELECTOR DE NIVELES (COLORES) -->
 <!-- PESTAÑA CUSTOM: SELECTOR DE NIVELES Y EDITOR DE VARIABLES CSS -->
 <!-- PESTAÑA CUSTOM EN VERTICAL (CORREGIDA: TODO HACIA ABAJO) -->
 <div id="tab-custom" class="tab-content">
@@ -655,6 +655,76 @@ designed for massive context windows.
             </div>
         </div>
     </div>
+
+    <div id="modal-status" class="modal">
+    <div class="class-window" style="max-width: 550px; height: auto;">
+        <!-- CABECERA -->
+        <header class="class-win-header" style="border-bottom-color: var(--main-ui);">
+            <div class="win-title">// CORE_SYSTEMS_MONITOR</div>
+            <a href="javascript:closeModal('modal-status')" class="win-close-btn">×</a>
+        </header>
+
+        <!-- CUERPO DE MONITOREO -->
+        <div style="padding: 25px; display: flex; flex-direction: column; gap: 20px; font-family: 'Share Tech Mono', monospace; box-sizing: border-box;">
+            
+            <!-- Estado en vivo (Desde keneq.txt) -->
+            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px dashed var(--main-ui); padding-bottom: 10px;">
+                <span style="color: var(--main-ui); font-weight: bold;">[!] OPERATOR_STATUS:</span>
+                <span id="hud-user-status" style="color: var(--second-ui); font-weight: bold; text-align: right;">LOADING_STATUS_LOG...</span>
+            </div>
+
+            <!-- Notas del operador (Desde keneq.txt) -->
+            <div style="border: 1px solid var(--main-ui); background: var(--third-ui); padding: 15px; box-sizing: border-box;">
+                <div style="font-size: 0.7rem; color: var(--second-ui); margin-bottom: 8px;">// INCOMING_OPERATOR_NOTES.log</div>
+                <p id="hud-user-notes" style="color: #fff; line-height: 1.5; margin: 0; font-style: italic;">
+                    "WAITING_FOR_DATA_STREAM..."
+                </p>
+            </div>
+
+            <!-- Formulario de Peticiones (Link al Google Forms) -->
+            <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px dashed var(--main-ui); padding-top: 15px;">
+                <span style="color: var(--main-ui); font-size: 0.85rem;">INCOMING_REQUESTS:</span>
+                <a href="https://forms.gle/unzjPimuZkMuMS9M7" target="_blank" class="btn-ui-mini" style="text-decoration: none; padding: 4px 15px;">
+                    [ OPEN_FORM_LINK ]
+                </a>
+            </div>
+
+            <!-- Dirección de red dinámica mutante -->
+            <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--main-ui); opacity: 0.6; margin-top: 5px;">
+                <span id="hud-dynamic-address">UPLINK_ADDR: 0x00000000</span>
+                <span>SECURE_UPLINK // STABLE</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL: RETORNO Y PROTOCOLO DE SALIDA -->
+<div id="modal-return" class="modal">
+    <div class="class-window" style="max-width: 450px; height: auto;">
+        <!-- CABECERA -->
+        <header class="class-win-header">
+            <div class="win-title">// EXIT_DESTINATION_PROTOCOL</div>
+            <a href="javascript:closeModal('modal-return')" class="win-close-btn">×</a>
+        </header>
+
+        <!-- CUERPO DE SELECCIÓN -->
+        <div style="padding: 25px; display: flex; flex-direction: column; gap: 20px; font-family: 'Share Tech Mono', monospace; text-align: center; box-sizing: border-box;">
+            <p style="color: #fff; opacity: 0.8; margin: 0 0 10px 0;">SELECT_SECURE_EXIT_DESTINATION:</p>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                <!-- Botón 1: Redirige a la terminal antigua en la misma pestaña -->
+                <button class="btn-ui" onclick="location.href='index.html'" style="font-size: 0.8rem; padding: 10px;">
+                    [ OLD_TERMINAL ]
+                </button>
+                
+                <!-- Botón 2: Redirige a tu Janitor AI en una pestaña nueva -->
+                <button class="btn-ui" onclick="window.open('https://janitorai.com/profiles/545c2fad-bf1f-4a6c-af5f-6dc4c705d448_profile-of-keneq-sys', '_blank')" style="font-size: 0.8rem; padding: 10px; border-color: var(--second-ui); color: var(--second-ui);">
+                    [ RETURN_TO_JAI ]
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
 
     <!-- MENÚ CONTEXTUAL CLI (POP-OUT) -->
     <div id="terminal-context-menu" style="display: none; position: fixed; z-index: 60000; background: var(--third-ui); border: 1px solid var(--main-ui); box-shadow: 5px 5px 15px rgba(0,0,0,0.5); padding: 5px; min-width: 150px;">

@@ -10,7 +10,7 @@ const UIX = [
         color_theme: "",
         duration: 15,
         tracks: [
-            "TERMINAL.DATA/User/Penumbra_BP_E1.mp3"
+            ""
         ]
     }
 ];
@@ -103,7 +103,7 @@ let selectedColors = {
 let activeColorTarget = "name";
 
 // Lógica de seguridad para el bloqueo de 30 días
-const ENABLE_SECURITY_LOCK = false; 
+const ENABLE_SECURITY_LOCK = true; 
 const LOCK_DURATION_MS = 30 * 24 * 60 * 60 * 1000; 
 
 
@@ -1237,14 +1237,13 @@ function saveCustomVars() {
     
     closeModal('modal-classification');
 }
-/* Bloque duplicado de restauración eliminado para evitar conflictos con el Cargador Maestro */
 // ==========================================
 //    BASE DE DATOS DE MÚSICA (NATIVA EN UIX)
 // ==========================================
 const SYSTEM_PLAYLISTS = {
     "NONE": { 
         folder: "TERMINAL.DATA/User", 
-        tracks: ["ROUTINE.mp3", "Penumbra_BP_E1.mp3"] 
+        tracks: ["ROUTINE.mp3"] 
     },
     "level-0": { 
         folder: "TERMINAL.Audio/Fragmented", 
@@ -3307,3 +3306,59 @@ async function startUnfragmentedSequence(output, promptEl, skipAnim = false) {
 
 // Iniciar el ciclo de actualización cada 2 segundos
 setInterval(updateDiagnosticStats, 2000);
+
+
+// ==========================================
+//    MÓDULO SYSTEM STATUS: LEER KENEQ.TXT Y DIRECCIÓN DINÁMICA
+// ==========================================
+
+// 1. Leer y procesar el archivo keneq.txt de tu servidor
+async function loadKeneqStatus() {
+    const statusEl = document.getElementById('hud-user-status');
+    const notesEl = document.getElementById('hud-user-notes');
+    
+    if (!statusEl || !notesEl) return;
+
+    try {
+        // Hacemos el fetch con un timestamp (?t=) para evitar que GitHub cachee tu estado antiguo
+        const response = await fetch(`keneq.txt?t=${Date.now()}`);
+        if (!response.ok) throw new Error("STATUS_FILE_NOT_FOUND");
+
+        const text = await response.text();
+
+        // Extraer la línea de STATUS usando Expresión Regular
+        const statusMatch = text.match(/STATUS:\s*(.*)/i);
+        const statusVal = statusMatch ? statusMatch[1].trim() : "OPERATIONAL // NO_MESSAGE";
+
+        // Extraer la línea de NOTES usando Expresión Regular
+        const notesMatch = text.match(/NOTES:\s*(.*)/i);
+        const notesVal = notesMatch ? notesMatch[1].trim() : "No active system logs detected from creator.";
+
+        // Inyectamos los datos reales en el HTML
+        statusEl.innerText = statusVal.toUpperCase();
+        notesEl.innerText = `"${notesVal}"`;
+
+        console.log("Estatus y notas del operador sincronizadas con keneq.txt");
+    } catch (e) {
+        console.error("Error al sincronizar keneq.txt:", e);
+        statusEl.innerText = "OFFLINE // DISCONNECTED";
+        notesEl.innerText = `"System failed to sync with keneq.txt. Operator uplink is offline."`;
+    }
+}
+
+// 2. Rotador de direcciones de red (Hexadecimal dinámico)
+function startAddressRotator() {
+    const addressEl = document.getElementById('hud-dynamic-address');
+    if (!addressEl) return;
+
+    setInterval(() => {
+        // Genera una dirección física de memoria simulada (ej: 0x7FFA8F4E)
+        const hex = Math.floor(Math.random() * 0xFFFFFFFF).toString(16).toUpperCase().padStart(8, '0');
+        addressEl.innerText = `UPLINK_ADDR: 0x${hex}`;
+    }, 1500); // Cambia el código de conexión cada 1.5 segundos
+}
+
+// Inicializar el rotador al cargar la página para que esté funcionando en background
+window.addEventListener('load', () => {
+    startAddressRotator();
+});
