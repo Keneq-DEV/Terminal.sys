@@ -22,7 +22,7 @@
       "id": "MAKO",
       "link": "https://janitorai.com/characters/264865de-a814-4f79-a561-fc48c599d675_character-mako",
       "img": "https://ella.janitorai.com/bot-avatars/ZdiGj8Dyjwk77qHOeOjue.webp?width=1200",
-      "corrupted": true,
+      "corrupted": false,
       "org": "Mgecko117",
       "org_link": "https://x.com/MGecko117",
       "desc": "Asset Mako is an Idolon enforcer of the Aegis and Phasma vocations. Known as the 'obsidian blade,' her Archon architecture utilizes a Sarkic/Gnostic Panoply for rapid modular adaptation between stealth and heavy assault. Operating with surgical detachment, she employs a 360-degree sensory suite and high-density claws for precise neutralization. While a silent engine of efficiency, her Aegis protocol triggers absolute, unrestrained force if the Creator’s safety is compromised.",
@@ -270,7 +270,7 @@
         {
         "id": "LUCY",
         "link": "https://janitorai.com/characters/7c406427-d16e-44da-a35a-c4b4b4d2301e_character-lucy",
-        "img": "https://ella.janitorai.com/bot-avatars/lajuazGoau_cPbA_plEj4.webp?width=1200",
+        "img": "https://ella.janitorai.com/bot-avatars/14bEIWGTExQ2_mDfWVeFc.webp?width=1200",
         "corrupted": false,
         "org": "Keneq.sys",
         "org_link": "https://janitorai.com/profiles/545c2fad-bf1f-4a6c-af5f-6dc4c705d448_profile-of-keneq-sys",
@@ -281,7 +281,7 @@
         {
           "id": "KIRA",
           "link": "https://janitorai.com/characters/a4dad1b7-a116-4076-aec5-8034ade90eaa_character-kira",
-          "img": "https://ella.janitorai.com/bot-avatars/bJsb1bMW59VXymoCZ4xDp.webp?width=400",
+          "img": "https://ella.janitorai.com/bot-avatars/6eSXIMNdwuswcZWpruVwS.webp?width=1200",
           "corrupted": true,
           "org": "Hynbrid-Kira",
           "org_link": "https://www.deviantart.com/hybrid-kira/gallery",
@@ -303,7 +303,7 @@
         {
           "id": "ZENDA",
           "link": "https://janitorai.com/characters/d64c2184-d1f0-4180-bdbe-587082e0e378_character-zenda",
-          "img": "https://ella.janitorai.com/bot-avatars/woZq2qadQngMrRko8zHOx.webp?width=1200",
+          "img": "https://ella.janitorai.com/bot-avatars/gsVMzQLgUrSFy0yAZAOqx.webp?width=1200",
           "corrupted": true,
           "org": "Hynbrid-Kira",
           "org_link": "https://www.deviantart.com/hybrid-kira/gallery",
@@ -314,12 +314,22 @@
         {
           "id": "IRIS",
           "link": "https://janitorai.com/characters/dd2a8bb0-b819-4194-876d-8fad70d6b12f_character-iris",
-          "img": "https://ella.janitorai.com/bot-avatars/icrAFQzMreTJtmM3K-lPY.webp?width=1200",
+          "img": "https://ella.janitorai.com/bot-avatars/cBfWGJVJwlZRo8YHKOUQC.webp?width=1200",
           "corrupted": true,
           "org": "Hynbrid-Kira",
           "org_link": "https://www.deviantart.com/hybrid-kira/gallery",
           "desc": "Asset Iris is a high-yield Reconnaissance Dire Vehicle based on the 2016 Corvette Stingray platform. Her high-gloss white chassis is integrated with orange tactical accents and infused with radar-absorbent materials (RAM) for military-grade signal reduction. Following a terminal-decommissioning event, she exhibits permanent structural asymmetry and unpolished scarring along her rear-right flank—a localized point of tactical and psychological vulnerability. Iris utilizes a battle-tuned 6.2L LT1 V8 propulsion core, augmented by Magnetic Ride Control and eLSD protocols for surgical high-G pursuit and evasive maneuvers. Behavioral logs confirm an 'Analytical-Guardian' matrix characterized by a profound biological imprinting on [REDACTED], manifesting as absolute submissive-nymphomania and fanatical overprotectiveness. Warning: Asset is subject to thermal overload under sustained combat and triggers an immediate terminal-rage state if [REDACTED] is threatened.",
           "tags": ["DIRE-VEHICLE", "CORVETTE-STINGRAY", "TACTICAL-SCOUT", "MILITARY-ASSET", "OBSESSIVE-GUARDIAN"]
+        },
+        {
+          "id": "KASSIA",
+          "link": "https://janitorai.com/es/characters/03c977de-34f0-4f30-b41a-fd109fa8a18e_character-kassia",
+          "img": "https://ella.janitorai.com/bot-avatars/2VLj1Gnipu7sjzDcjGbXs.webp?width=1200",
+          "corrupted": true,
+          "org": "Hynbrid-Kira",
+          "org_link": "https://www.deviantart.com/hybrid-kira/gallery",
+          "desc": "",
+          "tags": []
         }
 
 
