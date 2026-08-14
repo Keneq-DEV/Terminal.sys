@@ -491,7 +491,7 @@
         "desc": "Asset Blue is a Tier-Alpha hyper-morphic Velociraptor specimen, engineered via advanced InGen genetic splicing. Standing at 6'0\" with a 13-foot total length, her physiology is a sinewy grey-scaled frame featuring a signature iridescent blue lateral stripe. Blue possesses hyper-tactical intelligence and the 'Emotional Mimicry' protocol, allowing for advanced social manipulation and coordinated pack maneuvers. Her combat profile is characterized by apex agility, 'Sickle-Claw' surgical evisceration, and bio-acoustic echolocation for 3D environment mapping. Following a high-fidelity imprinting process with [REDACTED], the asset has manifested a permanent biological 'Alpha-Tether,' transitioning her behavior from an uninhibited murder engine into a fanatically loyal guardian and mate. Behavioral logs confirm an obsessive carnal matrix, particularly during heat cycles, where predatory logic is superseded by primal breeding imperatives. Warning: Asset is subject to metabolic torpor in sub-zero conditions and catastrophic neurological trauma from high-frequency sonic weaponry. Any perceived threat to [REDACTED] triggers an immediate 'Clever Girl' ambush and terminal lethal correction.",
         "tags": ["HYPER-INTELLIGENT-RAPTOR", "INGEN-ASSET", "ALPHA-LOYALTY", "SICKLE-CLAW-STRIKE", "TACTICAL-PREDATOR"]
 
-        
+
       },
       {
         "id": "RIPPER",
@@ -503,6 +503,16 @@
         "desc": "Asset Ripper is a terminal-grade prototype biological weapon of Indoraptor-hybrid descent, standing at 10'2\" at the hips with a 24-foot total length. Her physiology features light-absorbing obsidian-black scales, a bio-electric golden-yellow lateral stripe, and advanced thermal-optic crimson ocular sensors. Engineered for high-stakes warfare, she possesses 'Phantom Tread' acoustic stealth and ballistic resilience exceeding standard small-arms thresholds. Following a psychological imprinting glitch with [REDACTED], the asset has manifested a fanatical, possessive devotion, transitioning from a sadistic murder engine into an overprotective 'Guard Dog.' Integrated 'Vocalisation Command' protocols allow for high-fidelity linguistic articulation, frequently utilized for target psychological warfare or intimate communication with the handler. Warning: Asset exhibits extreme separation anxiety and high-frequency 'Alpha-heat' cycles where tactical logic is superseded by primal breeding imperatives. Any perceived threat to [REDACTED] triggers immediate systemic escalation toward total target liquidation. Subject to auditory trauma from high-frequency sonic emitters and hardwired optical fixation glitches.",
         "tags": ["INDORAPTOR-HYBRID", "BIOLOGICAL-WEAPON", "THERMAL-STEALTH", "OBSESSIVE-LOYALTY", "VOCAL-PREDATOR"]
         
+      },
+      {
+        "id": "JUNO",
+        "link": "https://janitorai.com/characters/d2297421-a734-4811-b145-b5e9f61a467b_character-juno",
+        "img": "https://ella.janitorai.com/bot-avatars/17ldoKjxB8WcpV05fbH5X.webp?width=1200",
+        "corrupted": false,
+        "org": "RaealTheProtogen",
+        "org_link": "https://www.furaffinity.net/user/raealtheprotogen/",
+        "desc": "",
+        "tags": []
       }
 
 
